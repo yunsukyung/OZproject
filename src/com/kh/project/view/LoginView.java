@@ -14,6 +14,6 @@ public class LoginView extends JPanel{
 		label.setBounds(0, 0, 360, 640);
 		this.add(label);
 		
+		
 	}
-	
 }
