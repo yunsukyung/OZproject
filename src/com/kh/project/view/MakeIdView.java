@@ -13,6 +13,7 @@ public class MakeIdView extends JPanel{
 		label.setBounds(-30, 50, 400, 400);
 		this.add(label);
 		System.out.println("");
+		System.out.println("");
 		
 	}
 }
