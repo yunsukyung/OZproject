@@ -9,7 +9,7 @@ public class MainView extends JFrame {
 		this.setBounds(0, 0, 370, 760);
 		
 		//this.add(new BackgroundPanel(this));
-		this.add(new StartStoryView(this));
+		
 		
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
