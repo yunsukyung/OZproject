@@ -1,7 +1,13 @@
 package com.kh.project.view;
 
-import java.awt.Component;
 
-public class BackgroundPanel extends Component {
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class BackgroundPanel extends JPanel {
+	
+	public BackgroundPanel(JFrame mf) {
+		StartStoryView ssv = new StartStoryView(mf);
+	}
 }
