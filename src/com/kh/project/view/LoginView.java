@@ -13,7 +13,7 @@ public class LoginView extends JPanel{
 		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\jino0\\git\\OZproject\\src\\image\\start\\로그인간판.png").getImage().getScaledInstance(360, 640, 0)));
 		label.setBounds(0, 0, 360, 640);
 		this.add(label);
-		
+		System.out.println("");
 		
 	}
 }
