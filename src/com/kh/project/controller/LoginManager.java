@@ -26,11 +26,16 @@ public class LoginManager {
 		System.out.println(plist.toString());
 	}
 
-	public Player LoginId(String userId, String userPwd) {
+	public Player LoginId(String userId, char[] userPwd) {
+		String str = "";
+		for(int i = 0; i < userPwd.length; i ++) {
+			str += userPwd[i];
+		}
+				
 		ArrayList<Player> plist = pd.readPlayerList();
 		for(int i = 0; i < plist.size(); i ++) {
 			if(plist.get(i).getUserId().equals(userId)) {
-				if(plist.get(i).getUserPwd().equals(userPwd)) {
+				if(plist.get(i).getUserPwd().equals(str)) {
 					return plist.get(i);
 				}
 			}
