@@ -17,15 +17,16 @@ import javax.swing.JTextField;
 import com.kh.project.controller.LoginManager;
 
 public class LoginView extends JPanel{
+	
 	LoginManager lm = new LoginManager();
 	public LoginView(JFrame mf) {
 		this.setLocation(0, 0);
 		this.setSize(370, 760);
 		
-		JLabel background = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\jino0\\git\\OZproject\\src\\image\\start\\로그인 바탕.png").getImage().getScaledInstance(360, 640, 0)));
+		JLabel background = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\s\\git\\OZproject\\src\\image\\start\\시작 배경.png").getImage().getScaledInstance(360, 640, 0)));
 		
 		
-		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\jino0\\git\\OZproject\\src\\image\\start\\로그인간판.png").getImage().getScaledInstance(458, 458, 0)));
+		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\s\\git\\OZproject\\src\\image\\start\\로그인간판.png").getImage().getScaledInstance(458, 458, 0)));
 		label.setLocation(0, 0);
 		label.setSize(360, 458);
 		

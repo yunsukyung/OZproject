@@ -21,13 +21,13 @@ public class StartView extends JPanel{
 		
 		this.setLocation(0, 0);
 		this.setSize(370, 760);
-		Image background = new ImageIcon("C:\\Users\\tmddu\\git\\OZ\\image\\start\\startBackground.png").getImage().getScaledInstance(370, 760, 0);
+		Image background = new ImageIcon("src/image/start/시작 배경.png").getImage().getScaledInstance(370, 760, 0);
 
 		JLabel label = new JLabel(new ImageIcon(background));
 		
 		
 		
-		JButton button = new JButton(new ImageIcon(new ImageIcon("C:\\Users\\tmddu\\git\\OZ\\image\\start\\start.png").getImage().getScaledInstance(160, 160, 0)));
+		JButton button = new JButton(new ImageIcon(new ImageIcon("src/image/start/start2.png").getImage().getScaledInstance(160, 160, 0)));
 		button.setLocation(100, 300);
 		button.setSize(180, 150);
 		
