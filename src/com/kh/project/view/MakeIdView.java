@@ -1,5 +1,7 @@
 package com.kh.project.view;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -13,24 +15,39 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class MakeIdView extends JPanel{
-
+public class MakeIdView extends JPanel{	
+	private static JFrame mf;
+	
 	public MakeIdView(JFrame mf) {
+		
+		mf.setTitle("oz의 펭귄");
+		mf.setBounds(0, 0, 370, 760);
+		
 		this.setLayout(null);
 		
-		JLabel back = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\시작 배경.png").getImage().getScaledInstance(370, 760, 0)));
+		JLabel back = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\user2\\git\\OZproject\\src\\image\\start\\시작 배경.png").getImage().getScaledInstance(370, 760, 0)));
 		back.setBounds(0, -40, 370, 760);
-		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\로그인간판.png").getImage().getScaledInstance(400, 400, 0)));
+		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\user2\\git\\OZproject\\src\\image\\start\\로그인간판.png").getImage().getScaledInstance(400, 400, 0)));
 		label.setBounds(20, 103, 350, 350);
 		
-		JButton next = new JButton(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\next.png").getImage().getScaledInstance(50, 20, 0)));
+		JButton next = new JButton(new ImageIcon(new ImageIcon("C:\\Users\\user2\\git\\OZproject\\src\\image\\start\\next.png").getImage().getScaledInstance(50, 20, 0)));
 		next.setLayout(null);
 		next.setBounds(170, 275, 50, 20);
+
 		
 		JLabel id = new JLabel("ID : ");
 		id.setBounds(157, 175, 50, 50);
 		JTextField tf = new JTextField(10);
 		tf.setBounds(180, 190, 100, 20);
+		
+		next.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				id.setText("12");
+				
+			}
+		});
 		
 		JLabel pwd = new JLabel("pass : ");
 		pwd.setBounds(140, 205, 50, 50);
@@ -45,11 +62,9 @@ public class MakeIdView extends JPanel{
 		next.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {	
-				if(e.getSource() == next) {
 			new MakeIdView2(mf);
-		}
-				
 			}
+			
 		});
 		
 
@@ -64,6 +79,17 @@ public class MakeIdView extends JPanel{
 		this.add(next);
 		this.add(label);
 		this.add(back);
+		
+		
+		
+		mf.setVisible(true);
+		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		new MakeIdView(mf);
 		
 		
 	}
