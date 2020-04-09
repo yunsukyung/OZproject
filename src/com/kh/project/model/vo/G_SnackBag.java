@@ -6,4 +6,10 @@ public class G_SnackBag extends Garbage{
 		super(200,3);
 	}
 
+	@Override
+	public String toString() {
+		return "G_SnackBag";
+	}
+	
+
 }
