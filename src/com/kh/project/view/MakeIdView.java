@@ -16,12 +16,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class MakeIdView extends JPanel{	
-	private static JFrame mf;
 	
 	public MakeIdView(JFrame mf) {
-		
-		mf.setTitle("oz의 펭귄");
-		mf.setBounds(0, 0, 370, 760);
 		
 		this.setLayout(null);
 		
@@ -40,15 +36,6 @@ public class MakeIdView extends JPanel{
 		JTextField tf = new JTextField(10);
 		tf.setBounds(180, 190, 100, 20);
 		
-		next.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				id.setText("12");
-				
-			}
-		});
-		
 		JLabel pwd = new JLabel("pass : ");
 		pwd.setBounds(140, 205, 50, 50);
 		JPasswordField tf2 = new JPasswordField(10);
@@ -59,15 +46,14 @@ public class MakeIdView extends JPanel{
 		JPasswordField tf3 = new JPasswordField(10);
 		tf3.setBounds(180, 250, 100, 20);
 		
-		next.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {	
-			new MakeIdView2(mf);
-			}
+		next.addActionListener(new ActionListener() {
 			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new MakeIdView2(mf);
+				System.out.println("112");
+			}
 		});
-		
-
 		
 		this.add(id);
 		this.add(tf);
@@ -79,18 +65,6 @@ public class MakeIdView extends JPanel{
 		this.add(next);
 		this.add(label);
 		this.add(back);
-		
-		
-		
-		mf.setVisible(true);
-		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-	}
-	
-	public static void main(String[] args) {
-		
-		new MakeIdView(mf);
-		
 		
 	}
 }
