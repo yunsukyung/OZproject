@@ -16,5 +16,4 @@ public class Eps1 extends Item{
 	public void setEpsGb(int epsGb) {
 		this.epsGb = epsGb;
 	}
-	
 }

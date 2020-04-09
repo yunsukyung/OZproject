@@ -8,7 +8,7 @@ public class Rod3 extends Item {
 		super(0, 15);
 		rodSp = 10;
 	}
-
+	
 	public int getRodSp() {
 		return rodSp;
 	}

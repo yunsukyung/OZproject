@@ -8,7 +8,7 @@ public class Food3 extends Item{
 		super(50, 0);
 		foodSt = 75;
 	}
-
+	
 	public int getFoodSt() {
 		return foodSt;
 	}

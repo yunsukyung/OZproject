@@ -23,7 +23,6 @@ public class ShopManager {
 			act = true;
 		} else {
 			System.out.println("진주가 부족합니다.");
-			
 		}
 		
 		//보유한 쓰레기나 진주가 충분할 경우 true를 전달받아 아이템 효과 수행
