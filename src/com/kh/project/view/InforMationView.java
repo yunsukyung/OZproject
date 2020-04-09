@@ -12,22 +12,34 @@ public class InforMationView extends JPanel{
 
 	public InforMationView(JFrame mf) {
 		this.setLocation(0, 0);
-		this.setSize(370,760);
+		this.setSize(360,640);
 		
 		//바다뒷배경
 		JLabel background = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\jino0\\git\\OZproject\\src\\image\\start\\바다뒷배경.png").getImage().getScaledInstance(360, 640, 0)));
-		//안내표지판
-		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\jino0\\git\\OZproject\\src\\image\\start\\안내문표.png").getImage().getScaledInstance(458, 458, 0)));
-		label.setLocation(0, 0);
-		label.setSize(360, 458);
 		
-		JButton backButton = new JButton("Back");
-		backButton.setBounds(150,220,60,20);
+		//만든사람들
+		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\jino0\\git\\OZproject\\src\\image\\start\\만든사람들.png").getImage().getScaledInstance(324, 387, 0)));
+		label.setLocation(18, 151);
+		label.setSize(324, 387);
 		
-		label.add(backButton);
+		//광고판
+		JLabel label2 = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\jino0\\git\\OZproject\\src\\image\\start\\KH정보교육원.png").getImage().getScaledInstance(360, 63, 0)));
+		label2.setLocation(0, 0);
+		label2.setSize(360,63);
+		
+		//백버튼
+		JButton backButton = new JButton(new ImageIcon(new ImageIcon("C:\\Users\\jino0\\git\\OZproject\\src\\image\\start\\빽.png").getImage().getScaledInstance(98, 35, 0)));
+		backButton.setLocation(131,495);
+		backButton.setSize(98, 35);
+		
+		
+		background.add(backButton);
+		background.add(label2);
+		
 		
 		background.add(label, BorderLayout.CENTER);
 		this.add(background);
+		
 	}
 	
 }
