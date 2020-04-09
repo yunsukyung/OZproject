@@ -15,8 +15,8 @@ public class MakeIdView2 extends JPanel{
 	public MakeIdView2(JFrame mf) {
 		this.setLayout(null);
 		
-		JLabel back = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\시작 배경.png").getImage().getScaledInstance(370, 760, 0)));
-		back.setBounds(0, -40, 370, 760);
+		JLabel back = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\시작 배경.png").getImage().getScaledInstance(360, 640, 0)));
+		back.setBounds(0, 0, 360, 640);
 		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\로그인간판.png").getImage().getScaledInstance(400, 400, 0)));
 		label.setBounds(20, 103, 350, 350);
 		
