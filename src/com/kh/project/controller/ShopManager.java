@@ -53,10 +53,19 @@ public class ShopManager {
 			}	
 		}
 		
-		//모자 종류가 맞는지 대조 후 모자 씌워줌
-		
 		
 		//발전소 종류가 맞는지 대조 후 시간당 쓰레기 올려줌
+		if(act == true) {
+			if(thing instanceof Eps1) {
+				p.setGarbage(p.getGarbage() + ((Eps1)thing).getEpsGb());
+			} else if(thing instanceof Eps2) {
+				p.setGarbage(p.getGarbage() + ((Eps2)thing).getEpsGb());
+			} else if(thing instanceof Eps3) {
+				p.setGarbage(p.getGarbage() + ((Eps3)thing).getEpsGb());
+			} else if(thing instanceof Eps4) {
+				
+			}	
+		}
 		
 	}
 }
