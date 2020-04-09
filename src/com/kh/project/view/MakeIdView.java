@@ -1,5 +1,10 @@
 package com.kh.project.view;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.annotation.processing.SupportedSourceVersion;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,7 +14,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class MakeIdView extends JPanel{
-	
+
 	public MakeIdView(JFrame mf) {
 		this.setLayout(null);
 		
@@ -36,6 +41,17 @@ public class MakeIdView extends JPanel{
 		passcheck.setBounds(105, 235, 80, 50);
 		JPasswordField tf3 = new JPasswordField(10);
 		tf3.setBounds(180, 250, 100, 20);
+		
+		next.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {	
+				if(e.getSource() == next) {
+			new MakeIdView2(mf);
+		}
+				
+			}
+		});
+		
 
 		
 		this.add(id);
