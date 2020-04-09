@@ -14,8 +14,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import com.kh.project.controller.LoginManager;
+
 public class LoginView extends JPanel{
-	
+	LoginManager lm = new LoginManager();
 	public LoginView(JFrame mf) {
 		this.setLocation(0, 0);
 		this.setSize(370, 760);
@@ -46,7 +48,14 @@ public class LoginView extends JPanel{
 		JButton button3 = new JButton("아이디찾기");
 		button3.setBounds(220, 220, 60, 20);
 		
-		
+		button1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				lm.LoginId(Idtf.getText(), password.getPassword());
+				
+			}
+		});
 		
 		
 		label.add(Id);
@@ -61,4 +70,8 @@ public class LoginView extends JPanel{
 		this.add(background);
 		
 	}
+	
+
+	
+	
 }
