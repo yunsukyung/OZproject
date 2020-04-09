@@ -30,39 +30,39 @@ public class ShopManager {
 		
 		//낚시대의 종류가 맞는지 대조 후 공격력 올려줌
 		if(act == true) {
-			if(thing instanceof Rod1) {
-				p.setSp(p.getSp() + ((Rod1)thing).getRodSp());
-			} else if(thing instanceof Rod2) {
-				p.setSp(p.getSp() + ((Rod2)thing).getRodSp());
-			} else if(thing instanceof Rod3) {
-				p.setSp(p.getSp() + ((Rod3)thing).getRodSp());
+			if(thing instanceof I_Rod1) {
+				p.setSp(p.getSp() + ((I_Rod1)thing).getRodSp());
+			} else if(thing instanceof I_Rod2) {
+				p.setSp(p.getSp() + ((I_Rod2)thing).getRodSp());
+			} else if(thing instanceof I_Rod3) {
+				p.setSp(p.getSp() + ((I_Rod3)thing).getRodSp());
 			}	
 		}
 		
 		
 		//음식의 종류가 맞는지 대조 후 포만감 올려줌
 		if(act == true) {
-			if(thing instanceof Food1) {
-				p.setSatiety(p.getSatiety() + ((Food1)thing).getFoodSt());
-			} else if(thing instanceof Food2) {
-				p.setSatiety(p.getSatiety() + ((Food2)thing).getFoodSt());
-			} else if(thing instanceof Food3) {
-				p.setSatiety(p.getSatiety() + ((Food3)thing).getFoodSt());
-			} else if(thing instanceof Food4) {
-				p.setSatiety(p.getSatiety() + ((Food4)thing).getFoodSt());
+			if(thing instanceof I_Food1) {
+				p.setSatiety(p.getSatiety() + ((I_Food1)thing).getFoodSt());
+			} else if(thing instanceof I_Food2) {
+				p.setSatiety(p.getSatiety() + ((I_Food2)thing).getFoodSt());
+			} else if(thing instanceof I_Food3) {
+				p.setSatiety(p.getSatiety() + ((I_Food3)thing).getFoodSt());
+			} else if(thing instanceof I_Food4) {
+				p.setSatiety(p.getSatiety() + ((I_Food4)thing).getFoodSt());
 			}	
 		}
 		
 		
 		//발전소 종류가 맞는지 대조 후 시간당 쓰레기 올려줌
 		if(act == true) {
-			if(thing instanceof Eps1) {
-				p.setGarbage(p.getGarbage() + ((Eps1)thing).getEpsGb());
-			} else if(thing instanceof Eps2) {
-				p.setGarbage(p.getGarbage() + ((Eps2)thing).getEpsGb());
-			} else if(thing instanceof Eps3) {
-				p.setGarbage(p.getGarbage() + ((Eps3)thing).getEpsGb());
-			} else if(thing instanceof Eps4) {
+			if(thing instanceof I_Eps1) {
+				p.setGarbage(p.getGarbage() + ((I_Eps1)thing).getEpsGb());
+			} else if(thing instanceof I_Eps2) {
+				p.setGarbage(p.getGarbage() + ((I_Eps2)thing).getEpsGb());
+			} else if(thing instanceof I_Eps3) {
+				p.setGarbage(p.getGarbage() + ((I_Eps3)thing).getEpsGb());
+			} else if(thing instanceof I_Eps4) {
 				
 			}	
 		}
