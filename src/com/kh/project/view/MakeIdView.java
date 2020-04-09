@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class MakeIdView extends JPanel{
@@ -28,12 +29,12 @@ public class MakeIdView extends JPanel{
 		
 		JLabel pwd = new JLabel("pass : ");
 		pwd.setBounds(140, 205, 50, 50);
-		JTextField tf2 = new JTextField(10);
+		JPasswordField tf2 = new JPasswordField(10);
 		tf2.setBounds(180, 220, 100, 20);
 		
 		JLabel passcheck = new JLabel("passcheck : ");
 		passcheck.setBounds(105, 235, 80, 50);
-		JTextField tf3 = new JTextField(10);
+		JPasswordField tf3 = new JPasswordField(10);
 		tf3.setBounds(180, 250, 100, 20);
 
 		
