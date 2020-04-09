@@ -8,7 +8,7 @@ public class MainView extends JFrame {
 		this.setTitle("oz의 펭귄");
 		this.setBounds(0, 0, 370, 760);
 		
-		this.add(new BackgroundPanel(this));
+		this.add(new StartView(this));
 		
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
