@@ -23,18 +23,19 @@ public class LoginManager {
 		} else {
 			System.out.println("Error Sign Up");
 		}
+		System.out.println(plist.toString());
 	}
 
-	public boolean LoginId(String userId, String userPwd) {
+	public Player LoginId(String userId, String userPwd) {
 		ArrayList<Player> plist = pd.readPlayerList();
 		for(int i = 0; i < plist.size(); i ++) {
 			if(plist.get(i).getUserId().equals(userId)) {
 				if(plist.get(i).getUserPwd().equals(userPwd)) {
-					return true;
+					return plist.get(i);
 				}
 			}
 		}
-		return false;
+		return null;
 	}
 
 	public boolean SearchId(String userName, String Email, String phoneNumber) {
