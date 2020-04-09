@@ -27,9 +27,9 @@ public class StartView extends JPanel{
 		
 		
 		
-		JButton button = new JButton(new ImageIcon(new ImageIcon("src/image/start/start2.png").getImage().getScaledInstance(160, 160, 0)));
+		JButton button = new JButton(new ImageIcon(new ImageIcon("src/image/start/start2.png").getImage().getScaledInstance(150, 180, 0)));
 		button.setLocation(100, 300);
-		button.setSize(180, 150);
+		button.setSize(180, 100);
 		
 		button.setBorderPainted(false);
 		button.setFocusPainted(false);
