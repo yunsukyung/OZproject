@@ -1,7 +1,9 @@
 package com.kh.project.model.vo;
 
 
-public class Player {
+public class Player implements java.io.Serializable{
+	
+	private static final long serialVersionUID = -663632L;
 	private String userId;		//유저아이디
 	private String userPwd;		//유저비밀번호
 	private String userName;	//유저 닉네임
@@ -14,18 +16,14 @@ public class Player {
 
 	public Player() {}
 
-	public Player(String userId, String userPwd, String userName, String phoneNumber, String email, int pearl,
-			int garbage, int sp, int satiety) {
+	public Player(String userId, String userPwd, String userName, 
+			String phoneNumber, String email) {
 		super();
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.userName = userName;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
-		Player.pearl = pearl;
-		Player.garbage = garbage;
-		Player.sp = sp;
-		Player.satiety = satiety;
 	}
 	public String getUserId() {
 		return userId;
@@ -81,6 +79,13 @@ public class Player {
 	public static void setSatiety(int satiety) {
 		Player.satiety = satiety;
 	}
+
+	@Override
+	public String toString() {
+		return "Player [userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", phoneNumber="
+				+ phoneNumber + ", email=" + email + "]\n";
+	}
+	
 
 }
 

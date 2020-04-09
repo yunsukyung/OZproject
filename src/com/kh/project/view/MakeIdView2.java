@@ -2,9 +2,7 @@ package com.kh.project.view;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-import javax.annotation.processing.SupportedSourceVersion;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,9 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class MakeIdView extends JPanel{
-
-	public MakeIdView(JFrame mf) {
+public class MakeIdView2 extends JPanel{
+	public MakeIdView2(JFrame mf) {
 		this.setLayout(null);
 		
 		JLabel back = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\시작 배경.png").getImage().getScaledInstance(370, 760, 0)));
@@ -23,48 +20,43 @@ public class MakeIdView extends JPanel{
 		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\로그인간판.png").getImage().getScaledInstance(400, 400, 0)));
 		label.setBounds(20, 103, 350, 350);
 		
-		JButton next = new JButton(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\next.png").getImage().getScaledInstance(50, 20, 0)));
-		next.setLayout(null);
-		next.setBounds(170, 275, 50, 20);
+		JButton enter = new JButton(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\enter.png").getImage().getScaledInstance(50, 20, 0)));
+		enter.setLayout(null);
+		enter.setBounds(170, 275, 50, 20);
 		
-		JLabel id = new JLabel("ID : ");
-		id.setBounds(157, 175, 50, 50);
+		JLabel email = new JLabel("Email : ");
+		email.setBounds(137, 175, 50, 50);
 		JTextField tf = new JTextField(10);
 		tf.setBounds(180, 190, 100, 20);
 		
-		JLabel pwd = new JLabel("pass : ");
-		pwd.setBounds(140, 205, 50, 50);
-		JPasswordField tf2 = new JPasswordField(10);
+		JLabel name = new JLabel("NickName : ");
+		name.setBounds(110, 205, 80, 50);
+		JTextField tf2 = new JTextField(10);
 		tf2.setBounds(180, 220, 100, 20);
 		
-		JLabel passcheck = new JLabel("passcheck : ");
-		passcheck.setBounds(105, 235, 80, 50);
-		JPasswordField tf3 = new JPasswordField(10);
+		JLabel phon = new JLabel("PhoneNumber : ");
+		phon.setBounds(86, 235, 100, 50);
+		JTextField tf3 = new JTextField(10);
 		tf3.setBounds(180, 250, 100, 20);
 		
-		next.addMouseListener(new MouseAdapter() {
+		enter.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {	
-				if(e.getSource() == next) {
-			new MakeIdView2(mf);
-		}
-				
+			public void mouseClicked(MouseEvent e) {
 			}
 		});
 		
 
 		
-		this.add(id);
+		this.add(email);
 		this.add(tf);
-		this.add(pwd);
+		this.add(name);
 		this.add(tf2);
-		this.add(passcheck);
+		this.add(phon);
 		this.add(tf3);
-		
-		this.add(next);
+		this.add(enter);
 		this.add(label);
 		this.add(back);
 		
-		
 	}
+
 }
