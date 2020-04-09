@@ -6,4 +6,9 @@ public class G_Mac extends Garbage{
 		super(1, 0);
 		havePearl = 1;
 	}
+	@Override
+	public String toString() {
+		return "G_Mac";
+	}
+	
 }

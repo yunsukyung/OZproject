@@ -20,4 +20,9 @@ public class Garbage {
 	public void setHaveGargabe(int haveGarbage) {
 		this.haveGarbage = haveGarbage;
 	}
+	@Override
+	public String toString() {
+		return "Garbage [hp=" + hp + ", haveGarbage=" + haveGarbage + "]\n";
+	}
+	
 }

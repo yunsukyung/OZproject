@@ -6,4 +6,10 @@ public class G_Plastic extends Garbage{
 		super(100,2);
 	}
 
+	@Override
+	public String toString() {
+		return "G_Plastic";
+	}
+	
+
 }

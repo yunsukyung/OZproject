@@ -6,4 +6,10 @@ public class G_Cigarette extends Garbage{
 		super(300,4);
 	}
 
+	@Override
+	public String toString() {
+		return "G_Cigarette";
+	}
+	
+
 }
