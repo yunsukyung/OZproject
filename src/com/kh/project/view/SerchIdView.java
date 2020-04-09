@@ -22,27 +22,27 @@ public class SerchIdView extends JPanel{
 		next.setLayout(null);
 		next.setBounds(170, 275, 50, 20);
 		
-		JLabel id = new JLabel("Email : ");
-		id.setBounds(137, 175, 50, 50);
+		JLabel email = new JLabel("Email : ");
+		email.setBounds(137, 175, 50, 50);
 		JTextField tf = new JTextField(10);
 		tf.setBounds(180, 190, 100, 20);
 		
-		JLabel pwd = new JLabel("NickName : ");
-		pwd.setBounds(110, 205, 80, 50);
+		JLabel name = new JLabel("NickName : ");
+		name.setBounds(110, 205, 80, 50);
 		JTextField tf2 = new JTextField(10);
 		tf2.setBounds(180, 220, 100, 20);
 		
-		JLabel passcheck = new JLabel("PhoneNumber : ");
-		passcheck.setBounds(86, 235, 100, 50);
+		JLabel phon = new JLabel("PhoneNumber : ");
+		phon.setBounds(86, 235, 100, 50);
 		JTextField tf3 = new JTextField(10);
 		tf3.setBounds(180, 250, 100, 20);
 
 		
-		this.add(id);
+		this.add(email);
 		this.add(tf);
-		this.add(pwd);
+		this.add(name);
 		this.add(tf2);
-		this.add(passcheck);
+		this.add(phon);
 		this.add(tf3);
 		
 		this.add(next);
