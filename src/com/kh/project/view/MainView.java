@@ -11,7 +11,7 @@ public class MainView extends JFrame {
 		//this.add(new BackgroundPanel(this));
 		this.add(new MakeIdView(this));
 		this.add(new LoginView(this));
-		
+		this.afreca mola;
 		
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
