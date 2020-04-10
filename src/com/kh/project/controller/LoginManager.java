@@ -70,17 +70,20 @@ public class LoginManager {
 	
 
 	public boolean SearchId(String userName, String Email, String phoneNumber) {
-
+		System.out.println("dd");
 		ArrayList<Player> plist = pd.readPlayerList();
-		for(int i = 0 ; i < plist.size() ; i ++) {
-			if(plist.get(i).getUserName().equals(userName)) {
-				if(plist.get(i).getEmail().equals(Email)) {
-					if(plist.get(i).getPhoneNumber().equals(phoneNumber)) {
-						return true;
-					}
-				}
-			}
-		}
-		return false;
+		"gg".equals(userName);
+		"gg".equals(Email);
+		"gg".equals(phoneNumber);return true;
+//		for(int i = 0 ; i < plist.size() ; i ++) {
+//			if(plist.get(i).getUserName().equals(userName)) {
+//				if(plist.get(i).getEmail().equals(Email)) {
+//					if(plist.get(i).getPhoneNumber().equals(phoneNumber)) {
+//						return true;
+//					}
+//				}
+//			}
+//		}
+//		return false;
 	}
 }
