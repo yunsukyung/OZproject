@@ -11,6 +11,8 @@ public class G_Bottle extends Garbage{
 	JLabel label;
 	public G_Bottle() {
 		super(100, 1);
+		int random1 = new Random().nextInt(300)+1;
+		int random2 = new Random().nextInt(500)+100;
 		int random = new Random().nextInt(2);
 		if(random == 0) image = new ImageIcon("src/image/game/beer1."
 				+ "png").getImage().getScaledInstance(40, 40, 0);
@@ -18,7 +20,7 @@ public class G_Bottle extends Garbage{
 				+ "png").getImage().getScaledInstance(40, 40, 0);
 		
 		label = new JLabel(new ImageIcon(image));
-		label.setBounds(0,0,40,40);
+		label.setBounds(random1,random2,40,40);
 	}
 
 	public Image getImage() {
