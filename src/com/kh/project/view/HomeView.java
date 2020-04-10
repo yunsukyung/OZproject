@@ -1,102 +1,113 @@
 package com.kh.project.view;
 
-import java.awt.BorderLayout;
-import java.awt.Image;
-import java.awt.MediaTracker;
-import java.awt.image.ImageProducer;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
+import javax.swing.*;
+
+import com.kh.project.controller.LoginManager;
+import com.kh.project.model.vo.Player;
+import com.kh.project.view.shop.MainShopView;
+
+//!!!!메인뷰에 this.add(new HomeView(this)); 이거 추가해야 빨간 줄 사라짐!!!!
+
 
 public class HomeView extends JPanel{
-
+	private JPanel homeView;
+	private MainView mf;
 	
-	public HomeView(JFrame mf) {
+	LoginManager lm = new LoginManager();
+	Player p = new Player();
+	
+	public HomeView(MainView mf) {
+		this.homeView = this;
+		this.mf = mf;
+		
 		//위치 초기화
 		this.setLayout(null);
 		
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
+		
 		//배경
-		Image background = new ImageIcon("/Users/hailey/git/OZproject/src/image/start/icebergMain.jpg").getImage().getScaledInstance(360, 640, 0);
+		Image background = new ImageIcon("src/image/start/icebergMain.jpg").getImage().getScaledInstance(360, 640, 0);
 		//라벨로 배경에서 보여줄 위치표시
 		JLabel label = new JLabel(new ImageIcon(background));
 		label.setBounds(0, 0, 360, 640);
 		
 		//닉네임 간판
-		JButton button1 = new JButton(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/로그인간판.png").getImage().getScaledInstance(129, 148, 0)));
+		JButton button1 = new JButton(new ImageIcon(new ImageIcon("src/image/start/로그인간판.png").getImage().getScaledInstance(129, 148, 0)));
 		button1.setBounds(45, 110, 129, 148);
 		
 		//설정
-		JButton button2 = new JButton(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/settings.png").getImage().getScaledInstance(36, 36, 0)));
+		JButton button2 = new JButton(new ImageIcon(new ImageIcon("src/image/start/settings.png").getImage().getScaledInstance(36, 36, 0)));
 		button2.setBounds(310, 20, 36, 36);
 		
 		//상점
-		JButton button3 = new JButton(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/shopping-store (1).png").getImage().getScaledInstance(36, 36, 0)));
+		JButton button3 = new JButton(new ImageIcon(new ImageIcon("src/image/start/shopping-store (1).png").getImage().getScaledInstance(36, 36, 0)));
 		button3.setBounds(310, 65, 36, 36);
 		
 		//책(업적)
-		JButton button4 = new JButton(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/Rectangle 83.png").getImage().getScaledInstance(36, 36, 0)));
+		JButton button4 = new JButton(new ImageIcon(new ImageIcon("src/image/start/Rectangle 83.png").getImage().getScaledInstance(36, 36, 0)));
 		button4.setBounds(310, 110, 36, 36);
 		
 		//광고
-		JButton button5 = new JButton(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/Component 2.png").getImage().getScaledInstance(360, 63, 0)));
+		JButton button5 = new JButton(new ImageIcon(new ImageIcon("src/image/start/Component 2.png").getImage().getScaledInstance(360, 63, 0)));
 		button5.setBounds(0, 555, 360, 63);
 		
 		//이글루
-		JButton button6 = new JButton(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/igloo (1).png").getImage().getScaledInstance(161, 161, 0)));
+		JButton button6 = new JButton(new ImageIcon(new ImageIcon("src/image/start/igloo (1).png").getImage().getScaledInstance(161, 161, 0)));
 		button6.setBounds(30, 185, 161, 161);
 		
 		//펭즈
-		JButton button7 = new JButton(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/pengz2.png.png").getImage().getScaledInstance(232, 320, 0)));
+		JButton button7 = new JButton(new ImageIcon(new ImageIcon("src/image/start/pengz2.png.png").getImage().getScaledInstance(232, 320, 0)));
 		button7.setBounds(100, 210, 235, 224);
 		
 		//쏘주
-		JButton button8 = new JButton(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/soju1.png").getImage().getScaledInstance(90, 100, 0)));
+		JButton button8 = new JButton(new ImageIcon(new ImageIcon("src/image/start/soju1.png").getImage().getScaledInstance(90, 100, 0)));
 		button8.setBounds(60, 400, 60, 100);
 		
 		
 		//하트
-		JLabel label1 = new JLabel(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/heartbeat.png").getImage().getScaledInstance(25, 25, 0)));
+		JLabel label1 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/heartbeat.png").getImage().getScaledInstance(25, 25, 0)));
 		label1.setBounds(20, 10, 25, 25);
 		
 		//쓰레기 현황
-		JLabel label2 = new JLabel(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/trash.png").getImage().getScaledInstance(25, 25, 0)));
+		JLabel label2 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/trash.png").getImage().getScaledInstance(25, 25, 0)));
 		label2.setBounds(20, 35, 25, 25);
 		
 		//진주 현황
-		JLabel label3 = new JLabel(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/진주2.png").getImage().getScaledInstance(25, 25, 0)));
+		JLabel label3 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(25, 25, 0)));
 		label3.setBounds(20, 60, 25, 25);
 		
 		//포만감 현황 배경
-		JLabel label4 = new JLabel(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/Rectangle 80.png").getImage().getScaledInstance(236, 12, 0)));
+		JLabel label4 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/Rectangle 80.png").getImage().getScaledInstance(236, 12, 0)));
 		label4.setBounds(23, 15, 236, 12);
 		
 		//포만감 감소
-		JLabel label5 = new JLabel(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/Rectangle 81.png").getImage().getScaledInstance(200, 12, 0)));
+		JLabel label5 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/Rectangle 81.png").getImage().getScaledInstance(200, 12, 0)));
 		label5.setBounds(23, 15, 200, 12);
 		
+		
 		//쓰레기 텍스트
-		JLabel trash = new JLabel("X 12");
+		JLabel trash = new JLabel(Integer.toString(p.getGarbage()));
 		trash.setBounds(55, 35, 100, 25);
 		JTextField tf1 = new JTextField(10);
 		tf1.setBounds(70, 50, 100, 30);
 		
 		//진주 텍스트
-		JLabel pearl = new JLabel("X 9");
+		JLabel pearl = new JLabel(Integer.toString(p.getPearl()));
 		pearl.setBounds(55, 60, 100, 25);
 		JTextField tf2 = new JTextField(10);
 		tf2.setBounds(70, 80, 100, 30);
 		
 		//닉네임 텍스트
-		JLabel id = new JLabel("PENGZ");
+		JLabel id = new JLabel(p.getUserName());
 		id.setBounds(89, 159, 100, 25);
 		JTextField tf3 = new JTextField(10);
 		tf3.setBounds(70, 80, 100, 30);
@@ -141,16 +152,35 @@ public class HomeView extends JPanel{
 		button8.setFocusPainted(false);
 		button8.setContentAreaFilled(false);
 		
+		//닉네임 간판
+		button1.addActionListener(new Listener1());
+		//설정
+		button2.addMouseListener(new MyMouseAdapter2());
+		//상점
+		button3.addMouseListener(new MyMouseAdapter3());
+		//책(업적)
+		button4.addMouseListener(new MyMouseAdapter4());
+		//광고
+		button5.addMouseListener(new MyMouseAdapter5());
+		//소주(게임)
+		button8.addMouseListener(new MyMouseAdapter6());
+		//보유쓰레기
+//		trash.addActionListener(new Listener2(this));
+		//보유진주
+//		pearl.addActionListener(new Listener3(mf));
+		//포만감 감소
+		label5.addMouseListener(new MyMouseAdapter9());
+		
 		
 		this.add(button7);		//펭즈
 		this.add(id);			//닉네임 텍스트
 		this.add(button1);		//닉네임 간판
 		this.add(button2);		//설정
 		this.add(button3);		//상점
-		this.add(button4);		//책
+		this.add(button4);		//책(업적)
 		this.add(button5);		//광고
 		this.add(button6);		//이글루
-		this.add(button8);		//쏘주
+		this.add(button8);		//쏘주(게임)
 		this.add(label1);		//하트
 		this.add(label2);		//쓰레기
 		this.add(label3);		//진주
@@ -162,6 +192,67 @@ public class HomeView extends JPanel{
 		this.add(label);		//배경
 		mf.add(this);
 	}
+	
+	//닉네임 간판
+	//텍스트로 바꾸기
+	class Listener1 implements ActionListener {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			lm.SearchId(getName(), null, null);
+			// TODO Auto-generated method stub
+			
+		}
+	}
+	
+	//설정
+	class MyMouseAdapter2 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+//			ChangePanel1.changePanel(mf, homeView, new ConfigurationView(mf));
+		}
+	}
+	
+	//상점
+	class MyMouseAdapter3 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+//			ChangePanel1.changePanel(mf, homeView, new MainShopView(mf));
+		}
+	}
+	
+	//업적
+	class MyMouseAdapter4 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+//			ChangePanel1.changePanel(mf, homeView, new MainBookView(mf));
+		}
+	}
+	
+	//광고
+	class MyMouseAdapter5 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+//			ChangePanel1.changePanel(mf, homeView, new View(mf));
+		}
+	}
+	
+	//소주 게임
+	class MyMouseAdapter6 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+//			ChangePanel1.changePanel(mf, homeView, new InGameView(mf));
+		}
+	}
+	
+	//포만감 감소
+	class MyMouseAdapter9 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+//			ChangePanel1.changePanel(mf, homeView, new View(mf));
+		}
+	}
+	
 	
 
 }
