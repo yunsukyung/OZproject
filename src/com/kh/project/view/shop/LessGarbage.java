@@ -17,9 +17,10 @@ public class LessGarbage extends JPanel{
 		background.setBounds(0, 0, 360, 640);
 		
 		//쓰레기 수집하러가기 버튼
-		JButton garbageButton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\쓰레기수집하러가기1.png").getImage().getScaledInstance(100, 35, 0)));
-		garbageButton.setBounds(131, 340, 92, 27);
+		JButton garbageButton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\쓰레기수집하기 2.png").getImage().getScaledInstance(100, 35, 0)));
+		garbageButton.setBounds(131, 340, 100, 35);
 		background.add(garbageButton);
+		garbageButton.setLayout(null);
 		
 		//back버튼 
 		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\back.png").getImage().getScaledInstance(98, 35, 0)));
