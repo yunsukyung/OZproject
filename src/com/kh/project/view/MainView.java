@@ -2,16 +2,14 @@ package com.kh.project.view;
 
 import javax.swing.JFrame;
 
+import com.kh.project.view.shop.*;
+
 public class MainView extends JFrame {
 	
 	public MainView() {
 		this.setTitle("oz의 펭귄");
-		this.setBounds(0, 0, 370, 760);
+		this.setBounds(0, 0, 380, 680);
 		
-		//this.add(new BackgroundPanel(this));
-		this.add(new MakeIdView(this));
-		this.add(new LoginView(this));
-		this.afreca mola;
 		
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
