@@ -8,7 +8,7 @@ public class bohoonView {
 		JFrame mf = new JFrame();
 		mf.setBounds(0, 0, 360, 640);
 		
-		mf.add(new MainBookView(mf));
+		mf.add(new MainBookView(null));
 		
 		mf.setVisible(true);
 		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
