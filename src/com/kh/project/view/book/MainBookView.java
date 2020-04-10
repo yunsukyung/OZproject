@@ -57,6 +57,33 @@ public class MainBookView extends JPanel{
 			}
 		});
 		
+		bookbutton2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new mous2();
+				
+			}
+		});
+		
+		bookbutton3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new mous3();
+				
+			}
+		});
+		
+		bookbutton4.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new mous4();
+				
+			}
+		});
+		
 		
 		this.add(bookbutton1);
 		this.add(bookbutton2);
@@ -73,6 +100,148 @@ public class MainBookView extends JPanel{
 class mous extends JFrame{
 	
 	public mous() {
+		this.setBounds(57, 206, 245, 205);
+		JPanel mo = new JPanel();
+		mo.setLayout(null);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\판.png").getImage().getScaledInstance(245, 205, 0)));
+		pan.setBounds(-5, 0, 245, 205);
+		JLabel jin = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\진주.png").getImage().getScaledInstance(116, 113, 0)));
+		jin.setBounds(60, 20, 116, 113);
+		
+		JButton gohome = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\gohome버튼.png").getImage().getScaledInstance(98, 35, 0)));
+		gohome.setLayout(null);
+		gohome.setBounds(60, 160, 121, 32);
+		gohome.setBorderPainted(false);
+		gohome.setFocusPainted(false);
+		gohome.setContentAreaFilled(false);
+		
+		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
+		garbagetong.setBounds(80, 135, 25, 25);
+		
+		JLabel point = new JLabel("x  150");
+		point.setBounds(110, 130, 50, 40);
+		
+		JLabel jin2 = new JLabel("진주 획득!!");
+		jin2.setBounds(90, 30, 100, 40);
+		jin2.setForeground(Color.WHITE);
+		JLabel jin3 = new JLabel("x 2");
+		jin3.setBounds(110, 50, 30, 40);
+		jin3.setForeground(Color.WHITE);
+		
+		
+		mo.add(jin2);
+		mo.add(jin3);
+		mo.add(garbagetong);
+		mo.add(point);
+		mo.add(gohome);
+		mo.add(jin);
+		mo.add(pan);
+		
+		this.add(mo);
+		this.setResizable(false);
+		this.setSize(240,222);
+		this.setVisible(true);
+	}
+}
+
+class mous2 extends JFrame{
+	
+	public mous2() {
+		this.setBounds(57, 206, 245, 205);
+		JPanel mo = new JPanel();
+		mo.setLayout(null);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\판.png").getImage().getScaledInstance(245, 205, 0)));
+		pan.setBounds(-5, 0, 245, 205);
+		JLabel jin = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\진주.png").getImage().getScaledInstance(116, 113, 0)));
+		jin.setBounds(60, 20, 116, 113);
+		
+		JButton gohome = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\gohome버튼.png").getImage().getScaledInstance(98, 35, 0)));
+		gohome.setLayout(null);
+		gohome.setBounds(60, 160, 121, 32);
+		gohome.setBorderPainted(false);
+		gohome.setFocusPainted(false);
+		gohome.setContentAreaFilled(false);
+		
+		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
+		garbagetong.setBounds(80, 135, 25, 25);
+		
+		JLabel point = new JLabel("x  150");
+		point.setBounds(110, 130, 50, 40);
+		
+		JLabel jin2 = new JLabel("진주 획득!!");
+		jin2.setBounds(90, 30, 100, 40);
+		jin2.setForeground(Color.WHITE);
+		JLabel jin3 = new JLabel("x 2");
+		jin3.setBounds(110, 50, 30, 40);
+		jin3.setForeground(Color.WHITE);
+		
+		
+		mo.add(jin2);
+		mo.add(jin3);
+		mo.add(garbagetong);
+		mo.add(point);
+		mo.add(gohome);
+		mo.add(jin);
+		mo.add(pan);
+		
+		this.add(mo);
+		this.setResizable(false);
+		this.setSize(240,222);
+		this.setVisible(true);
+	}
+}
+
+
+class mous3 extends JFrame{
+	
+	public mous3() {
+		this.setBounds(57, 206, 245, 205);
+		JPanel mo = new JPanel();
+		mo.setLayout(null);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\판.png").getImage().getScaledInstance(245, 205, 0)));
+		pan.setBounds(-5, 0, 245, 205);
+		JLabel jin = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\진주.png").getImage().getScaledInstance(116, 113, 0)));
+		jin.setBounds(60, 20, 116, 113);
+		
+		JButton gohome = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\gohome버튼.png").getImage().getScaledInstance(98, 35, 0)));
+		gohome.setLayout(null);
+		gohome.setBounds(60, 160, 121, 32);
+		gohome.setBorderPainted(false);
+		gohome.setFocusPainted(false);
+		gohome.setContentAreaFilled(false);
+		
+		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
+		garbagetong.setBounds(80, 135, 25, 25);
+		
+		JLabel point = new JLabel("x  150");
+		point.setBounds(110, 130, 50, 40);
+		
+		JLabel jin2 = new JLabel("진주 획득!!");
+		jin2.setBounds(90, 30, 100, 40);
+		jin2.setForeground(Color.WHITE);
+		JLabel jin3 = new JLabel("x 2");
+		jin3.setBounds(110, 50, 30, 40);
+		jin3.setForeground(Color.WHITE);
+		
+		
+		mo.add(jin2);
+		mo.add(jin3);
+		mo.add(garbagetong);
+		mo.add(point);
+		mo.add(gohome);
+		mo.add(jin);
+		mo.add(pan);
+		
+		this.add(mo);
+		this.setResizable(false);
+		this.setSize(240,222);
+		this.setVisible(true);
+	}
+}
+
+class mous4 extends JFrame{
+	
+	public mous4() {
 		this.setBounds(57, 206, 245, 205);
 		JPanel mo = new JPanel();
 		mo.setLayout(null);
