@@ -1,5 +1,6 @@
 package com.kh.project.view;
 
+import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -43,7 +44,9 @@ public class MakeIdView extends JPanel{
 		JButton next = new JButton(new ImageIcon(new ImageIcon("src/image/start/next.png").getImage().getScaledInstance(60, 20, 0)));
 
 		next.setBounds(150, 220, 60, 20);
-
+		
+		next.addMouseListener(new MymouseAdapter());
+		
 
 		JLabel id = new JLabel("ID : ");
 		id.setBounds(90, 115, 50, 50);
@@ -60,7 +63,7 @@ public class MakeIdView extends JPanel{
 
 		tf3.setBounds(170, 190, 100, 20);
 
-		next.addMouseListener(new MymouseAdapter());
+
 
 		label.add(id);
 		label.add(tf);
@@ -81,11 +84,28 @@ public class MakeIdView extends JPanel{
 		@Override
 		public void mousePressed(MouseEvent e) {
 			if(lm.CheckId(tf.getText())) {
+				
+//				Dialog idcheck = new Dialog(mf, "ID");
+//				idcheck.setBounds(150, 250, 150, 150);
+//				idcheck.add(new JLabel("중복된 아이디 입니다."));
+//				JButton check = new JButton("확인");
+//				idcheck.add(check);
+//				
+//				check.addActionListener(new ActionListener() {
+//					
+//					@Override
+//					public void actionPerformed(ActionEvent e) {
+//						idcheck.dispose();
+//						
+//					}
+//				});
+//				
+				
 				if(tf2.getPassword().length > 5 && tf3.getPassword().length > 5) {
 					if(lm.CheckPwd(tf2.getPassword(),tf3.getPassword())){
 						ChangePanel.changePanel(mf, makeidview, new MakeIdView2(mf, p));
 					}
-					}
+				}
 			}
 		}
 
