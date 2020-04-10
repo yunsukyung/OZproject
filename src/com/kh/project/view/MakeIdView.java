@@ -103,6 +103,13 @@ public class MakeIdView extends JPanel{
 				
 				if(tf2.getPassword().length > 5 && tf3.getPassword().length > 5) {
 					if(lm.CheckPwd(tf2.getPassword(),tf3.getPassword())){
+						p.setUserId(tf.getText());
+						char[] pw = new char[tf2.getPassword().length];
+						String str = "";
+						for(int i = 0; i < pw.length; i++) {
+							str += pw[i];
+						}
+						p.setUserPwd(str);
 						ChangePanel.changePanel(mf, makeidview, new MakeIdView2(mf, p));
 					}
 				}

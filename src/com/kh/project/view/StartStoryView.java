@@ -14,6 +14,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.kh.project.model.vo.Player;
+
 public class StartStoryView extends JPanel{
 	private JPanel startStory;
 	private MainView mf;
@@ -21,8 +23,10 @@ public class StartStoryView extends JPanel{
 	private JLabel label2;
 	private int x = 0;
 	int count = 0;
-	public StartStoryView(MainView mf) {
+	Player p = new Player();
+	public StartStoryView(MainView mf, Player p) {
 		this.mf = mf;
+		this.p = p;
 		this.startStory = this;
 
 
@@ -111,7 +115,7 @@ public class StartStoryView extends JPanel{
 				text1.setText("내가 이곳의 쓰레기를 모두 치우겠어!");
 				nextText2();
 			} else if(count == 6) {
-				ChangePanel.changePanel(mf, startStory, new ExplainView(mf));
+				ChangePanel.changePanel(mf, startStory, new ExplainView(mf, p));
 			}
 
 
