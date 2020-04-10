@@ -83,10 +83,18 @@ public class SerchIdView extends JPanel{
 				Dialog searchid = new Dialog(mf, "find ID / password");
 				searchid.setVisible(true);
 				searchid.setBounds(150, 250, 150, 150);
-				JTextArea idPw = new JTextArea(10, 10);
+				
+				JLabel id = new JLabel("ID : " + p.getUserId());
+				id.setBounds(10, 30, 150, 50);
+				JLabel pass = new JLabel("PW : " + p.getUserPwd());
+				pass.setBounds(10, 50, 150, 50);
+				
+				
 				JButton cheak = new JButton("확인");
-				cheak.setBounds(150, 250, 50, 50);
+				cheak.setBounds(0, 100, 150, 50);
 				searchid.add(cheak);
+				searchid.add(id);
+				searchid.add(pass);
 				
 				cheak.addActionListener(new ActionListener() {
 					

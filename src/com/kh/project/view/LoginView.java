@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 
 
 import com.kh.project.controller.LoginManager;
+import com.kh.project.model.vo.Player;
 //아이디랑 비번입력안하면 아이디 또는 비밀번호를 입력하세요 뜨게해야함
 public class LoginView extends JPanel{
 	
@@ -27,6 +28,7 @@ public class LoginView extends JPanel{
 	JTextField Idtf = new JTextField(30);
 	JPasswordField password = new JPasswordField(30);
 	LoginManager lm = new LoginManager();
+	
 	public LoginView(MainView mf) {
 		this.mf = mf;
 		this.loginView = this;
@@ -87,7 +89,8 @@ public class LoginView extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			lm.LoginId(Idtf.getText(), password.getPassword());
+			//lm.LoginId(Idtf.getText(), password.getPassword());
+			ChangePanel.changePanel(mf, loginView, new StartStoryView(mf));
 			
 		}
 	}
