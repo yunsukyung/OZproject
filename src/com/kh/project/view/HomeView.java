@@ -63,7 +63,6 @@ public class HomeView extends JPanel{
 		button8.setBounds(60, 400, 60, 100);
 		
 		
-		
 		//하트
 		JLabel label1 = new JLabel(new ImageIcon(new ImageIcon("/Users/hailey/git/OZproject/src/image/start/heartbeat.png").getImage().getScaledInstance(25, 25, 0)));
 		label1.setBounds(20, 10, 25, 25);
