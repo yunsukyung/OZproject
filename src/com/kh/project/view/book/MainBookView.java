@@ -23,6 +23,7 @@ public class MainBookView extends JPanel{
 		
 		this.setLayout(null);
 				
+		//버튼 및 라벨 생성
 		JLabel back = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\스토리 배경.jpg").getImage().getScaledInstance(360, 640, 0)));
 		back.setBounds(0, 0, 360, 640);
 		JLabel book = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\book.PNG").getImage().getScaledInstance(292, 520, 0)));
@@ -48,6 +49,8 @@ public class MainBookView extends JPanel{
 		backbutton.setLayout(null);
 		backbutton.setBounds(130, 469, 98, 35);
 		
+		
+		//액션
 		bookbutton1.addActionListener(new ActionListener() {
 			
 			@Override
@@ -84,7 +87,7 @@ public class MainBookView extends JPanel{
 			}
 		});
 		
-		
+		//패널에 삽입
 		this.add(bookbutton1);
 		this.add(bookbutton2);
 		this.add(bookbutton3);
@@ -96,7 +99,7 @@ public class MainBookView extends JPanel{
 		
 	}
 }
-
+//클릭했을때 새로운 프레임 생성
 class mous extends JFrame{
 	
 	public mous() {
