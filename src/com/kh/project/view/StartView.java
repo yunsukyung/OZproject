@@ -32,8 +32,8 @@ public class StartView extends JPanel {
 		this.mf = mf;
 		
 		this.setLocation(0, 0);
-		this.setSize(370, 760);
-		Image background = new ImageIcon("src/image/start/시작 배경.png").getImage().getScaledInstance(370, 760, 0);
+		this.setSize(360, 640);
+		Image background = new ImageIcon("src/image/start/시작 배경.png").getImage().getScaledInstance(360, 640, 0);
 
 		JLabel label = new JLabel(new ImageIcon(background));
 		
