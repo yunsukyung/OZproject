@@ -1,5 +1,8 @@
 package com.kh.project.view;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -8,46 +11,61 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class SerchIdView extends JPanel{
+import com.kh.project.view.MakeIdView2.MyMouseAdapter;
 
-	public SerchIdView(JFrame mf) {
-		this.setLayout(null);
+public class SerchIdView extends JPanel{
+	private MainView mf;
+	private JPanel serchidview;
+	public SerchIdView(MainView mf) {
+		this.serchidview = this;
+		this.mf = mf;
+		this.setLocation(0, 0);
+		this.setSize(360, 640);
 		
-		JLabel back = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\시작 배경.png").getImage().getScaledInstance(370, 760, 0)));
-		back.setBounds(0, -40, 370, 760);
-		JLabel label = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\로그인간판.png").getImage().getScaledInstance(400, 400, 0)));
-		label.setBounds(20, 103, 350, 350);
+		JLabel back = new JLabel(new ImageIcon(new ImageIcon("src/image/start/시작 배경.png").getImage().getScaledInstance(360, 640, 0)));
+		back.setBounds(0, 0, 360, 640);
+		JLabel label = new JLabel(new ImageIcon(new ImageIcon("src/image/start/로그인간판.png").getImage().getScaledInstance(458, 458, 0)));
+		label.setBounds(0, 0, 360, 458);
 		
-		JButton enter = new JButton(new ImageIcon(new ImageIcon("C:\\Users\\보훈\\git\\OZproject\\src\\image\\start\\enter.png").getImage().getScaledInstance(50, 20, 0)));
-		enter.setLayout(null);
-		enter.setBounds(170, 275, 50, 20);
+		JButton enter = new JButton(new ImageIcon(new ImageIcon("src/image/start/enter.png").getImage().getScaledInstance(60, 20, 0)));
+		
+		enter.setBounds(150, 220, 60, 20);
 		
 		JLabel email = new JLabel("Email : ");
-		email.setBounds(137, 175, 50, 50);
+		email.setBounds(80, 115, 50, 50);
 		JTextField tf = new JTextField(10);
-		tf.setBounds(180, 190, 100, 20);
+		tf.setBounds(170, 130, 100, 20);
 		
 		JLabel name = new JLabel("NickName : ");
-		name.setBounds(110, 205, 80, 50);
+		name.setBounds(80, 145, 80, 50);
 		JTextField tf2 = new JTextField(10);
-		tf2.setBounds(180, 220, 100, 20);
+		tf2.setBounds(170, 160, 100, 20);
 		
-		JLabel phon = new JLabel("PhoneNumber : ");
-		phon.setBounds(86, 235, 100, 50);
+		JLabel phon = new JLabel("PhoneNum : ");
+		phon.setBounds(80, 175, 80, 50);
 		JTextField tf3 = new JTextField(10);
-		tf3.setBounds(180, 250, 100, 20);
+		tf3.setBounds(170, 190, 100, 20);
 
+		enter.addMouseListener(new MyMouseAdapter());
 		
-		this.add(email);
-		this.add(tf);
-		this.add(name);
-		this.add(tf2);
-		this.add(phon);
-		this.add(tf3);
-		
-		this.add(enter);
-		this.add(label);
+		label.add(email);
+		label.add(tf);
+		label.add(name);
+		label.add(tf2);
+		label.add(phon);
+		label.add(tf3);
+		label.add(enter);
+		back.add(label);
 		this.add(back);
 		
+		mf.add(this);
+		mf.revalidate();
+		
+	}
+	class MyMouseAdapter extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, serchidview, new LoginView(mf));
+		}
 	}
 }

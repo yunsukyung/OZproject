@@ -31,7 +31,7 @@ public class LoginManager {
 		for(int i = 0; i < userPwd.length; i ++) {
 			str += userPwd[i];
 		}
-				
+
 		ArrayList<Player> plist = pd.readPlayerList();
 		for(int i = 0; i < plist.size(); i ++) {
 			if(plist.get(i).getUserId().equals(userId)) {
@@ -42,6 +42,32 @@ public class LoginManager {
 		}
 		return null;
 	}
+
+	public boolean CheckId(String userId) {
+
+		ArrayList<Player> plist = pd.readPlayerList();
+		if(plist == null) return true;
+		for(int i = 0; i < plist.size(); i ++) {
+			if(!plist.get(i).getUserId().equals(userId))return true;
+		} return false;
+	}
+	
+	public boolean CheckPwd(char[] userPwd,char[] userPwdc ) {
+
+		String str = "";
+		for(int i = 0; i < userPwd.length; i ++) {
+			str += userPwd[i];
+		}
+		
+		String str2 = "";
+		for(int i = 0; i < userPwdc.length; i ++) {
+			str2 += userPwdc[i];
+		}
+		
+		if(str.equals(str2)) return true;
+		else return false;
+	}
+	
 
 	public boolean SearchId(String userName, String Email, String phoneNumber) {
 

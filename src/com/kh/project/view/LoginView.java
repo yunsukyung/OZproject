@@ -2,6 +2,7 @@ package com.kh.project.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -16,17 +17,22 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import com.kh.project.controller.LoginManager;
 
+import com.kh.project.controller.LoginManager;
+//아이디랑 비번입력안하면 아이디 또는 비밀번호를 입력하세요 뜨게해야함
 public class LoginView extends JPanel{
-	JTextField Idtf = new JTextField(30);
 	
+	private MainView mf;
+	private JPanel loginView;
+	JTextField Idtf = new JTextField(30);
 	JPasswordField password = new JPasswordField(30);
 	LoginManager lm = new LoginManager();
-	public LoginView(JFrame mf) {
+	public LoginView(MainView mf) {
+		this.mf = mf;
+		this.loginView = this;
 		System.out.println(this.getLocation());
 		this.setLocation(0, 0);
-		this.setSize(370, 760);
+		this.setSize(360, 640);
 		
 		JLabel background = new JLabel(new ImageIcon(new ImageIcon("src/image/start/시작 배경.png").getImage().getScaledInstance(360, 640, 0)));
 		
@@ -46,17 +52,21 @@ public class LoginView extends JPanel{
 		password.setBounds(180, 180, 100, 20);
 		
 		
-		//Image login = new ImageIcon("src/image/start/in.png");
-		JButton button1 = new JButton("로그인");
+		Image login = new ImageIcon("src/image/start/in.png").getImage().getScaledInstance(60, 20, 0);
+		Image singUp = new ImageIcon("src/image/start/up.png").getImage().getScaledInstance(60, 20, 0);
+		Image findId = new ImageIcon("src/image/start/id.png").getImage().getScaledInstance(60, 20, 0);
+		
+		JButton button1 = new JButton(new ImageIcon(login));
 		
 		button1.setBounds(80, 220, 60, 20);
-		JButton button2 = new JButton("회원가입");
+		JButton button2 = new JButton(new ImageIcon(singUp));
 		button2.setBounds(150, 220, 60, 20);
-		JButton button3 = new JButton("아이디찾기");
+		JButton button3 = new JButton(new ImageIcon(findId));
 		button3.setBounds(220, 220, 60, 20);
 		
 		button1.addMouseListener(new MyMouseAdapter());
-		
+		button2.addMouseListener(new MyMouseAdapter2());
+		button3.addMouseListener(new MyMouseAdapter3());
 		
 		label.add(Id);
 		label.add(Idtf);
@@ -65,6 +75,8 @@ public class LoginView extends JPanel{
 		label.add(button1);
 		label.add(button2);
 		label.add(button3);
+		
+		
 		
 		background.add(label, BorderLayout.CENTER);
 		this.add(background);
@@ -77,6 +89,20 @@ public class LoginView extends JPanel{
 		public void mousePressed(MouseEvent e) {
 			lm.LoginId(Idtf.getText(), password.getPassword());
 			
+		}
+	}
+	class MyMouseAdapter2 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, loginView, new MakeIdView(mf));
+			
+		}
+		
+	}
+	class MyMouseAdapter3 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, loginView, new SerchIdView(mf));
 		}
 	}
 	
