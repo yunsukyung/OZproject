@@ -20,6 +20,9 @@ public class MakeIdView2 extends JPanel{
 
 	Player p = new Player();
 	LoginManager lm = new LoginManager();
+	JTextField tf = new JTextField(10);
+	JTextField tf2 = new JTextField(10);
+	JTextField tf3 = new JTextField(10);
 	
 	public MakeIdView2(MainView mf, Player p) {
 		this.p = p;
@@ -39,17 +42,17 @@ public class MakeIdView2 extends JPanel{
 		
 		JLabel email = new JLabel("Email : ");
 		email.setBounds(80, 115, 50, 50);
-		JTextField tf = new JTextField(10);
+		
 		tf.setBounds(170, 130, 100, 20);
 		
 		JLabel name = new JLabel("NickName : ");
 		name.setBounds(80, 145, 80, 50);
-		JTextField tf2 = new JTextField(10);
+		
 		tf2.setBounds(170, 160, 100, 20);
 		
 		JLabel phon = new JLabel("PhoneNum : ");
 		phon.setBounds(80, 175, 80, 50);
-		JTextField tf3 = new JTextField(10);
+		
 		tf3.setBounds(170, 190, 100, 20);
 		
 		enter.addMouseListener(new MyMouseAdapter());
@@ -73,6 +76,10 @@ public class MakeIdView2 extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
+			p.setEmail(tf.getText());
+			p.setUserName(tf2.getText());
+			p.setPhoneNumber(tf3.getText());
+			lm.MakeId(p);
 			ChangePanel.changePanel(mf, makeidview2, new LoginView(mf));
 		}
 	}

@@ -28,7 +28,7 @@ public class LoginView extends JPanel{
 	JTextField Idtf = new JTextField(30);
 	JPasswordField password = new JPasswordField(30);
 	LoginManager lm = new LoginManager();
-	
+	Player p = new Player();
 	public LoginView(MainView mf) {
 		this.mf = mf;
 		this.loginView = this;
@@ -89,8 +89,9 @@ public class LoginView extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			//lm.LoginId(Idtf.getText(), password.getPassword());
-			ChangePanel.changePanel(mf, loginView, new StartStoryView(mf));
+			
+			p = lm.LoginId(Idtf.getText(), password.getPassword());
+			ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 			
 		}
 	}
