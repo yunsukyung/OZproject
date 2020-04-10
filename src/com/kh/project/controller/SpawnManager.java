@@ -2,11 +2,19 @@ package com.kh.project.controller;
 
 import java.util.Random;
 
-import com.kh.project.model.vo.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class SpawnManager {
+import com.kh.project.model.vo.*;
+import com.kh.project.view.MainView;
+
+public class SpawnManager{
 	Garbage[] garb = new Garbage[100];
+	JLabel[] labels = new JLabel[100];
+	int count = 0;
 	public SpawnManager() {
+		
 		for(int i = 0; i < 100; i++) {
 			int random = new Random().nextInt(800) + 1;
 			if(random > 0 && random < 100) garb[i] = new G_Bottle();
@@ -18,20 +26,55 @@ public class SpawnManager {
 			else if(random >= 600 && random < 790) garb[i] = new G_Bottle();
 			else if(random >= 790 && random < 795) garb[i] = new G_Mac();
 			else garb[i] = new G_LoveLetter();
+
+			
+			if(garb[i] instanceof G_Bottle) {
+				labels[i] = (((G_Bottle)garb[i]).getLabel());
+			}
+			if(garb[i] instanceof G_Can) {
+				labels[i] = (((G_Can)garb[i]).getLabel());
+			}
+			if(garb[i] instanceof G_Cigarette) {
+				labels[i] = (((G_Cigarette)garb[i]).getLabel());
+			}
+			if(garb[i] instanceof G_LoveLetter) {
+				labels[i] = (((G_LoveLetter)garb[i]).getLabel());
+			}
+			if(garb[i] instanceof G_Mac) {
+				labels[i] = (((G_Mac)garb[i]).getLabel());
+			}
+			if(garb[i] instanceof G_Paper) {
+				labels[i] = (((G_Paper)garb[i]).getLabel());
+			}
+			if(garb[i] instanceof G_Plastic) {
+				labels[i] = (((G_Plastic)garb[i]).getLabel());
+			}
+			if(garb[i] instanceof G_SnackBag) {
+				labels[i] = (((G_SnackBag)garb[i]).getLabel());
+			}
 		}
-		
 	}
+
 	public Garbage[] getGarb() {
 		return garb;
 	}
 	public void setGarb(Garbage[] garb) {
 		this.garb = garb;
 	}
+
+	public JLabel[] getLabels() {
+		return labels;
+	}
+
+	public void setLabels(JLabel[] labels) {
+		this.labels = labels;
+	}
+
 	public void test() {
 		for(int i = 0 ; i < garb.length; i ++) {
 			System.out.println(garb[i].toString());
-			
+
 		}
 	}
-	 
+
 }
