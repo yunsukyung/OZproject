@@ -16,7 +16,7 @@ public class LoginManager {
 			plist = new ArrayList<Player>();
 		}
 		plist.add(p);
-
+		
 		int result = pd.writePlayerList(plist);
 		if(result > 0) {
 			System.out.println("Success Sign Up");
@@ -35,8 +35,11 @@ public class LoginManager {
 		ArrayList<Player> plist = pd.readPlayerList();
 		for(int i = 0; i < plist.size(); i ++) {
 			if(plist.get(i).getUserId().equals(userId)) {
+				
 				if(plist.get(i).getUserPwd().equals(str)) {
+					
 					return plist.get(i);
+					
 				}
 			}
 		}

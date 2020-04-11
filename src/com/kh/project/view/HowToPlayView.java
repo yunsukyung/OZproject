@@ -2,12 +2,20 @@ package com.kh.project.view;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.*;
 
 public class HowToPlayView extends JPanel{
-	public HowToPlayView(JFrame mf) {
-		this.setLayout(null);
+	
+	private MainView mf;
+	private JPanel howtoplayview;
+	
+	public HowToPlayView(MainView mf) {
+		this.mf = mf;
+		this.howtoplayview = this;
+		
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
 		
@@ -20,9 +28,21 @@ public class HowToPlayView extends JPanel{
 		backbutton.setBounds(131, 530, 98, 35);
 		background.add(backbutton);
 		
+		backbutton.addMouseListener(new MyMouseAdapter());
 
 		background.add(backbutton, BorderLayout.CENTER);
 		this.add(backbutton);
 		this.add(background);
+		
+		mf.add(this);
+		mf.revalidate();
+		
+	}
+	
+	class MyMouseAdapter extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, howtoplayview, new InGameView(mf));
+		}
 	}
 }
