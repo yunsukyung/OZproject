@@ -101,38 +101,38 @@ public class LoginView extends JPanel{
 				str += pass[i];
 				
 			}
+			ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 			
-			
-			//유저 아이디랑 비번 무조건 널값
-			if(p.getUserId().equals(Idtf.getText()) && p.getUserPwd().equals(str)) {
-				ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
-			} else {
-				Dialog check = new Dialog(mf, "아이디, 비밀번호 오류");
-				check.setVisible(true);
-				check.setBounds(120, 250, 200, 200);
-				
-				
-				JLabel id = new JLabel("<html>아이디 또는 비밀번호가 다릅니다.<html>");
-				id.setBounds(10, 30, 150, 50);
-				
-				
-				
-				JButton button = new JButton("확인");
-				button.setBounds(0, 100, 150, 50);
-				check.add(button, BorderLayout.SOUTH);
-				button.add(id);
-				
-				
-				button.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						check.dispose(); return;
-						
-					}
-				});
-			}
-			
+//			오류나
+//			if((p.getUserId().equals(null)) || (p.getUserPwd().equals(null)) ) {
+//				
+//			} else {
+//				Dialog check = new Dialog(mf, "아이디, 비밀번호 오류");
+//				check.setVisible(true);
+//				check.setBounds(120, 250, 200, 200);
+//				
+//				
+//				JLabel id = new JLabel("<html>아이디 또는 비밀번호가 다릅니다.<html>");
+//				id.setBounds(10, 30, 150, 50);
+//				
+//				
+//				
+//				JButton button = new JButton("확인");
+//				button.setBounds(0, 100, 150, 50);
+//				check.add(button, BorderLayout.SOUTH);
+//				button.add(id);
+//				
+//				
+//				button.addActionListener(new ActionListener() {
+//					
+//					@Override
+//					public void actionPerformed(ActionEvent e) {
+//						check.dispose(); return;
+//						
+//					}
+//				});
+//			}
+//			
 
 
 
