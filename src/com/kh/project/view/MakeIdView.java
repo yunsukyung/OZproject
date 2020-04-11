@@ -1,5 +1,6 @@
 package com.kh.project.view;
 
+import java.awt.BorderLayout;
 import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -44,9 +45,9 @@ public class MakeIdView extends JPanel{
 		JButton next = new JButton(new ImageIcon(new ImageIcon("src/image/start/next.png").getImage().getScaledInstance(60, 20, 0)));
 
 		next.setBounds(150, 220, 60, 20);
-		
+
 		next.addMouseListener(new MymouseAdapter());
-		
+
 
 		JLabel id = new JLabel("ID : ");
 		id.setBounds(90, 115, 50, 50);
@@ -83,37 +84,73 @@ public class MakeIdView extends JPanel{
 	class MymouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if(lm.CheckId(tf.getText())) {
-				
-//				Dialog idcheck = new Dialog(mf, "ID");
-//				idcheck.setBounds(150, 250, 150, 150);
-//				idcheck.add(new JLabel("중복된 아이디 입니다."));
-//				JButton check = new JButton("확인");
-//				idcheck.add(check);
-//				
-//				check.addActionListener(new ActionListener() {
-//					
-//					@Override
-//					public void actionPerformed(ActionEvent e) {
-//						idcheck.dispose();
-//						
-//					}
-//				});
-//				
-				
-				if(tf2.getPassword().length > 5 && tf3.getPassword().length > 5) {
-					if(lm.CheckPwd(tf2.getPassword(),tf3.getPassword())){
-						p.setUserId(tf.getText());
-						char[] pw = new char[tf2.getPassword().length];
-						String str = "";
-						for(int i = 0; i < pw.length; i++) {
-							str += pw[i];
-						}
-						p.setUserPwd(str);
-						ChangePanel.changePanel(mf, makeidview, new MakeIdView2(mf, p));
+			if(lm.CheckId(tf.getText()) == false) {
+
+				Dialog idcheck = new Dialog(mf, "중복된 아이디");
+				idcheck.setBounds(120, 250, 200, 200);
+				idcheck.setVisible(true);
+
+				JLabel id = new JLabel("<html>중복된 아이디 입니다.<br/>아이디를 다시 입력하세요.<html>");
+				id.setBounds(10, 30, 150, 50);
+
+				JButton check = new JButton("확인");
+				check.setSize(150, 50);
+				check.setLocation(0, 100);
+
+				idcheck.add(id);
+				idcheck.add(check, BorderLayout.SOUTH);
+
+
+
+				check.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						idcheck.dispose(); return;
+
 					}
+				});
+
+			}	
+			if(tf2.getPassword().length > 5 && tf3.getPassword().length > 5) {
+				if(lm.CheckPwd(tf2.getPassword(),tf3.getPassword()) == true){
+					p.setUserId(tf.getText());
+					char[] pw = new char[tf2.getPassword().length];
+					String str = "";
+					for(int i = 0; i < pw.length; i++) {
+						str += pw[i];
+					}
+					p.setUserPwd(str);
+					ChangePanel.changePanel(mf, makeidview, new MakeIdView2(mf, p));
+				} else {
+					Dialog passcheck = new Dialog(mf, "비밀번호");
+					passcheck.setBounds(120, 250, 200, 200);
+					passcheck.setVisible(true);
+
+					JLabel pass = new JLabel("<html>입력하신 비밀번호가 다릅니다.<br/>비밀번호를 다시 입력하세요.<html>");
+					pass.setBounds(10, 30, 150, 50);
+
+					JButton check2 = new JButton("확인");
+					check2.setSize(150, 50);
+					check2.setLocation(0, 100);
+
+					passcheck.add(pass);
+					passcheck.add(check2, BorderLayout.SOUTH);
+
+
+
+					check2.addActionListener(new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							passcheck.dispose(); return;
+
+						}
+					});
+
 				}
 			}
+
 		}
 
 	}
