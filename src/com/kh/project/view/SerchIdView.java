@@ -1,5 +1,6 @@
 package com.kh.project.view;
 
+import java.awt.BorderLayout;
 import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -78,12 +79,13 @@ public class SerchIdView extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			System.out.println("f");
+			
 			if(new LoginManager().SearchId(tf.getText(), tf2.getText(), tf3.getText())) {
 				Dialog searchid = new Dialog(mf, "find ID / password");
 				searchid.setVisible(true);
 				searchid.setBounds(150, 250, 150, 150);
 				
+				//찾는 아이디랑 비번 안나오고 null값나옴
 				JLabel id = new JLabel("ID : " + p.getUserId());
 				id.setBounds(10, 30, 150, 50);
 				JLabel pass = new JLabel("PW : " + p.getUserPwd());
@@ -102,6 +104,32 @@ public class SerchIdView extends JPanel{
 					public void actionPerformed(ActionEvent e) {
 						searchid.dispose();
 						ChangePanel.changePanel(mf, serchidview, new LoginView(mf));
+					}
+				});
+			} else {
+				//이메일이랑 닉네임, 폰번호 다르면 뜨는 창
+				Dialog searchid = new Dialog(mf, "find ID / password");
+				searchid.setVisible(true);
+				searchid.setBounds(120, 250, 200, 200);
+				
+				
+				JLabel id = new JLabel("<html>찾는 아이디와 비밀번호가 없습니다.<html>");
+				id.setBounds(10, 30, 150, 50);
+				
+				
+				
+				JButton cheak = new JButton("확인");
+				cheak.setBounds(0, 100, 150, 50);
+				searchid.add(cheak, BorderLayout.SOUTH);
+				searchid.add(id);
+				
+				
+				cheak.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						searchid.dispose(); return;
+						
 					}
 				});
 			}
