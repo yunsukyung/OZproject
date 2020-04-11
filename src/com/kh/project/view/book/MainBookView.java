@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -48,7 +49,7 @@ public class MainBookView extends JPanel{
 		JButton backbutton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
 		backbutton.setLayout(null);
 		backbutton.setBounds(130, 469, 98, 35);
-		
+		backbutton.addMouseListener(new MyMouseAdapter());
 		
 		//액션
 		bookbutton1.addActionListener(new ActionListener() {
@@ -98,6 +99,16 @@ public class MainBookView extends JPanel{
 		
 		
 	}
+	
+	
+	class MyMouseAdapter extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			
+		}
+	}
+	
+	
 }
 //클릭했을때 새로운 프레임 생성
 class mous extends JFrame{
