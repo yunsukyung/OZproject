@@ -1,5 +1,7 @@
 package com.kh.project.view.shop;
 
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Image;
@@ -154,7 +156,21 @@ public class SettingView extends JPanel{
 			}
 		});
 		
+		button4.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new MainBookView();
+			}
+		});
 		
+		button3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new shop();
+			}
+		});
 		
 		this.add(button7);		//펭즈
 		this.add(id);			//닉네임 텍스트
@@ -174,21 +190,20 @@ public class SettingView extends JPanel{
 		this.add(pearl);		//진주 텍스트
 		
 		this.add(label);		//배경
-		mf.add(this);
 		
 	}
 }
-
+//설정 버튼 누르면 나오는 창
 class button2_1 extends JFrame {
 	public button2_1() {
-		this.setBounds(57, 206, 220, 370);
+		this.setBounds(57, 180, 220, 370);
 		this.setUndecorated(true);
 		this.setVisible(true);
 		
 		JPanel mo = new JPanel();
 		mo.setLayout(null);
-		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sttinglabel.png").getImage().getScaledInstance(224, 346, 0)));
-		pan.setBounds(-5, 0, 224, 346);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sttinglabel.png").getImage().getScaledInstance(224, 370, 0)));
+		pan.setBounds(-5, 0, 224, 370);
 		
 		JButton quitbutton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\quitbutton.png").getImage().getScaledInstance(119, 33, 0)));
 		quitbutton.setLayout(null);
@@ -229,7 +244,337 @@ class button2_1 extends JFrame {
 		
 		this.add(mo);
 		this.setResizable(false); 
-		this.setSize(220,335);
 		
 	}
 }
+//업적 버튼 누르면 뜨는 창
+class MainBookView extends JFrame{
+	public MainBookView() {
+		this.setBounds(57, 180, 220, 370);
+		this.setUndecorated(true);
+		this.setVisible(true);
+		this.setLayout(null);
+				
+		//버튼 및 라벨 생성
+		JLabel book = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\book.PNG").getImage().getScaledInstance(220, 370, 0)));
+		book.setBounds(0, 0, 220, 370);
+
+		JButton bookbutton1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼.PNG").getImage().getScaledInstance(140, 40, 0)));
+		bookbutton1.setLayout(null);
+		bookbutton1.setBounds(40, 90, 140, 40);
+
+		JButton bookbutton2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼2_1.PNG").getImage().getScaledInstance(140, 52, 0)));
+		bookbutton2.setLayout(null);
+		bookbutton2.setBounds(40, 140, 140, 40);
+
+		JButton bookbutton3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼3_1.PNG").getImage().getScaledInstance(140, 52, 0)));
+		bookbutton3.setLayout(null);
+		bookbutton3.setBounds(40, 190, 140, 40);
+
+		JButton bookbutton4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼4_1.PNG").getImage().getScaledInstance(140, 52, 0)));
+		bookbutton4.setLayout(null);
+		bookbutton4.setBounds(40, 240, 140, 40);
+		
+		JButton backbutton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
+		backbutton.setLayout(null);
+		backbutton.setBounds(60, 300, 98, 35);
+		
+		
+		//액션
+		bookbutton1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new mous();
+				
+			}
+		});
+		
+		bookbutton2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new mous2();
+				
+			}
+		});
+		
+		bookbutton3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new mous3();
+				
+			}
+		});
+		
+		bookbutton4.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new mous4();
+				
+			}
+		});
+		
+		//패널에 삽입
+		this.add(bookbutton1);
+		this.add(bookbutton2);
+		this.add(bookbutton3);
+		this.add(bookbutton4);
+		this.add(backbutton);
+		this.add(book);
+		
+		
+	}
+}
+//업적 클리어 클릭 했을때 새로운 프레임 생성1
+class mous extends JFrame{
+	
+	public mous() {
+		this.setBounds(57, 206, 245, 205);
+		JPanel mo = new JPanel();
+		mo.setLayout(null);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\판.png").getImage().getScaledInstance(245, 205, 0)));
+		pan.setBounds(-5, 0, 245, 205);
+		JLabel jin = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\진주.png").getImage().getScaledInstance(116, 113, 0)));
+		jin.setBounds(60, 20, 116, 113);
+		
+		JButton gohome = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\gohome버튼.png").getImage().getScaledInstance(98, 35, 0)));
+		gohome.setLayout(null);
+		gohome.setBounds(60, 160, 121, 32);
+		gohome.setBorderPainted(false);
+		gohome.setFocusPainted(false);
+		gohome.setContentAreaFilled(false);
+		
+		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
+		garbagetong.setBounds(80, 135, 25, 25);
+		
+		JLabel point = new JLabel("x  150");
+		point.setBounds(110, 130, 50, 40);
+		
+		JLabel jin2 = new JLabel("진주 획득!!");
+		jin2.setBounds(90, 30, 100, 40);
+		jin2.setForeground(Color.WHITE);
+		JLabel jin3 = new JLabel("x 2");
+		jin3.setBounds(110, 50, 30, 40);
+		jin3.setForeground(Color.WHITE);
+		
+		
+		mo.add(jin2);
+		mo.add(jin3);
+		mo.add(garbagetong);
+		mo.add(point);
+		mo.add(gohome);
+		mo.add(jin);
+		mo.add(pan);
+		
+		this.add(mo);
+		this.setResizable(false);
+		this.setSize(240,222);
+		this.setVisible(true);
+	}
+}
+//업적 클리어 클릭했을때 새로운 프레임 생성2
+class mous2 extends JFrame{
+	
+	public mous2() {
+		this.setBounds(57, 206, 245, 205);
+		JPanel mo = new JPanel();
+		mo.setLayout(null);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\판.png").getImage().getScaledInstance(245, 205, 0)));
+		pan.setBounds(-5, 0, 245, 205);
+		JLabel jin = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\진주.png").getImage().getScaledInstance(116, 113, 0)));
+		jin.setBounds(60, 20, 116, 113);
+		
+		JButton gohome = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\gohome버튼.png").getImage().getScaledInstance(98, 35, 0)));
+		gohome.setLayout(null);
+		gohome.setBounds(60, 160, 121, 32);
+		gohome.setBorderPainted(false);
+		gohome.setFocusPainted(false);
+		gohome.setContentAreaFilled(false);
+		
+		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
+		garbagetong.setBounds(80, 135, 25, 25);
+		
+		JLabel point = new JLabel("x  150");
+		point.setBounds(110, 130, 50, 40);
+		
+		JLabel jin2 = new JLabel("진주 획득!!");
+		jin2.setBounds(90, 30, 100, 40);
+		jin2.setForeground(Color.WHITE);
+		JLabel jin3 = new JLabel("x 2");
+		jin3.setBounds(110, 50, 30, 40);
+		jin3.setForeground(Color.WHITE);
+		
+		
+		mo.add(jin2);
+		mo.add(jin3);
+		mo.add(garbagetong);
+		mo.add(point);
+		mo.add(gohome);
+		mo.add(jin);
+		mo.add(pan);
+		
+		this.add(mo);
+		this.setResizable(false);
+		this.setSize(240,222);
+		this.setVisible(true);
+	}
+}
+
+//업적 클리어 클릭 했을때 새로운 프레임 생성3
+class mous3 extends JFrame{
+	
+	public mous3() {
+		this.setBounds(57, 206, 245, 205);
+		JPanel mo = new JPanel();
+		mo.setLayout(null);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\판.png").getImage().getScaledInstance(245, 205, 0)));
+		pan.setBounds(-5, 0, 245, 205);
+		JLabel jin = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\진주.png").getImage().getScaledInstance(116, 113, 0)));
+		jin.setBounds(60, 20, 116, 113);
+		
+		JButton gohome = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\gohome버튼.png").getImage().getScaledInstance(98, 35, 0)));
+		gohome.setLayout(null);
+		gohome.setBounds(60, 160, 121, 32);
+		gohome.setBorderPainted(false);
+		gohome.setFocusPainted(false);
+		gohome.setContentAreaFilled(false);
+		
+		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
+		garbagetong.setBounds(80, 135, 25, 25);
+		
+		JLabel point = new JLabel("x  150");
+		point.setBounds(110, 130, 50, 40);
+		
+		JLabel jin2 = new JLabel("진주 획득!!");
+		jin2.setBounds(90, 30, 100, 40);
+		jin2.setForeground(Color.WHITE);
+		JLabel jin3 = new JLabel("x 2");
+		jin3.setBounds(110, 50, 30, 40);
+		jin3.setForeground(Color.WHITE);
+		
+		
+		mo.add(jin2);
+		mo.add(jin3);
+		mo.add(garbagetong);
+		mo.add(point);
+		mo.add(gohome);
+		mo.add(jin);
+		mo.add(pan);
+		
+		this.add(mo);
+		this.setResizable(false);
+		this.setSize(240,222);
+		this.setVisible(true);
+	}
+}
+//업적 클리어 클릭 했을때 새로운 프레임 생성4
+class mous4 extends JFrame{
+	
+	public mous4() {
+		this.setBounds(57, 206, 245, 205);
+		JPanel mo = new JPanel();
+		mo.setLayout(null);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\판.png").getImage().getScaledInstance(245, 205, 0)));
+		pan.setBounds(-5, 0, 245, 205);
+		JLabel jin = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\진주.png").getImage().getScaledInstance(116, 113, 0)));
+		jin.setBounds(60, 20, 116, 113);
+		
+		JButton gohome = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\gohome버튼.png").getImage().getScaledInstance(98, 35, 0)));
+		gohome.setLayout(null);
+		gohome.setBounds(60, 160, 121, 32);
+		gohome.setBorderPainted(false);
+		gohome.setFocusPainted(false);
+		gohome.setContentAreaFilled(false);
+		
+		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
+		garbagetong.setBounds(80, 135, 25, 25);
+		
+		JLabel point = new JLabel("x  150");
+		point.setBounds(110, 130, 50, 40);
+		
+		JLabel jin2 = new JLabel("진주 획득!!");
+		jin2.setBounds(90, 30, 100, 40);
+		jin2.setForeground(Color.WHITE);
+		JLabel jin3 = new JLabel("x 2");
+		jin3.setBounds(110, 50, 30, 40);
+		jin3.setForeground(Color.WHITE);
+		
+		
+		mo.add(jin2);
+		mo.add(jin3);
+		mo.add(garbagetong);
+		mo.add(point);
+		mo.add(gohome);
+		mo.add(jin);
+		mo.add(pan);
+		
+		this.add(mo);
+		this.setResizable(false);
+		this.setSize(240,222);
+		this.setVisible(true);
+	}
+}
+
+class shop extends JFrame{
+	public shop() {
+		this.setBounds(57, 180, 220, 370);
+		this.setUndecorated(true);
+		this.setVisible(true);
+		this.setLayout(null);
+		
+		CardLayout card = new CardLayout();
+		
+		Image background = new ImageIcon("src\\image\\start\\shopback.png").getImage().getScaledInstance(230, 385, 0);
+		JLabel label = new JLabel(new ImageIcon(background));
+		label.setBounds(0, 0, 220, 370);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBounds(0, 0, 220, 370);
+		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
+		JButton robButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/rod.png").getImage().getScaledInstance(80, 80, 0)));
+		robButton.setBounds(25, 110, 80, 80);
+		
+		JButton foodButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/fish.png").getImage().getScaledInstance(80, 80, 0)));
+		foodButton.setBounds(115, 110, 80, 80);
+		
+		JButton epsButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/eps.png").getImage().getScaledInstance(80, 80, 0)));
+		epsButton.setBounds(115, 210, 80, 80);
+		
+		JButton hatButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/hat.png").getImage().getScaledInstance(80, 80, 0)));
+		hatButton.setBounds(25, 210, 80, 80);
+		
+		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
+		backButton.setBounds(60, 300, 98, 35);
+		
+		JPanel panel1 = new JPanel();
+		panel.setBounds(0, 0, 220, 370);
+		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
+		
+		
+		JPanel panel2 = new JPanel();
+		panel.setBounds(0, 0, 220, 370);
+		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
+		JPanel panel3 = new JPanel();
+		panel.setBounds(0, 0, 220, 370);
+		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
+		JPanel panel4 = new JPanel();
+		panel.setBounds(0, 0, 220, 370);
+		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
+		panel.add(robButton);
+		panel.add(foodButton);
+		panel.add(epsButton);
+		panel.add(hatButton);
+		this.add(backButton);
+		this.add(panel);
+		this.add(label);
+	}
+}
+
