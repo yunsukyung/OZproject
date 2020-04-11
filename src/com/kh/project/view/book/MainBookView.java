@@ -146,7 +146,7 @@ class mous extends JFrame{
 		this.setVisible(true);
 	}
 }
-
+//클릭했을때 새로운 프레임 생성
 class mous2 extends JFrame{
 	
 	public mous2() {
@@ -194,7 +194,7 @@ class mous2 extends JFrame{
 	}
 }
 
-
+//클릭했을때 새로운 프레임 생성
 class mous3 extends JFrame{
 	
 	public mous3() {
@@ -241,7 +241,7 @@ class mous3 extends JFrame{
 		this.setVisible(true);
 	}
 }
-
+//클릭했을때 새로운 프레임 생성
 class mous4 extends JFrame{
 	
 	public mous4() {
