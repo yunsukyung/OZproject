@@ -6,6 +6,8 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -69,6 +71,8 @@ public class LoginView extends JPanel{
 		button3.setBounds(220, 220, 60, 20);
 
 		button1.addMouseListener(new MyMouseAdapter());
+		//button1.addKeyListener(new MyKeyAdapter());
+		
 		button2.addMouseListener(new MyMouseAdapter2());
 		button3.addMouseListener(new MyMouseAdapter3());
 
@@ -87,6 +91,13 @@ public class LoginView extends JPanel{
 		mf.add(this);
 		mf.revalidate();
 	}
+//	
+//	class MyKeyAdapter extends KeyAdapter {
+//		@Override
+//		public void keyPressed(KeyEvent e) {
+//			ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
+//		}
+//	}
 
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
@@ -121,49 +132,6 @@ public class LoginView extends JPanel{
 				ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 			}
 			
-			
-//			p = lm.LoginId(Idtf.getText(), password.getPassword());
-//			
-//			char[] pass = new char[password.getPassword().length];
-//			String str = "";
-//			for(int i = 0; i < password.getPassword().length; i++) {
-//				pass[i] = password.getPassword()[i];
-//				
-//				str += pass[i];
-//				
-//			}
-//			
-//			
-//			if((p.getUserId().equals(Idtf.getText())) && (p.getUserPwd().equals(str)) ) {
-//				ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
-//			} else {
-//				Dialog check = new Dialog(mf, "아이디, 비밀번호 오류");
-//				check.setVisible(true);
-//				check.setBounds(120, 250, 200, 200);
-//				
-//				
-//				JLabel id = new JLabel("<html>아이디 또는 비밀번호가 다릅니다.<html>");
-//				id.setBounds(10, 30, 150, 50);
-//				
-//				
-//				
-//				JButton button = new JButton("확인");
-//				button.setBounds(0, 100, 150, 50);
-//				check.add(button, BorderLayout.SOUTH);
-//				button.add(id);
-//				
-//				
-//				button.addActionListener(new ActionListener() {
-//					
-//					@Override
-//					public void actionPerformed(ActionEvent e) {
-//						check.dispose(); return;
-//						
-//					}
-//				});
-//			}
-//			
-
 
 
 		}
