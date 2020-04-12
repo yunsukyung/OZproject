@@ -29,6 +29,7 @@ public class LoginView extends JPanel{
 	JTextField Idtf = new JTextField(30);
 	JPasswordField password = new JPasswordField(30);
 	LoginManager lm = new LoginManager();
+	
 	Player p = new Player();
 	public LoginView(MainView mf) {
 		this.mf = mf;
@@ -91,21 +92,50 @@ public class LoginView extends JPanel{
 		@Override
 		public void mousePressed(MouseEvent e) {
 			
-			p = lm.LoginId(Idtf.getText(), password.getPassword());
-			
-			char[] pass = new char[password.getPassword().length];
-			String str = "";
-			for(int i = 0; i < password.getPassword().length; i++) {
-				pass[i] = password.getPassword()[i];
+			if(lm.LoginId(Idtf.getText(), password.getPassword()) == null) {
+				Dialog check = new Dialog(mf, "아이디, 비밀번호 오류");
+				check.setVisible(true);
+				check.setBounds(120, 250, 200, 200);
 				
-				str += pass[i];
 				
+				JLabel id = new JLabel("<html>아이디 또는 비밀번호가 다릅니다.<html>");
+				id.setBounds(10, 30, 150, 50);
+				
+				
+				
+				JButton button = new JButton("확인");
+				button.setBounds(0, 100, 150, 50);
+				check.add(button, BorderLayout.SOUTH);
+				check.add(id);
+				
+				
+				button.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						check.dispose(); return;
+						
+					}
+				});
+			} else {
+				ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 			}
-			ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 			
-//			오류나
-//			if((p.getUserId().equals(null)) || (p.getUserPwd().equals(null)) ) {
+			
+//			p = lm.LoginId(Idtf.getText(), password.getPassword());
+//			
+//			char[] pass = new char[password.getPassword().length];
+//			String str = "";
+//			for(int i = 0; i < password.getPassword().length; i++) {
+//				pass[i] = password.getPassword()[i];
 //				
+//				str += pass[i];
+//				
+//			}
+//			
+//			
+//			if((p.getUserId().equals(Idtf.getText())) && (p.getUserPwd().equals(str)) ) {
+//				ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 //			} else {
 //				Dialog check = new Dialog(mf, "아이디, 비밀번호 오류");
 //				check.setVisible(true);

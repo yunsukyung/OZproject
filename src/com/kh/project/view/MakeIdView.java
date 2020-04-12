@@ -110,46 +110,51 @@ public class MakeIdView extends JPanel{
 
 					}
 				});
-
-			}	
-			if(tf2.getPassword().length > 5 && tf3.getPassword().length > 5) {
-				if(lm.CheckPwd(tf2.getPassword(),tf3.getPassword()) == true){
-					p.setUserId(tf.getText());
-					char[] pw = new char[tf2.getPassword().length];
-					String str = "";
-					for(int i = 0; i < pw.length; i++) {
-						str += pw[i];
-					}
-					p.setUserPwd(str);
-					ChangePanel.changePanel(mf, makeidview, new MakeIdView2(mf, p));
-				} else {
-					Dialog passcheck = new Dialog(mf, "비밀번호");
-					passcheck.setBounds(120, 250, 200, 200);
-					passcheck.setVisible(true);
-
-					JLabel pass = new JLabel("<html>입력하신 비밀번호가 다릅니다.<br/>비밀번호를 다시 입력하세요.<html>");
-					pass.setBounds(10, 30, 150, 50);
-
-					JButton check2 = new JButton("확인");
-					check2.setSize(150, 50);
-					check2.setLocation(0, 100);
-
-					passcheck.add(pass);
-					passcheck.add(check2, BorderLayout.SOUTH);
-
-
-
-					check2.addActionListener(new ActionListener() {
-
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							passcheck.dispose(); return;
-
-						}
-					});
-
-				}
 			}
+				else {
+				if(tf2.getPassword().length > 5 && tf3.getPassword().length > 5) {
+					if(lm.CheckPwd(tf2.getPassword(),tf3.getPassword()) == true){
+						p.setUserId(tf.getText());
+						char[] pw = new char[tf2.getPassword().length];
+						String str = "";
+						pw = tf2.getPassword();
+
+						for(int i = 0; i < pw.length; i++) {
+							str += pw[i];
+						}
+						p.setUserPwd(str);
+						ChangePanel.changePanel(mf, makeidview, new MakeIdView2(mf, p));
+					} else {
+						Dialog passcheck = new Dialog(mf, "비밀번호");
+						passcheck.setBounds(120, 250, 200, 200);
+						passcheck.setVisible(true);
+
+						JLabel pass = new JLabel("<html>입력하신 비밀번호가 다릅니다.<br/>비밀번호를 다시 입력하세요.<html>");
+						pass.setBounds(10, 30, 150, 50);
+
+						JButton check2 = new JButton("확인");
+						check2.setSize(150, 50);
+						check2.setLocation(0, 100);
+
+						passcheck.add(pass);
+						passcheck.add(check2, BorderLayout.SOUTH);
+
+
+
+						check2.addActionListener(new ActionListener() {
+
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								passcheck.dispose(); return;
+
+							}
+						});
+
+					}
+				}
+			}	
+
+
 
 		}
 
