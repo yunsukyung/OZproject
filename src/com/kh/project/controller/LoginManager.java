@@ -33,6 +33,7 @@ public class LoginManager {
 		}
 
 		ArrayList<Player> plist = pd.readPlayerList();
+		
 		for(int i = 0; i < plist.size(); i ++) {
 			
 			
