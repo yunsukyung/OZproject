@@ -12,6 +12,7 @@ import com.kh.project.view.MainView;
 public class SpawnManager{
 	Garbage[] garb = new Garbage[100];
 	JLabel[] labels = new JLabel[100];
+	JLabel[] hpLabels = new JLabel[100];
 	int count = 0;
 	public SpawnManager() {
 		
@@ -30,27 +31,35 @@ public class SpawnManager{
 			
 			if(garb[i] instanceof G_Bottle) {
 				labels[i] = (((G_Bottle)garb[i]).getLabel());
+				hpLabels[i] = (((G_Bottle)garb[i]).getHpLabel());
 			}
 			if(garb[i] instanceof G_Can) {
 				labels[i] = (((G_Can)garb[i]).getLabel());
+				hpLabels[i] = (((G_Can)garb[i]).getHpLabel());
 			}
 			if(garb[i] instanceof G_Cigarette) {
 				labels[i] = (((G_Cigarette)garb[i]).getLabel());
+				hpLabels[i] = (((G_Cigarette)garb[i]).getHpLabel());
 			}
 			if(garb[i] instanceof G_LoveLetter) {
 				labels[i] = (((G_LoveLetter)garb[i]).getLabel());
+				hpLabels[i] = (((G_LoveLetter)garb[i]).getHpLabel());
 			}
 			if(garb[i] instanceof G_Mac) {
 				labels[i] = (((G_Mac)garb[i]).getLabel());
+				hpLabels[i] = (((G_Mac)garb[i]).getHpLabel());
 			}
 			if(garb[i] instanceof G_Paper) {
 				labels[i] = (((G_Paper)garb[i]).getLabel());
+				hpLabels[i] = (((G_Paper)garb[i]).getHpLabel());
 			}
 			if(garb[i] instanceof G_Plastic) {
 				labels[i] = (((G_Plastic)garb[i]).getLabel());
+				hpLabels[i] = (((G_Plastic)garb[i]).getHpLabel());
 			}
 			if(garb[i] instanceof G_SnackBag) {
 				labels[i] = (((G_SnackBag)garb[i]).getLabel());
+				hpLabels[i] = (((G_SnackBag)garb[i]).getHpLabel());
 			}
 		}
 	}
@@ -68,6 +77,15 @@ public class SpawnManager{
 
 	public void setLabels(JLabel[] labels) {
 		this.labels = labels;
+	}
+
+	
+	public JLabel[] getHpLabels() {
+		return hpLabels;
+	}
+
+	public void setHpLabels(JLabel[] hpLabels) {
+		this.hpLabels = hpLabels;
 	}
 
 	public void test() {

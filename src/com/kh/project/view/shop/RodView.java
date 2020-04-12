@@ -51,7 +51,6 @@ public class RodView extends JPanel{
 		JLabel label5 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/나무낚시대.png").getImage().getScaledInstance(155, 155, 0)));
 		label5.setBounds(35, 160, 300, 300);
 		
-		
 		//상점 레이어 7
 		JLabel label7 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/Rectangle 29.png").getImage()));
 		label7.setBounds(133, 490, 100, 50);

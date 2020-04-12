@@ -11,15 +11,21 @@ public class G_Cigarette extends Garbage{
 
 	Image image;
 	JLabel label;
+	
+	Image hpImage;
+	JLabel hpLabel;
+	private int hp = 40;
+	int random1 = new Random().nextInt(1000)+1;
+	int random2 = new Random().nextInt(500)+100;
+	
 	public G_Cigarette() {
-		super(300,4);
-		int random1 = new Random().nextInt(300)+1;
-		int random2 = new Random().nextInt(500)+100;
-		int random = new Random().nextInt(2);
-		if(random == 0) image = new ImageIcon("src/image/game/beer1."
+		super(1200,4);;
+		image = new ImageIcon("src/image/game/cigarette."
 				+ "png").getImage().getScaledInstance(40, 40, 0);
-		else if(random == 1) image = new ImageIcon("src/image/game/beer2."
-				+ "png").getImage().getScaledInstance(40, 40, 0);
+
+		hpImage = new ImageIcon("src/image/game/hpBar.png").getImage().getScaledInstance(40, 6, 0);
+		hpLabel = new JLabel(new ImageIcon(hpImage));
+		hpLabel.setBounds(random1, random2 - 10, 40, 10);
 		
 		label = new JLabel(new ImageIcon(image));
 		label.setBounds(random1,random2,40,40);
@@ -37,6 +43,28 @@ public class G_Cigarette extends Garbage{
 	public void setLabel(JLabel label) {
 		this.label = label;
 	}
+	
+	public Image getHpImage() {
+		return hpImage;
+	}
+
+	public JLabel getHpLabel() {
+		return hpLabel;
+	}
+
+	public void setHpImage(Image hpImage) {
+		this.hpImage = hpImage;
+	}
+
+	public void setHpLabel(JLabel hpLabel) {
+		this.hpLabel = hpLabel;
+	}
+	public void hpControl(int attack) {
+		super.setHp(super.getHp() - attack*10);
+		hp -= attack/3;
+		hpLabel.setBounds(random1,random2 - 10,hp - attack/3,6);
+	}
+
 	@Override
 	public String toString() {
 		return "G_Cigarette";

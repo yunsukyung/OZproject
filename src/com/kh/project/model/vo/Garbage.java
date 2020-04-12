@@ -4,6 +4,8 @@ public class Garbage {
 	private int hp;
 	private int haveGarbage;
 	private int life = 10;
+	
+	
 	public Garbage(int hp, int haveGarbage) {
 		super();
 		this.hp = hp;
