@@ -36,7 +36,7 @@ public class LoginManager {
 		
 		for(int i = 0; i < plist.size(); i ++) {
 			if(plist.get(i).getUserId().equals(userId)) {
-				
+				System.out.println("11");
 				if(plist.get(i).getUserPwd().equals(str)) {
 					return plist.get(i);
 				}
