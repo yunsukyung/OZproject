@@ -7,6 +7,8 @@ import java.awt.Container;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -525,7 +527,7 @@ class shop extends JFrame{
 		this.setVisible(true);
 		this.setLayout(null);
 		
-		CardLayout card = new CardLayout();
+		CardLayout card = new CardLayout(0,0);
 		
 		Image background = new ImageIcon("src\\image\\start\\shopback.png").getImage().getScaledInstance(230, 385, 0);
 		JLabel label = new JLabel(new ImageIcon(background));
@@ -550,52 +552,203 @@ class shop extends JFrame{
 		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
 		backButton.setBounds(60, 300, 98, 35);
 		
+		
+		//카드 패널 1
 		JPanel panel1 = new JPanel();
 		panel1.setLayout(null);
-		panel1.setBounds(25, 110, 170, 220);
+		panel1.setBounds(25, 100, 170, 190);
+		panel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
+		JLabel shoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		shoplabel1.setBounds(0, 0, 170, 190);
 		
+		JLabel rod1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\나무낚시대.png").getImage().getScaledInstance(100, 100, 0)));
+		rod1.setLayout(null);
+		rod1.setBounds(35, 40, 100, 100);
+		
+		JButton left1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		left1.setLayout(null);
+		left1.setBounds(10, 80, 20, 20);
+		
+		JButton right1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		right1.setLayout(null);
+		right1.setBounds(140, 80, 20, 20);
+		
+		//카드 패널 2
 		JPanel panel2 = new JPanel();
 		panel2.setLayout(null);
 		panel2.setBounds(25, 100, 170, 190);
 		panel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
-		JLabel shoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
-		shoplabel1.setBounds(0, 0, 170, 190);
+		JLabel shoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		shoplabel2.setBounds(0, 0, 170, 190);
 		
-		JButton left = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
-		left.setLayout(null);
-		left.setBounds(10, 80, 20, 20);
+		JLabel rod2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\제목 없음-1.png").getImage().getScaledInstance(100, 100, 0)));
+		rod2.setLayout(null);
+		rod2.setBounds(35, 40, 100, 100);
 		
-		JButton right = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
-		right.setLayout(null);
-		right.setBounds(140, 80, 20, 20);
+		JButton left2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		left2.setLayout(null);
+		left2.setBounds(10, 80, 20, 20);
 		
-		panel2.add(right);
-		panel2.add(left);
-		panel2.add(shoplabel1);
+		JButton right2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		right2.setLayout(null);
+		right2.setBounds(140, 80, 20, 20);
 		
+
 		
+		//카드 패널 3
 		JPanel panel3 = new JPanel();
 		panel3.setLayout(null);
 		panel3.setBounds(25, 100, 170, 280);
 		panel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
+		JLabel shoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		shoplabel3.setBounds(0, 0, 170, 190);
+		
+		JLabel rod3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\fishing.png").getImage().getScaledInstance(100, 100, 0)));
+		rod3.setLayout(null);
+		rod3.setBounds(35, 40, 100, 100);
+		
+		JButton left3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		left3.setLayout(null);
+		left3.setBounds(10, 80, 20, 20);
+		
+		JButton right3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		right3.setLayout(null);
+		right3.setBounds(140, 80, 20, 20);
+		
+
+		//카드 패널4
 		JPanel panel4 = new JPanel();
 		panel4.setLayout(null);
 		panel4.setBounds(25, 100, 170, 280);
 		panel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
-		//panel2.add(shoplabel1);
+		JLabel shoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		shoplabel4.setBounds(0, 0, 170, 190);
+		//왼쪽
+		JButton left4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		left4.setLayout(null);
+		left4.setBounds(10, 80, 20, 20);
+		//오른쪽
+		JButton right4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		right4.setLayout(null);
+		right4.setBounds(140, 80, 20, 20);
 		
-		panel.add(robButton);
-		panel.add(foodButton);
-		panel.add(epsButton);
-		panel.add(hatButton);
-		//this.add(panel2);
+		
+		
+		
+		panel1.add(rod1);
+		panel1.add("r1",right1);
+		panel1.add("l1",left1);
+		panel2.add(rod2);
+		panel2.add("r2",right2);
+		panel2.add("l2",left2);
+		panel3.add(rod3);
+		panel3.add("r3",right3);
+		panel3.add("l3",left3);
+		panel4.add("r4",right4);
+		panel4.add("l4",left4);
+		
+		
+		panel1.setVisible(true);
+		panel2.setVisible(false);
+		panel3.setVisible(false);
+		panel4.setVisible(false);
+		
+		
+		right1.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel1.setVisible(false);
+				panel2.setVisible(true);
+				panel3.setVisible(false);
+				panel4.setVisible(false);
+			}
+		});
+		left1.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel1.setVisible(false);
+				panel2.setVisible(false);
+				panel3.setVisible(false);
+				panel4.setVisible(true);
+			}
+		});
+		
+		right2.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel1.setVisible(false);
+				panel2.setVisible(false);
+				panel3.setVisible(true);
+				panel4.setVisible(false);
+			}
+		});
+		left2.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel1.setVisible(true);
+				panel2.setVisible(false);
+				panel3.setVisible(false);
+				panel4.setVisible(false);
+			}
+		});
+		
+		right3.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel1.setVisible(false);
+				panel2.setVisible(false);
+				panel3.setVisible(false);
+				panel4.setVisible(true);
+			}
+		});
+		left3.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel1.setVisible(false);
+				panel2.setVisible(true);
+				panel3.setVisible(false);
+				panel4.setVisible(false);
+			}
+		});
+		
+		right4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel1.setVisible(true);
+				panel2.setVisible(false);
+				panel3.setVisible(false);
+				panel4.setVisible(false);
+			}
+		});
+		left4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel1.setVisible(false);
+				panel2.setVisible(false);
+				panel3.setVisible(true);
+				panel4.setVisible(false);
+			}
+		});
+		
+		
+		//패널 백그라운드 이미지
+		panel1.add(shoplabel1);
+		panel2.add(shoplabel2);
+		panel3.add(shoplabel3);
+		panel4.add(shoplabel4);
+		
+		//버튼 클릭스 다음 패널로 넘어가게함 
+		this.add("p1",panel1);
+		this.add("p2",panel2);
+		this.add("p3",panel3);
+		this.add("p4",panel4);
+		
+		//panel.add(robButton);
+		//panel.add(foodButton);
+		//panel.add(epsButton);
+		//panel.add(hatButton);
+
 		this.add(backButton);
-		this.add(panel);
+		//this.add(panel);
 		this.add(label);
 	}
 }
+
+
 
