@@ -9,7 +9,7 @@ public class MainView extends JFrame {
 	public MainView() {
 		this.setTitle("oz의 펭귄");
 		this.setBounds(0, 0, 380, 680);
-		this.setLayout(null);
+		
 		this.add(new StartView(this));
 		
 		this.setVisible(true);
