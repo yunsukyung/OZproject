@@ -532,46 +532,67 @@ class shop extends JFrame{
 		label.setBounds(0, 0, 220, 370);
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		panel.setBounds(0, 0, 220, 370);
+		panel.setBounds(25, 100, 170, 280);
 		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
 		JButton robButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/rod.png").getImage().getScaledInstance(80, 80, 0)));
-		robButton.setBounds(25, 110, 80, 80);
+		robButton.setBounds(0, 10, 80, 80);
 		
 		JButton foodButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/fish.png").getImage().getScaledInstance(80, 80, 0)));
-		foodButton.setBounds(115, 110, 80, 80);
+		foodButton.setBounds(90, 10, 80, 80);
 		
 		JButton epsButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/eps.png").getImage().getScaledInstance(80, 80, 0)));
-		epsButton.setBounds(115, 210, 80, 80);
+		epsButton.setBounds(90, 110, 80, 80);
 		
 		JButton hatButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/hat.png").getImage().getScaledInstance(80, 80, 0)));
-		hatButton.setBounds(25, 210, 80, 80);
+		hatButton.setBounds(0, 110, 80, 80);
 		
 		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
 		backButton.setBounds(60, 300, 98, 35);
 		
 		JPanel panel1 = new JPanel();
-		panel.setBounds(0, 0, 220, 370);
-		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
-		
+		panel1.setLayout(null);
+		panel1.setBounds(25, 110, 170, 220);
 		
 		
 		JPanel panel2 = new JPanel();
-		panel.setBounds(0, 0, 220, 370);
-		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		panel2.setLayout(null);
+		panel2.setBounds(25, 100, 170, 190);
+		panel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
+		JLabel shoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		shoplabel1.setBounds(0, 0, 170, 190);
+		
+		JButton left = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		left.setLayout(null);
+		left.setBounds(10, 80, 20, 20);
+		
+		JButton right = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		right.setLayout(null);
+		right.setBounds(140, 80, 20, 20);
+		
+		panel2.add(right);
+		panel2.add(left);
+		panel2.add(shoplabel1);
+		
 		
 		JPanel panel3 = new JPanel();
-		panel.setBounds(0, 0, 220, 370);
-		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		panel3.setLayout(null);
+		panel3.setBounds(25, 100, 170, 280);
+		panel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
 		JPanel panel4 = new JPanel();
-		panel.setBounds(0, 0, 220, 370);
-		panel.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		panel4.setLayout(null);
+		panel4.setBounds(25, 100, 170, 280);
+		panel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
+		//panel2.add(shoplabel1);
 		
 		panel.add(robButton);
 		panel.add(foodButton);
 		panel.add(epsButton);
 		panel.add(hatButton);
+		//this.add(panel2);
 		this.add(backButton);
 		this.add(panel);
 		this.add(label);
