@@ -14,6 +14,7 @@ public class SpawnManager{
 	JLabel[] labels = new JLabel[100];
 	JLabel[] hpLabels = new JLabel[100];
 	int count = 0;
+	
 	public SpawnManager() {
 		
 		for(int i = 0; i < 100; i++) {
