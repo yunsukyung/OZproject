@@ -12,6 +12,7 @@ import javax.swing.*;
 
 import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
+import com.kh.project.view.book.MainBookView;
 import com.kh.project.view.shop.MainShopView;
 
 //!!!!메인뷰에 this.add(new HomeView(this)); 이거 추가해야 빨간 줄 사라짐!!!!
@@ -209,7 +210,9 @@ public class HomeView extends JPanel{
 	class MyMouseAdapter2 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-//			ChangePanel1.changePanel(mf, homeView, new ConfigurationView(mf));
+			
+			new ConfigurationView(mf);
+			
 		}
 	}
 	
@@ -225,7 +228,7 @@ public class HomeView extends JPanel{
 	class MyMouseAdapter4 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-//			ChangePanel1.changePanel(mf, homeView, new MainBookView(mf));
+			new MainBookView(mf);
 		}
 	}
 	

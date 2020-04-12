@@ -14,21 +14,31 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MainBookView extends JPanel{
-	private JPanel startPage;
-	private bohoonView mf;
+import com.kh.project.view.MainView;
+
+public class MainBookView extends JFrame {
+	private JFrame startPage;
+	private MainView mf;
 	
-	public MainBookView(bohoonView mf) {
+	public MainBookView(MainView mf) {
 		this.startPage = this;
 		this.mf = mf;
+		this.setBounds(57, 180, 220, 370);
+		this.setUndecorated(true);
+		this.setVisible(true);
+		this.setBackground(new Color(0, 0, 0, 0));
 		
-		this.setLayout(null);
+		
 				
 		//버튼 및 라벨 생성
-		JLabel back = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\스토리 배경.jpg").getImage().getScaledInstance(360, 640, 0)));
-		back.setBounds(0, 0, 360, 640);
+//		JLabel back = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\스토리 배경.jpg").getImage().getScaledInstance(360, 640, 0)));
+//		back.setBounds(0, 0, 360, 640);
+		JPanel back = new JPanel();
+		back.setLayout(null);
+		back.setBackground(new Color(0, 0, 0, 0));
+		
 		JLabel book = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\book.PNG").getImage().getScaledInstance(292, 520, 0)));
-		book.setBounds(30, 31, 292, 520);
+		book.setBounds(-5, 0, 224, 370);
 
 		JButton bookbutton1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼.PNG").getImage().getScaledInstance(218, 52, 0)));
 		bookbutton1.setLayout(null);
@@ -89,14 +99,14 @@ public class MainBookView extends JPanel{
 		});
 		
 		//패널에 삽입
-		this.add(bookbutton1);
-		this.add(bookbutton2);
-		this.add(bookbutton3);
-		this.add(bookbutton4);
-		this.add(backbutton);
-		this.add(book);
+		back.add(bookbutton1);
+		back.add(bookbutton2);
+		back.add(bookbutton3);
+		back.add(bookbutton4);
+		back.add(backbutton);
+		back.add(book);
 		this.add(back);
-		
+		this.setResizable(false); 
 		
 	}
 	
