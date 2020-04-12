@@ -47,6 +47,7 @@ public class InGameView extends JPanel implements Runnable{
 		this.add(label);
 		mf.add(this);
 		mf.repaint();
+		mf.revalidate();
 	}
 	
 	@Override

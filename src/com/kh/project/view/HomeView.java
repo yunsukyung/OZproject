@@ -23,7 +23,7 @@ public class HomeView extends JPanel implements Runnable {
 	
 	LoginManager lm = new LoginManager();
 	Player p = new Player();
-	ReduceSatiety rs = new ReduceSatiety(mf);
+	//ReduceSatiety rs = new ReduceSatiety(mf);
 	
 	JLabel labelrs;
 	JLabel label;
@@ -258,7 +258,11 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter6 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-//			ChangePanel1.changePanel(mf, homeView, new InGameView(mf));
+			InGameView iv = new InGameView(mf, p);
+			Thread t2 = new Thread(iv);
+			ChangePanel.changePanel(mf, homeView, iv);
+			
+			t2.start();
 		}
 	}
 	
@@ -267,7 +271,7 @@ public class HomeView extends JPanel implements Runnable {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			if(p.getSatiety() <= 0) {
-				ChangePanel.changePanel(mf, homeView, new GameOverView(mf));
+				//ChangePanel.changePanel(mf, homeView, new GameOverView(mf));
 			}
 		}
 	}
