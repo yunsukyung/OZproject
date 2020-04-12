@@ -10,9 +10,9 @@ import javax.swing.JPanel;
 public class G_SnackBag extends Garbage{
 	Image image;
 	JLabel label;
-	
 	Image hpImage;
 	JLabel hpLabel;
+	
 	int random1 = new Random().nextInt(1000)+1;
 	int random2 = new Random().nextInt(500)+100;
 	private int hp = 40;

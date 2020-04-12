@@ -12,7 +12,6 @@ public class G_Mac extends Garbage{
 
 	Image image;
 	JLabel label;
-	
 	Image hpImage;
 	JLabel hpLabel;
 

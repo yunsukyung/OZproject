@@ -9,9 +9,9 @@ public class G_Bottle extends Garbage{
 	
 	Image image;
 	JLabel label;
-	
 	Image hpImage;
 	JLabel hpLabel;
+	
 	int hp = 40;
 	int random1 = new Random().nextInt(1000)+1;
 	int random2 = new Random().nextInt(500)+100;

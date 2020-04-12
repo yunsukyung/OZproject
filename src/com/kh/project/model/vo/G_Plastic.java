@@ -11,9 +11,9 @@ public class G_Plastic extends Garbage{
 
 	Image image;
 	JLabel label;
-	
 	Image hpImage;
 	JLabel hpLabel;
+	
 	private int hp = 40;
 	
 	int random1 = new Random().nextInt(1000)+1;
