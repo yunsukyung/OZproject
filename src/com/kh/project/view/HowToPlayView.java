@@ -7,15 +7,17 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.*;
 
+import com.kh.project.model.vo.Player;
+
 public class HowToPlayView extends JPanel{
 	
 	private MainView mf;
 	private JPanel howtoplayview;
-	
-	public HowToPlayView(MainView mf) {
+	Player p;
+	public HowToPlayView(MainView mf, Player p) {
 		this.mf = mf;
 		this.howtoplayview = this;
-		
+		this.p = p;
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
 		
@@ -42,7 +44,7 @@ public class HowToPlayView extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			ChangePanel.changePanel(mf, howtoplayview, new InGameView(mf));
+			ChangePanel.changePanel(mf, howtoplayview, new InGameView(mf, p));
 		}
 	}
 }
