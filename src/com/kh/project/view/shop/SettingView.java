@@ -652,7 +652,7 @@ class shop extends JFrame{
 		panel4.add("l4",left4);
 		
 		
-		panel1.setVisible(true);
+		panel1.setVisible(false);
 		panel2.setVisible(false);
 		panel3.setVisible(false);
 		panel4.setVisible(false);
@@ -739,16 +739,23 @@ class shop extends JFrame{
 		this.add("p3",panel3);
 		this.add("p4",panel4);
 		
-		//panel.add(robButton);
+		panel.add(robButton);
+		
+		robButton.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel.setVisible(false);
+				panel1.setVisible(true);
+				panel2.setVisible(false);
+				panel3.setVisible(false);
+				panel4.setVisible(false);
+			}
+		});
 		//panel.add(foodButton);
 		//panel.add(epsButton);
 		//panel.add(hatButton);
 
 		this.add(backButton);
-		//this.add(panel);
+		this.add(panel);
 		this.add(label);
 	}
 }
-
-
-
