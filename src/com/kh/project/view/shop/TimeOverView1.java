@@ -9,11 +9,11 @@ import javax.swing.*;
 
 import com.kh.project.view.MainView;
 
-public class GameOverView1 extends JPanel{
+public class TimeOverView1 extends JPanel{
 	private JPanel startPage;
 	private MainView mf;
 
-	public GameOverView1(MainView mf) {
+	public TimeOverView1(MainView mf) {
 		this.startPage = this;
 		this.mf = mf;
 
@@ -34,13 +34,13 @@ public class GameOverView1 extends JPanel{
 		label.setBounds(0, 0, 360, 640);
 		label.setBackground(new Color(0, 0, 0, 0));
 		
-		JLabel GameOver = new JLabel("G A M E O V E R");
-		GameOver.setBounds(90, 250, 240, 100);
+		JLabel TimeOver = new JLabel("T I M E O V E R");
+		TimeOver.setBounds(75, 250, 240, 100);
 		JTextField tf1 = new JTextField(100);
 		tf1.setBounds(0, 0, 300, 300);
-		GameOver.setFont(new Font("Arial", Font.BOLD, 20));
-		JLabel GameOver1 = new JLabel("색변경");
-		GameOver.setForeground(Color.WHITE);
+		TimeOver.setFont(new Font("Arial", Font.BOLD, 30));
+		JLabel TimeOver1 = new JLabel("색변경");
+		TimeOver.setForeground(Color.WHITE);
 		JLabel label2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\바다속gameover.png").getImage().getScaledInstance(360, 640, 0)));
 		label2.setBounds(0, 0, 360, 640);
 		
@@ -48,7 +48,7 @@ public class GameOverView1 extends JPanel{
 
 
 
-		label.add(GameOver);
+		label.add(TimeOver);
 		this.add(label);
 		this.add(label);
 		mf.add(this);
