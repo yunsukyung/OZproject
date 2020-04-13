@@ -39,6 +39,7 @@ public class HomeView extends JPanel implements Runnable {
 		this.mf = mf;
 		
 		//위치 초기화
+		
 		this.setLayout(null);
 		
 		this.setLocation(0, 0);
@@ -257,7 +258,11 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter3 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			ChangePanel.changePanel(mf, homeView, new MainShopView(mf));
+			//new MainShopView(mf);
+			//homeView.add(new MainShopView(mf));
+			mf.add(new MainShopView(mf));
+			System.out.println("22");
+			//ChangePanel.changePanel(mf, homeView, new MainShopView(mf));
 		}
 	}
 	
