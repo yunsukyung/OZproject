@@ -201,9 +201,13 @@ class button2_1 extends JFrame {
 		this.setBounds(57, 180, 220, 370);
 		this.setUndecorated(true);
 		this.setVisible(true);
+		this.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
 		JPanel mo = new JPanel();
 		mo.setLayout(null);
+
+		mo.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
 		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sttinglabel.png").getImage().getScaledInstance(224, 370, 0)));
 		pan.setBounds(-5, 0, 224, 370);
 		
@@ -553,6 +557,7 @@ class shop extends JFrame{
 		backButton.setBounds(60, 300, 98, 35);
 		
 		
+		
 		//낚시대 패널 1
 		JPanel robpanel1 = new JPanel();
 		robpanel1.setLayout(null);
@@ -562,9 +567,13 @@ class shop extends JFrame{
 		JLabel shoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel1.setBounds(0, 0, 170, 190);
 		
-		JLabel rod1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\나무낚시대.png").getImage().getScaledInstance(100, 100, 0)));
-		rod1.setLayout(null);
-		rod1.setBounds(35, 40, 100, 100);
+		JLabel rob1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\나무낚시대.png").getImage().getScaledInstance(100, 100, 0)));
+		rob1.setLayout(null);
+		rob1.setBounds(35, 40, 100, 100);
+		
+		JButton robpurchase = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\Component 6.png").getImage().getScaledInstance(60, 30, 0)));
+		robpurchase.setLayout(null);
+		robpurchase.setBounds(55, 160, 60, 30);
 		
 		JButton robleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		robleft1.setLayout(null);
@@ -583,9 +592,9 @@ class shop extends JFrame{
 		JLabel shoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel2.setBounds(0, 0, 170, 190);
 		
-		JLabel rod2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\제목 없음-1.png").getImage().getScaledInstance(100, 100, 0)));
-		rod2.setLayout(null);
-		rod2.setBounds(35, 40, 100, 100);
+		JLabel rob2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\제목 없음-1.png").getImage().getScaledInstance(100, 100, 0)));
+		rob2.setLayout(null);
+		rob2.setBounds(35, 40, 100, 100);
 		
 		JButton robleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		robleft2.setLayout(null);
@@ -606,9 +615,9 @@ class shop extends JFrame{
 		JLabel shoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel3.setBounds(0, 0, 170, 190);
 		
-		JLabel rod3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\fishing.png").getImage().getScaledInstance(100, 100, 0)));
-		rod3.setLayout(null);
-		rod3.setBounds(35, 40, 100, 100);
+		JLabel rob3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\fishing.png").getImage().getScaledInstance(100, 100, 0)));
+		rob3.setLayout(null);
+		rob3.setBounds(35, 40, 100, 100);
 		
 		JButton robleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		robleft3.setLayout(null);
@@ -617,25 +626,6 @@ class shop extends JFrame{
 		JButton robright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		robright3.setLayout(null);
 		robright3.setBounds(140, 80, 20, 20);
-		
-
-		//낚시대 패널4
-		JPanel robpanel4 = new JPanel();
-		robpanel4.setLayout(null);
-		robpanel4.setBounds(25, 100, 170, 280);
-		robpanel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
-		
-		JLabel shoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
-		shoplabel4.setBounds(0, 0, 170, 190);
-		//왼쪽
-		JButton robleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
-		robleft4.setLayout(null);
-		robleft4.setBounds(10, 80, 20, 20);
-		//오른쪽
-		JButton robright4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
-		robright4.setLayout(null);
-		robright4.setBounds(140, 80, 20, 20);
-		
 		
 		//모자 패널 1
 		JPanel hatpanel1 = new JPanel();
@@ -678,8 +668,6 @@ class shop extends JFrame{
 		JButton hatright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		hatright2.setLayout(null);
 		hatright2.setBounds(140, 80, 20, 20);
-
-
 
 		//모자 패널 3
 		JPanel hatpanel3 = new JPanel();
@@ -843,7 +831,7 @@ class shop extends JFrame{
 		JLabel epsshoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		epsshoplabel2.setBounds(0, 0, 170, 190);
 
-		JLabel eps2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sushi.png").getImage().getScaledInstance(100, 100, 0)));
+		JLabel eps2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\풍차.png").getImage().getScaledInstance(100, 100, 0)));
 		eps2.setLayout(null);
 		eps2.setBounds(35, 40, 100, 100);
 
@@ -902,17 +890,16 @@ class shop extends JFrame{
 		epsright4.setBounds(140, 80, 20, 20);
 		
 		
-		robpanel1.add(rod1);
+		robpanel1.add(rob1);
+		robpanel1.add(robpurchase);
 		robpanel1.add("r1",robright1);
 		robpanel1.add("l1",robleft1);
-		robpanel2.add(rod2);
+		robpanel2.add(rob2);
 		robpanel2.add("r2",robright2);
 		robpanel2.add("l2",robleft2);
-		robpanel3.add(rod3);
+		robpanel3.add(rob3);
 		robpanel3.add("r3",robright3);
 		robpanel3.add("l3",robleft3);
-		robpanel4.add("r4",robright4);
-		robpanel4.add("l4",robleft4);
 		
 		hatpanel1.add(hat1);
 		hatpanel1.add("r1",hatright1);
@@ -943,7 +930,7 @@ class shop extends JFrame{
 		epspanel1.add(eps1);
 		epspanel1.add("r1",epsright1);
 		epspanel1.add("l1",epsleft1);
-		epspanel2.add(food2);
+		epspanel2.add(eps2);
 		epspanel2.add("r2",epsright2);
 		epspanel2.add("l2",epsleft2);
 		epspanel3.add(eps3);
@@ -957,7 +944,6 @@ class shop extends JFrame{
 		robpanel1.setVisible(false);
 		robpanel2.setVisible(false);
 		robpanel3.setVisible(false);
-		robpanel4.setVisible(false);
 		
 		hatpanel1.setVisible(false);
 		hatpanel2.setVisible(false);
@@ -980,15 +966,13 @@ class shop extends JFrame{
 				robpanel1.setVisible(false);
 				robpanel2.setVisible(true);
 				robpanel3.setVisible(false);
-				robpanel4.setVisible(false);
 			}
 		});
 		robleft1.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
-				robpanel1.setVisible(false);
+				robpanel1.setVisible(true);
 				robpanel2.setVisible(false);
 				robpanel3.setVisible(false);
-				robpanel4.setVisible(true);
 			}
 		});
 		
@@ -997,7 +981,6 @@ class shop extends JFrame{
 				robpanel1.setVisible(false);
 				robpanel2.setVisible(false);
 				robpanel3.setVisible(true);
-				robpanel4.setVisible(false);
 			}
 		});
 		robleft2.addMouseListener(new MouseAdapter() {
@@ -1005,16 +988,14 @@ class shop extends JFrame{
 				robpanel1.setVisible(true);
 				robpanel2.setVisible(false);
 				robpanel3.setVisible(false);
-				robpanel4.setVisible(false);
 			}
 		});
 		
 		robright3.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
-				robpanel1.setVisible(false);
+				robpanel1.setVisible(true);
 				robpanel2.setVisible(false);
 				robpanel3.setVisible(false);
-				robpanel4.setVisible(true);
 			}
 		});
 		robleft3.addMouseListener(new MouseAdapter() {
@@ -1022,24 +1003,6 @@ class shop extends JFrame{
 				robpanel1.setVisible(false);
 				robpanel2.setVisible(true);
 				robpanel3.setVisible(false);
-				robpanel4.setVisible(false);
-			}
-		});
-		
-		robright4.addMouseListener(new MouseAdapter() {
-			@Override public void mousePressed(MouseEvent e) {
-				robpanel1.setVisible(true);
-				robpanel2.setVisible(false);
-				robpanel3.setVisible(false);
-				robpanel4.setVisible(false);
-			}
-		});
-		robleft4.addMouseListener(new MouseAdapter() {
-			@Override public void mousePressed(MouseEvent e) {
-				robpanel1.setVisible(false);
-				robpanel2.setVisible(false);
-				robpanel3.setVisible(true);
-				robpanel4.setVisible(false);
 			}
 		});
 		
@@ -1255,7 +1218,6 @@ class shop extends JFrame{
 		robpanel1.add(shoplabel1);
 		robpanel2.add(shoplabel2);
 		robpanel3.add(shoplabel3);
-		robpanel4.add(shoplabel4);
 		
 		hatpanel1.add(hatshoplabel1);
 		hatpanel2.add(hatshoplabel2);
@@ -1276,7 +1238,6 @@ class shop extends JFrame{
 		this.add("p1",robpanel1);
 		this.add("p2",robpanel2);
 		this.add("p3",robpanel3);
-		this.add("p4",robpanel4);
 		
 		this.add("p1",hatpanel1);
 		this.add("p2",hatpanel2);
@@ -1299,8 +1260,7 @@ class shop extends JFrame{
 				panel.setVisible(false);
 				robpanel1.setVisible(true);
 				robpanel2.setVisible(false);
-				robpanel3.setVisible(false);				
-				robpanel4.setVisible(false);
+				robpanel3.setVisible(false);	
 			}
 		});
 		
