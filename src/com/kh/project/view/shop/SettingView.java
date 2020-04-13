@@ -740,19 +740,48 @@ class shop extends JFrame{
 		this.add("p4",panel4);
 		
 		panel.add(robButton);
-		
 		robButton.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
 				panel.setVisible(false);
 				panel1.setVisible(true);
 				panel2.setVisible(false);
-				panel3.setVisible(false);
+				panel3.setVisible(false);				
 				panel4.setVisible(false);
 			}
 		});
-		//panel.add(foodButton);
-		//panel.add(epsButton);
-		//panel.add(hatButton);
+		
+		panel.add(foodButton);
+		foodButton.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel.setVisible(false);
+				panel1.setVisible(true);
+				panel2.setVisible(false);
+				panel3.setVisible(false);				
+				panel4.setVisible(false);
+			}
+		});
+		
+		panel.add(epsButton);
+		epsButton.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel.setVisible(false);
+				panel1.setVisible(true);
+				panel2.setVisible(false);
+				panel3.setVisible(false);				
+				panel4.setVisible(false);
+			}
+		});
+		
+		panel.add(hatButton);
+		hatButton.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel.setVisible(false);
+				panel1.setVisible(true);
+				panel2.setVisible(false);
+				panel3.setVisible(false);				
+				panel4.setVisible(false);
+			}
+		});
 
 		this.add(backButton);
 		this.add(panel);
