@@ -31,6 +31,9 @@ public class MainShopView extends JPanel{
 		JButton robButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/rod.png").getImage().getScaledInstance(100, 100, 0)));
 		robButton.setBounds(72, 188, 100, 100);
 		
+		
+		
+		
 		JButton foodButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/fish.png").getImage().getScaledInstance(100, 100, 0)));
 		foodButton.setBounds(183, 188, 100, 100);
 		
