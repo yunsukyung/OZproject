@@ -15,5 +15,6 @@ public class bohoonView {
 		
 		mf.setVisible(true);
 		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	}
 }
