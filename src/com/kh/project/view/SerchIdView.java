@@ -23,6 +23,7 @@ import com.kh.project.view.MakeIdView2.MyMouseAdapter;
 public class SerchIdView extends JPanel{
 	private MainView mf;
 	private JPanel serchidview;
+	
 	Player p = new Player();
 	LoginManager lm = new LoginManager();
 	JTextField tf = new JTextField(10);
@@ -79,8 +80,8 @@ public class SerchIdView extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
-			if(new LoginManager().SearchId(tf.getText(), tf2.getText(), tf3.getText())) {
+			p = lm.SearchId(tf.getText(), tf2.getText(), tf3.getText());
+			if(p != null) {
 				Dialog searchid = new Dialog(mf, "find ID / password");
 				searchid.setVisible(true);
 				searchid.setBounds(150, 250, 150, 150);
@@ -128,7 +129,8 @@ public class SerchIdView extends JPanel{
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						searchid.dispose(); return;
+						searchid.dispose();
+						ChangePanel.changePanel(mf, serchidview, new LoginView(mf));
 						
 					}
 				});
