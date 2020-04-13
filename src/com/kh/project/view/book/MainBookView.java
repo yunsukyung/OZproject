@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.kh.project.view.HomeView;
 import com.kh.project.view.MainView;
 
 public class MainBookView extends JFrame {
@@ -37,28 +38,28 @@ public class MainBookView extends JFrame {
 		back.setLayout(null);
 		back.setBackground(new Color(0, 0, 0, 0));
 		
-		JLabel book = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\book.PNG").getImage().getScaledInstance(292, 520, 0)));
+		JLabel book = new JLabel(new ImageIcon(new ImageIcon("src\\image\\book\\book.PNG").getImage().getScaledInstance(224, 370, 0)));
 		book.setBounds(-5, 0, 224, 370);
 
-		JButton bookbutton1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼.PNG").getImage().getScaledInstance(218, 52, 0)));
+		JButton bookbutton1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼.PNG").getImage().getScaledInstance(155, 50, 0)));
 		bookbutton1.setLayout(null);
-		bookbutton1.setBounds(72, 179, 218, 52);
+		bookbutton1.setBounds(30, 100, 155, 45);
 
-		JButton bookbutton2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼2_1.PNG").getImage().getScaledInstance(218, 52, 0)));
+		JButton bookbutton2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼2_1.PNG").getImage().getScaledInstance(155, 50, 0)));
 		bookbutton2.setLayout(null);
-		bookbutton2.setBounds(72, 249, 218, 52);
+		bookbutton2.setBounds(30, 150, 155, 45);
 
-		JButton bookbutton3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼3_1.PNG").getImage().getScaledInstance(218, 52, 0)));
+		JButton bookbutton3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼3_1.PNG").getImage().getScaledInstance(155, 50, 0)));
 		bookbutton3.setLayout(null);
-		bookbutton3.setBounds(72, 316, 218, 52);
+		bookbutton3.setBounds(30, 200, 155, 45);
 
-		JButton bookbutton4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼4_1.PNG").getImage().getScaledInstance(218, 52, 0)));
+		JButton bookbutton4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\book\\업적버튼4_1.PNG").getImage().getScaledInstance(155, 50, 0)));
 		bookbutton4.setLayout(null);
-		bookbutton4.setBounds(72, 384, 218, 52);
+		bookbutton4.setBounds(30, 250, 155, 45);
 		
 		JButton backbutton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
 		backbutton.setLayout(null);
-		backbutton.setBounds(130, 469, 98, 35);
+		backbutton.setBounds(55, 310, 98, 35);
 		backbutton.addMouseListener(new MyMouseAdapter());
 		
 		//액션
@@ -110,11 +111,11 @@ public class MainBookView extends JFrame {
 		
 	}
 	
-	
+	//나가기
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+			dispose();
 		}
 	}
 	

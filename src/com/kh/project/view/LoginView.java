@@ -23,7 +23,7 @@ import javax.swing.JTextField;
 
 import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
-//아이디랑 비번입력안하면 아이디 또는 비밀번호를 입력하세요 뜨게해야함
+
 public class LoginView extends JPanel{
 
 	private MainView mf;
@@ -31,7 +31,7 @@ public class LoginView extends JPanel{
 	JTextField Idtf = new JTextField(30);
 	JPasswordField password = new JPasswordField(30);
 	LoginManager lm = new LoginManager();
-	
+
 	Player p = new Player();
 	public LoginView(MainView mf) {
 		this.mf = mf;
@@ -71,8 +71,9 @@ public class LoginView extends JPanel{
 		button3.setBounds(220, 220, 60, 20);
 
 		button1.addMouseListener(new MyMouseAdapter());
-		//button1.addKeyListener(new MyKeyAdapter());
-		
+//		button1.addKeyListener(new MyKeyAdapter());
+//		button1.setFocusable(true);
+
 		button2.addMouseListener(new MyMouseAdapter2());
 		button3.addMouseListener(new MyMouseAdapter3());
 
@@ -91,47 +92,50 @@ public class LoginView extends JPanel{
 		mf.add(this);
 		mf.revalidate();
 	}
-//	
+
 //	class MyKeyAdapter extends KeyAdapter {
 //		@Override
 //		public void keyPressed(KeyEvent e) {
-//			ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
-//		}
+//			if(e.getKeyCode() == 13) {
+//				ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
+//
+//			}
+//		}	
 //	}
 
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+
 			if(lm.LoginId(Idtf.getText(), password.getPassword()) == null) {
 				Dialog check = new Dialog(mf, "아이디, 비밀번호 오류");
 				check.setVisible(true);
 				check.setBounds(120, 250, 200, 200);
-				
-				
+
+
 				JLabel id = new JLabel("<html>아이디 또는 비밀번호가 다릅니다.<html>");
 				id.setBounds(10, 30, 150, 50);
-				
-				
-				
+
+
+
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				check.add(button, BorderLayout.SOUTH);
 				check.add(id);
-				
-				
+
+
 				button.addActionListener(new ActionListener() {
-					
+
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						check.dispose(); return;
-						
+
 					}
 				});
 			} else {
 				ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 			}
-			
+
 
 
 		}

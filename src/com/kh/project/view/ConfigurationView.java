@@ -1,6 +1,8 @@
 package com.kh.project.view;
 
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -9,9 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 
+import com.kh.project.model.vo.Player;
+
+
+
 public class ConfigurationView extends JFrame {
 	private JFrame mo;
 	private MainView mf;
+	Player p = new Player();
 	public ConfigurationView(MainView mf) {
 		this.mf = mf;
 		this.mo = this;
@@ -34,6 +41,8 @@ public class ConfigurationView extends JFrame {
 		quitbutton.setFocusPainted(false);
 		quitbutton.setContentAreaFilled(false);
 		
+		quitbutton.addMouseListener(new MyMouseAdepter2());
+		
 		JButton howtoplaybutton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\howtoplaybutton.png").getImage().getScaledInstance(119, 33, 0)));
 		howtoplaybutton.setLayout(null);
 		howtoplaybutton.setBounds(45, 130, 119, 33);
@@ -41,12 +50,23 @@ public class ConfigurationView extends JFrame {
 		howtoplaybutton.setFocusPainted(false);
 		howtoplaybutton.setContentAreaFilled(false);
 		
+		howtoplaybutton.addMouseListener(new MyMouseAdepter3());
+		
+		
 		JButton imforbutton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\inforbutton.png").getImage().getScaledInstance(119, 33, 0)));
 		imforbutton.setLayout(null);
 		imforbutton.setBounds(45, 230, 119, 33);
 		imforbutton.setBorderPainted(false);
 		imforbutton.setFocusPainted(false);
 		imforbutton.setContentAreaFilled(false);
+		
+		imforbutton.addMouseListener(new MyMouseAdepter4());
+		
+		JButton backbutton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
+		backbutton.setLayout(null);
+		backbutton.setBounds(55, 310, 98, 35);
+		backbutton.addMouseListener(new MyMouseAdapter());
+		
 		
 		JSlider s = new JSlider(0,10,5);
 		s.setMinorTickSpacing(1);
@@ -68,5 +88,40 @@ public class ConfigurationView extends JFrame {
 		this.setResizable(false); 
 		
 	}
+	
+	//셋팅나가기
+	class MyMouseAdapter extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			dispose();
+		}
+	}
+	
+	//게임끄기
+	class MyMouseAdepter2 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			System.exit(0);
+		}
+	}
+	
+	//사용방법
+	class MyMouseAdepter3 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			dispose();
+			ChangePanel.changeFrame(mf, mo, new ExplainView(mf, p));
+		}
+	}
+	
+	//infor
+	class MyMouseAdepter4 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			dispose();
+			ChangePanel.changeFrame(mf, mo, new InforMationView(mf));
+		}
+	}
+	
 	
 }
