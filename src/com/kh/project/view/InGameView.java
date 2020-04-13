@@ -192,16 +192,16 @@ public class InGameView extends JPanel implements Runnable{
 			
 			if(e.getKeyCode() == 39) {
 				
-				if(label.getLocation().getX()<= -600) label.setLocation(p.x,p.y);
-				else if (label.getLocation().getX()>-600){
+				if(label.getLocation().getX()< -600) label.setLocation(p.x,p.y);
+				else if (label.getLocation().getX()>=-600){
 					label.setLocation(p.x - size,p.y);
 					gtf.setLocation(gtf.getX() + size,gtf.getY());
 				}
 			}
 			
 			if(e.getKeyCode() == 37) {
-				if(label.getLocation().getX()> 0) label.setLocation(p.x,p.y);
-				else if (label.getLocation().getX()<= 0){
+				if(label.getLocation().getX()>= 0) label.setLocation(p.x,p.y);
+				else if (label.getLocation().getX()< 0){
 					label.setLocation(p.x + size,p.y);
 					gtf.setLocation(gtf.getX() - size,gtf.getY());
 				}
