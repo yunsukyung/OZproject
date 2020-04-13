@@ -667,10 +667,10 @@ class shop extends JFrame{
 		JLabel hatshoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		hatshoplabel2.setBounds(0, 0, 170, 190);
 
-		JLabel hat2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\IMG_1513.PNG").getImage().getScaledInstance(100, 100, 0)));
+		JLabel hat2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\hat.png").getImage().getScaledInstance(100, 100, 0)));
 		hat2.setLayout(null);
 		hat2.setBounds(35, 40, 100, 100);
-
+		
 		JButton hatleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft2.setLayout(null);
 		hatleft2.setBounds(10, 80, 20, 20);
@@ -690,7 +690,7 @@ class shop extends JFrame{
 		JLabel hatshoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		hatshoplabel3.setBounds(0, 0, 170, 190);
 
-		JLabel hat3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\IMG_1512.PNG").getImage().getScaledInstance(100, 100, 0)));
+		JLabel hat3 = new JLabel(new ImageIcon(new ImageIcon("src\\\\image\\\\start\\\\IMG_1513.PNG").getImage().getScaledInstance(100, 100, 0)));
 		hat3.setLayout(null);
 		hat3.setBounds(35, 40, 100, 100);
 
@@ -711,6 +711,11 @@ class shop extends JFrame{
 
 		JLabel hatshoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		hatshoplabel4.setBounds(0, 0, 170, 190);
+		
+		JLabel hat4 = new JLabel(new ImageIcon(new ImageIcon("src\\\\image\\\\start\\\\IMG_1512.PNG").getImage().getScaledInstance(100, 100, 0)));
+		hat4.setLayout(null);
+		hat4.setBounds(35, 40, 100, 100);
+		
 		//왼쪽
 		JButton hatleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft4.setLayout(null);
@@ -720,9 +725,181 @@ class shop extends JFrame{
 		hatright4.setLayout(null);
 		hatright4.setBounds(140, 80, 20, 20);
 
+		//음식 패널 1
+		JPanel foodpanel1 = new JPanel();
+		foodpanel1.setLayout(null);
+		foodpanel1.setBounds(25, 100, 170, 190);
+		foodpanel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel foodshoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		foodshoplabel1.setBounds(0, 0, 170, 190);
+
+		JLabel food1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\fish.png").getImage().getScaledInstance(100, 100, 0)));
+		food1.setLayout(null);
+		food1.setBounds(35, 40, 100, 100);
+
+		JButton foodleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		foodleft1.setLayout(null);
+		foodleft1.setBounds(10, 80, 20, 20);
+
+		JButton foodright1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		foodright1.setLayout(null);
+		foodright1.setBounds(140, 80, 20, 20);
+
+		//음식 패널 2
+		JPanel foodpanel2 = new JPanel();
+		foodpanel2.setLayout(null);
+		foodpanel2.setBounds(25, 100, 170, 190);
+		foodpanel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel foodshoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		foodshoplabel2.setBounds(0, 0, 170, 190);
+
+		JLabel food2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sushi.png").getImage().getScaledInstance(100, 100, 0)));
+		food2.setLayout(null);
+		food2.setBounds(35, 40, 100, 100);
+
+		JButton foodleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		foodleft2.setLayout(null);
+		foodleft2.setBounds(10, 80, 20, 20);
+
+		JButton foodright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		foodright2.setLayout(null);
+		foodright2.setBounds(140, 80, 20, 20);
 
 
+
+		//음식 패널 3
+		JPanel foodpanel3 = new JPanel();
+		foodpanel3.setLayout(null);
+		foodpanel3.setBounds(25, 100, 170, 280);
+		foodpanel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel foodshoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		foodshoplabel3.setBounds(0, 0, 170, 190);
+
+		JLabel food3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\장어구이.png").getImage().getScaledInstance(100, 100, 0)));
+		food3.setLayout(null);
+		food3.setBounds(35, 40, 100, 100);
+
+		JButton foodleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		foodleft3.setLayout(null);
+		foodleft3.setBounds(10, 80, 20, 20);
+
+		JButton foodright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		foodright3.setLayout(null);
+		foodright3.setBounds(140, 80, 20, 20);
+
+
+		//음식 패널4
+		JPanel foodpanel4 = new JPanel();
+		foodpanel4.setLayout(null);
+		foodpanel4.setBounds(25, 100, 170, 280);
+		foodpanel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel foodshoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		foodshoplabel4.setBounds(0, 0, 170, 190);
 		
+		JLabel food4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sushi (1).png").getImage().getScaledInstance(100, 100, 0)));
+		food4.setLayout(null);
+		food4.setBounds(35, 40, 100, 100);
+		
+		//왼쪽
+		JButton foodleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		foodleft4.setLayout(null);
+		foodleft4.setBounds(10, 80, 20, 20);
+		//오른쪽
+		JButton foodright4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		foodright4.setLayout(null);
+		foodright4.setBounds(140, 80, 20, 20);
+
+		//발전소 패널 1
+		JPanel epspanel1 = new JPanel();
+		epspanel1.setLayout(null);
+		epspanel1.setBounds(25, 100, 170, 190);
+		epspanel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel epsshoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		epsshoplabel1.setBounds(0, 0, 170, 190);
+
+		JLabel eps1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\winter.png").getImage().getScaledInstance(100, 100, 0)));
+		eps1.setLayout(null);
+		eps1.setBounds(35, 40, 100, 100);
+
+		JButton epsleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		epsleft1.setLayout(null);
+		epsleft1.setBounds(10, 80, 20, 20);
+
+		JButton epsright1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		epsright1.setLayout(null);
+		epsright1.setBounds(140, 80, 20, 20);
+
+		//발전소 패널 2
+		JPanel epspanel2 = new JPanel();
+		epspanel2.setLayout(null);
+		epspanel2.setBounds(25, 100, 170, 190);
+		epspanel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel epsshoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		epsshoplabel2.setBounds(0, 0, 170, 190);
+
+		JLabel eps2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sushi.png").getImage().getScaledInstance(100, 100, 0)));
+		eps2.setLayout(null);
+		eps2.setBounds(35, 40, 100, 100);
+
+		JButton epsleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		epsleft2.setLayout(null);
+		epsleft2.setBounds(10, 80, 20, 20);
+
+		JButton epsright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		epsright2.setLayout(null);
+		epsright2.setBounds(140, 80, 20, 20);
+
+
+
+		//발전소 패널 3
+		JPanel epspanel3 = new JPanel();
+		epspanel3.setLayout(null);
+		epspanel3.setBounds(25, 100, 170, 280);
+		epspanel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel epsshoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		epsshoplabel3.setBounds(0, 0, 170, 190);
+
+		JLabel eps3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\EPSView(1).png").getImage().getScaledInstance(100, 100, 0)));
+		eps3.setLayout(null);
+		eps3.setBounds(35, 40, 100, 100);
+
+		JButton epsleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		epsleft3.setLayout(null);
+		epsleft3.setBounds(10, 80, 20, 20);
+
+		JButton epsright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		epsright3.setLayout(null);
+		epsright3.setBounds(140, 80, 20, 20);
+
+
+		//발전소 패널4
+		JPanel epspanel4 = new JPanel();
+		epspanel4.setLayout(null);
+		epspanel4.setBounds(25, 100, 170, 280);
+		epspanel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel epsshoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		epsshoplabel4.setBounds(0, 0, 170, 190);
+		
+		JLabel eps4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\planet-earth.png").getImage().getScaledInstance(100, 100, 0)));
+		eps4.setLayout(null);
+		eps4.setBounds(35, 40, 100, 100);
+		
+		//왼쪽
+		JButton epsleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		epsleft4.setLayout(null);
+		epsleft4.setBounds(10, 80, 20, 20);
+		//오른쪽
+		JButton epsright4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		epsright4.setLayout(null);
+		epsright4.setBounds(140, 80, 20, 20);
 		
 		
 		robpanel1.add(rod1);
@@ -746,8 +923,35 @@ class shop extends JFrame{
 		hatpanel3.add(hat3);
 		hatpanel3.add("r3",hatright3);
 		hatpanel3.add("l3",hatleft3);
+		hatpanel4.add(hat4);
 		hatpanel4.add("r4",hatright4);
 		hatpanel4.add("l4",hatleft4);
+		
+		foodpanel1.add(food1);
+		foodpanel1.add("r1",foodright1);
+		foodpanel1.add("l1",foodleft1);
+		foodpanel2.add(food2);
+		foodpanel2.add("r2",foodright2);
+		foodpanel2.add("l2",foodleft2);
+		foodpanel3.add(food3);
+		foodpanel3.add("r3",foodright3);
+		foodpanel3.add("l3",foodleft3);
+		foodpanel4.add(food4);
+		foodpanel4.add("r4",foodright4);
+		foodpanel4.add("l4",foodleft4);
+		
+		epspanel1.add(eps1);
+		epspanel1.add("r1",epsright1);
+		epspanel1.add("l1",epsleft1);
+		epspanel2.add(food2);
+		epspanel2.add("r2",epsright2);
+		epspanel2.add("l2",epsleft2);
+		epspanel3.add(eps3);
+		epspanel3.add("r3",epsright3);
+		epspanel3.add("l3",epsleft3);
+		epspanel4.add(eps4);
+		epspanel4.add("r4",epsright4);
+		epspanel4.add("l4",epsleft4);
 		
 		
 		robpanel1.setVisible(false);
@@ -759,6 +963,16 @@ class shop extends JFrame{
 		hatpanel2.setVisible(false);
 		hatpanel3.setVisible(false);
 		hatpanel4.setVisible(false);
+		
+		foodpanel1.setVisible(false);
+		foodpanel2.setVisible(false);
+		foodpanel3.setVisible(false);
+		foodpanel4.setVisible(false);
+		
+		epspanel1.setVisible(false);
+		epspanel2.setVisible(false);
+		epspanel3.setVisible(false);
+		epspanel4.setVisible(false);
 		
 		//낚시대 버튼
 		robright1.addMouseListener(new MouseAdapter() {
@@ -898,6 +1112,144 @@ class shop extends JFrame{
 			}
 		});
 		
+		//음식 버튼
+		foodright1.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				foodpanel1.setVisible(false);
+				foodpanel2.setVisible(true);
+				foodpanel3.setVisible(false);
+				foodpanel4.setVisible(false);
+			}
+		});
+		foodleft1.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				foodpanel1.setVisible(false);
+				foodpanel2.setVisible(false);
+				foodpanel3.setVisible(false);
+				foodpanel4.setVisible(true);
+			}
+		});
+		
+		foodright2.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				foodpanel1.setVisible(false);
+				foodpanel2.setVisible(false);
+				foodpanel3.setVisible(true);
+				foodpanel4.setVisible(false);
+			}
+		});
+		foodleft2.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				foodpanel1.setVisible(true);
+				foodpanel2.setVisible(false);
+				foodpanel3.setVisible(false);
+				foodpanel4.setVisible(false);
+			}
+		});
+		
+		foodright3.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				foodpanel1.setVisible(false);
+				foodpanel2.setVisible(false);
+				foodpanel3.setVisible(false);
+				foodpanel4.setVisible(true);
+			}
+		});
+		foodleft3.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				foodpanel1.setVisible(false);
+				foodpanel2.setVisible(true);
+				foodpanel3.setVisible(false);
+				foodpanel4.setVisible(false);
+			}
+		});
+		
+		foodright4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				foodpanel1.setVisible(true);
+				foodpanel2.setVisible(false);
+				foodpanel3.setVisible(false);
+				foodpanel4.setVisible(false);
+			}
+		});
+		foodleft4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				foodpanel1.setVisible(false);
+				foodpanel2.setVisible(false);
+				foodpanel3.setVisible(true);
+				foodpanel4.setVisible(false);
+			}
+		});
+		
+		//발전소 버튼
+		epsright1.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				epspanel1.setVisible(false);
+				epspanel2.setVisible(true);
+				epspanel3.setVisible(false);
+				epspanel4.setVisible(false);
+			}
+		});
+		epsleft1.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				epspanel1.setVisible(false);
+				epspanel2.setVisible(false);
+				epspanel3.setVisible(false);
+				epspanel4.setVisible(true);
+			}
+		});
+		
+		epsright2.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				epspanel1.setVisible(false);
+				epspanel2.setVisible(false);
+				epspanel3.setVisible(true);
+				epspanel4.setVisible(false);
+			}
+		});
+		epsleft2.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				epspanel1.setVisible(true);
+				epspanel2.setVisible(false);
+				epspanel3.setVisible(false);
+				epspanel4.setVisible(false);
+			}
+		});
+		
+		epsright3.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				epspanel1.setVisible(false);
+				epspanel2.setVisible(false);
+				epspanel3.setVisible(false);
+				epspanel4.setVisible(true);
+			}
+		});
+		epsleft3.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				epspanel1.setVisible(false);
+				epspanel2.setVisible(true);
+				epspanel3.setVisible(false);
+				epspanel4.setVisible(false);
+			}
+		});
+		
+		epsright4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				epspanel1.setVisible(true);
+				epspanel2.setVisible(false);
+				epspanel3.setVisible(false);
+				epspanel4.setVisible(false);
+			}
+		});
+		epsleft4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				epspanel1.setVisible(false);
+				epspanel2.setVisible(false);
+				epspanel3.setVisible(true);
+				epspanel4.setVisible(false);
+			}
+		});
+		
 		
 		//패널 백그라운드 이미지
 		robpanel1.add(shoplabel1);
@@ -910,6 +1262,16 @@ class shop extends JFrame{
 		hatpanel3.add(hatshoplabel3);
 		hatpanel4.add(hatshoplabel4);
 		
+		foodpanel1.add(foodshoplabel1);
+		foodpanel2.add(foodshoplabel2);
+		foodpanel3.add(foodshoplabel3);
+		foodpanel4.add(foodshoplabel4);
+		
+		epspanel1.add(epsshoplabel1);
+		epspanel2.add(epsshoplabel2);
+		epspanel3.add(epsshoplabel3);
+		epspanel4.add(epsshoplabel4);
+		
 		//버튼 클릭스 다음 패널로 넘어가게함 
 		this.add("p1",robpanel1);
 		this.add("p2",robpanel2);
@@ -920,6 +1282,16 @@ class shop extends JFrame{
 		this.add("p2",hatpanel2);
 		this.add("p3",hatpanel3);
 		this.add("p4",hatpanel4);
+		
+		this.add("p1",foodpanel1);
+		this.add("p2",foodpanel2);
+		this.add("p3",foodpanel3);
+		this.add("p4",foodpanel4);
+		
+		this.add("p1",epspanel1);
+		this.add("p2",epspanel2);
+		this.add("p3",epspanel3);
+		this.add("p4",epspanel4);
 		
 		panel.add(robButton);
 		robButton.addMouseListener(new MouseAdapter() {
@@ -936,16 +1308,34 @@ class shop extends JFrame{
 		foodButton.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
 				panel.setVisible(false);
+				foodpanel1.setVisible(true);
+				foodpanel2.setVisible(false);
+				foodpanel3.setVisible(false);				
+				foodpanel4.setVisible(false);
+			}
+		});
+		
+		panel.add(epsButton);
+		epsButton.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel.setVisible(false);
+				epspanel1.setVisible(true);
+				epspanel2.setVisible(false);
+				epspanel3.setVisible(false);				
+				epspanel4.setVisible(false);
+			}
+		});
+		
+		panel.add(hatButton);
+		hatButton.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel.setVisible(false);
 				hatpanel1.setVisible(true);
 				hatpanel2.setVisible(false);
 				hatpanel3.setVisible(false);				
 				hatpanel4.setVisible(false);
 			}
 		});
-		
-		panel.add(epsButton);
-		panel.add(hatButton);
-
 		this.add(backButton);
 		this.add(panel);
 		this.add(label);
