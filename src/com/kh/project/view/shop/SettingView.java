@@ -550,7 +550,8 @@ class shop extends JFrame{
 		JButton epsButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/eps.png").getImage().getScaledInstance(80, 80, 0)));
 		epsButton.setBounds(90, 110, 80, 80);
 		
-		JButton hatButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/hat.png").getImage().getScaledInstance(80, 80, 0)));
+		//진주버튼으로 수정    코드는 hat으로 썼음
+		JButton hatButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(80, 80, 0)));
 		hatButton.setBounds(0, 110, 80, 80);
 		
 		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
@@ -564,6 +565,9 @@ class shop extends JFrame{
 		robpanel1.setBounds(25, 100, 170, 190);
 		robpanel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
+		JLabel rodattack1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\at1.png").getImage().getScaledInstance(65, 15, 0)));
+		rodattack1.setBounds(50, 140, 65, 15);
+		
 		JLabel shoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel1.setBounds(0, 0, 170, 190);
 		
@@ -571,7 +575,7 @@ class shop extends JFrame{
 		rob1.setLayout(null);
 		rob1.setBounds(35, 40, 100, 100);
 		
-		JButton robpurchase = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\Component 6.png").getImage().getScaledInstance(60, 30, 0)));
+		JButton robpurchase = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\50쓰.png").getImage().getScaledInstance(60, 30, 0)));
 		robpurchase.setLayout(null);
 		robpurchase.setBounds(55, 160, 60, 30);
 		
@@ -589,12 +593,19 @@ class shop extends JFrame{
 		robpanel2.setBounds(25, 100, 170, 190);
 		robpanel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
+		JLabel rodattack2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\at3.png").getImage().getScaledInstance(65, 15, 0)));
+		rodattack2.setBounds(50, 140, 65, 15);
+		
 		JLabel shoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel2.setBounds(0, 0, 170, 190);
 		
 		JLabel rob2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\제목 없음-1.png").getImage().getScaledInstance(100, 100, 0)));
 		rob2.setLayout(null);
 		rob2.setBounds(35, 40, 100, 100);
+		
+		JButton robpurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\150쓰.png").getImage().getScaledInstance(60, 30, 0)));
+		robpurchase2.setLayout(null);
+		robpurchase2.setBounds(55, 160, 60, 30);
 		
 		JButton robleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		robleft2.setLayout(null);
@@ -612,12 +623,19 @@ class shop extends JFrame{
 		robpanel3.setBounds(25, 100, 170, 280);
 		robpanel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
+		JLabel rodattack3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\at5.png").getImage().getScaledInstance(65, 15, 0)));
+		rodattack3.setBounds(50, 140, 65, 15);
+		
 		JLabel shoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel3.setBounds(0, 0, 170, 190);
 		
 		JLabel rob3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\fishing.png").getImage().getScaledInstance(100, 100, 0)));
 		rob3.setLayout(null);
 		rob3.setBounds(35, 40, 100, 100);
+		
+		JButton robpurchase3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\15진.png").getImage().getScaledInstance(60, 30, 0)));
+		robpurchase3.setLayout(null);
+		robpurchase3.setBounds(55, 160, 60, 30);
 		
 		JButton robleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		robleft3.setLayout(null);
@@ -636,10 +654,14 @@ class shop extends JFrame{
 		JLabel hatshoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		hatshoplabel1.setBounds(0, 0, 170, 190);
 
-		JLabel hat1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\IMG_1515.PNG").getImage().getScaledInstance(100, 100, 0)));
+		JLabel hat1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\10가진주.PNG").getImage().getScaledInstance(100, 100, 0)));
 		hat1.setLayout(null);
 		hat1.setBounds(35, 40, 100, 100);
 
+		JButton hatpurchase1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\1200원.png").getImage().getScaledInstance(60, 30, 0)));
+		hatpurchase1.setLayout(null);
+		hatpurchase1.setBounds(55, 160, 60, 30);
+		
 		JButton hatleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft1.setLayout(null);
 		hatleft1.setBounds(10, 80, 20, 20);
@@ -657,9 +679,13 @@ class shop extends JFrame{
 		JLabel hatshoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		hatshoplabel2.setBounds(0, 0, 170, 190);
 
-		JLabel hat2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\hat.png").getImage().getScaledInstance(100, 100, 0)));
+		JLabel hat2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\30가진주.png").getImage().getScaledInstance(100, 100, 0)));
 		hat2.setLayout(null);
 		hat2.setBounds(35, 40, 100, 100);
+		
+		JButton hatpurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\3000원.png").getImage().getScaledInstance(60, 30, 0)));
+		hatpurchase2.setLayout(null);
+		hatpurchase2.setBounds(55, 160, 60, 30);
 		
 		JButton hatleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft2.setLayout(null);
@@ -678,10 +704,14 @@ class shop extends JFrame{
 		JLabel hatshoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		hatshoplabel3.setBounds(0, 0, 170, 190);
 
-		JLabel hat3 = new JLabel(new ImageIcon(new ImageIcon("src\\\\image\\\\start\\\\IMG_1513.PNG").getImage().getScaledInstance(100, 100, 0)));
+		JLabel hat3 = new JLabel(new ImageIcon(new ImageIcon("src\\\\image\\\\start\\\\70가진주.PNG").getImage().getScaledInstance(100, 100, 0)));
 		hat3.setLayout(null);
 		hat3.setBounds(35, 40, 100, 100);
 
+		JButton hatpurchase3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\6500원.png").getImage().getScaledInstance(60, 30, 0)));
+		hatpurchase3.setLayout(null);
+		hatpurchase3.setBounds(55, 160, 60, 30);
+		
 		JButton hatleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft3.setLayout(null);
 		hatleft3.setBounds(10, 80, 20, 20);
@@ -700,9 +730,13 @@ class shop extends JFrame{
 		JLabel hatshoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		hatshoplabel4.setBounds(0, 0, 170, 190);
 		
-		JLabel hat4 = new JLabel(new ImageIcon(new ImageIcon("src\\\\image\\\\start\\\\IMG_1512.PNG").getImage().getScaledInstance(100, 100, 0)));
+		JLabel hat4 = new JLabel(new ImageIcon(new ImageIcon("src\\\\image\\\\start\\\\120가진주.PNG").getImage().getScaledInstance(100, 100, 0)));
 		hat4.setLayout(null);
 		hat4.setBounds(35, 40, 100, 100);
+		
+		JButton hatpurchase4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\10000원.png").getImage().getScaledInstance(60, 30, 0)));
+		hatpurchase4.setLayout(null);
+		hatpurchase4.setBounds(55, 160, 60, 30);
 		
 		//왼쪽
 		JButton hatleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
@@ -719,6 +753,9 @@ class shop extends JFrame{
 		foodpanel1.setBounds(25, 100, 170, 190);
 		foodpanel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 
+		JLabel foodHp1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\hx25.png").getImage().getScaledInstance(65, 15, 0)));
+		foodHp1.setBounds(50, 140, 65, 15);
+		
 		JLabel foodshoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		foodshoplabel1.setBounds(0, 0, 170, 190);
 
@@ -726,6 +763,10 @@ class shop extends JFrame{
 		food1.setLayout(null);
 		food1.setBounds(35, 40, 100, 100);
 
+		JButton foodpurchase1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\10쓰.png").getImage().getScaledInstance(60, 30, 0)));
+		foodpurchase1.setLayout(null);
+		foodpurchase1.setBounds(55, 160, 60, 30);
+		
 		JButton foodleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		foodleft1.setLayout(null);
 		foodleft1.setBounds(10, 80, 20, 20);
@@ -740,6 +781,9 @@ class shop extends JFrame{
 		foodpanel2.setBounds(25, 100, 170, 190);
 		foodpanel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 
+		JLabel foodHp2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\hx50.png").getImage().getScaledInstance(65, 15, 0)));
+		foodHp2.setBounds(50, 140, 65, 15);
+		
 		JLabel foodshoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		foodshoplabel2.setBounds(0, 0, 170, 190);
 
@@ -747,6 +791,10 @@ class shop extends JFrame{
 		food2.setLayout(null);
 		food2.setBounds(35, 40, 100, 100);
 
+		JButton foodpurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\30쓰.png").getImage().getScaledInstance(60, 30, 0)));
+		foodpurchase2.setLayout(null);
+		foodpurchase2.setBounds(55, 160, 60, 30);
+		
 		JButton foodleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		foodleft2.setLayout(null);
 		foodleft2.setBounds(10, 80, 20, 20);
@@ -763,6 +811,9 @@ class shop extends JFrame{
 		foodpanel3.setBounds(25, 100, 170, 280);
 		foodpanel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 
+		JLabel foodHp3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\hx75.png").getImage().getScaledInstance(65, 15, 0)));
+		foodHp3.setBounds(50, 140, 65, 15);
+		
 		JLabel foodshoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		foodshoplabel3.setBounds(0, 0, 170, 190);
 
@@ -770,6 +821,10 @@ class shop extends JFrame{
 		food3.setLayout(null);
 		food3.setBounds(35, 40, 100, 100);
 
+		JButton foodpurchase3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\50쓰.png").getImage().getScaledInstance(60, 30, 0)));
+		foodpurchase3.setLayout(null);
+		foodpurchase3.setBounds(55, 160, 60, 30);
+		
 		JButton foodleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		foodleft3.setLayout(null);
 		foodleft3.setBounds(10, 80, 20, 20);
@@ -785,12 +840,19 @@ class shop extends JFrame{
 		foodpanel4.setBounds(25, 100, 170, 280);
 		foodpanel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 
+		JLabel foodHp4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\hx100.png").getImage().getScaledInstance(65, 15, 0)));
+		foodHp4.setBounds(50, 140, 65, 15);
+		
 		JLabel foodshoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		foodshoplabel4.setBounds(0, 0, 170, 190);
 		
 		JLabel food4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sushi (1).png").getImage().getScaledInstance(100, 100, 0)));
 		food4.setLayout(null);
 		food4.setBounds(35, 40, 100, 100);
+		
+		JButton foodpurchase4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\5진.png").getImage().getScaledInstance(60, 30, 0)));
+		foodpurchase4.setLayout(null);
+		foodpurchase4.setBounds(55, 160, 60, 30);
 		
 		//왼쪽
 		JButton foodleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
@@ -806,6 +868,9 @@ class shop extends JFrame{
 		epspanel1.setLayout(null);
 		epspanel1.setBounds(25, 100, 170, 190);
 		epspanel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		
+		JLabel epsAbility = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\eps1.png").getImage().getScaledInstance(65, 15, 0)));
+		epsAbility.setBounds(50, 140, 65, 15);
 
 		JLabel epsshoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		epsshoplabel1.setBounds(0, 0, 170, 190);
@@ -814,6 +879,10 @@ class shop extends JFrame{
 		eps1.setLayout(null);
 		eps1.setBounds(35, 40, 100, 100);
 
+		JButton epspurchase1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\500쓰.png").getImage().getScaledInstance(60, 30, 0)));
+		epspurchase1.setLayout(null);
+		epspurchase1.setBounds(55, 160, 60, 30);
+		
 		JButton epsleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		epsleft1.setLayout(null);
 		epsleft1.setBounds(10, 80, 20, 20);
@@ -831,10 +900,18 @@ class shop extends JFrame{
 		JLabel epsshoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		epsshoplabel2.setBounds(0, 0, 170, 190);
 
+		JLabel epsAbility2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\eps3.png").getImage().getScaledInstance(65, 15, 0)));
+		epsAbility2.setBounds(50, 140, 65, 15);
+
 		JLabel eps2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\풍차.png").getImage().getScaledInstance(100, 100, 0)));
 		eps2.setLayout(null);
 		eps2.setBounds(35, 40, 100, 100);
 
+		JButton epspurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\75진.png").getImage().getScaledInstance(60, 30, 0)));
+		epspurchase2.setLayout(null);
+		epspurchase2.setBounds(55, 160, 60, 30);
+
+		
 		JButton epsleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		epsleft2.setLayout(null);
 		epsleft2.setBounds(10, 80, 20, 20);
@@ -854,9 +931,16 @@ class shop extends JFrame{
 		JLabel epsshoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		epsshoplabel3.setBounds(0, 0, 170, 190);
 
+		JLabel epsAbility3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\eps5.png").getImage().getScaledInstance(65, 15, 0)));
+		epsAbility3.setBounds(50, 140, 65, 15);
+		
 		JLabel eps3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\EPSView(1).png").getImage().getScaledInstance(100, 100, 0)));
 		eps3.setLayout(null);
 		eps3.setBounds(35, 40, 100, 100);
+
+		JButton epspurchase3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\75진.png").getImage().getScaledInstance(60, 30, 0)));
+		epspurchase3.setLayout(null);
+		epspurchase3.setBounds(55, 160, 60, 30);
 
 		JButton epsleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		epsleft3.setLayout(null);
@@ -876,10 +960,17 @@ class shop extends JFrame{
 		JLabel epsshoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		epsshoplabel4.setBounds(0, 0, 170, 190);
 		
+		JLabel epsAbility4 = new JLabel("clean earth");
+		epsAbility4.setBounds(50, 140, 65, 15);
+		
 		JLabel eps4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\planet-earth.png").getImage().getScaledInstance(100, 100, 0)));
 		eps4.setLayout(null);
 		eps4.setBounds(35, 40, 100, 100);
-		
+
+		JButton epspurchase4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\135진.png").getImage().getScaledInstance(60, 30, 0)));
+		epspurchase4.setLayout(null);
+		epspurchase4.setBounds(55, 160, 60, 30);
+
 		//왼쪽
 		JButton epsleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		epsleft4.setLayout(null);
@@ -891,54 +982,79 @@ class shop extends JFrame{
 		
 		
 		robpanel1.add(rob1);
+		robpanel1.add(rodattack1);
 		robpanel1.add(robpurchase);
 		robpanel1.add("r1",robright1);
 		robpanel1.add("l1",robleft1);
+		robpanel2.add(rodattack2);
 		robpanel2.add(rob2);
+		robpanel2.add(robpurchase2);
 		robpanel2.add("r2",robright2);
 		robpanel2.add("l2",robleft2);
+		robpanel3.add(rodattack3);
 		robpanel3.add(rob3);
+		robpanel3.add(robpurchase3);
 		robpanel3.add("r3",robright3);
 		robpanel3.add("l3",robleft3);
 		
 		hatpanel1.add(hat1);
 		hatpanel1.add("r1",hatright1);
 		hatpanel1.add("l1",hatleft1);
+		hatpanel1.add(hatpurchase1);
 		hatpanel2.add(hat2);
 		hatpanel2.add("r2",hatright2);
 		hatpanel2.add("l2",hatleft2);
+		hatpanel2.add(hatpurchase2);
 		hatpanel3.add(hat3);
 		hatpanel3.add("r3",hatright3);
 		hatpanel3.add("l3",hatleft3);
+		hatpanel3.add(hatpurchase3);
 		hatpanel4.add(hat4);
 		hatpanel4.add("r4",hatright4);
 		hatpanel4.add("l4",hatleft4);
+		hatpanel4.add(hatpurchase4);
 		
 		foodpanel1.add(food1);
+		foodpanel1.add(foodHp1);
 		foodpanel1.add("r1",foodright1);
 		foodpanel1.add("l1",foodleft1);
+		foodpanel1.add(foodpurchase1);
+		foodpanel2.add(foodHp2);
 		foodpanel2.add(food2);
 		foodpanel2.add("r2",foodright2);
 		foodpanel2.add("l2",foodleft2);
+		foodpanel2.add(foodpurchase2);
+		foodpanel3.add(foodHp3);
 		foodpanel3.add(food3);
 		foodpanel3.add("r3",foodright3);
 		foodpanel3.add("l3",foodleft3);
+		foodpanel3.add(foodpurchase3);
+		foodpanel4.add(foodHp4);
 		foodpanel4.add(food4);
 		foodpanel4.add("r4",foodright4);
 		foodpanel4.add("l4",foodleft4);
+		foodpanel4.add(foodpurchase4);
 		
+		epspanel1.add(epsAbility);
 		epspanel1.add(eps1);
 		epspanel1.add("r1",epsright1);
 		epspanel1.add("l1",epsleft1);
+		epspanel1.add(epspurchase1);
+		epspanel2.add(epsAbility2);
 		epspanel2.add(eps2);
 		epspanel2.add("r2",epsright2);
 		epspanel2.add("l2",epsleft2);
+		epspanel2.add(epspurchase2);
+		epspanel3.add(epsAbility3);
 		epspanel3.add(eps3);
 		epspanel3.add("r3",epsright3);
 		epspanel3.add("l3",epsleft3);
+		epspanel3.add(epspurchase3);
+		epspanel4.add(epsAbility4);
 		epspanel4.add(eps4);
 		epspanel4.add("r4",epsright4);
 		epspanel4.add("l4",epsleft4);
+		epspanel4.add(epspurchase4);
 		
 		
 		robpanel1.setVisible(false);
