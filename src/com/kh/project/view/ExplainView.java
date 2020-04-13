@@ -36,7 +36,7 @@ public class ExplainView extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			ChangePanel.changePanel(mf, explainView, new HomeView(mf));
+			ChangePanel.changePanel(mf, explainView, new HomeView(mf, p));
 		}
 	}
 	
