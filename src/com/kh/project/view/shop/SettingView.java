@@ -553,11 +553,11 @@ class shop extends JFrame{
 		backButton.setBounds(60, 300, 98, 35);
 		
 		
-		//카드 패널 1
-		JPanel panel1 = new JPanel();
-		panel1.setLayout(null);
-		panel1.setBounds(25, 100, 170, 190);
-		panel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		//낚시대 패널 1
+		JPanel robpanel1 = new JPanel();
+		robpanel1.setLayout(null);
+		robpanel1.setBounds(25, 100, 170, 190);
+		robpanel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
 		JLabel shoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel1.setBounds(0, 0, 170, 190);
@@ -566,19 +566,19 @@ class shop extends JFrame{
 		rod1.setLayout(null);
 		rod1.setBounds(35, 40, 100, 100);
 		
-		JButton left1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
-		left1.setLayout(null);
-		left1.setBounds(10, 80, 20, 20);
+		JButton robleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		robleft1.setLayout(null);
+		robleft1.setBounds(10, 80, 20, 20);
 		
-		JButton right1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
-		right1.setLayout(null);
-		right1.setBounds(140, 80, 20, 20);
+		JButton robright1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		robright1.setLayout(null);
+		robright1.setBounds(140, 80, 20, 20);
 		
-		//카드 패널 2
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(null);
-		panel2.setBounds(25, 100, 170, 190);
-		panel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		//낚시대 패널 2
+		JPanel robpanel2 = new JPanel();
+		robpanel2.setLayout(null);
+		robpanel2.setBounds(25, 100, 170, 190);
+		robpanel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
 		JLabel shoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel2.setBounds(0, 0, 170, 190);
@@ -587,21 +587,21 @@ class shop extends JFrame{
 		rod2.setLayout(null);
 		rod2.setBounds(35, 40, 100, 100);
 		
-		JButton left2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
-		left2.setLayout(null);
-		left2.setBounds(10, 80, 20, 20);
+		JButton robleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		robleft2.setLayout(null);
+		robleft2.setBounds(10, 80, 20, 20);
 		
-		JButton right2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
-		right2.setLayout(null);
-		right2.setBounds(140, 80, 20, 20);
+		JButton robright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		robright2.setLayout(null);
+		robright2.setBounds(140, 80, 20, 20);
 		
 
 		
-		//카드 패널 3
-		JPanel panel3 = new JPanel();
-		panel3.setLayout(null);
-		panel3.setBounds(25, 100, 170, 280);
-		panel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		//낚시대 패널 3
+		JPanel robpanel3 = new JPanel();
+		robpanel3.setLayout(null);
+		robpanel3.setBounds(25, 100, 170, 280);
+		robpanel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
 		JLabel shoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel3.setBounds(0, 0, 170, 190);
@@ -610,149 +610,341 @@ class shop extends JFrame{
 		rod3.setLayout(null);
 		rod3.setBounds(35, 40, 100, 100);
 		
-		JButton left3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
-		left3.setLayout(null);
-		left3.setBounds(10, 80, 20, 20);
+		JButton robleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		robleft3.setLayout(null);
+		robleft3.setBounds(10, 80, 20, 20);
 		
-		JButton right3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
-		right3.setLayout(null);
-		right3.setBounds(140, 80, 20, 20);
+		JButton robright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		robright3.setLayout(null);
+		robright3.setBounds(140, 80, 20, 20);
 		
 
-		//카드 패널4
-		JPanel panel4 = new JPanel();
-		panel4.setLayout(null);
-		panel4.setBounds(25, 100, 170, 280);
-		panel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+		//낚시대 패널4
+		JPanel robpanel4 = new JPanel();
+		robpanel4.setLayout(null);
+		robpanel4.setBounds(25, 100, 170, 280);
+		robpanel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
 		
 		JLabel shoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
 		shoplabel4.setBounds(0, 0, 170, 190);
 		//왼쪽
-		JButton left4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
-		left4.setLayout(null);
-		left4.setBounds(10, 80, 20, 20);
+		JButton robleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		robleft4.setLayout(null);
+		robleft4.setBounds(10, 80, 20, 20);
 		//오른쪽
-		JButton right4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
-		right4.setLayout(null);
-		right4.setBounds(140, 80, 20, 20);
+		JButton robright4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		robright4.setLayout(null);
+		robright4.setBounds(140, 80, 20, 20);
+		
+		
+		//모자 패널 1
+		JPanel hatpanel1 = new JPanel();
+		hatpanel1.setLayout(null);
+		hatpanel1.setBounds(25, 100, 170, 190);
+		hatpanel1.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel hatshoplabel1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		hatshoplabel1.setBounds(0, 0, 170, 190);
+
+		JLabel hat1 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\IMG_1515.PNG").getImage().getScaledInstance(100, 100, 0)));
+		hat1.setLayout(null);
+		hat1.setBounds(35, 40, 100, 100);
+
+		JButton hatleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		hatleft1.setLayout(null);
+		hatleft1.setBounds(10, 80, 20, 20);
+
+		JButton hatright1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		hatright1.setLayout(null);
+		hatright1.setBounds(140, 80, 20, 20);
+
+		//모자 패널 2
+		JPanel hatpanel2 = new JPanel();
+		hatpanel2.setLayout(null);
+		hatpanel2.setBounds(25, 100, 170, 190);
+		hatpanel2.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel hatshoplabel2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		hatshoplabel2.setBounds(0, 0, 170, 190);
+
+		JLabel hat2 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\IMG_1513.PNG").getImage().getScaledInstance(100, 100, 0)));
+		hat2.setLayout(null);
+		hat2.setBounds(35, 40, 100, 100);
+
+		JButton hatleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		hatleft2.setLayout(null);
+		hatleft2.setBounds(10, 80, 20, 20);
+
+		JButton hatright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		hatright2.setLayout(null);
+		hatright2.setBounds(140, 80, 20, 20);
+
+
+
+		//모자 패널 3
+		JPanel hatpanel3 = new JPanel();
+		hatpanel3.setLayout(null);
+		hatpanel3.setBounds(25, 100, 170, 280);
+		hatpanel3.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel hatshoplabel3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		hatshoplabel3.setBounds(0, 0, 170, 190);
+
+		JLabel hat3 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\IMG_1512.PNG").getImage().getScaledInstance(100, 100, 0)));
+		hat3.setLayout(null);
+		hat3.setBounds(35, 40, 100, 100);
+
+		JButton hatleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		hatleft3.setLayout(null);
+		hatleft3.setBounds(10, 80, 20, 20);
+
+		JButton hatright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		hatright3.setLayout(null);
+		hatright3.setBounds(140, 80, 20, 20);
+
+
+		//모자 패널4
+		JPanel hatpanel4 = new JPanel();
+		hatpanel4.setLayout(null);
+		hatpanel4.setBounds(25, 100, 170, 280);
+		hatpanel4.setBackground(new Color(255, 0, 0, 0));    //패널 투명
+
+		JLabel hatshoplabel4 = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\Rectangle 32.png").getImage().getScaledInstance(170, 190, 0)));
+		hatshoplabel4.setBounds(0, 0, 170, 190);
+		//왼쪽
+		JButton hatleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
+		hatleft4.setLayout(null);
+		hatleft4.setBounds(10, 80, 20, 20);
+		//오른쪽
+		JButton hatright4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
+		hatright4.setLayout(null);
+		hatright4.setBounds(140, 80, 20, 20);
+
+
+
 		
 		
 		
+		robpanel1.add(rod1);
+		robpanel1.add("r1",robright1);
+		robpanel1.add("l1",robleft1);
+		robpanel2.add(rod2);
+		robpanel2.add("r2",robright2);
+		robpanel2.add("l2",robleft2);
+		robpanel3.add(rod3);
+		robpanel3.add("r3",robright3);
+		robpanel3.add("l3",robleft3);
+		robpanel4.add("r4",robright4);
+		robpanel4.add("l4",robleft4);
 		
-		panel1.add(rod1);
-		panel1.add("r1",right1);
-		panel1.add("l1",left1);
-		panel2.add(rod2);
-		panel2.add("r2",right2);
-		panel2.add("l2",left2);
-		panel3.add(rod3);
-		panel3.add("r3",right3);
-		panel3.add("l3",left3);
-		panel4.add("r4",right4);
-		panel4.add("l4",left4);
+		hatpanel1.add(hat1);
+		hatpanel1.add("r1",hatright1);
+		hatpanel1.add("l1",hatleft1);
+		hatpanel2.add(hat2);
+		hatpanel2.add("r2",hatright2);
+		hatpanel2.add("l2",hatleft2);
+		hatpanel3.add(hat3);
+		hatpanel3.add("r3",hatright3);
+		hatpanel3.add("l3",hatleft3);
+		hatpanel4.add("r4",hatright4);
+		hatpanel4.add("l4",hatleft4);
 		
 		
-		panel1.setVisible(false);
-		panel2.setVisible(false);
-		panel3.setVisible(false);
-		panel4.setVisible(false);
+		robpanel1.setVisible(false);
+		robpanel2.setVisible(false);
+		robpanel3.setVisible(false);
+		robpanel4.setVisible(false);
 		
+		hatpanel1.setVisible(false);
+		hatpanel2.setVisible(false);
+		hatpanel3.setVisible(false);
+		hatpanel4.setVisible(false);
 		
-		right1.addMouseListener(new MouseAdapter() {
+		//낚시대 버튼
+		robright1.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
-				panel1.setVisible(false);
-				panel2.setVisible(true);
-				panel3.setVisible(false);
-				panel4.setVisible(false);
+				robpanel1.setVisible(false);
+				robpanel2.setVisible(true);
+				robpanel3.setVisible(false);
+				robpanel4.setVisible(false);
 			}
 		});
-		left1.addMouseListener(new MouseAdapter() {
+		robleft1.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
-				panel1.setVisible(false);
-				panel2.setVisible(false);
-				panel3.setVisible(false);
-				panel4.setVisible(true);
+				robpanel1.setVisible(false);
+				robpanel2.setVisible(false);
+				robpanel3.setVisible(false);
+				robpanel4.setVisible(true);
 			}
 		});
 		
-		right2.addMouseListener(new MouseAdapter() {
+		robright2.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
-				panel1.setVisible(false);
-				panel2.setVisible(false);
-				panel3.setVisible(true);
-				panel4.setVisible(false);
+				robpanel1.setVisible(false);
+				robpanel2.setVisible(false);
+				robpanel3.setVisible(true);
+				robpanel4.setVisible(false);
 			}
 		});
-		left2.addMouseListener(new MouseAdapter() {
+		robleft2.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
-				panel1.setVisible(true);
-				panel2.setVisible(false);
-				panel3.setVisible(false);
-				panel4.setVisible(false);
-			}
-		});
-		
-		right3.addMouseListener(new MouseAdapter() {
-			@Override public void mousePressed(MouseEvent e) {
-				panel1.setVisible(false);
-				panel2.setVisible(false);
-				panel3.setVisible(false);
-				panel4.setVisible(true);
-			}
-		});
-		left3.addMouseListener(new MouseAdapter() {
-			@Override public void mousePressed(MouseEvent e) {
-				panel1.setVisible(false);
-				panel2.setVisible(true);
-				panel3.setVisible(false);
-				panel4.setVisible(false);
+				robpanel1.setVisible(true);
+				robpanel2.setVisible(false);
+				robpanel3.setVisible(false);
+				robpanel4.setVisible(false);
 			}
 		});
 		
-		right4.addMouseListener(new MouseAdapter() {
+		robright3.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
-				panel1.setVisible(true);
-				panel2.setVisible(false);
-				panel3.setVisible(false);
-				panel4.setVisible(false);
+				robpanel1.setVisible(false);
+				robpanel2.setVisible(false);
+				robpanel3.setVisible(false);
+				robpanel4.setVisible(true);
 			}
 		});
-		left4.addMouseListener(new MouseAdapter() {
+		robleft3.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
-				panel1.setVisible(false);
-				panel2.setVisible(false);
-				panel3.setVisible(true);
-				panel4.setVisible(false);
+				robpanel1.setVisible(false);
+				robpanel2.setVisible(true);
+				robpanel3.setVisible(false);
+				robpanel4.setVisible(false);
+			}
+		});
+		
+		robright4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				robpanel1.setVisible(true);
+				robpanel2.setVisible(false);
+				robpanel3.setVisible(false);
+				robpanel4.setVisible(false);
+			}
+		});
+		robleft4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				robpanel1.setVisible(false);
+				robpanel2.setVisible(false);
+				robpanel3.setVisible(true);
+				robpanel4.setVisible(false);
+			}
+		});
+		
+		//모자 버튼
+		hatright1.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				hatpanel1.setVisible(false);
+				hatpanel2.setVisible(true);
+				hatpanel3.setVisible(false);
+				hatpanel4.setVisible(false);
+			}
+		});
+		hatleft1.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				hatpanel1.setVisible(false);
+				hatpanel2.setVisible(false);
+				hatpanel3.setVisible(false);
+				hatpanel4.setVisible(true);
+			}
+		});
+		
+		hatright2.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				hatpanel1.setVisible(false);
+				hatpanel2.setVisible(false);
+				hatpanel3.setVisible(true);
+				hatpanel4.setVisible(false);
+			}
+		});
+		hatleft2.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				hatpanel1.setVisible(true);
+				hatpanel2.setVisible(false);
+				hatpanel3.setVisible(false);
+				hatpanel4.setVisible(false);
+			}
+		});
+		
+		hatright3.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				hatpanel1.setVisible(false);
+				hatpanel2.setVisible(false);
+				hatpanel3.setVisible(false);
+				hatpanel4.setVisible(true);
+			}
+		});
+		hatleft3.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				hatpanel1.setVisible(false);
+				hatpanel2.setVisible(true);
+				hatpanel3.setVisible(false);
+				hatpanel4.setVisible(false);
+			}
+		});
+		
+		hatright4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				hatpanel1.setVisible(true);
+				hatpanel2.setVisible(false);
+				hatpanel3.setVisible(false);
+				hatpanel4.setVisible(false);
+			}
+		});
+		hatleft4.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				hatpanel1.setVisible(false);
+				hatpanel2.setVisible(false);
+				hatpanel3.setVisible(true);
+				hatpanel4.setVisible(false);
 			}
 		});
 		
 		
 		//패널 백그라운드 이미지
-		panel1.add(shoplabel1);
-		panel2.add(shoplabel2);
-		panel3.add(shoplabel3);
-		panel4.add(shoplabel4);
+		robpanel1.add(shoplabel1);
+		robpanel2.add(shoplabel2);
+		robpanel3.add(shoplabel3);
+		robpanel4.add(shoplabel4);
+		
+		hatpanel1.add(hatshoplabel1);
+		hatpanel2.add(hatshoplabel2);
+		hatpanel3.add(hatshoplabel3);
+		hatpanel4.add(hatshoplabel4);
 		
 		//버튼 클릭스 다음 패널로 넘어가게함 
-		this.add("p1",panel1);
-		this.add("p2",panel2);
-		this.add("p3",panel3);
-		this.add("p4",panel4);
+		this.add("p1",robpanel1);
+		this.add("p2",robpanel2);
+		this.add("p3",robpanel3);
+		this.add("p4",robpanel4);
+		
+		this.add("p1",hatpanel1);
+		this.add("p2",hatpanel2);
+		this.add("p3",hatpanel3);
+		this.add("p4",hatpanel4);
 		
 		panel.add(robButton);
-		
 		robButton.addMouseListener(new MouseAdapter() {
 			@Override public void mousePressed(MouseEvent e) {
 				panel.setVisible(false);
-				panel1.setVisible(true);
-				panel2.setVisible(false);
-				panel3.setVisible(false);
-				panel4.setVisible(false);
+				robpanel1.setVisible(true);
+				robpanel2.setVisible(false);
+				robpanel3.setVisible(false);				
+				robpanel4.setVisible(false);
 			}
 		});
-		//panel.add(foodButton);
-		//panel.add(epsButton);
-		//panel.add(hatButton);
+		
+		panel.add(foodButton);
+		foodButton.addMouseListener(new MouseAdapter() {
+			@Override public void mousePressed(MouseEvent e) {
+				panel.setVisible(false);
+				hatpanel1.setVisible(true);
+				hatpanel2.setVisible(false);
+				hatpanel3.setVisible(false);				
+				hatpanel4.setVisible(false);
+			}
+		});
+		
+		panel.add(epsButton);
+		panel.add(hatButton);
 
 		this.add(backButton);
 		this.add(panel);
