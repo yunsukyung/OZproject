@@ -57,7 +57,7 @@ public class InforMationView extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			ChangePanel.changePanel(mf, informationview, new HomeView(mf));
+			ChangePanel.changePanel(mf, informationview, new HomeView(mf, p));
 		}
 	}
 

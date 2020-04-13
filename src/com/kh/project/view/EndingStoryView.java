@@ -111,7 +111,7 @@ public class EndingStoryView extends JPanel {
 						"                   Comming Soon...");
 				
 			} else if(count == 6) {
-				ChangePanel.changePanel(mf, startStory, new HomeView(mf));
+				ChangePanel.changePanel(mf, startStory, new HomeView(mf, p));
 			}
 
 
