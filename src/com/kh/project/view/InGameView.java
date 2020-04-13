@@ -11,6 +11,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.*;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -19,8 +24,13 @@ import javax.swing.JTextField;
 
 import com.kh.project.controller.SpawnManager;
 import com.kh.project.model.vo.*;
+import sun.audio.*;
+import java.io.*;
 
 public class InGameView extends JPanel implements Runnable{
+	
+	File file = new File("src/com/kh/music/띠딩2.wav");
+	
 	private MainView mf;
 	private InGameView inGameView;
 	int count = 0;
@@ -29,23 +39,32 @@ public class InGameView extends JPanel implements Runnable{
 	Image background;
 	SpawnManager sm = new SpawnManager();
 	Player p;
-
-	JTextField gtf = new JTextField();
+	
+	int Timer = 100;
+	JLabel tLabel;
+	Image tImage;
+	
+	JLabel tLabel2;
+	Image tImage2;
+	
 	JLabel gLabel;
+	JLabel gtLabel;
 	Image gImage;
 
-	JTextField ptf = new JTextField();
 	JLabel pLabel;
+	JLabel ptLabel;
 	Image pImage;
-
+	AudioInputStream stream;
+	Clip clip;
 	public InGameView(MainView mf, Player p) {
-
+		System.out.println(file.exists());
+		
 		this.p = p;
 		this.inGameView = this;
 		this.mf = mf;
 
 		this.setLayout(null);
-		background = new ImageIcon("src/image/game/InGameImage.png").getImage().getScaledInstance(1000, 1000, 0);
+		background = new ImageIcon("src/image/game/InGameBack3.jpg").getImage().getScaledInstance(1000, 1000, 0);
 		label = new JLabel(new ImageIcon(background));
 
 		gImage = new ImageIcon("src/image/start/garbagetong.png").getImage().getScaledInstance(30, 30, 0);
@@ -54,47 +73,64 @@ public class InGameView extends JPanel implements Runnable{
 		pImage = new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(30, 30, 0);
 		pLabel = new JLabel(new ImageIcon(pImage));
 
-
+		tImage = new ImageIcon("src/image/game/수쿠버 1.png").getImage().getScaledInstance(30, 30, 0);
+		tLabel = new JLabel(new ImageIcon(tImage));
+		
+		tImage2 = new ImageIcon("src/image/game/스쿠버2.png").getImage().getScaledInstance(100, 10, 0);
+		tLabel2 = new JLabel(new ImageIcon(tImage2));
+		
+		gtLabel = new JLabel();
+		gtLabel.setText("x 0");
+		
+		ptLabel = new JLabel();
+		ptLabel.setText("x 0");
+		
 		label.setBounds(0, 0, 1000, 1000);
 		label.setLayout(null);
-
 		label.addKeyListener(new Key());
 		label.setFocusable(true);
+		
+		tLabel2.setBounds(40, 25, Timer, 10);
+		tLabel.setBounds(10, 10, 40, 40);
+		
+		gtLabel.setBounds(70, 50, 40, 40);
+		gLabel.setBounds( 10,  50, 40 ,40);
 
-		gtf.setBounds( 70,  30, 40 ,40);
-		gLabel.setBounds( 10,  30, 40 ,40);
-
-
-		ptf.setBounds( 70,  70, 40 ,40);
-		pLabel.setBounds( 10,  70, 40 ,40);
+		ptLabel.setBounds(70, 90, 40, 40);
+		pLabel.setBounds( 10,  90, 40 ,40);
 
 
 	
-//		gtf.setFont(new Font("굴림체", Font.BOLD, 15));
-		gtf.setForeground(Color.BLACK);
-
+		System.out.println("!111");
 		gLabel.setBackground(new Color(0,0,0,0));
-		gtf.setBackground(new Color(0,0,0,0));
-		gtf.setBorder(null);
-
+		tLabel.setBackground(new Color(0,0,0,0));
 		pLabel.setBackground(new Color(0,0,0,0));
-		ptf.setBackground(new Color(0,0,0,0));
-		ptf.setBorder(null);
-
-		this.add(label);
+		tLabel2.setBackground(new Color(0,0,0,0));
+		
+		this.add(tLabel2);
+		this.add(ptLabel);
+		this.add(gtLabel);
+		
+		this.add(tLabel);
 		this.add(pLabel);
 		this.add(gLabel);
+		
+		this.add(label);
 		mf.add(this);
 		mf.repaint();
 		mf.revalidate();
 	}
 
+	
 	@Override
 	public void run() {		
-		gLabel.setBackground(new Color(0,0,0,0));
-		pLabel.setBackground(new Color(0,0,0,0));
-		ptf.repaint();
-		gtf.repaint();
+		
+		label.addKeyListener(new Key());
+		try {
+			stream = AudioSystem.getAudioInputStream(file);
+			clip = AudioSystem.getClip();
+			clip.open(stream);
+		
 		label.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent e) {
@@ -102,10 +138,9 @@ public class InGameView extends JPanel implements Runnable{
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				System.out.println(gtf.getLocation());
-				
+				label.repaint();
 				for(int i = 0 ;i <= count; i ++) {
-
+					
 					if(e.getXOnScreen()<sm.getLabels()[i].getX()+40+label.getX() + mf.getX()&&
 							e.getXOnScreen()>sm.getLabels()[i].getX()+15+label.getX() + mf.getX()) {
 						if(e.getYOnScreen() < sm.getLabels()[i].getY()+80 +label.getY() + mf.getY()&&
@@ -131,9 +166,18 @@ public class InGameView extends JPanel implements Runnable{
 							}
 
 							if(sm.getGarb()[i].getHp() <= 0) {
-								sm.getLabels()[i].setBounds(1000,1000,40,40);
-								sm.getHpLabels()[i].setBounds(1000,1000,40,40);
-
+								sm.getLabels()[i].setBounds(10000,10000,40,40);
+								sm.getHpLabels()[i].setBounds(10000,10000,40,40);
+								clip.start();
+								try {
+									stream = AudioSystem.getAudioInputStream(file);
+									clip = AudioSystem.getClip();
+									clip.open(stream);
+								}catch (Exception e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+								
 								if(sm.getGarb()[i] instanceof G_Bottle) {
 									p.setGarbage(p.getGarbage()+((G_Bottle) sm.getGarb()[i]).getHaveGargabe());
 								}else if(sm.getGarb()[i] instanceof G_Can) {
@@ -156,11 +200,9 @@ public class InGameView extends JPanel implements Runnable{
 
 								String str = "x "+Integer.toString(p.getGarbage());
 								String str2 = "x " + Integer.toString(p.getPearl());
-								gLabel.setBackground(new Color(0,0,0,0));
-								pLabel.setBackground(new Color(0,0,0,0));
-								gtf.setText(str);
-								ptf.setText(str2);
-
+								
+								gtLabel.setText(str);
+								ptLabel.setText(str2);
 								System.out.println("쓰레기 : " + p.getGarbage());
 								System.out.println("진주 : " + p.getPearl());
 
@@ -188,81 +230,132 @@ public class InGameView extends JPanel implements Runnable{
 
 			}
 		});
-
+		
+		int[] random = new int[100];
+		for(int i = 0;i < random.length; i ++) {
+			random[i] = new Random().nextInt(20);
+		}
+		
 		while(count != 100) {
 			try {
-
-				label.add(sm.getLabels()[count]);
-				label.add(sm.getHpLabels()[count]);
-
+				int count2 = 0;
+				
+				while(count2 != 10) {
+					
+				for(int i = 0; i < count; i ++) {
+					System.out.println(sm.getLabels()[0].getLocation());
+					int random2 = new Random().nextInt(4);
+					if(random2 == 0) {
+						sm.getLabels()[i].setLocation((int)sm.getLabels()[i].getLocation().getX() - 3, (int)sm.getLabels()[i].getLocation().getY() - 3);
+					} else if(random2 == 1) {
+						sm.getLabels()[i].setLocation((int)sm.getLabels()[i].getLocation().getX() + 2, (int)sm.getLabels()[i].getLocation().getY() - 2);
+					} else if(random2 == 2) {
+						sm.getLabels()[i].setLocation((int)sm.getLabels()[i].getLocation().getX() - 4, (int)sm.getLabels()[i].getLocation().getY() + 4);
+					} else if(random2 == 3) {
+						sm.getLabels()[i].setLocation((int)sm.getLabels()[i].getLocation().getX() + 5, (int)sm.getLabels()[i].getLocation().getY() + 5);
+					}
+					
+				}
+				
+				
+				label.repaint();
+				Thread.sleep(50);
+				count2 += 1;
+				}
+				for(int i = 0; i < count; i ++) {
+				sm.getHpLabels()[i].setLocation((int)sm.getLabels()[i].getLocation().getX(), (int)sm.getLabels()[i].getLocation().getY());
+				label.add(sm.getHpLabels()[i]);
+				label.repaint();
+				}
+				Thread.sleep(2000);
 				for(int i = 0; i < count; i ++) {
 					sm.getGarb()[i].setLife(sm.getGarb()[i].getLife()-1);
-					if(sm.getGarb()[i].getLife() == 0) {
-						sm.getLabels()[i].setBounds(1000,1000,40,40);
-						sm.getHpLabels()[i].setBounds(1000,1000,40,40);
+					if(sm.getLabels()[i].getLocation().getX()>9000) {
+//						clip.start();
+//						stream = AudioSystem.getAudioInputStream(file);
+//						clip = AudioSystem.getClip();
+//						clip.open(stream);
 					}
-
+					
+					
+					if(sm.getGarb()[i].getLife() <= 0) {
+						sm.getLabels()[i].setBounds(10000,10000,40,40);
+						sm.getHpLabels()[i].setBounds(10000,10000,40,40);
+					}
+					
 				}
-				Thread.sleep(3000);
+				
+				Timer -= 10;
+				tLabel2.setSize(Timer,10);;
+				
 				count++;
+				label.repaint();
+				label.add(sm.getLabels()[count]);
+				label.add(sm.getHpLabels()[count]);
+				
 
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
-
+	
 	class Key implements KeyListener{
 		int size = 30;
 		@Override
 		public void keyPressed(KeyEvent e) {
+			System.out.println("asdasd");
+			label.add(tLabel);
 			label.add(gLabel);
 			label.add(pLabel);
-			label.add(gtf);
-			label.add(ptf);
-
+			label.add(tLabel2);
 			Point p = label.getLocation();
-			if(e.getKeyCode() == 39) {
-				if(label.getLocation().getX()< -600) label.setLocation(p.x,p.y);
-				else if (label.getLocation().getX()>=-600){
+			
+			if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				if(label.getLocation().getX()< -620) label.setLocation(p.x,p.y);
+				else if (label.getLocation().getX()>=-620){
 					label.setLocation(p.x - size,p.y);
-					gtf.setLocation(gtf.getX() + size,gtf.getY());
-					ptf.setLocation(ptf.getX() + size,ptf.getY());
 					gLabel.setLocation(gLabel.getX()+ size, gLabel.getY());
 					pLabel.setLocation(pLabel.getX()+ size, pLabel.getY());
+					tLabel.setLocation(tLabel.getX()+ size, tLabel.getY());
+					tLabel2.setLocation(tLabel2.getX()+ size, tLabel2.getY());
 				}
 			}
 
-			if(e.getKeyCode() == 37) {
+			if(e.getKeyCode() == KeyEvent.VK_LEFT) {
 				if(label.getLocation().getX()>= 0) label.setLocation(p.x,p.y);
 				else if (label.getLocation().getX()< 0){
 					label.setLocation(p.x + size,p.y);
-					gtf.setLocation(gtf.getX() - size,gtf.getY());
-					ptf.setLocation(ptf.getX() - size,ptf.getY());
 					gLabel.setLocation(gLabel.getX()- size,gLabel.getY());
 					pLabel.setLocation(pLabel.getX()- size, pLabel.getY());
+					tLabel.setLocation(tLabel.getX()- size, tLabel.getY());
+					tLabel2.setLocation(tLabel2.getX()- size, tLabel2.getY());
 				}
 			}
 
-			if(e.getKeyCode() == 38) {
+			if(e.getKeyCode() == KeyEvent.VK_UP) {
 				if(label.getLocation().getY()> 0) label.setLocation(p.x,p.y);
 				else if (label.getLocation().getY()< 0){
 					label.setLocation(p.x, p.y+ size);
-					gtf.setLocation(gtf.getX(), gtf.getY() - size);
-					ptf.setLocation(ptf.getX(), ptf.getY() - size);
 					gLabel.setLocation(gLabel.getX(), gLabel.getY()- size);
 					pLabel.setLocation(pLabel.getX(), pLabel.getY()- size);
+					tLabel.setLocation(tLabel.getX(), tLabel.getY()- size);
+					tLabel2.setLocation(tLabel2.getX(), tLabel2.getY()- size);
 				}
 			}
-			if(e.getKeyCode() == 40) {
+			if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 				if(label.getLocation().getY()<= -360) label.setLocation(p.x,p.y);
 				else if (label.getLocation().getY()>-360){
 					label.setLocation(p.x, p.y - size);
-					gtf.setLocation(gtf.getX(), gtf.getY() + size);
-					ptf.setLocation(ptf.getX(), ptf.getY() + size);
 					gLabel.setLocation(gLabel.getX(), gLabel.getY()+ size);
 					pLabel.setLocation(pLabel.getX(), pLabel.getY()+ size);
+					tLabel.setLocation(tLabel.getX(), tLabel.getY()+ size);
+					tLabel2.setLocation(tLabel2.getX(), tLabel2.getY()+ size);
 				}
 			}
 		}
@@ -280,6 +373,7 @@ public class InGameView extends JPanel implements Runnable{
 		}
 
 	}
+	
 }
 
 
