@@ -334,6 +334,5 @@ public class HomeView extends JPanel implements Runnable {
 		System.out.println("gameover");
 	}
 	
-	
 
 }
