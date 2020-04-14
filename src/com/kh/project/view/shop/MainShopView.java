@@ -13,8 +13,8 @@ import javax.swing.*;
 
 import com.kh.project.view.*;
 
-public class MainShopView extends JPanel{
-	private JPanel startPage;
+public class MainShopView extends JDialog{
+	private JDialog startPage;
 	private MainView mf;
 	private JPanel panel = new JPanel();
 	
@@ -23,10 +23,10 @@ public class MainShopView extends JPanel{
 		this.startPage = this;
 		this.mf = mf;
 		
-		this.setBounds(57, 180, 220, 370);
+		this.setBounds(57, 180, 230, 400);
 	//	this.setUndecorated(true);
 		this.setVisible(true);
-		this.setBackground(new Color(0, 0, 0, 0));
+		//this.setBackground(new Color(0, 0, 0, 0));
 		
 //		Image background = new ImageIcon("src/image/start/ShopMain.png").getImage().getScaledInstance(360, 640, 0);
 //		JLabel label = new JLabel(new ImageIcon(background));
@@ -83,9 +83,9 @@ public class MainShopView extends JPanel{
 		JButton hatButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(80, 80, 0)));
 		hatButton.setBounds(30, 178, 80, 80);
 		
-		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
-		backButton.setBounds(60, 300, 98, 35);
-		backButton.addMouseListener(new MyMouseAdepter());
+//		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
+//		backButton.setBounds(60, 190, 98, 35);
+//		backButton.addMouseListener(new MyMouseAdepter());
 		
 		
 		//낚시대 패널 1
@@ -951,28 +951,29 @@ public class MainShopView extends JPanel{
 		});
 		
 		this.add(label);
-		panel.add(backButton);
+		//panel.add(backButton);
 		this.add(panel);
-		mf.add(this);
+		//mf.add(this);
 	//	this.setResizable(false);
 		
 		
 		
 		
+		
 	}
 	
-	class MyMouseAdepter extends MouseAdapter{
-		@Override
-		public void mousePressed(MouseEvent e) {
-			//dispose();
-		}
-	}
+//	class MyMouseAdepter extends MouseAdapter{
+//		@Override
+//		public void mousePressed(MouseEvent e) {
+//			dispose();
+//		}
+//	}
 	
 	class MyMouseAdepter1 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			//dispose();
-			new MainShopView(mf);
+			dispose();
+			//new MainShopView(mf);
 		}
 	}
 	

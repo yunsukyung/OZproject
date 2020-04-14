@@ -10,6 +10,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,17 +18,17 @@ import javax.swing.JPanel;
 import com.kh.project.view.HomeView;
 import com.kh.project.view.MainView;
 
-public class MainBookView extends JFrame {
-	private JFrame startPage;
+public class MainBookView extends JDialog {
+	private JDialog startPage;
 	private MainView mf;
 	
 	public MainBookView(MainView mf) {
 		this.startPage = this;
 		this.mf = mf;
-		this.setBounds(57, 180, 220, 370);
-		this.setUndecorated(true);
+		this.setBounds(57, 180, 230, 400);
+		//this.setUndecorated(true);
 		this.setVisible(true);
-		this.setBackground(new Color(0, 0, 0, 0));
+		//this.setBackground(new Color(0, 0, 0, 0));
 		
 		
 				

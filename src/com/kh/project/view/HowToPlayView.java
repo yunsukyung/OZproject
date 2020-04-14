@@ -22,18 +22,18 @@ public class HowToPlayView extends JPanel{
 		this.setSize(360, 640);
 		
 		//튜토리얼 화면
-	    JLabel background = new JLabel(new ImageIcon(new ImageIcon("C:\\Users\\tmddu\\git\\OZproject\\src\\image\\start\\게임방법.png").getImage().getScaledInstance(360, 640, 0)));
+	    JLabel background = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\게임방법.png").getImage().getScaledInstance(360, 640, 0)));
 		background.setBounds(0, 0, 360, 640);
 	    
 		//back버튼추가
-		JButton backbutton = new JButton(new ImageIcon(new ImageIcon("C:\\Users\\tmddu\\git\\OZproject\\src\\image\\start\\back.png").getImage().getScaledInstance(98, 35, 0)));
+		JButton backbutton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\back.png").getImage().getScaledInstance(98, 35, 0)));
 		backbutton.setBounds(131, 530, 98, 35);
 		background.add(backbutton);
 		
 		backbutton.addMouseListener(new MyMouseAdapter());
 
 		background.add(backbutton, BorderLayout.CENTER);
-		this.add(backbutton);
+		background.add(backbutton);
 		this.add(background);
 		
 		mf.add(this);
@@ -44,7 +44,11 @@ public class HowToPlayView extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			ChangePanel.changePanel(mf, howtoplayview, new InGameView(mf, p));
+			
+			InGameView iv = new InGameView(mf, p);
+			Thread t2 = new Thread(iv);
+			t2.start();
+			ChangePanel.changePanel(mf, howtoplayview, iv);
 		}
 	}
 }
