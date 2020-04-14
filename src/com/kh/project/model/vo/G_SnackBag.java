@@ -15,9 +15,9 @@ public class G_SnackBag extends Garbage{
 	
 	int random1 = new Random().nextInt(1000)+1;
 	int random2 = new Random().nextInt(500)+100;
-	private int hp = 40;
+	private int hps = 40;
 	public G_SnackBag() {
-		super(1200,3);
+		super(40,3);
 		image = new ImageIcon("src/image/game/snackBag."
 				+ "png").getImage().getScaledInstance(40, 40, 0);
 		
@@ -58,9 +58,24 @@ public class G_SnackBag extends Garbage{
 		this.hpLabel = hpLabel;
 	}
 	public void hpControl(int attack) {
-		super.setHp(super.getHp() - attack*10);
-		hp -= attack / 3;
-		hpLabel.setBounds(random1,random2 - 10,hp - attack/3,6);
+		int at = 0;
+		if(attack == 10) {
+			at = 2;
+		} else if ( attack == 30) {
+			at = 6;
+		} else if ( attack == 50) {
+			at = 10;
+		}
+		hps -= at;
+		super.setHp(hps);
+		hpLabel.setBounds(random1,random2 - 10,hps ,6);
+	}
+	public int getHps() {
+		return hps;
+	}
+
+	public void setHps(int hps) {
+		this.hps = hps;
 	}
 
 	@Override
