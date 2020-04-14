@@ -41,6 +41,7 @@ public class HomeView extends JPanel implements Runnable {
 		this.mf = mf;
 		this.p = p;
 		//위치 초기화
+		
 		this.setLayout(null);
 
 		this.setLocation(0, 0);
@@ -287,7 +288,9 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter6 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
+			
 			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
+			
 		}
 	}
 
