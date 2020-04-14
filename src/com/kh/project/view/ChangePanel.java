@@ -1,5 +1,6 @@
 package com.kh.project.view;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -12,7 +13,7 @@ public class ChangePanel {
 		mf.repaint();
 		System.out.println(mf.getLocation() +  " " + cp.getLocation());
 	}
-	public static void changeFrame(MainView mf, JFrame op, JPanel cp) {
+	public static void change(MainView mf, JDialog op, JPanel cp) {
 		mf.getContentPane().removeAll();
 		mf.getContentPane().add(cp);
 		mf.repaint();

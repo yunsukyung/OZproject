@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,28 +16,30 @@ import com.kh.project.model.vo.Player;
 
 
 
-public class ConfigurationView extends JFrame {
-	private JFrame mo;
+public class ConfigurationView extends JDialog {
+	private JDialog mo;
 	private MainView mf;
 	Player p = new Player();
 	public ConfigurationView(MainView mf) {
 		this.mf = mf;
 		this.mo = this;
-		this.setBounds(57, 180, 220, 370);
-		this.setUndecorated(true);
+		this.setBounds(57, 180, 230, 400);
+		//this.setUndecorated(true);
 		this.setVisible(true);
-		this.setBackground(new Color(0, 0, 0, 0));
+		//this.setBackground(new Color(0, 0, 0, 0));
+		
+		
 		
 		JPanel mo = new JPanel();
 		mo.setLayout(null);
 		mo.setBackground(new Color(0, 0, 0, 0));
 		
-		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\sttinglabel.png").getImage().getScaledInstance(224, 370, 0)));
-		pan.setBounds(-5, 0, 224, 370);
+		JLabel pan = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\settingback.png").getImage().getScaledInstance(250, 420, 0)));
+		pan.setBounds(-10, -35, 250, 420);
 		
 		JButton quitbutton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\quitbutton.png").getImage().getScaledInstance(119, 33, 0)));
 		quitbutton.setLayout(null);
-		quitbutton.setBounds(45, 180, 119, 33);
+		quitbutton.setBounds(50, 180, 119, 33);
 		quitbutton.setBorderPainted(false);
 		quitbutton.setFocusPainted(false);
 		quitbutton.setContentAreaFilled(false);
@@ -45,7 +48,7 @@ public class ConfigurationView extends JFrame {
 		
 		JButton howtoplaybutton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\howtoplaybutton.png").getImage().getScaledInstance(119, 33, 0)));
 		howtoplaybutton.setLayout(null);
-		howtoplaybutton.setBounds(45, 130, 119, 33);
+		howtoplaybutton.setBounds(50, 130, 119, 33);
 		howtoplaybutton.setBorderPainted(false);
 		howtoplaybutton.setFocusPainted(false);
 		howtoplaybutton.setContentAreaFilled(false);
@@ -55,7 +58,7 @@ public class ConfigurationView extends JFrame {
 		
 		JButton imforbutton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\inforbutton.png").getImage().getScaledInstance(119, 33, 0)));
 		imforbutton.setLayout(null);
-		imforbutton.setBounds(45, 230, 119, 33);
+		imforbutton.setBounds(50, 230, 119, 33);
 		imforbutton.setBorderPainted(false);
 		imforbutton.setFocusPainted(false);
 		imforbutton.setContentAreaFilled(false);
@@ -64,7 +67,7 @@ public class ConfigurationView extends JFrame {
 		
 		JButton backbutton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
 		backbutton.setLayout(null);
-		backbutton.setBounds(55, 310, 98, 35);
+		backbutton.setBounds(58, 300, 98, 35);
 		backbutton.addMouseListener(new MyMouseAdapter());
 		
 		
@@ -76,13 +79,15 @@ public class ConfigurationView extends JFrame {
 		s.setPaintLabels(true);
 		s.setSnapToTicks(true);
 		
-        s.setBounds(48,80,115,40);
+        s.setBounds(50,80,115,40);
         this.add(s); 
-		
+        
+		mo.add(backbutton);
 		mo.add(howtoplaybutton);
 		mo.add(imforbutton);
 		mo.add(quitbutton);
 		mo.add(pan);
+		
 		
 		this.add(mo);
 		this.setResizable(false); 
@@ -110,7 +115,7 @@ public class ConfigurationView extends JFrame {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			dispose();
-			ChangePanel.changeFrame(mf, mo, new ExplainView(mf, p));
+			ChangePanel.change(mf, mo, new ExplainView(mf, p));
 		}
 	}
 	
@@ -119,7 +124,7 @@ public class ConfigurationView extends JFrame {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			dispose();
-			ChangePanel.changeFrame(mf, mo, new InforMationView(mf));
+			ChangePanel.change(mf, mo, new InforMationView(mf));
 		}
 	}
 	
