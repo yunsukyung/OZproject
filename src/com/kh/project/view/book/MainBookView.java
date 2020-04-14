@@ -143,6 +143,8 @@ class mous extends JFrame{
 		gohome.setFocusPainted(false);
 		gohome.setContentAreaFilled(false);
 		
+		gohome.addMouseListener(new HomeMouse1());
+		
 		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
 		garbagetong.setBounds(80, 135, 25, 25);
 		
@@ -170,6 +172,12 @@ class mous extends JFrame{
 		this.setSize(240,222);
 		this.setVisible(true);
 	}
+	class HomeMouse1 extends MouseAdapter{
+		@Override
+		public void mousePressed(MouseEvent e) {
+			
+		}
+	}
 }
 //클릭했을때 새로운 프레임 생성
 class mous2 extends JFrame{
@@ -190,24 +198,20 @@ class mous2 extends JFrame{
 		gohome.setFocusPainted(false);
 		gohome.setContentAreaFilled(false);
 		
-		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
-		garbagetong.setBounds(80, 135, 25, 25);
+		gohome.addMouseListener(new HomeMouse2());
 		
-		JLabel point = new JLabel("x  150");
-		point.setBounds(110, 130, 50, 40);
+
 		
 		JLabel jin2 = new JLabel("진주 획득!!");
 		jin2.setBounds(90, 30, 100, 40);
 		jin2.setForeground(Color.WHITE);
-		JLabel jin3 = new JLabel("x 2");
+		JLabel jin3 = new JLabel("x 5");
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
 		
 		mo.add(jin2);
 		mo.add(jin3);
-		mo.add(garbagetong);
-		mo.add(point);
 		mo.add(gohome);
 		mo.add(jin);
 		mo.add(pan);
@@ -216,6 +220,12 @@ class mous2 extends JFrame{
 		this.setResizable(false);
 		this.setSize(240,222);
 		this.setVisible(true);
+	}
+	class HomeMouse2 extends MouseAdapter{
+		@Override
+		public void mousePressed(MouseEvent e) {
+			
+		}
 	}
 }
 
@@ -238,24 +248,18 @@ class mous3 extends JFrame{
 		gohome.setFocusPainted(false);
 		gohome.setContentAreaFilled(false);
 		
-		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
-		garbagetong.setBounds(80, 135, 25, 25);
-		
-		JLabel point = new JLabel("x  150");
-		point.setBounds(110, 130, 50, 40);
-		
+		gohome.addMouseListener(new HomeMouse3());
+
 		JLabel jin2 = new JLabel("진주 획득!!");
 		jin2.setBounds(90, 30, 100, 40);
 		jin2.setForeground(Color.WHITE);
-		JLabel jin3 = new JLabel("x 2");
+		JLabel jin3 = new JLabel("x 15");
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
 		
 		mo.add(jin2);
 		mo.add(jin3);
-		mo.add(garbagetong);
-		mo.add(point);
 		mo.add(gohome);
 		mo.add(jin);
 		mo.add(pan);
@@ -264,6 +268,12 @@ class mous3 extends JFrame{
 		this.setResizable(false);
 		this.setSize(240,222);
 		this.setVisible(true);
+	}
+	class HomeMouse3 extends MouseAdapter{
+		@Override
+		public void mousePressed(MouseEvent e) {
+			
+		}
 	}
 }
 //클릭했을때 새로운 프레임 생성
@@ -285,24 +295,17 @@ class mous4 extends JFrame{
 		gohome.setFocusPainted(false);
 		gohome.setContentAreaFilled(false);
 		
-		JLabel garbagetong = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\garbagetong.png").getImage().getScaledInstance(25, 25, 0)));
-		garbagetong.setBounds(80, 135, 25, 25);
-		
-		JLabel point = new JLabel("x  150");
-		point.setBounds(110, 130, 50, 40);
-		
+		gohome.addMouseListener(new HomeMouse4());
+
 		JLabel jin2 = new JLabel("진주 획득!!");
 		jin2.setBounds(90, 30, 100, 40);
 		jin2.setForeground(Color.WHITE);
-		JLabel jin3 = new JLabel("x 2");
+		JLabel jin3 = new JLabel("x 30");
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
-		
 		mo.add(jin2);
 		mo.add(jin3);
-		mo.add(garbagetong);
-		mo.add(point);
 		mo.add(gohome);
 		mo.add(jin);
 		mo.add(pan);
@@ -311,5 +314,11 @@ class mous4 extends JFrame{
 		this.setResizable(false);
 		this.setSize(240,222);
 		this.setVisible(true);
+	}
+	class HomeMouse4 extends MouseAdapter{
+		@Override
+		public void mousePressed(MouseEvent e) {
+			
+		}
 	}
 }
