@@ -159,15 +159,15 @@ public class InGameView extends JPanel implements Runnable{
 				}
 				@Override
 				public void mousePressed(MouseEvent e) {
-					if(e.getXOnScreen()<setLabel.getX()+100+label.getX() + mf.getX()&&
+					if(e.getXOnScreen()<setLabel.getX()+60+label.getX() + mf.getX()&&
 							e.getXOnScreen()>setLabel.getX()+15+label.getX() + mf.getX()) {
-						if(e.getYOnScreen() < setLabel.getY()+120 +label.getY() + mf.getY()&&
+						if(e.getYOnScreen() < setLabel.getY()+80 +label.getY() + mf.getY()&&
 								e.getYOnScreen()>=setLabel.getY()+40 + label.getY() + mf.getY()) {
-							System.out.println("!@3123123123");
 							new ConfigurationView(mf);
 						}
+						System.out.println("!@3123123123");
 					}
-						
+						System.out.println("안뜬다");
 					label.repaint();
 					for(int i = 0 ;i <= count; i ++) {
 						String str = "x "+Integer.toString(p.getGarbage());
