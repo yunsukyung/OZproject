@@ -13,6 +13,7 @@ import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
 import com.kh.project.view.book.MainBookView;
 import com.kh.project.view.shop.MainShopView;
+import com.kh.project.view.shop.StageView;
 import com.kh.project.view.shop.TimeOverView1;
 
 //!!!!메인뷰에 this.add(new HomeView(this)); 이거 추가해야 빨간 줄 사라짐!!!!
@@ -39,7 +40,7 @@ public class HomeView extends JPanel implements Runnable {
 		this.mf = mf;
 		this.p = p;
 		//위치 초기화
-		
+
 		this.setLayout(null);
 
 		this.setLocation(0, 0);
@@ -282,16 +283,8 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter6 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if(!f) {
-				ChangePanel.changePanel(mf, homeView, new HowToPlayView(mf, p));
-				f = true;
-			} else {
-				InGameView iv = new InGameView(mf, p);
-				Thread t2 = new Thread(iv);
-				t2.start();
-				ChangePanel.changePanel(mf, homeView, iv);
 
-			}
+			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
 
 		}
 	}
