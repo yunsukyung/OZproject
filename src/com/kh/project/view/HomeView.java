@@ -79,8 +79,8 @@ public class HomeView extends JPanel implements Runnable {
 		igloo_b.setBounds(30, 185, 161, 161);
 
 		//펭즈
-		JButton button7 = new JButton(new ImageIcon(new ImageIcon("src/image/start/pengz2.png.png").getImage().getScaledInstance(232, 320, 0)));
-		button7.setBounds(100, 210, 235, 224);
+		JButton button7 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\메인펭귄.gif").getImage().getScaledInstance(100, 100, 0)));
+		button7.setBounds(100, 300, 150, 100);
 
 		//쏘주
 		JButton soju_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/soju1.png").getImage().getScaledInstance(90, 100, 0)));

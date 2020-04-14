@@ -36,7 +36,8 @@ public class InGameView extends JPanel implements Runnable{
 	private MainView mf;
 	private InGameView inGameView;
 	int count = 0;
-
+	
+	
 	Toolkit tk = Toolkit.getDefaultToolkit();
 	Image img1 = tk.getImage("src/image/game/나무낚싯대이미지.png");
 	Image img2 = tk.getImage("src/image/game/파랑낚싯대이미지.png");
@@ -79,6 +80,7 @@ public class InGameView extends JPanel implements Runnable{
 		this.inGameView = this;
 		this.mf = mf;
 
+		MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\인게임.wav");
 		this.setLayout(null);
 		background = new ImageIcon("src/image/game/InGameBack3.jpg").getImage().getScaledInstance(1000, 1000, 0);
 		label = new JLabel(new ImageIcon(background));
