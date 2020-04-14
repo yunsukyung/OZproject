@@ -23,7 +23,7 @@ public class HomeView extends JPanel implements Runnable {
 	private MainView mf;
 	boolean f = false;
 	LoginManager lm = new LoginManager();
-	Player p = new Player();
+	Player p;
 	//ReduceSatiety rs = new ReduceSatiety(mf);
 
 	JLabel labelrs;
@@ -37,14 +37,14 @@ public class HomeView extends JPanel implements Runnable {
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
 		this.mf = mf;
-
+		this.p = p;
 		//위치 초기화
-
+		
 		this.setLayout(null);
 
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-
+		this.p.setSp(50);
 		//배경
 		Image background = new ImageIcon("src/image/start/icebergMain.jpg").getImage().getScaledInstance(360, 640, 0);
 		//라벨로 배경에서 보여줄 위치표시

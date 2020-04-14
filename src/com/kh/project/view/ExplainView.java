@@ -15,13 +15,14 @@ import com.kh.project.model.vo.Player;
 public class ExplainView extends JPanel{
 	private JPanel explainView;
 	private MainView mf;
-	Player p = new Player();
+	Player p;
 	public ExplainView(MainView mf, Player p) {
 		this.explainView = this;
 		this.mf = mf;
 		this.p = p;
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
+		
 		Image background = new ImageIcon("src/image/start/튜토리얼.png").getImage().getScaledInstance(360, 640, 0);
 		
 		JLabel label = new JLabel(new ImageIcon(background));
