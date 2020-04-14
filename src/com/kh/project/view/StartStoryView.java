@@ -7,7 +7,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,8 +26,12 @@ public class StartStoryView extends JPanel{
 	private JLabel text1;
 	private JLabel label2;
 	private int x = 0;
+	//AudioInputStream stream;
+	//Clip clip;
+	//File file = new File("src\\com\\kh\\project\\bgm\\스토리-거울동굴.wav");
 	int count = 0;
 	Player p = new Player();
+	
 	public StartStoryView(MainView mf, Player p) {
 		this.mf = mf;
 		this.p = p;
@@ -32,14 +40,16 @@ public class StartStoryView extends JPanel{
 
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-
-
+		
+		MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\스토리-거울동굴.wav");
+		
+		
 
 
 
 		Image icon = new ImageIcon("src/image/start/스토리 배경.jpg").getImage().getScaledInstance(570, 640, 0);
 		JLabel label = new JLabel(new ImageIcon(icon));
-
+		
 
 		Image penguin = new ImageIcon("src/image/start/펭.gif").getImage().getScaledInstance(200, 200, 0);
 		label2 = new JLabel(new ImageIcon(penguin));
