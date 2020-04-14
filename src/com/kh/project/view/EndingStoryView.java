@@ -33,7 +33,7 @@ public class EndingStoryView extends JPanel {
 
 
 
-
+		MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\엔딩.wav");
 
 		Image icon = new ImageIcon("src/image/start/스토리 배경.jpg").getImage().getScaledInstance(570, 640, 0);
 		JLabel label = new JLabel(new ImageIcon(icon));
