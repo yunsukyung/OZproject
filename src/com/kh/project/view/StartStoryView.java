@@ -23,7 +23,7 @@ public class StartStoryView extends JPanel{
 	private JLabel label2;
 	private int x = 0;
 	int count = 0;
-	Player p;
+	Player p = new Player();
 	public StartStoryView(MainView mf, Player p) {
 		this.mf = mf;
 		this.p = p;
