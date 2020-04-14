@@ -92,7 +92,7 @@ public class TimeOverView1 extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ChangePanel.changePanel(mf, startPage, new HomeView(mf, p));
-				InGameView.count = 0;
+				//InGameView.count = 0;
 				InGameView.timer = 10;
 				
 			}

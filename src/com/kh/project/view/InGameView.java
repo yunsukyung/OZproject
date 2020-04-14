@@ -36,7 +36,7 @@ public class InGameView extends JPanel implements Runnable{
 
 	private MainView mf;
 	private InGameView inGameView;
-	public static int count = 0;
+	public static int count1 = 0;
 	boolean stop = false;
 	
 	Toolkit tk = Toolkit.getDefaultToolkit();
@@ -76,7 +76,7 @@ public class InGameView extends JPanel implements Runnable{
 	
 	int countGarbege = 0;
 	int countPearl = 0;
-	
+	int count;
 	public InGameView(MainView mf, Player p) {
 
 

@@ -13,6 +13,7 @@ import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
 import com.kh.project.view.book.MainBookView;
 import com.kh.project.view.shop.MainShopView;
+import com.kh.project.view.shop.StageView;
 import com.kh.project.view.shop.TimeOverView1;
 
 //!!!!메인뷰에 this.add(new HomeView(this)); 이거 추가해야 빨간 줄 사라짐!!!!
@@ -100,7 +101,7 @@ public class HomeView extends JPanel implements Runnable {
 		garbage_l.setBounds(20, 35, 25, 25);
 
 		//진주 현황
-		JLabel pearl_l = new JLabel(new ImageIcon(new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(25, 25, 0)));
+		JLabel pearl_l = new JLabel(new ImageIcon(new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(25, 25, 0)));
 		pearl_l.setBounds(20, 60, 25, 25);
 
 		//하트
@@ -296,7 +297,7 @@ public class HomeView extends JPanel implements Runnable {
 				ChangePanel.changePanel(mf, homeView, iv);
 
 			}
-
+			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
 		}
 	}
 
