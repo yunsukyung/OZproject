@@ -28,6 +28,7 @@ public class PaymentView extends JPanel{
 		Image background = new ImageIcon("src\\image\\start\\진주결체장1.png").getImage().getScaledInstance(307, 358, 0);
 		JLabel label = new JLabel(new ImageIcon(background));
 		
+		//취소 텍스트
 		JLabel Cancel = new JLabel("취 소");
 		Cancel.setBounds(243, 0, 110, 44);
 		JTextField tf1 = new JTextField(100);
@@ -37,6 +38,7 @@ public class PaymentView extends JPanel{
 		Cancel.setBackground(new Color(255,0,0));
 		Cancel.setForeground(Color.WHITE);
 		
+		//진주 구매갯수 텍스트
 		JLabel PearlNumber = new JLabel("120");
 		PearlNumber.setBounds(205, 56, 216, 35);
 		JTextField tf2 = new JTextField(100);
@@ -46,6 +48,7 @@ public class PaymentView extends JPanel{
 		PearlNumber.setBackground(new Color(255,0,0));
 		PearlNumber.setForeground(Color.WHITE);
 		
+		//결제가격 텍스트
 		JLabel Price = new JLabel("10,000");
 		Price.setBounds(246, 140, 72, 35);
 		JTextField tf3 = new JTextField(100);
@@ -55,11 +58,13 @@ public class PaymentView extends JPanel{
 		Price.setBackground(new Color(255,0,0));
 		Price.setForeground(Color.WHITE);
 		
+		//지문버튼 
 		JButton button = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\결제버튼.png").getImage().getScaledInstance(57, 57, 0)));
 		button.setLocation(130, 200);
 		button.setSize(57, 57);
 		
 		
+		//버튼 투명하게하기
 		button.setBorderPainted(false);
 		button.setFocusPainted(false);
 		button.setContentAreaFilled(false);
