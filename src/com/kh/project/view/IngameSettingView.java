@@ -15,21 +15,27 @@ import javax.swing.JPanel;
 
 import com.kh.project.model.vo.Player;
 import com.kh.project.view.ConfigurationView.MyMouseAdapter;
+import com.kh.project.view.shop.TimeOverView1;
 
 public class IngameSettingView extends JDialog {
 	private JDialog inset;
 	private MainView mf;
 	Player p = new Player();
-	public IngameSettingView(MainView mf, Player p) {
+	int countG = 0;
+	int countP = 0;
+	public IngameSettingView(MainView mf, Player p, int countG, int countP) {
 		this.mf = mf;
 		this.inset = this;
 		this.setBounds(57, 180, 230, 400);
+		this.p = p;
 		this.setVisible(true);
-		
+		this.countG = countG;
+		this.countP = countP;
+		InGameView.timer = 0;
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBackground(new Color(0, 0, 0, 0));
-		
+		InGameView.threadtimer = true;
 		JLabel background = new JLabel(new ImageIcon(new ImageIcon("src/image/start/ingameback.png").getImage().getScaledInstance(245, 420, 0)));
 		background.setBounds(-10, -30, 245, 420);
 		
@@ -59,13 +65,18 @@ public class IngameSettingView extends JDialog {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			dispose();
-			ChangePanel.change(mf, inset, new HomeView(mf, p));
+			ChangePanel.change(mf, inset, new TimeOverView1(mf, p, countP, countG));
+			InGameView.count = 1001;
 		}
 	}
 	class MyMouseAdapter1 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			dispose();
+			InGameView.timer = 10;
+
+			InGameView.threadtimer = false;
+			System.out.println(InGameView.threadtimer);
 		}
 	}
 }

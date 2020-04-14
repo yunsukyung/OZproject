@@ -25,7 +25,7 @@ public class HomeView extends JPanel implements Runnable {
 	LoginManager lm = new LoginManager();
 	Player p;
 	//ReduceSatiety rs = new ReduceSatiety(mf);
-
+	public static Thread t1;;
 	JLabel labelrs;
 	JLabel bg_l;
 	JLabel gameover;
@@ -34,12 +34,12 @@ public class HomeView extends JPanel implements Runnable {
 	JButton restart;
 	JButton restart2;
 	JLabel re_text;
+	public static boolean stop = false;
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
 		this.mf = mf;
 		this.p = p;
 		//위치 초기화
-		
 		this.setLayout(null);
 
 		this.setLocation(0, 0);
@@ -118,12 +118,12 @@ public class HomeView extends JPanel implements Runnable {
 
 
 		//쓰레기 텍스트
-		JLabel trash = new JLabel(Integer.toString(p.getGarbage()));
-		trash.setBounds(55, 35, 100, 25);
+		JLabel trash = new JLabel(" x " + Integer.toString(+p.getGarbage()));
+		trash.setBounds(50, 35, 100, 25);
 
 		//진주 텍스트
-		JLabel pearl = new JLabel(Integer.toString(p.getPearl()));
-		pearl.setBounds(55, 60, 100, 25);
+		JLabel pearl = new JLabel(" x " + Integer.toString(p.getPearl()));
+		pearl.setBounds(50, 60, 100, 25);
 
 		//닉네임 텍스트
 		JLabel id = new JLabel(p.getUserName());
@@ -232,8 +232,12 @@ public class HomeView extends JPanel implements Runnable {
 		mf.repaint();
 	}
 
+	public static void setStop(boolean stop) {
+		HomeView.stop = stop;
+	}
 	//닉네임 간판
 	//텍스트로 바꾸기
+	
 	class Listener1 implements ActionListener {
 
 		@Override
@@ -284,11 +288,11 @@ public class HomeView extends JPanel implements Runnable {
 		public void mousePressed(MouseEvent e) {
 			if(!f) {
 				ChangePanel.changePanel(mf, homeView, new HowToPlayView(mf, p));
-				f = true;
+				
 			} else {
 				InGameView iv = new InGameView(mf, p);
-				Thread t2 = new Thread(iv);
-				t2.start();
+				t1 = new Thread(iv);
+				t1.start();
 				ChangePanel.changePanel(mf, homeView, iv);
 
 			}
