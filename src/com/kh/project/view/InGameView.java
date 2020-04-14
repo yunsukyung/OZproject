@@ -164,7 +164,7 @@ public class InGameView extends JPanel implements Runnable{
 						if(e.getYOnScreen() < setLabel.getY()+120 +label.getY() + mf.getY()&&
 								e.getYOnScreen()>=setLabel.getY()+40 + label.getY() + mf.getY()) {
 							System.out.println("!@3123123123");
-							new ConfigurationView(mf);
+							new IngameSettingView(mf, p);
 						}
 					}
 						
