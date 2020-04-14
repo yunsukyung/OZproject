@@ -44,7 +44,6 @@ public class HomeView extends JPanel implements Runnable {
 
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-
 		this.p.setSp(50);
 		//배경
 		Image background = new ImageIcon("src/image/start/icebergMain.jpg").getImage().getScaledInstance(360, 640, 0);
