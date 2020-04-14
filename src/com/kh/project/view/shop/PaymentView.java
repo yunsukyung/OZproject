@@ -69,11 +69,7 @@ public class PaymentView extends JPanel{
 		button.setFocusPainted(false);
 		button.setContentAreaFilled(false);
 
-		
-		
-		
-		
-		
+
 		this.add(label, BorderLayout.CENTER);
 		label.add(button, BorderLayout.CENTER); 
 		label.add(Cancel);
