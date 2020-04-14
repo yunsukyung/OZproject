@@ -14,13 +14,13 @@ public class G_Plastic extends Garbage{
 	Image hpImage;
 	JLabel hpLabel;
 	
-	private int hp = 40;
+	private int hps = 40;
 	
 	int random1 = new Random().nextInt(1000)+1;
 	int random2 = new Random().nextInt(500)+100;
 	
 	public G_Plastic() {
-		super(800,2);
+		super(40,2);
 		image = new ImageIcon("src/image/game/plastic."
 				+ "png").getImage().getScaledInstance(40, 40, 0);
 		hpImage = new ImageIcon("src/image/game/hpBar.png").getImage().getScaledInstance(40, 6, 0);
@@ -60,9 +60,24 @@ public class G_Plastic extends Garbage{
 		this.hpLabel = hpLabel;
 	}
 	public void hpControl(int attack) {
-		super.setHp(super.getHp() - attack*10);
-		hp -= attack / 2;
-		hpLabel.setBounds(random1,random2 - 10,hp - attack/2,6);
+		int at = 0;
+		if(attack == 10) {
+			at = 2;
+		} else if ( attack == 30) {
+			at = 6;
+		} else if ( attack == 50) {
+			at = 10;
+		}
+		hps -= at;
+		super.setHp(hps);
+		hpLabel.setBounds(random1,random2 - 10,hps ,6);
+	}
+	public int getHps() {
+		return hps;
+	}
+
+	public void setHps(int hps) {
+		this.hps = hps;
 	}
 
 	@Override

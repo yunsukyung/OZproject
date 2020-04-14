@@ -13,9 +13,9 @@ public class G_Paper extends Garbage{
 	
 	int random1 = new Random().nextInt(1000)+1;
 	int random2 = new Random().nextInt(500)+100;
-	private int hp = 40;
+	private int hps = 40;
 	public G_Paper() {
-		super(800,2);
+		super(40,2);
 		int random = new Random().nextInt(2);
 		if(random == 0) image = new ImageIcon("src/image/game/beer1."
 				+ "png").getImage().getScaledInstance(40, 40, 0);
@@ -53,10 +53,25 @@ public class G_Paper extends Garbage{
 	public void setHpLabel(JLabel hpLabel) {
 		this.hpLabel = hpLabel;
 	}
+	
+	public int getHps() {
+		return hps;
+	}
+	public void setHps(int hps) {
+		this.hps = hps;
+	}
 	public void hpControl(int attack) {
-		super.setHp(super.getHp() - attack*10);
-		hp -= attack / 2;
-		hpLabel.setBounds(random1,random2 - 10,hp - attack/2,6);
+		int at = 0;
+		if(attack == 10) {
+			at = 1;
+		} else if ( attack == 30) {
+			at = 5;
+		} else if ( attack == 50) {
+			at = 7;
+		}
+		hps -= at;
+		super.setHp(hps);
+		hpLabel.setBounds(random1,random2 - 10,hps ,6);
 	}
 
 	

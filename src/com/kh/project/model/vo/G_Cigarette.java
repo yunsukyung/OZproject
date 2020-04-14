@@ -14,12 +14,12 @@ public class G_Cigarette extends Garbage{
 	Image hpImage;
 	JLabel hpLabel;
 	
-	private int hp = 40;
+	private int hps = 40;
 	int random1 = new Random().nextInt(1000)+1;
 	int random2 = new Random().nextInt(500)+100;
 	
 	public G_Cigarette() {
-		super(1200,4);;
+		super(40,4);;
 		image = new ImageIcon("src/image/game/cigarette."
 				+ "png").getImage().getScaledInstance(40, 40, 0);
 
@@ -60,9 +60,25 @@ public class G_Cigarette extends Garbage{
 		this.hpLabel = hpLabel;
 	}
 	public void hpControl(int attack) {
-		super.setHp(super.getHp() - attack*10);
-		hp -= attack/3;
-		hpLabel.setBounds(random1,random2 - 10,hp - attack/3,6);
+		int at = 0;
+		if(attack == 10) {
+			at = 1;
+		} else if ( attack == 30) {
+			at = 5;
+		} else if ( attack == 50) {
+			at = 7;
+		}
+		hps -= at;
+		super.setHp(hps);
+		hpLabel.setBounds(random1,random2 - 10,hps,6);
+	}
+
+	public int getHps() {
+		return hps;
+	}
+
+	public void setHps(int hps) {
+		this.hps = hps;
 	}
 
 	@Override

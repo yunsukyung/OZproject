@@ -14,12 +14,12 @@ public class G_Can extends Garbage{
 	Image hpImage;
 	JLabel hpLabel;
 	
-	int hp = 40;
+	int hps = 40;
 	int random1 = new Random().nextInt(1000)+1;
 	int random2 = new Random().nextInt(500)+100;
 	
 	public G_Can() {
-		super(400, 2);
+		super(600, 2);
 		int random = new Random().nextInt(2);
 		if(random == 0) image = new ImageIcon("src/image/game/can."
 				+ "png").getImage().getScaledInstance(40, 40, 0);
@@ -64,9 +64,25 @@ public class G_Can extends Garbage{
 	}
 	
 	public void hpControl(int attack) {
-		super.setHp(super.getHp() - attack*10);
-		hp -= attack;
-		hpLabel.setBounds(random1,random2 - 10,hp - attack,6);
+		int at = 0;
+		if(attack == 10) {
+			at = 4;
+		} else if ( attack == 30) {
+			at = 8;
+		} else if ( attack == 50) {
+			at = 12;
+		}
+		hps -= at;
+		super.setHp(hps);
+		hpLabel.setBounds(random1,random2 - 10,hps,6);
+	}
+	
+	public int getHps() {
+		return hps;
+	}
+
+	public void setHps(int hps) {
+		this.hps = hps;
 	}
 
 	@Override

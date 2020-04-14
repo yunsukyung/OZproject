@@ -3,7 +3,7 @@ package com.kh.project.model.vo;
 public class Garbage {
 	private int hp;
 	private int haveGarbage;
-	private int life = 10;
+	private int life = 20;
 	
 	
 	public Garbage(int hp, int haveGarbage) {
