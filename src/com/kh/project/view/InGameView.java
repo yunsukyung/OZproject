@@ -69,10 +69,10 @@ public class InGameView extends JPanel implements Runnable{
 
 	Image setImage;
 	JLabel setLabel;
-	
+
 	public InGameView(MainView mf, Player p) {
-		
-		
+
+
 		System.out.println(file.exists());
 
 		this.p = p;
@@ -118,11 +118,11 @@ public class InGameView extends JPanel implements Runnable{
 
 		ptLabel.setBounds(70, 90, 40, 40);
 		pLabel.setBounds( 10,  90, 40 ,40);
-		
+
 		if(p.getSp() == 10) setCursor(myCursor1);
 		else if(p.getSp() == 30) setCursor(myCursor2);
 		else if(p.getSp() == 50) setCursor(myCursor3);
-		
+
 		System.out.println("!111");
 		gLabel.setBackground(new Color(0,0,0,0));
 		tLabel.setBackground(new Color(0,0,0,0));
@@ -146,7 +146,7 @@ public class InGameView extends JPanel implements Runnable{
 
 	@Override
 	public void run() {		
-		
+
 		label.addKeyListener(new Key());
 		try {
 			stream = AudioSystem.getAudioInputStream(file);
@@ -164,10 +164,12 @@ public class InGameView extends JPanel implements Runnable{
 						if(e.getYOnScreen() < setLabel.getY()+80 +label.getY() + mf.getY()&&
 								e.getYOnScreen()>=setLabel.getY()+40 + label.getY() + mf.getY()) {
 							new ConfigurationView(mf, p);
+
+							new IngameSettingView(mf, p);
 						}
 						System.out.println("!@3123123123");
 					}
-						System.out.println("안뜬다");
+					System.out.println("안뜬다");
 					label.repaint();
 					for(int i = 0 ;i <= count; i ++) {
 						String str = "x "+Integer.toString(p.getGarbage());
@@ -200,7 +202,7 @@ public class InGameView extends JPanel implements Runnable{
 								if(e.getYOnScreen() < sm.getLabels()[i].getY()+80 +label.getY() + mf.getY()&&
 										e.getYOnScreen()>=sm.getLabels()[i].getY()+40 + label.getY() + mf.getY()) {
 									if(sm.getGarb()[i] instanceof G_Bottle) {
-										
+
 										((G_Bottle) sm.getGarb()[i]).hpControl(p.getSp());
 									}else if(sm.getGarb()[i] instanceof G_Can) {
 										((G_Can) sm.getGarb()[i]).hpControl(p.getSp());
@@ -215,7 +217,7 @@ public class InGameView extends JPanel implements Runnable{
 									}else if(sm.getGarb()[i] instanceof G_Plastic) {
 										((G_Plastic) sm.getGarb()[i]).hpControl(p.getSp());
 									}
-									
+
 									if(sm.getGarb()[i].getHp() <= 0) {
 										sm.getLabels()[i].setBounds(10000,10000,40,40);
 										sm.getHpLabels()[i].setBounds(10000,10000,40,40);
@@ -262,7 +264,7 @@ public class InGameView extends JPanel implements Runnable{
 				}
 				@Override
 				public void mouseEntered(MouseEvent e) {
-					
+
 				}
 				@Override
 				public void mouseClicked(MouseEvent e) {
