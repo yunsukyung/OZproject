@@ -108,14 +108,25 @@ public class MainShopView extends JDialog{
 		JButton robpurchase = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\50쓰.png").getImage().getScaledInstance(60, 30, 0)));
 		robpurchase.setLayout(null);
 		robpurchase.setBounds(55, 160, 60, 30);
+		robpurchase.setBorderPainted(false);
+		robpurchase.setFocusPainted(false);
+		robpurchase.setContentAreaFilled(false);
+		
+		robpurchase.addMouseListener(new BuyMouse1());
 		
 		JButton robleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		robleft1.setLayout(null);
 		robleft1.setBounds(10, 80, 20, 20);
+		robleft1.setBorderPainted(false);
+		robleft1.setFocusPainted(false);
+		robleft1.setContentAreaFilled(false);
 		
 		JButton robright1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		robright1.setLayout(null);
 		robright1.setBounds(140, 80, 20, 20);
+		robright1.setBorderPainted(false);
+		robright1.setFocusPainted(false);
+		robright1.setContentAreaFilled(false);
 		
 		
 		//나가기버튼
@@ -123,6 +134,7 @@ public class MainShopView extends JDialog{
 		robackButton.setLayout(null);
 		robackButton.setBounds(60, 300, 98, 35);
 		robackButton.addMouseListener(new MyMouseAdepter1());
+		
 		
 		//낚시대 패널 2
 		JPanel robpanel2 = new JPanel();
@@ -143,14 +155,23 @@ public class MainShopView extends JDialog{
 		JButton robpurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\150쓰.png").getImage().getScaledInstance(60, 30, 0)));
 		robpurchase2.setLayout(null);
 		robpurchase2.setBounds(55, 160, 60, 30);
+		robpurchase2.setBorderPainted(false);
+		robpurchase2.setFocusPainted(false);
+		robpurchase2.setContentAreaFilled(false);
 		
 		JButton robleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		robleft2.setLayout(null);
 		robleft2.setBounds(10, 80, 20, 20);
+		robleft2.setBorderPainted(false);
+		robleft2.setFocusPainted(false);
+		robleft2.setContentAreaFilled(false);
 		
 		JButton robright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		robright2.setLayout(null);
 		robright2.setBounds(140, 80, 20, 20);
+		robright2.setBorderPainted(false);
+		robright2.setFocusPainted(false);
+		robright2.setContentAreaFilled(false);
 		
 
 		
@@ -173,14 +194,23 @@ public class MainShopView extends JDialog{
 		JButton robpurchase3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\15진.png").getImage().getScaledInstance(60, 30, 0)));
 		robpurchase3.setLayout(null);
 		robpurchase3.setBounds(55, 160, 60, 30);
+		robpurchase3.setBorderPainted(false);
+		robpurchase3.setFocusPainted(false);
+		robpurchase3.setContentAreaFilled(false);
 		
 		JButton robleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		robleft3.setLayout(null);
 		robleft3.setBounds(10, 80, 20, 20);
+		robleft3.setBorderPainted(false);
+		robleft3.setFocusPainted(false);
+		robleft3.setContentAreaFilled(false);
 		
 		JButton robright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		robright3.setLayout(null);
 		robright3.setBounds(140, 80, 20, 20);
+		robright3.setBorderPainted(false);
+		robright3.setFocusPainted(false);
+		robright3.setContentAreaFilled(false);
 		
 		//모자 패널 1
 		JPanel hatpanel1 = new JPanel();
@@ -198,14 +228,23 @@ public class MainShopView extends JDialog{
 		JButton hatpurchase1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\1200원.png").getImage().getScaledInstance(60, 30, 0)));
 		hatpurchase1.setLayout(null);
 		hatpurchase1.setBounds(55, 160, 60, 30);
+		hatpurchase1.setBorderPainted(false);
+		hatpurchase1.setFocusPainted(false);
+		hatpurchase1.setContentAreaFilled(false);
 		
 		JButton hatleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft1.setLayout(null);
 		hatleft1.setBounds(10, 80, 20, 20);
+		hatleft1.setBorderPainted(false);
+		hatleft1.setFocusPainted(false);
+		hatleft1.setContentAreaFilled(false);
 
 		JButton hatright1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		hatright1.setLayout(null);
 		hatright1.setBounds(140, 80, 20, 20);
+		hatright1.setBorderPainted(false);
+		hatright1.setFocusPainted(false);
+		hatright1.setContentAreaFilled(false);
 
 		//모자 패널 2
 		JPanel hatpanel2 = new JPanel();
@@ -223,15 +262,24 @@ public class MainShopView extends JDialog{
 		JButton hatpurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\3000원.png").getImage().getScaledInstance(60, 30, 0)));
 		hatpurchase2.setLayout(null);
 		hatpurchase2.setBounds(55, 160, 60, 30);
+		hatpurchase2.setBorderPainted(false);
+		hatpurchase2.setFocusPainted(false);
+		hatpurchase2.setContentAreaFilled(false);
 		
 		JButton hatleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft2.setLayout(null);
 		hatleft2.setBounds(10, 80, 20, 20);
+		hatleft2.setBorderPainted(false);
+		hatleft2.setFocusPainted(false);
+		hatleft2.setContentAreaFilled(false);
 
 		JButton hatright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		hatright2.setLayout(null);
 		hatright2.setBounds(140, 80, 20, 20);
-
+		hatright2.setBorderPainted(false);
+		hatright2.setFocusPainted(false);
+		hatright2.setContentAreaFilled(false);
+		
 		//모자 패널 3
 		JPanel hatpanel3 = new JPanel();
 		hatpanel3.setLayout(null);
@@ -248,14 +296,23 @@ public class MainShopView extends JDialog{
 		JButton hatpurchase3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\6500원.png").getImage().getScaledInstance(60, 30, 0)));
 		hatpurchase3.setLayout(null);
 		hatpurchase3.setBounds(55, 160, 60, 30);
+		hatpurchase3.setBorderPainted(false);
+		hatpurchase3.setFocusPainted(false);
+		hatpurchase3.setContentAreaFilled(false);
 		
 		JButton hatleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft3.setLayout(null);
 		hatleft3.setBounds(10, 80, 20, 20);
+		hatleft3.setBorderPainted(false);
+		hatleft3.setFocusPainted(false);
+		hatleft3.setContentAreaFilled(false);
 
 		JButton hatright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		hatright3.setLayout(null);
 		hatright3.setBounds(140, 80, 20, 20);
+		hatright3.setBorderPainted(false);
+		hatright3.setFocusPainted(false);
+		hatright3.setContentAreaFilled(false);
 
 
 		//모자 패널4
@@ -274,15 +331,24 @@ public class MainShopView extends JDialog{
 		JButton hatpurchase4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\10000원.png").getImage().getScaledInstance(60, 30, 0)));
 		hatpurchase4.setLayout(null);
 		hatpurchase4.setBounds(55, 160, 60, 30);
+		hatpurchase4.setBorderPainted(false);
+		hatpurchase4.setFocusPainted(false);
+		hatpurchase4.setContentAreaFilled(false);
 		
 		//왼쪽
 		JButton hatleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		hatleft4.setLayout(null);
 		hatleft4.setBounds(10, 80, 20, 20);
+		hatleft4.setBorderPainted(false);
+		hatleft4.setFocusPainted(false);
+		hatleft4.setContentAreaFilled(false);
 		//오른쪽
 		JButton hatright4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		hatright4.setLayout(null);
 		hatright4.setBounds(140, 80, 20, 20);
+		hatright4.setBorderPainted(false);
+		hatright4.setFocusPainted(false);
+		hatright4.setContentAreaFilled(false);
 
 		//음식 패널 1
 		JPanel foodpanel1 = new JPanel();
@@ -303,14 +369,23 @@ public class MainShopView extends JDialog{
 		JButton foodpurchase1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\10쓰.png").getImage().getScaledInstance(60, 30, 0)));
 		foodpurchase1.setLayout(null);
 		foodpurchase1.setBounds(55, 160, 60, 30);
+		foodpurchase1.setBorderPainted(false);
+		foodpurchase1.setFocusPainted(false);
+		foodpurchase1.setContentAreaFilled(false);
 		
 		JButton foodleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		foodleft1.setLayout(null);
 		foodleft1.setBounds(10, 80, 20, 20);
+		foodleft1.setBorderPainted(false);
+		foodleft1.setFocusPainted(false);
+		foodleft1.setContentAreaFilled(false);
 
 		JButton foodright1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		foodright1.setLayout(null);
 		foodright1.setBounds(140, 80, 20, 20);
+		foodright1.setBorderPainted(false);
+		foodright1.setFocusPainted(false);
+		foodright1.setContentAreaFilled(false);
 
 		//음식 패널 2
 		JPanel foodpanel2 = new JPanel();
@@ -331,14 +406,23 @@ public class MainShopView extends JDialog{
 		JButton foodpurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\30쓰.png").getImage().getScaledInstance(60, 30, 0)));
 		foodpurchase2.setLayout(null);
 		foodpurchase2.setBounds(55, 160, 60, 30);
+		foodpurchase2.setBorderPainted(false);
+		foodpurchase2.setFocusPainted(false);
+		foodpurchase2.setContentAreaFilled(false);
 		
 		JButton foodleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		foodleft2.setLayout(null);
 		foodleft2.setBounds(10, 80, 20, 20);
+		foodleft2.setBorderPainted(false);
+		foodleft2.setFocusPainted(false);
+		foodleft2.setContentAreaFilled(false);
 
 		JButton foodright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		foodright2.setLayout(null);
 		foodright2.setBounds(140, 80, 20, 20);
+		foodright2.setBorderPainted(false);
+		foodright2.setFocusPainted(false);
+		foodright2.setContentAreaFilled(false);
 
 
 
@@ -361,14 +445,23 @@ public class MainShopView extends JDialog{
 		JButton foodpurchase3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\50쓰.png").getImage().getScaledInstance(60, 30, 0)));
 		foodpurchase3.setLayout(null);
 		foodpurchase3.setBounds(55, 160, 60, 30);
+		foodpurchase3.setBorderPainted(false);
+		foodpurchase3.setFocusPainted(false);
+		foodpurchase3.setContentAreaFilled(false);
 		
 		JButton foodleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		foodleft3.setLayout(null);
 		foodleft3.setBounds(10, 80, 20, 20);
+		foodleft3.setBorderPainted(false);
+		foodleft3.setFocusPainted(false);
+		foodleft3.setContentAreaFilled(false);
 
 		JButton foodright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		foodright3.setLayout(null);
 		foodright3.setBounds(140, 80, 20, 20);
+		foodright3.setBorderPainted(false);
+		foodright3.setFocusPainted(false);
+		foodright3.setContentAreaFilled(false);
 
 
 		//음식 패널4
@@ -390,15 +483,24 @@ public class MainShopView extends JDialog{
 		JButton foodpurchase4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\5진.png").getImage().getScaledInstance(60, 30, 0)));
 		foodpurchase4.setLayout(null);
 		foodpurchase4.setBounds(55, 160, 60, 30);
+		foodpurchase4.setBorderPainted(false);
+		foodpurchase4.setFocusPainted(false);
+		foodpurchase4.setContentAreaFilled(false);
 		
 		//왼쪽
 		JButton foodleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		foodleft4.setLayout(null);
 		foodleft4.setBounds(10, 80, 20, 20);
+		foodleft4.setBorderPainted(false);
+		foodleft4.setFocusPainted(false);
+		foodleft4.setContentAreaFilled(false);
 		//오른쪽
 		JButton foodright4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		foodright4.setLayout(null);
 		foodright4.setBounds(140, 80, 20, 20);
+		foodright4.setBorderPainted(false);
+		foodright4.setFocusPainted(false);
+		foodright4.setContentAreaFilled(false);
 
 		//발전소 패널 1
 		JPanel epspanel1 = new JPanel();
@@ -419,14 +521,23 @@ public class MainShopView extends JDialog{
 		JButton epspurchase1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\500쓰.png").getImage().getScaledInstance(60, 30, 0)));
 		epspurchase1.setLayout(null);
 		epspurchase1.setBounds(55, 160, 60, 30);
+		epspurchase1.setBorderPainted(false);
+		epspurchase1.setFocusPainted(false);
+		epspurchase1.setContentAreaFilled(false);
 		
 		JButton epsleft1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		epsleft1.setLayout(null);
 		epsleft1.setBounds(10, 80, 20, 20);
+		epsleft1.setBorderPainted(false);
+		epsleft1.setFocusPainted(false);
+		epsleft1.setContentAreaFilled(false);
 
 		JButton epsright1 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		epsright1.setLayout(null);
 		epsright1.setBounds(140, 80, 20, 20);
+		epsright1.setBorderPainted(false);
+		epsright1.setFocusPainted(false);
+		epsright1.setContentAreaFilled(false);
 
 		//발전소 패널 2
 		JPanel epspanel2 = new JPanel();
@@ -447,15 +558,24 @@ public class MainShopView extends JDialog{
 		JButton epspurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\75진.png").getImage().getScaledInstance(60, 30, 0)));
 		epspurchase2.setLayout(null);
 		epspurchase2.setBounds(55, 160, 60, 30);
+		epspurchase2.setBorderPainted(false);
+		epspurchase2.setFocusPainted(false);
+		epspurchase2.setContentAreaFilled(false);
 
 		
 		JButton epsleft2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		epsleft2.setLayout(null);
 		epsleft2.setBounds(10, 80, 20, 20);
+		epsleft2.setBorderPainted(false);
+		epsleft2.setFocusPainted(false);
+		epsleft2.setContentAreaFilled(false);
 
 		JButton epsright2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		epsright2.setLayout(null);
 		epsright2.setBounds(140, 80, 20, 20);
+		epsright2.setBorderPainted(false);
+		epsright2.setFocusPainted(false);
+		epsright2.setContentAreaFilled(false);
 
 
 
@@ -478,14 +598,23 @@ public class MainShopView extends JDialog{
 		JButton epspurchase3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\75진.png").getImage().getScaledInstance(60, 30, 0)));
 		epspurchase3.setLayout(null);
 		epspurchase3.setBounds(55, 160, 60, 30);
+		epspurchase3.setBorderPainted(false);
+		epspurchase3.setFocusPainted(false);
+		epspurchase3.setContentAreaFilled(false);
 
 		JButton epsleft3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		epsleft3.setLayout(null);
 		epsleft3.setBounds(10, 80, 20, 20);
+		epsleft3.setBorderPainted(false);
+		epsleft3.setFocusPainted(false);
+		epsleft3.setContentAreaFilled(false);
 
 		JButton epsright3 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		epsright3.setLayout(null);
 		epsright3.setBounds(140, 80, 20, 20);
+		epsright3.setBorderPainted(false);
+		epsright3.setFocusPainted(false);
+		epsright3.setContentAreaFilled(false);
 
 
 		//발전소 패널4
@@ -507,15 +636,24 @@ public class MainShopView extends JDialog{
 		JButton epspurchase4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\135진.png").getImage().getScaledInstance(60, 30, 0)));
 		epspurchase4.setLayout(null);
 		epspurchase4.setBounds(55, 160, 60, 30);
+		epspurchase4.setBorderPainted(false);
+		epspurchase4.setFocusPainted(false);
+		epspurchase4.setContentAreaFilled(false);
 
 		//왼쪽
 		JButton epsleft4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\left.png").getImage().getScaledInstance(20, 20, 0)));
 		epsleft4.setLayout(null);
 		epsleft4.setBounds(10, 80, 20, 20);
+		epsleft4.setBorderPainted(false);
+		epsleft4.setFocusPainted(false);
+		epsleft4.setContentAreaFilled(false);
 		//오른쪽
 		JButton epsright4 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\right.png").getImage().getScaledInstance(20, 20, 0)));
 		epsright4.setLayout(null);
 		epsright4.setBounds(140, 80, 20, 20);
+		epsright4.setBorderPainted(false);
+		epsright4.setFocusPainted(false);
+		epsright4.setContentAreaFilled(false);
 		
 		
 		robpanel1.add(rob1);
@@ -975,6 +1113,37 @@ public class MainShopView extends JDialog{
 		public void mousePressed(MouseEvent e) {
 			dispose();
 			//new MainShopView(mf);
+		}
+	}
+	class BuyMouse1 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			if(p.getGarbage() < 50) {
+				ChangePanel.changePanel(mf, panel, new LessGarbage(mf, p));
+				dispose();
+			} else {
+				JDialog buy = new JDialog(mf, "구매성공!");
+				buy.setVisible(true);
+				buy.setBounds(120, 250, 200, 200);
+				
+				JLabel ok = new JLabel("아이템을 구매하였습니다!");
+				ok.setBounds(10, 30, 150, 50);
+				
+				JButton button = new JButton("확인");
+				button.setBounds(0, 100, 150, 50);
+				buy.add(button, BorderLayout.SOUTH);
+				buy.add(buy);
+				
+				button.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						buy.dispose();
+
+					}
+				});
+				
+			}
 		}
 	}
 	
