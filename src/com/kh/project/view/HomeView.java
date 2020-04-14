@@ -287,17 +287,7 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter6 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if(!f) {
-				ChangePanel.changePanel(mf, homeView, new HowToPlayView(mf, p));
-				
-			} else {
-				InGameView iv = new InGameView(mf, p);
-				t1 = new Thread(iv);
-				t1.start();
-				ChangePanel.changePanel(mf, homeView, iv);
-
-			}
-			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
+			
 		}
 	}
 

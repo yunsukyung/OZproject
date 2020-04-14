@@ -38,6 +38,7 @@ public class InGameView extends JPanel implements Runnable{
 	private InGameView inGameView;
 	public static int count1 = 0;
 	boolean stop = false;
+	int count;
 	
 	Toolkit tk = Toolkit.getDefaultToolkit();
 	Image img1 = tk.getImage("src/image/game/나무낚싯대이미지.png");
@@ -76,7 +77,7 @@ public class InGameView extends JPanel implements Runnable{
 	
 	int countGarbege = 0;
 	int countPearl = 0;
-	int count;
+	
 	public InGameView(MainView mf, Player p) {
 
 
