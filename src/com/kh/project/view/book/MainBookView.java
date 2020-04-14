@@ -15,14 +15,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.kh.project.model.vo.Player;
 import com.kh.project.view.HomeView;
 import com.kh.project.view.MainView;
 
 public class MainBookView extends JDialog {
 	private JDialog startPage;
 	private MainView mf;
-	
-	public MainBookView(MainView mf) {
+	private Player p;
+	public MainBookView(MainView mf, Player p) {
+		this.p = p;
 		this.startPage = this;
 		this.mf = mf;
 		this.setBounds(57, 180, 230, 400);

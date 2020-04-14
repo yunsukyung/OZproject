@@ -249,7 +249,7 @@ public class HomeView extends JPanel implements Runnable {
 		@Override
 		public void mousePressed(MouseEvent e) {
 
-			new ConfigurationView(mf);
+			new ConfigurationView(mf, p);
 
 		}
 	}
@@ -258,7 +258,7 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter3 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			new MainShopView(mf);
+			new MainShopView(mf, p);
 		}
 	}
 
@@ -266,7 +266,7 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter4 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			new MainBookView(mf);
+			new MainBookView(mf, p);
 		}
 	}
 

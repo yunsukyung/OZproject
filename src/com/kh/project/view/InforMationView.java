@@ -16,10 +16,10 @@ public class InforMationView extends JPanel{
 	private JPanel informationview;
 	private MainView mf;
 	Player p = new Player();
-	public InforMationView(MainView mf) {
+	public InforMationView(MainView mf, Player p) {
 		this.informationview = this;
 		this.mf = mf;
-		
+		this.p = p;
 		this.setLocation(0, 0);
 		this.setSize(360,640);
 

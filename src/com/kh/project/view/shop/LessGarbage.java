@@ -5,13 +5,15 @@ import java.awt.Image;
 
 import javax.swing.*;
 
+import com.kh.project.model.vo.Player;
+
 public class LessGarbage extends JPanel{
-	
-	public LessGarbage(JFrame mf) {
+	Player p;
+	public LessGarbage(JFrame mf, Player p) {
 		this.setLayout(null);
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-		
+		this.p = p;
 		//쓰레기수집배경
 		JLabel background = new JLabel(new ImageIcon(new ImageIcon("src/image/start/쓰레기 수집1.png").getImage().getScaledInstance(360, 640, 0)));
 		background.setBounds(0, 0, 360, 640);

@@ -7,16 +7,17 @@ import java.awt.Image;
 
 import javax.swing.*;
 
+import com.kh.project.model.vo.Player;
 import com.kh.project.view.MainView;
 
 public class TimeOverView1 extends JPanel{
 	private JPanel startPage;
 	private MainView mf;
-
-	public TimeOverView1(MainView mf) {
+	Player p;
+	public TimeOverView1(MainView mf, Player p) {
 		this.startPage = this;
 		this.mf = mf;
-
+		this.p = p;
 		//위치고정 
 
 

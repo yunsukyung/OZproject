@@ -13,7 +13,7 @@ public class Player implements java.io.Serializable{
 	private int garbage = 0;	//쓰레기
 	private int sp = 10;		//공격력
 	private int satiety = 100;	//포만감
-
+	private boolean firstEnter = false;
 	public Player() {}
 
 	public Player(String userId, String userPwd, String userName, 
@@ -101,7 +101,14 @@ public class Player implements java.io.Serializable{
 	public void setSatiety(int satiety) {
 		this.satiety = satiety;
 	}
-	
+
+	public boolean isFirstEnter() {
+		return firstEnter;
+	}
+
+	public void setFirstEnter(boolean firstEnter) {
+		this.firstEnter = firstEnter;
+	}
 
 }
 

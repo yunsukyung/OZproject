@@ -163,7 +163,7 @@ public class InGameView extends JPanel implements Runnable{
 							e.getXOnScreen()>setLabel.getX()+15+label.getX() + mf.getX()) {
 						if(e.getYOnScreen() < setLabel.getY()+80 +label.getY() + mf.getY()&&
 								e.getYOnScreen()>=setLabel.getY()+40 + label.getY() + mf.getY()) {
-							new ConfigurationView(mf);
+							new ConfigurationView(mf, p);
 						}
 						System.out.println("!@3123123123");
 					}
@@ -283,7 +283,7 @@ public class InGameView extends JPanel implements Runnable{
 					}
 					Thread.sleep(1000);
 					if(Timer <= 0) {
-						new TimeOverView1(mf);
+						new TimeOverView1(mf, p);
 						Thread.sleep(3000);
 					}
 					Timer -= 10;

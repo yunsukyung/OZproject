@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 
+import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
 
 
@@ -19,10 +20,12 @@ import com.kh.project.model.vo.Player;
 public class ConfigurationView extends JDialog {
 	private JDialog mo;
 	private MainView mf;
+	LoginManager lm = new LoginManager();
 	Player p = new Player();
-	public ConfigurationView(MainView mf) {
+	public ConfigurationView(MainView mf, Player p) {
 		this.mf = mf;
 		this.mo = this;
+		this.p = p;
 		this.setBounds(57, 180, 230, 400);
 		//this.setUndecorated(true);
 		this.setVisible(true);
@@ -106,6 +109,8 @@ public class ConfigurationView extends JDialog {
 	class MyMouseAdepter2 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
+			System.out.println("p.get : " + p.getUserId());
+			System.out.println(lm.SaveId(p.getUserId(), p));
 			System.exit(0);
 		}
 	}
@@ -124,7 +129,7 @@ public class ConfigurationView extends JDialog {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			dispose();
-			ChangePanel.change(mf, mo, new InforMationView(mf));
+			ChangePanel.change(mf, mo, new InforMationView(mf, p));
 		}
 	}
 	

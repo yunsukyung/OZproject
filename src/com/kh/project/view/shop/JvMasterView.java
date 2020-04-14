@@ -4,17 +4,18 @@ import java.awt.Image;
 
 import javax.swing.*;
 
+import com.kh.project.model.vo.Player;
 import com.kh.project.view.MainView;
 
 public class JvMasterView extends JPanel{
 	private JPanel startPage;
 	private MainView mf;
-
-	public JvMasterView(MainView mf) {
+	Player p;
+	public JvMasterView(MainView mf,Player p) {
 		this.setLayout(null);
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-
+		this.p = p;
 		//배경
 		Image background = new ImageIcon("src/image/start/편지배경.png").getImage().getScaledInstance(360, 640, 0);
 		JLabel label = new JLabel(new ImageIcon(background));

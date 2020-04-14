@@ -9,18 +9,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.kh.project.model.vo.Player;
 import com.kh.project.view.MainView;
 
 public class FoodView extends JPanel{
 	
 	private JPanel buypearl;
 	private MainView mf;
+	private Player p;
 	
-	
-	public FoodView(MainView mf) {
+	public FoodView(MainView mf, Player p) {
 		this.buypearl = this;
 		this.mf = mf;
-		
+		this.p = p;
 		this.setLayout(null);
 		
 		this.setLocation(0, 0);

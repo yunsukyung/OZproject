@@ -11,18 +11,19 @@ import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
+import com.kh.project.model.vo.Player;
 import com.kh.project.view.*;
 
 public class MainShopView extends JDialog{
 	private JDialog startPage;
 	private MainView mf;
 	private JPanel panel = new JPanel();
-	
-	public MainShopView(MainView mf) {
+	Player p;
+	public MainShopView(MainView mf, Player p) {
 		System.out.println("zz");
 		this.startPage = this;
 		this.mf = mf;
-		
+		this.p = p;
 		this.setBounds(57, 180, 230, 400);
 	//	this.setUndecorated(true);
 		this.setVisible(true);

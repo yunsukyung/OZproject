@@ -9,18 +9,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.kh.project.model.vo.Player;
 import com.kh.project.view.MainView;
 
 public class HatView extends JPanel{
 	
 	private JPanel buypearl;
 	private MainView mf;
+	Player p;
 	
-	
-	public HatView(MainView mf) {
+	public HatView(MainView mf,Player p) {
 		this.buypearl = this;
 		this.mf = mf;
-		
+		this.p = p;
 		this.setLayout(null);
 		
 		this.setLocation(0, 0);

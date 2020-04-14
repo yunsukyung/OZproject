@@ -9,6 +9,17 @@ public class LoginManager {
 
 	private PlayerDao pd = new PlayerDao();
 
+	public boolean SaveId(String str, Player p) {
+		ArrayList <Player> plist = pd.readPlayerList();
+		
+		for(int i = 0 ; i < plist.size(); i ++) {
+			if(plist.get(i).getUserId().equals(str)) {
+				plist.set(i, p);
+				return true;
+			}
+		}
+		return false;
+	}
 	public void MakeId(Player p) {
 		ArrayList <Player> plist = pd.readPlayerList();
 

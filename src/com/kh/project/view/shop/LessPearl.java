@@ -4,13 +4,15 @@ import java.awt.BorderLayout;
 
 import javax.swing.*;
 
-public class LessPearl extends JPanel{
+import com.kh.project.model.vo.Player;
 
-	public LessPearl(JFrame mf) {
+public class LessPearl extends JPanel{
+	Player p;
+	public LessPearl(JFrame mf, Player p) {
 		this.setLayout(null);
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-		
+		this.p = p;
 		//진주 수집배경
 		JLabel background = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\진주수집배경.png").getImage().getScaledInstance(360, 640, 0)));
 		background.setBounds(0, 0, 360, 640);

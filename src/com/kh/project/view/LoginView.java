@@ -133,7 +133,13 @@ public class LoginView extends JPanel{
 					}
 				});
 			} else {
-				ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
+				p = lm.LoginId(Idtf.getText(), password.getPassword());
+				if(!p.isFirstEnter()) {
+					ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
+					p.setFirstEnter(true);
+				} else {
+					ChangePanel.changePanel(mf, loginView, new HomeView(mf, p));
+				}
 			}
 
 

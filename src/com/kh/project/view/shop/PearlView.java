@@ -5,16 +5,17 @@ import java.awt.Image;
 
 import javax.swing.*;
 
+import com.kh.project.model.vo.Player;
 import com.kh.project.view.MainView;
 
 public class PearlView extends JPanel{
 	private JPanel buypearl;
 	private MainView mf;
-	
-	public PearlView(MainView mf) {
+	Player p;
+	public PearlView(MainView mf, Player p) {
 		this.buypearl = this;
 		this.mf = mf;
-		
+		this.p = p;
 		this.setLayout(null);
 		
 		this.setLocation(0, 0);
