@@ -39,7 +39,7 @@ public class LoginView extends JPanel{
 		System.out.println(this.getLocation());
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-
+		
 		JLabel background = new JLabel(new ImageIcon(new ImageIcon("src/image/start/시작 배경.png").getImage().getScaledInstance(360, 640, 0)));
 
 
@@ -137,7 +137,7 @@ public class LoginView extends JPanel{
 				if(!p.isFirstEnter()) {
 					ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 					p.setFirstEnter(true);
-				} else {
+				} else if (p.isFirstEnter()){
 					ChangePanel.changePanel(mf, loginView, new HomeView(mf, p));
 				}
 			}

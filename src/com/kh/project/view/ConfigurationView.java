@@ -109,8 +109,7 @@ public class ConfigurationView extends JDialog {
 	class MyMouseAdepter2 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			System.out.println("p.get : " + p.getUserId());
-			System.out.println(lm.SaveId(p.getUserId(), p));
+			lm.SaveId(p.getUserId(), p);
 			System.exit(0);
 		}
 	}

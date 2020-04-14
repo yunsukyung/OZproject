@@ -15,6 +15,7 @@ public class LoginManager {
 		for(int i = 0 ; i < plist.size(); i ++) {
 			if(plist.get(i).getUserId().equals(str)) {
 				plist.set(i, p);
+				pd.writePlayerList(plist);
 				return true;
 			}
 		}
