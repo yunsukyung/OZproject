@@ -94,8 +94,7 @@ public class PaymentView extends JDialog{
 		label.add(Cancel);
 		label.add(PearlNumber);
 		label.add(Price);
-//		mf.add(this);
-//		mf.revalidate();
+
 	}
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
