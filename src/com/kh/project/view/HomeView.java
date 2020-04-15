@@ -266,6 +266,7 @@ public class HomeView extends JPanel implements Runnable {
 		@Override
 		public void mousePressed(MouseEvent e) {
 
+			
 			new ConfigurationView(mf, p);
 
 		}
