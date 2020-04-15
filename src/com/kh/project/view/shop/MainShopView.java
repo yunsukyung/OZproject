@@ -1162,7 +1162,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1193,7 +1193,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1224,7 +1224,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1255,7 +1255,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1286,7 +1286,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1317,7 +1317,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1347,7 +1347,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1377,7 +1377,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1407,7 +1407,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1437,7 +1437,7 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
@@ -1454,7 +1454,7 @@ public class MainShopView extends JDialog{
 	class PayMouse5 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if(p.getPearl() < 75) {
+			if(p.getPearl() < 0) {
 				ChangePanel.changePanel(mf, panel, new LessPearl(mf, p));
 			} else {
 				JDialog buy = new JDialog(mf, "구매성공!");
@@ -1467,13 +1467,16 @@ public class MainShopView extends JDialog{
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				buy.add(button, BorderLayout.SOUTH);
-				buy.add(buy);
+				buy.add(ok);
 
 				button.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						new MainShopView(mf, p).dispose();
+						
+						
 
 					}
 				});
