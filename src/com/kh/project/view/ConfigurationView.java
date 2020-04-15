@@ -15,8 +15,6 @@ import javax.swing.JSlider;
 import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
 
-
-
 public class ConfigurationView extends JDialog {
 	private JDialog mo;
 	private MainView mf;

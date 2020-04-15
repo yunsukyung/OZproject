@@ -36,9 +36,8 @@ public class InGameView extends JPanel implements Runnable{
 
 	private MainView mf;
 	private InGameView inGameView;
-	public static int count1 = 0;
+	public static int count = 0;
 	boolean stop = false;
-	int count;
 	
 	Toolkit tk = Toolkit.getDefaultToolkit();
 	Image img1 = tk.getImage("src/image/game/나무낚싯대이미지.png");
@@ -171,6 +170,8 @@ public class InGameView extends JPanel implements Runnable{
 							e.getXOnScreen()>setLabel.getX()+15+label.getX() + mf.getX()) {
 						if(e.getYOnScreen() < setLabel.getY()+80 +label.getY() + mf.getY()&&
 								e.getYOnScreen()>=setLabel.getY()+40 + label.getY() + mf.getY()) {
+							p.setGarbage(p.getGarbage() + countGarbege);
+							p.setPearl(p.getPearl() + countPearl);
 							new IngameSettingView(mf, p, countGarbege, countPearl);
 							
 						}

@@ -30,8 +30,10 @@ public class IngameSettingView extends JDialog {
 		this.setBounds(57, 180, 230, 400);
 		this.p = p;
 		this.setVisible(true);
+		
 		this.countG = countG;
 		this.countP = countP;
+		
 		InGameView.timer = 0;
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
@@ -67,7 +69,7 @@ public class IngameSettingView extends JDialog {
 		public void mousePressed(MouseEvent e) {
 			dispose();
 			ChangePanel.change(mf, inset, new TimeOverView1(mf, p, countP, countG));
-			//InGameView.count = 1001;
+			InGameView.count = 1001;
 		}
 	}
 	class MyMouseAdapter1 extends MouseAdapter {

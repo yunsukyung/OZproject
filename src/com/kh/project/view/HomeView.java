@@ -35,6 +35,7 @@ public class HomeView extends JPanel implements Runnable {
 	JButton restart;
 	JButton restart2;
 	JLabel re_text;
+	
 	public static boolean stop = false;
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
@@ -288,9 +289,16 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter6 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
-			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
-			
+			if(!f) {
+				ChangePanel.changePanel(mf, homeView, new HowToPlayView(mf, p));
+				
+			} else {
+				InGameView iv = new InGameView(mf, p);
+				t1 = new Thread(iv);
+				t1.start();
+				ChangePanel.changePanel(mf, homeView, iv);
+
+			}
 		}
 	}
 
