@@ -19,4 +19,5 @@ public class ChangePanel {
 		mf.repaint();
 		System.out.println(mf.getLocation() +  " " + cp.getLocation());
 	}
+
 }
