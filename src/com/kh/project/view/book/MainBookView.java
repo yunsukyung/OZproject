@@ -112,6 +112,8 @@ public class MainBookView extends JDialog {
 		this.add(back);
 		this.setResizable(false); 
 		
+		
+		
 	}
 	
 	//나가기
@@ -167,6 +169,8 @@ class mous extends JFrame{
 		mo.add(jin);
 		mo.add(pan);
 		
+		
+		
 		this.add(mo);
 		this.setResizable(false);
 		this.setSize(240,222);
@@ -175,6 +179,7 @@ class mous extends JFrame{
 	class HomeMouse1 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
+			dispose();
 			
 		}
 	}
@@ -224,7 +229,7 @@ class mous2 extends JFrame{
 	class HomeMouse2 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+			dispose();
 		}
 	}
 }
@@ -272,7 +277,7 @@ class mous3 extends JFrame{
 	class HomeMouse3 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+			dispose();
 		}
 	}
 }
@@ -318,7 +323,7 @@ class mous4 extends JFrame{
 	class HomeMouse4 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+			dispose();
 		}
 	}
 }
