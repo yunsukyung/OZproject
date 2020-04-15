@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 import javax.swing.*;
 import javax.swing.text.StyledEditorKit.BoldAction;
@@ -35,6 +36,7 @@ public class HomeView extends JPanel implements Runnable {
 	JButton restart;
 	JButton restart2;
 	JLabel re_text;
+
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
 		this.mf = mf;
@@ -54,7 +56,9 @@ public class HomeView extends JPanel implements Runnable {
 
 		top_l = new JLabel();
 		top_l.setBounds(0, 0, 360, 640);
-
+		
+		MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\로딩-코크타운_1.wav");
+		
 		//닉네임 간판
 		JButton nickname_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/로그인간판.png").getImage().getScaledInstance(129, 148, 0)));
 		nickname_b.setBounds(45, 110, 129, 148);
