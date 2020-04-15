@@ -35,7 +35,7 @@ public class HomeView extends JPanel implements Runnable {
 	JButton restart;
 	JButton restart2;
 	JLabel re_text;
-	
+
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
 		this.mf = mf;
@@ -288,9 +288,9 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter6 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+
 			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
-			
+
 		}
 	}
 
