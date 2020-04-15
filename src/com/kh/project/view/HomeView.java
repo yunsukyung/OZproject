@@ -36,7 +36,6 @@ public class HomeView extends JPanel implements Runnable {
 	JButton restart2;
 	JLabel re_text;
 	
-	public static boolean stop = false;
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
 		this.mf = mf;
