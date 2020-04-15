@@ -12,8 +12,9 @@ public class Player implements java.io.Serializable{
 	private int pearl = 0;	//진주
 	private int garbage = 0;	//쓰레기
 	private int sp = 10;		//공격력
-	private int satiety = 100;	//포만감
+	public static int satiety = 236;	//포만감
 	private boolean firstEnter = false;
+
 	public Player() {}
 
 	public Player(String userId, String userPwd, String userName, 
@@ -62,7 +63,7 @@ public class Player implements java.io.Serializable{
 		return sp;
 	}
 
-	public int getSatiety() {
+	public static int getSatiety() {
 		return satiety;
 	}
 
@@ -98,8 +99,8 @@ public class Player implements java.io.Serializable{
 		this.sp = sp;
 	}
 
-	public void setSatiety(int satiety) {
-		this.satiety = satiety;
+	public static void setSatiety(int satiety) {
+		Player.satiety = satiety;
 	}
 
 	public boolean isFirstEnter() {

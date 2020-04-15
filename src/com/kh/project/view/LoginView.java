@@ -23,6 +23,7 @@ import javax.swing.JTextField;
 
 import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
+import com.kh.project.run.Run;
 
 public class LoginView extends JPanel{
 
@@ -134,9 +135,8 @@ public class LoginView extends JPanel{
 					ChangePanel.changePanel(mf, loginView, new StartStoryView(mf, p));
 					p.setFirstEnter(true);
 				} else if (p.isFirstEnter()){
+					Run.t1.start();
 					ChangePanel.changePanel(mf, loginView, new HomeView(mf, p));
-					Thread t1 = new Thread(new HomeView(mf, p));
-					t1.start();
 				}
 			}
 

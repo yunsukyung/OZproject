@@ -13,6 +13,7 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 
 import com.kh.project.model.vo.Player;
+import com.kh.project.run.Run;
 import com.kh.project.view.ChangePanel;
 import com.kh.project.view.HomeView;
 import com.kh.project.view.InGameView;
@@ -21,7 +22,7 @@ import com.kh.project.view.MainView;
 public class TimeOverView1 extends JPanel{
 	private JPanel startPage;
 	private MainView mf;
-	Player p;
+	Player p = new Player();
 	
 	public TimeOverView1(MainView mf, Player p, int countG, int countP) {
 		this.startPage = this;
@@ -93,8 +94,7 @@ public class TimeOverView1 extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ChangePanel.changePanel(mf, startPage, new HomeView(mf, p));
-				InGameView.count = 0;
-				InGameView.timer = 10;
+				InGameView.threadtimer = false;
 				
 			}
 		});

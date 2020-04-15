@@ -49,8 +49,8 @@ public class InGameView extends JPanel implements Runnable{
 	Image background;
 	SpawnManager sm = new SpawnManager();
 	Player p;
-
-	int Timer = 100;
+	
+	public static int Timer = 100;
 	public static int timer = 10;
 	public static boolean threadtimer = false;
 	JLabel tLabel;
@@ -76,6 +76,7 @@ public class InGameView extends JPanel implements Runnable{
 	int countGarbege = 0;
 	int countPearl = 0;
 	
+	public InGameView() {}
 	public InGameView(MainView mf, Player p) {
 
 
@@ -283,7 +284,6 @@ public class InGameView extends JPanel implements Runnable{
 				System.out.println("ThreadTimer  : " + threadtimer);
 				try {
 					if(!threadtimer) {
-					
 					label.add(sm.getLabels()[count]);
 					label.add(sm.getHpLabels()[count]);
 					for(int i = 0; i < count; i ++) {
@@ -293,7 +293,7 @@ public class InGameView extends JPanel implements Runnable{
 							sm.getHpLabels()[i].setBounds(10000,10000,40,40);
 						}
 					}
-					
+					System.out.println("123123123123");
 					Thread.sleep(1000);
 					Timer -= timer;
 					tLabel2.setSize(Timer,10);;
