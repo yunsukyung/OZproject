@@ -292,7 +292,6 @@ public class HomeView extends JPanel implements Runnable {
 			
 			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
 			
-			
 		}
 	}
 
