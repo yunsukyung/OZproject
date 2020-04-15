@@ -139,6 +139,8 @@ public class LoginView extends JPanel{
 					p.setFirstEnter(true);
 				} else if (p.isFirstEnter()){
 					ChangePanel.changePanel(mf, loginView, new HomeView(mf, p));
+					Thread t1 = new Thread(new HomeView(mf, p));
+					t1.start();
 				}
 			}
 
