@@ -1,14 +1,22 @@
 package com.kh.project.view.shop;
 
 import java.awt.BorderLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.*;
 
 import com.kh.project.model.vo.Player;
+import com.kh.project.view.ChangePanel;
+import com.kh.project.view.HomeView;
+import com.kh.project.view.MainView;
+import com.kh.project.view.book.MainBookView;
 
 public class LessPearl extends JPanel{
 	Player p;
-	public LessPearl(JFrame mf, Player p) {
+	private JPanel lessPearl;
+	private MainView mf;
+	public LessPearl(MainView mf, Player p) {
 		this.setLayout(null);
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
@@ -23,13 +31,30 @@ public class LessPearl extends JPanel{
 		background.add(pearlButton);
 		pearlButton.setLayout(null);
 		
+		pearlButton.addMouseListener(new MyMouseAdapter());
+		
 		//back버튼
 		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src\\\\image\\\\start\\\\back.png").getImage().getScaledInstance(98, 35, 0)));
 		backButton.setBounds(131, 450, 98, 35);
 		background.add(backButton);
 		
+		backButton.addMouseListener(new MyMouseAdapter2());
+		
 		background.add(pearlButton, BorderLayout.CENTER);
 		this.add(pearlButton);
 		this.add(background);
+	}
+	class MyMouseAdapter extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, lessPearl, new PaymentView(mf, p));
+		}
+	}
+	class MyMouseAdapter2 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, lessPearl, new HomeView(mf, p));
+			new MainBookView(mf, p);
+		}
 	}
 }
