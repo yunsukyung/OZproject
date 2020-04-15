@@ -111,13 +111,9 @@ public class LoginView extends JPanel{
 				Dialog check = new Dialog(mf, "아이디, 비밀번호 오류");
 				check.setVisible(true);
 				check.setBounds(120, 250, 200, 200);
-
-
 				JLabel id = new JLabel("<html>아이디 또는 비밀번호가 다릅니다.<html>");
 				id.setBounds(10, 30, 150, 50);
-
-
-
+				
 				JButton button = new JButton("확인");
 				button.setBounds(0, 100, 150, 50);
 				check.add(button, BorderLayout.SOUTH);
@@ -139,6 +135,8 @@ public class LoginView extends JPanel{
 					p.setFirstEnter(true);
 				} else if (p.isFirstEnter()){
 					ChangePanel.changePanel(mf, loginView, new HomeView(mf, p));
+					Thread t1 = new Thread(new HomeView(mf, p));
+					t1.start();
 				}
 			}
 
