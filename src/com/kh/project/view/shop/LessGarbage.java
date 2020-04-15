@@ -2,14 +2,22 @@ package com.kh.project.view.shop;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.*;
 
 import com.kh.project.model.vo.Player;
+import com.kh.project.view.ChangePanel;
+import com.kh.project.view.HomeView;
+import com.kh.project.view.MainView;
+import com.kh.project.view.book.MainBookView;
 
 public class LessGarbage extends JPanel{
 	Player p;
-	public LessGarbage(JFrame mf, Player p) {
+	private MainView mf;
+	private JPanel lessGarbage;
+	public LessGarbage(MainView mf, Player p) {
 		this.setLayout(null);
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
@@ -24,10 +32,14 @@ public class LessGarbage extends JPanel{
 		background.add(garbageButton);
 		garbageButton.setLayout(null);
 		
+		garbageButton.addMouseListener(new MyMouseAdapter());
+		
 		//back버튼 
 		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\back.png").getImage().getScaledInstance(98, 35, 0)));
 		backButton.setBounds(131, 450 ,98,35);
 		background.add(backButton);
+		
+		backButton.addMouseListener(new MyMouseAdapter2());
 		
 		background.add(garbageButton, BorderLayout.CENTER);
 		this.add(garbageButton);
@@ -36,6 +48,20 @@ public class LessGarbage extends JPanel{
 	
 		
 		
+	}
+	
+	class MyMouseAdapter extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, lessGarbage, new HomeView(mf, p));
+		}
+	}
+	class MyMouseAdapter2 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, lessGarbage, new HomeView(mf, p));
+			new MainBookView(mf, p);
+		}
 	}
 	
 	

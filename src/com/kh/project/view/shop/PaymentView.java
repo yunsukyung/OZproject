@@ -11,13 +11,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.kh.project.model.vo.Player;
 import com.kh.project.view.MainView;
 
 public class PaymentView extends JPanel{
 	private JPanel startPage;
 	private MainView mf;
+	Player p;
 
-	public PaymentView (MainView mf) {
+	public PaymentView (MainView mf, Player p) {
 		this.startPage = this;
 		this.mf = mf;
 		
