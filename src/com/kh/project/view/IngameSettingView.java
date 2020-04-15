@@ -68,7 +68,7 @@ public class IngameSettingView extends JDialog {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			dispose();
-			ChangePanel.change(mf, inset, new TimeOverView1(mf, p, countP, countG));
+			ChangePanel.change(mf, inset, new TimeOverView1(mf, p, countG, countP));
 			InGameView.count = 1001;
 		}
 	}

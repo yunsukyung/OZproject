@@ -36,6 +36,8 @@ public class HomeView extends JPanel implements Runnable {
 	JButton restart;
 	JButton restart2;
 	JLabel re_text;
+	
+	public static boolean stop = false;
 
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
@@ -47,7 +49,7 @@ public class HomeView extends JPanel implements Runnable {
 
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-		this.p.setSp(50);
+		
 		//배경
 		Image background = new ImageIcon("src/image/start/icebergMain.jpg").getImage().getScaledInstance(360, 640, 0);
 		//라벨로 배경에서 보여줄 위치표시
@@ -291,10 +293,19 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter6 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
+			if(!f) {
+				ChangePanel.changePanel(mf, homeView, new HowToPlayView(mf, p));
+				
+			} else {
+				InGameView iv = new InGameView(mf, p);
+				t1 = new Thread(iv);
+				t1.start();
+				ChangePanel.changePanel(mf, homeView, iv);
 
-			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
-
+			}
 		}
+
+
 	}
 
 	//포만감 감소

@@ -84,6 +84,7 @@ public class TimeOverView1 extends JPanel{
 		
 		label.add(trash);
 		label.add(pearl);
+		
 		label.add(button2);
 		label.add(button);
 		
