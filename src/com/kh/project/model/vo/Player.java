@@ -14,6 +14,10 @@ public class Player implements java.io.Serializable{
 	private int sp = 10;		//공격력
 	public static int satiety = 236;	//포만감
 	private boolean firstEnter = false;
+	public static boolean eps1 = false;
+	public static boolean eps2 = false;
+	public static boolean eps3 = false;
+	public static boolean eps4 = false;
 
 	public Player() {}
 
