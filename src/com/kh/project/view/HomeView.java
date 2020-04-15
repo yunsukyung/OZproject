@@ -326,7 +326,7 @@ public class HomeView extends JPanel implements Runnable {
 			if(maxHp < 0) {
 				break;
 			}
-			maxHp -= 30;
+			maxHp -= 0;
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {

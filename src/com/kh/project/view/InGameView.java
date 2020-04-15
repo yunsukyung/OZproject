@@ -24,6 +24,7 @@ import javax.swing.JTextField;
 
 import com.kh.project.controller.SpawnManager;
 import com.kh.project.model.vo.*;
+import com.kh.project.view.shop.LoveLetterView;
 import com.kh.project.view.shop.RewardView;
 import com.kh.project.view.shop.TimeOverView1;
 
@@ -289,6 +290,9 @@ public class InGameView extends JPanel implements Runnable{
 					for(int i = 0; i < count; i ++) {
 						sm.getGarb()[i].setLife(sm.getGarb()[i].getLife()-1);
 						if(sm.getGarb()[i].getLife() <= 0) {
+							if(sm.getGarb()[i] instanceof G_LoveLetter) {
+								ChangePanel.changePanel(mf, inGameView, new LoveLetterView(mf, p));
+							}
 							sm.getLabels()[i].setBounds(10000,10000,40,40);
 							sm.getHpLabels()[i].setBounds(10000,10000,40,40);
 						}
@@ -387,7 +391,7 @@ public class InGameView extends JPanel implements Runnable{
 			// TODO Auto-generated method stub
 
 		}
-
+	
 	}
 
 }
