@@ -47,14 +47,15 @@ public class LessPearl extends JPanel{
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			ChangePanel.changePanel(mf, lessPearl, new PaymentView(mf, p));
+			ChangePanel.changePanel(mf, lessPearl, new HomeView(mf, p));
+			new MainBookView(mf, p);
 		}
 	}
 	class MyMouseAdapter2 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			ChangePanel.changePanel(mf, lessPearl, new HomeView(mf, p));
-			new MainBookView(mf, p);
+			
 		}
 	}
 }
