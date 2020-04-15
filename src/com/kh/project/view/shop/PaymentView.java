@@ -34,6 +34,7 @@ public class PaymentView extends JDialog{
 		this.p = p;
 		this.pearl = pearl;
 		this.money = money;
+		Player.pearl = Player.pearl + pearl;
 		//위치
 		this.setLocation(0, 0);
 		this.setSize(317, 378);

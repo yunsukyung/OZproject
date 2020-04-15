@@ -52,7 +52,6 @@ public class HomeView extends JPanel implements Runnable {
 
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-
 		//배경
 		Image background = new ImageIcon("src/image/start/icebergMain.jpg").getImage().getScaledInstance(360, 640, 0);
 		//라벨로 배경에서 보여줄 위치표시
@@ -233,7 +232,7 @@ public class HomeView extends JPanel implements Runnable {
 		bg_l.add(labelrs);		//포만감 감소
 		//		this.add(label4);		//포만감 배경
 		bg_l.add(trash);		//쓰레기 텍스트
-		bg_l.add(pearl);		//진주 텍스트
+		bg_l.add(HomeView.pearl);		//진주 텍스트
 		bg_l.add(nickname_b);		//닉네임 간판
 		bg_l.add(igloo_b);		//이글루
 		this.add(bg_l);		//배경
@@ -243,6 +242,8 @@ public class HomeView extends JPanel implements Runnable {
 	public HomeView(MainView mf, Player p, int pearl) {
 		this(mf, p);
 		this.pearl = new JLabel(" x " + Integer.toString(pearl));
+		bg_l.add(HomeView.pearl);		//진주 텍스트
+		System.out.println(Player.pearl);
 	}
 
 	public static void setStop(boolean stop) {
