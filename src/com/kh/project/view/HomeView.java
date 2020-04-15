@@ -290,9 +290,7 @@ public class HomeView extends JPanel implements Runnable {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			
-			
 			ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
-			
 		}
 	}
 
