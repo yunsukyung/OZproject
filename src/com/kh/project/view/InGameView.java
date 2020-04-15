@@ -36,8 +36,8 @@ public class InGameView extends JPanel implements Runnable{
 
 	private MainView mf;
 	private InGameView inGameView;
-	public static int count = 0;
-	boolean stop = false;
+	int count = 0;
+	
 	
 	Toolkit tk = Toolkit.getDefaultToolkit();
 	Image img1 = tk.getImage("src/image/game/나무낚싯대이미지.png");
