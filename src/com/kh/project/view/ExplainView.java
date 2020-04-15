@@ -10,6 +10,7 @@ import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
 import com.kh.project.model.vo.Player;
+import com.kh.project.run.Run;
 
 
 public class ExplainView extends JPanel{
@@ -38,6 +39,7 @@ public class ExplainView extends JPanel{
 		@Override
 		public void mousePressed(MouseEvent e) {
 			ChangePanel.changePanel(mf, explainView, new HomeView(mf, p));
+			Run.t1.start();
 		}
 	}
 	

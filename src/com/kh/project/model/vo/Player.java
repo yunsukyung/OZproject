@@ -12,7 +12,7 @@ public class Player implements java.io.Serializable{
 	private int pearl = 0;	//진주
 	private int garbage = 0;	//쓰레기
 	private int sp = 10;		//공격력
-	public static int satiety = 100;	//포만감
+	public static int satiety = 236;	//포만감
 	private boolean firstEnter = false;
 	
 	public static boolean eps1 = false;

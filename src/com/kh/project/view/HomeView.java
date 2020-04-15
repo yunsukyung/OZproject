@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
 
 import javax.swing.*;
@@ -12,6 +13,7 @@ import javax.swing.text.StyledEditorKit.BoldAction;
 
 import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
+import com.kh.project.run.Run;
 import com.kh.project.view.book.MainBookView;
 import com.kh.project.view.shop.MainShopView;
 import com.kh.project.view.shop.StageView;
@@ -27,29 +29,29 @@ public class HomeView extends JPanel implements Runnable {
 	LoginManager lm = new LoginManager();
 	Player p;
 	//ReduceSatiety rs = new ReduceSatiety(mf);
-	public static Thread t1;;
-	JLabel labelrs;
-	JLabel bg_l;
-	JLabel gameover;
-	JLabel top_l;
-	JLabel bg_gameover;
-	JButton restart;
-	JButton restart2;
-	JLabel re_text;
-	
+	public static JLabel labelrs = new JLabel();
+	public static JLabel bg_l = new JLabel();
+	public static JLabel gameover = new JLabel();
+	public static JLabel top_l = new JLabel();
+	public static JButton restart = new JButton();
+	public static JButton restart2 = new JButton();
+	public static JLabel re_text = new JLabel();
+	public static JButton soju_b = new JButton();
+	public static int maxHp = 236;
 	public static boolean stop = false;
+	public static boolean bl = false;
 
+	public HomeView() {}
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
 		this.mf = mf;
 		this.p = p;
 		//위치 초기화
-
 		this.setLayout(null);
 
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
-		
+
 		//배경
 		Image background = new ImageIcon("src/image/start/icebergMain.jpg").getImage().getScaledInstance(360, 640, 0);
 		//라벨로 배경에서 보여줄 위치표시
@@ -58,9 +60,9 @@ public class HomeView extends JPanel implements Runnable {
 
 		top_l = new JLabel();
 		top_l.setBounds(0, 0, 360, 640);
-		
+
 		MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\로딩-코크타운_1.wav");
-		
+
 		//닉네임 간판
 		JButton nickname_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/로그인간판.png").getImage().getScaledInstance(129, 148, 0)));
 		nickname_b.setBounds(45, 110, 129, 148);
@@ -90,16 +92,16 @@ public class HomeView extends JPanel implements Runnable {
 		button7.setBounds(100, 300, 150, 100);
 
 		//쏘주
-		JButton soju_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/soju1.png").getImage().getScaledInstance(90, 100, 0)));
+		soju_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/soju1.png").getImage().getScaledInstance(90, 100, 0)));
 		soju_b.setBounds(60, 400, 60, 100);
 
 		//재시작 버튼
 		restart = new JButton(new ImageIcon(new ImageIcon("src/image/start/refresh.png").getImage().getScaledInstance(50, 50, 0)));
-		restart.setBounds(100, 300, 50, 50);
+		restart.setBounds(100, 500, 50, 50);
 
 		//재시작 텍스트 버튼
 		restart2 = new JButton(new ImageIcon(new ImageIcon("src/image/start/Rectangle 35.png").getImage().getScaledInstance(140, 40, 0)));
-		restart2.setBounds(120, 310, 140, 40);
+		restart2.setBounds(120, 510, 140, 40);
 
 
 		//쓰레기 현황
@@ -121,7 +123,7 @@ public class HomeView extends JPanel implements Runnable {
 		//포만감 감소
 		//		labelrs = new JLabel();
 		labelrs = new JLabel(new ImageIcon(new ImageIcon("src/image/start/Rectangle 81.png").getImage().getScaledInstance(236, 12, 0)));
-		labelrs.setBounds(23, 15, 236, 12);
+//		labelrs.setBounds(60, 15, Player.satiety, 12);
 
 
 		//쓰레기 텍스트
@@ -213,8 +215,8 @@ public class HomeView extends JPanel implements Runnable {
 
 		//포만감 감소
 		//		label5.addMouseListener(new MyMouseAdapter9());
-
-
+		
+		maxHp = Player.getSatiety();
 		//		bg_l.add(bg_gameover);
 		bg_l.add(top_l);
 		bg_l.add(button7);		//펭즈
@@ -233,7 +235,6 @@ public class HomeView extends JPanel implements Runnable {
 		bg_l.add(pearl);		//진주 텍스트
 		bg_l.add(nickname_b);		//닉네임 간판
 		bg_l.add(igloo_b);		//이글루
-
 		this.add(bg_l);		//배경
 		mf.add(this);
 		mf.repaint();
@@ -244,7 +245,7 @@ public class HomeView extends JPanel implements Runnable {
 	}
 	//닉네임 간판
 	//텍스트로 바꾸기
-	
+
 	class Listener1 implements ActionListener {
 
 		@Override
@@ -295,12 +296,12 @@ public class HomeView extends JPanel implements Runnable {
 		public void mousePressed(MouseEvent e) {
 			if(!f) {
 				ChangePanel.changePanel(mf, homeView, new HowToPlayView(mf, p));
-				
+
 			} else {
-				InGameView iv = new InGameView(mf, p);
-				t1 = new Thread(iv);
-				t1.start();
-				ChangePanel.changePanel(mf, homeView, iv);
+				InGameView.timer = 10;
+				InGameView.count = 0;
+				Run.t2.start();
+				ChangePanel.changePanel(mf, homeView, new InGameView());
 
 			}
 		}
@@ -320,37 +321,95 @@ public class HomeView extends JPanel implements Runnable {
 
 	@Override
 	public void run() {
-		int maxHp = p.getSatiety();
-
+		int max = 0;
 		while(true) {
-			if(maxHp < 0) {
-				break;
+			if(maxHp <= 0) {
+				if(!bl) {
+					gameover.setBounds(40, 200, 360, 80);
+					re_text.setBounds(150, 505, 140, 40);
+					restart.setBounds(100, 500, 50, 50);
+					restart2.setBounds(120, 510, 140, 40);
+					
+					top_l.add(gameover);
+					top_l.add(re_text);
+					top_l.add(restart);
+					top_l.add(restart2);
+					System.out.println("gameover");
+					bl = true;
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				} else {
+					restart2.addMouseListener(new key());
+					Player.setSatiety(maxHp);
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+					
+			}else if (maxHp > 0) {
+				System.out.println(Player.getSatiety());
+				maxHp -= 10;
+				Player.setSatiety(maxHp);
+				try {
+					max ++;
+					Thread.sleep(1000);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				labelrs.setBounds(23, 15, maxHp, 12);
+				System.out.println(labelrs.getSize());
+				bg_l.add(labelrs);
+				bg_l.repaint();
+				System.out.println(labelrs.getSize());
 			}
-			maxHp -= 30;
-			try {
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-			labelrs.setBounds(23, 15, maxHp, 12);
-			bg_l.add(labelrs);
-			bg_l.repaint();
-			System.out.println(labelrs.getSize());
 
 		}
-		top_l.add(gameover);
-		gameover.setBounds(40, 200, 360, 80);
-		top_l.add(re_text);
-		re_text.setBounds(150, 305, 140, 40);
-		top_l.add(restart);
-		top_l.add(restart2);
-		//		gameover.setBounds(40, 200, 360, 80);
-		bg_gameover = new JLabel(new ImageIcon(new ImageIcon("src\\image\\start\\GameOver2.png").getImage().getScaledInstance(360, 640, 0)));
-		bg_gameover.setBounds(0, 0, 360, 640);
-		bg_gameover.setOpaque(true);
-		bg_gameover.setBackground(new Color(0, 0, 0, 100));
-		top_l.add(bg_gameover);
-		System.out.println("gameover");
+	}
+	
+	public static class key implements MouseListener{
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			System.out.println(maxHp);
+			maxHp = 100;
+			re_text.setLocation(1000,1000);
+			gameover.setLocation(1000,1000);
+			restart.setLocation(1000,1000);
+			restart2.setLocation(1000,1000);
+			bl = false;
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
 	}
 
 
