@@ -25,46 +25,11 @@ public class MainShopView extends JDialog{
 		this.mf = mf;
 		this.p = p;
 		this.setBounds(57, 180, 230, 400);
-		//	this.setUndecorated(true);
+		
 		this.setVisible(true);
-		//this.setBackground(new Color(0, 0, 0, 0));
-
-		//		Image background = new ImageIcon("src/image/start/ShopMain.png").getImage().getScaledInstance(360, 640, 0);
-		//		JLabel label = new JLabel(new ImageIcon(background));
-		//		label.setBounds(0, 0, 360, 640);
-		//		
-		//		JButton robButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/rod.png").getImage().getScaledInstance(100, 100, 0)));
-		//		robButton.setBounds(72, 188, 100, 100);
-		//		
-		//		
-		//		
-		//		
-		//		JButton foodButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/fish.png").getImage().getScaledInstance(100, 100, 0)));
-		//		foodButton.setBounds(183, 188, 100, 100);
-		//		
-		//		JButton epsButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/eps.png").getImage().getScaledInstance(100, 100, 0)));
-		//		epsButton.setBounds(183, 298, 100, 100);
-		//		
-		//		JButton hatButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/hat.png").getImage().getScaledInstance(100, 100, 0)));
-		//		hatButton.setBounds(72, 298, 100, 100);
-		//		
-		//		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
-		//		backButton.setBounds(131, 450, 98, 35);
-		//		
-		//		
-		//		
-		//		this.add(robButton);
-		//		this.add(foodButton);
-		//		this.add(epsButton);
-		//		this.add(hatButton);
-		//		label.add(backButton,BorderLayout.CENTER);
-		//		this.add(backButton);
-		//		
-		//		this.add(label);
-		//		mf.add(this);
-		//JPanel panel = new JPanel();
+		
 		panel.setLayout(null);
-		//panel.setBounds(25, 100, 170, 280);
+		
 		panel.setBackground(new Color(0, 0, 0, 0));    //패널 투명
 
 		Image background = new ImageIcon("src\\image\\start\\shopback.png").getImage().getScaledInstance(230, 385, 0);
@@ -84,11 +49,7 @@ public class MainShopView extends JDialog{
 		JButton hatButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(80, 80, 0)));
 		hatButton.setBounds(30, 178, 80, 80);
 
-		//		JButton backButton = new JButton(new ImageIcon(new ImageIcon("src/image/start/back.png").getImage().getScaledInstance(98, 35, 0)));
-		//		backButton.setBounds(60, 190, 98, 35);
-		//		backButton.addMouseListener(new MyMouseAdepter());
-
-
+	
 		//낚시대 패널 1
 		JPanel robpanel1 = new JPanel();
 		robpanel1.setLayout(null);
@@ -578,7 +539,7 @@ public class MainShopView extends JDialog{
 		eps2.setLayout(null);
 		eps2.setBounds(35, 40, 100, 100);
 
-		JButton epspurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\75진.png").getImage().getScaledInstance(60, 30, 0)));
+		JButton epspurchase2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\55진주.png").getImage().getScaledInstance(60, 30, 0)));
 		epspurchase2.setLayout(null);
 		epspurchase2.setBounds(55, 160, 60, 30);
 		epspurchase2.setBorderPainted(false);
@@ -1169,6 +1130,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setGarbage(p.getGarbage() - 50);
 
 					}
 				});
@@ -1200,6 +1162,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setGarbage(p.getGarbage() - 150);
 
 					}
 				});
@@ -1231,7 +1194,8 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
-
+						p.setGarbage(p.getGarbage() - 10);
+						p.setSatiety(p.getSatiety() + 25);
 					}
 				});
 
@@ -1262,6 +1226,8 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setGarbage(p.getGarbage() - 30);
+						p.setSatiety(p.getSatiety() + 50);
 
 					}
 				});
@@ -1293,6 +1259,8 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setGarbage(p.getGarbage() - 50);
+						p.setSatiety(p.getSatiety() + 75);
 
 					}
 				});
@@ -1324,6 +1292,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setGarbage(p.getGarbage() - 500);
 
 					}
 				});
@@ -1354,6 +1323,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setPearl(p.getPearl() - 15);
 
 					}
 				});
@@ -1384,6 +1354,8 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setPearl(p.getPearl() - 5);
+						p.setSatiety(p.getSatiety() + 100);
 
 					}
 				});
@@ -1394,7 +1366,7 @@ public class MainShopView extends JDialog{
 	class PayMouse3 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if(p.getPearl() < 75) {
+			if(p.getPearl() < 55) {
 				ChangePanel.changePanel(mf, panel, new LessPearl(mf, p));
 			} else {
 				JDialog buy = new JDialog(mf, "구매성공!");
@@ -1414,6 +1386,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setPearl(p.getPearl() - 55);
 
 					}
 				});
@@ -1444,6 +1417,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setPearl(p.getPearl() - 75);
 
 					}
 				});
@@ -1454,7 +1428,7 @@ public class MainShopView extends JDialog{
 	class PayMouse5 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			if(p.getPearl() < 0) {
+			if(p.getPearl() < 135) {
 				ChangePanel.changePanel(mf, panel, new LessPearl(mf, p));
 			} else {
 				JDialog buy = new JDialog(mf, "구매성공!");
@@ -1474,9 +1448,11 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setPearl(p.getPearl() - 135);
 						new MainShopView(mf, p).dispose();
 						
 						
+						//발전소추가다시
 
 					}
 				});
@@ -1488,28 +1464,28 @@ public class MainShopView extends JDialog{
 	class PearlMouse1 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
-		
+			new PaymentView(mf, p, 10, 1200);
 
 		}
 	}
 	class PearlMouse2 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+			new PaymentView(mf, p, 30, 3000);
 			
 		}
 	}
 	class PearlMouse3 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+			new PaymentView(mf, p, 70, 6500);
 			
 		}
 	}
 	class PearlMouse4 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
-			
+			new PaymentView(mf, p, 120, 10000);
 			
 		}
 	}

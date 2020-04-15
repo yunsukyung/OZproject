@@ -4,9 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -14,18 +19,21 @@ import javax.swing.JTextField;
 import com.kh.project.model.vo.Player;
 import com.kh.project.view.MainView;
 
-public class PaymentView extends JPanel{
-	private JPanel startPage;
+public class PaymentView extends JDialog{
+	private JDialog startPage;
 	private MainView mf;
 	Player p;
+	int pearl = 0;
+	int money = 0;
 
-	public PaymentView (MainView mf, Player p) {
+	public PaymentView (MainView mf, Player p, int pearl, int money) {
 		this.startPage = this;
 		this.mf = mf;
 		
 		//위치
 		this.setLocation(0, 0);
-		this.setSize(307, 358);
+		this.setSize(317, 378);
+		this.setVisible(true);
 		//진주결제창 
 		Image background = new ImageIcon("src\\image\\start\\진주결체장1.png").getImage().getScaledInstance(307, 358, 0);
 		JLabel label = new JLabel(new ImageIcon(background));
@@ -41,8 +49,9 @@ public class PaymentView extends JPanel{
 		Cancel.setForeground(Color.WHITE);
 		
 		//진주 구매갯수 텍스트
-		JLabel PearlNumber = new JLabel("120");
-		PearlNumber.setBounds(205, 56, 216, 35);
+		String pe = Integer.toString(pearl);
+		JLabel PearlNumber = new JLabel(pe);
+		PearlNumber.setBounds(203, 46, 216, 35);
 		JTextField tf2 = new JTextField(100);
 		tf2.setBounds(0, 0, 216, 35);
 		
@@ -51,8 +60,9 @@ public class PaymentView extends JPanel{
 		PearlNumber.setForeground(Color.WHITE);
 		
 		//결제가격 텍스트
-		JLabel Price = new JLabel("10,000");
-		Price.setBounds(246, 140, 72, 35);
+		String mo = Integer.toString(money);
+		JLabel Price = new JLabel(mo);
+		Price.setBounds(236, 130, 72, 35);
 		JTextField tf3 = new JTextField(100);
 		tf3.setBounds(0, 0, 72, 35);
 		
@@ -65,6 +75,8 @@ public class PaymentView extends JPanel{
 		button.setLocation(130, 200);
 		button.setSize(57, 57);
 		
+		button.addMouseListener(new MyMouseAdapter());
+		
 		
 		//버튼 투명하게하기
 		button.setBorderPainted(false);
@@ -72,13 +84,39 @@ public class PaymentView extends JPanel{
 		button.setContentAreaFilled(false);
 
 
-		this.add(label, BorderLayout.CENTER);
-		label.add(button, BorderLayout.CENTER); 
+		this.add(label);
+		label.add(button); 
 		label.add(Cancel);
 		label.add(PearlNumber);
 		label.add(Price);
-		mf.add(this);
-		mf.revalidate();
+//		mf.add(this);
+//		mf.revalidate();
+	}
+	class MyMouseAdapter extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			JDialog buy = new JDialog(mf, "구매성공!");
+			buy.setVisible(true);
+			buy.setBounds(120, 250, 200, 200);
+
+			JLabel ok = new JLabel("진주를 구매하였습니다!");
+			ok.setBounds(10, 30, 150, 50);
+
+			JButton button = new JButton("확인");
+			button.setBounds(0, 100, 150, 50);
+			buy.add(button, BorderLayout.SOUTH);
+			buy.add(ok);
+
+			button.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					buy.dispose();
+					p.setPearl(p.getPearl() + pearl);
+				}
+			});
+			
+		}
 	}
 
 }

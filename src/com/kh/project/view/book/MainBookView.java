@@ -1,5 +1,6 @@
 package com.kh.project.view.book;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -18,6 +19,7 @@ import javax.swing.JPanel;
 import com.kh.project.model.vo.Player;
 import com.kh.project.view.HomeView;
 import com.kh.project.view.MainView;
+import com.kh.project.view.shop.MainShopView;
 
 public class MainBookView extends JDialog {
 	private JDialog startPage;
@@ -66,7 +68,8 @@ public class MainBookView extends JDialog {
 		backbutton.addMouseListener(new MyMouseAdapter());
 		
 		//액션
-		bookbutton1.addActionListener(new ActionListener() {
+		if(p.getGarbage() > 15) {
+			bookbutton1.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -74,8 +77,34 @@ public class MainBookView extends JDialog {
 				
 			}
 		});
+		} else {
+			JDialog less = new JDialog(mf);
+			
+			less.setVisible(true);
+			less.setBounds(120, 250, 200, 200);
+
+			JLabel ok = new JLabel("업적을 아직 달성하지 못했습니다!");
+			ok.setBounds(10, 30, 150, 50);
+
+			JButton button = new JButton("확인");
+			button.setBounds(0, 100, 150, 50);
+			less.add(button, BorderLayout.SOUTH);
+			less.add(ok);
+
+			button.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					less.dispose();
+
+				}
+			});
+
+			
+		}
 		
-		bookbutton2.addActionListener(new ActionListener() {
+		if(p.getGarbage() > 100) {
+			bookbutton2.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -83,8 +112,35 @@ public class MainBookView extends JDialog {
 				
 			}
 		});
+		} else {
+			JDialog less = new JDialog(mf);
+			
+			less.setVisible(true);
+			less.setBounds(120, 250, 200, 200);
+
+			JLabel ok = new JLabel("업적을 아직 달성하지 못했습니다!");
+			ok.setBounds(10, 30, 150, 50);
+
+			JButton button = new JButton("확인");
+			button.setBounds(0, 100, 150, 50);
+			less.add(button, BorderLayout.SOUTH);
+			less.add(ok);
+
+			button.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					less.dispose();
+
+				}
+			});
+
+			
+		}
 		
-		bookbutton3.addActionListener(new ActionListener() {
+		
+		if(p.getGarbage() > 500) {
+			bookbutton3.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -92,8 +148,34 @@ public class MainBookView extends JDialog {
 				
 			}
 		});
+		} else {
+			JDialog less = new JDialog(mf);
+			
+			less.setVisible(true);
+			less.setBounds(120, 250, 200, 200);
+
+			JLabel ok = new JLabel("업적을 아직 달성하지 못했습니다!");
+			ok.setBounds(10, 30, 150, 50);
+
+			JButton button = new JButton("확인");
+			button.setBounds(0, 100, 150, 50);
+			less.add(button, BorderLayout.SOUTH);
+			less.add(ok);
+
+			button.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					less.dispose();
+
+				}
+			});
+
+			
+		}
 		
-		bookbutton4.addActionListener(new ActionListener() {
+		if(p.getGarbage() > 1000) {
+			bookbutton4.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -101,6 +183,33 @@ public class MainBookView extends JDialog {
 				
 			}
 		});
+		} else {
+			JDialog less = new JDialog(mf);
+			
+			less.setVisible(true);
+			less.setBounds(120, 250, 200, 200);
+
+			JLabel ok = new JLabel("업적을 아직 달성하지 못했습니다!");
+			ok.setBounds(10, 30, 150, 50);
+
+			JButton button = new JButton("확인");
+			button.setBounds(0, 100, 150, 50);
+			less.add(button, BorderLayout.SOUTH);
+			less.add(ok);
+
+			button.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					less.dispose();
+
+				}
+			});
+
+			
+		}
+		
+		
 		
 		//패널에 삽입
 		back.add(bookbutton1);
@@ -128,7 +237,7 @@ public class MainBookView extends JDialog {
 }
 //클릭했을때 새로운 프레임 생성
 class mous extends JFrame{
-	
+	Player p;
 	public mous() {
 		this.setBounds(57, 206, 245, 205);
 		JPanel mo = new JPanel();
@@ -160,6 +269,8 @@ class mous extends JFrame{
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
+		p.setGarbage(p.getGarbage() + 150);
+		p.setPearl(p.getPearl() + 2);
 		
 		mo.add(jin2);
 		mo.add(jin3);
@@ -186,7 +297,7 @@ class mous extends JFrame{
 }
 //클릭했을때 새로운 프레임 생성
 class mous2 extends JFrame{
-	
+	Player p;
 	public mous2() {
 		this.setBounds(57, 206, 245, 205);
 		JPanel mo = new JPanel();
@@ -214,6 +325,7 @@ class mous2 extends JFrame{
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
+		p.setPearl(p.getPearl() + 5);
 		
 		mo.add(jin2);
 		mo.add(jin3);
@@ -236,7 +348,7 @@ class mous2 extends JFrame{
 
 //클릭했을때 새로운 프레임 생성
 class mous3 extends JFrame{
-	
+	Player p;
 	public mous3() {
 		this.setBounds(57, 206, 245, 205);
 		JPanel mo = new JPanel();
@@ -262,6 +374,7 @@ class mous3 extends JFrame{
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
+		p.setPearl(p.getPearl() + 15);
 		
 		mo.add(jin2);
 		mo.add(jin3);
@@ -283,7 +396,7 @@ class mous3 extends JFrame{
 }
 //클릭했을때 새로운 프레임 생성
 class mous4 extends JFrame{
-	
+	Player p;
 	public mous4() {
 		this.setBounds(57, 206, 245, 205);
 		JPanel mo = new JPanel();
@@ -308,6 +421,8 @@ class mous4 extends JFrame{
 		JLabel jin3 = new JLabel("x 30");
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
+		
+		p.setPearl(p.getPearl() + 30);
 		
 		mo.add(jin2);
 		mo.add(jin3);
