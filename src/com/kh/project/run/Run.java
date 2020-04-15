@@ -8,6 +8,7 @@ public class Run {
 
 	public static Thread t1 = new Thread(new HomeView());
 	public static Thread t2 = new Thread(new InGameView());
+	
 	public static void main(String[] args) {
 		new MainView();
 	}
