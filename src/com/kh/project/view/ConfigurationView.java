@@ -15,8 +15,6 @@ import javax.swing.JSlider;
 import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
 
-
-
 public class ConfigurationView extends JDialog {
 	private JDialog mo;
 	private MainView mf;
@@ -109,7 +107,7 @@ public class ConfigurationView extends JDialog {
 	class MyMouseAdepter2 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			lm.SaveId(p.getUserId(), p);
+			System.out.println(lm.SaveId(p.getUserId(), p));
 			System.exit(0);
 		}
 	}

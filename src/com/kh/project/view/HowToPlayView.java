@@ -47,6 +47,7 @@ public class HowToPlayView extends JPanel{
 			
 			InGameView iv = new InGameView(mf, p);
 			Thread t2 = new Thread(iv);
+			t2.setDaemon(true);
 			t2.start();
 			ChangePanel.changePanel(mf, howtoplayview, iv);
 		}

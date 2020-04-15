@@ -24,6 +24,7 @@ import javax.swing.JTextField;
 
 import com.kh.project.controller.SpawnManager;
 import com.kh.project.model.vo.*;
+import com.kh.project.view.shop.RewardView;
 import com.kh.project.view.shop.TimeOverView1;
 
 import sun.audio.*;
@@ -51,6 +52,8 @@ public class InGameView extends JPanel implements Runnable{
 	Player p;
 
 	int Timer = 100;
+	public static int timer = 10;
+	public static boolean threadtimer = false;
 	JLabel tLabel;
 	Image tImage;
 
@@ -70,7 +73,10 @@ public class InGameView extends JPanel implements Runnable{
 
 	Image setImage;
 	JLabel setLabel;
-
+	
+	int countGarbege = 0;
+	int countPearl = 0;
+	
 	public InGameView(MainView mf, Player p) {
 
 
@@ -148,8 +154,8 @@ public class InGameView extends JPanel implements Runnable{
 
 	@Override
 	public void run() {		
-
 		label.addKeyListener(new Key());
+		System.out.println(InGameView.threadtimer);
 		try {
 			stream = AudioSystem.getAudioInputStream(file);
 			clip = AudioSystem.getClip();
@@ -165,17 +171,17 @@ public class InGameView extends JPanel implements Runnable{
 							e.getXOnScreen()>setLabel.getX()+15+label.getX() + mf.getX()) {
 						if(e.getYOnScreen() < setLabel.getY()+80 +label.getY() + mf.getY()&&
 								e.getYOnScreen()>=setLabel.getY()+40 + label.getY() + mf.getY()) {
-							new ConfigurationView(mf, p);
-
-							new IngameSettingView(mf, p);
+							p.setGarbage(p.getGarbage() + countGarbege);
+							p.setPearl(p.getPearl() + countPearl);
+							new IngameSettingView(mf, p, countGarbege, countPearl);
+							
 						}
-						System.out.println("!@3123123123");
 					}
-					System.out.println("안뜬다");
 					label.repaint();
 					for(int i = 0 ;i <= count; i ++) {
-						String str = "x "+Integer.toString(p.getGarbage());
-						String str2 = "x " + Integer.toString(p.getPearl());
+					
+						String str = "x "+Integer.toString(countGarbege);
+						String str2 = "x " + Integer.toString(countPearl);
 
 						gtLabel.setText(str);
 						ptLabel.setText(str2);
@@ -191,7 +197,7 @@ public class InGameView extends JPanel implements Runnable{
 										sm.getLabels()[i].setBounds(10000,10000,40,40);
 										sm.getHpLabels()[i].setBounds(10000,10000,40,40);
 										p.setGarbage(p.getGarbage()+((G_Mac) sm.getGarb()[i]).getHaveGargabe());
-										p.setPearl(p.getPearl() + ((G_Mac) sm.getGarb()[i]).getHavePearl());
+										countPearl += ((G_Mac) sm.getGarb()[i]).getHavePearl();
 										label.repaint();
 									}
 								}
@@ -234,20 +240,20 @@ public class InGameView extends JPanel implements Runnable{
 										}
 
 										if(sm.getGarb()[i] instanceof G_Bottle) {
-											p.setGarbage(p.getGarbage()+((G_Bottle) sm.getGarb()[i]).getHaveGargabe());
+											countGarbege += ((G_Bottle) sm.getGarb()[i]).getHaveGargabe();
 										}else if(sm.getGarb()[i] instanceof G_Can) {
-											p.setGarbage(p.getGarbage()+((G_Can) sm.getGarb()[i]).getHaveGargabe());
+											countGarbege += ((G_Can) sm.getGarb()[i]).getHaveGargabe();
 
 										}else if(sm.getGarb()[i] instanceof G_Cigarette) {
-											p.setGarbage(p.getGarbage()+((G_Cigarette) sm.getGarb()[i]).getHaveGargabe());
+											countGarbege += ((G_Cigarette) sm.getGarb()[i]).getHaveGargabe();
 										} else if(sm.getGarb()[i] instanceof G_LoveLetter) {
-											p.setGarbage(p.getGarbage()+((G_LoveLetter) sm.getGarb()[i]).getHaveGargabe());
+											countGarbege += ((G_LoveLetter) sm.getGarb()[i]).getHaveGargabe();
 										} else if(sm.getGarb()[i] instanceof G_Paper) {
-											p.setGarbage(p.getGarbage()+((G_Paper) sm.getGarb()[i]).getHaveGargabe());
+											countGarbege += ((G_Paper) sm.getGarb()[i]).getHaveGargabe();
 										} else if(sm.getGarb()[i] instanceof G_SnackBag) {
-											p.setGarbage(p.getGarbage()+((G_SnackBag) sm.getGarb()[i]).getHaveGargabe());
+											countGarbege += ((G_SnackBag) sm.getGarb()[i]).getHaveGargabe();
 										}else if(sm.getGarb()[i] instanceof G_Plastic) {
-											p.setGarbage(p.getGarbage()+((G_Plastic) sm.getGarb()[i]).getHaveGargabe());
+											countGarbege += ((G_Plastic) sm.getGarb()[i]).getHaveGargabe();
 										}
 
 
@@ -274,8 +280,11 @@ public class InGameView extends JPanel implements Runnable{
 
 				}
 			});
-			while(count != 1000) {
+			while(count <= 1000) {
+				System.out.println("ThreadTimer  : " + threadtimer);
 				try {
+					if(!threadtimer) {
+					
 					label.add(sm.getLabels()[count]);
 					label.add(sm.getHpLabels()[count]);
 					for(int i = 0; i < count; i ++) {
@@ -285,30 +294,35 @@ public class InGameView extends JPanel implements Runnable{
 							sm.getHpLabels()[i].setBounds(10000,10000,40,40);
 						}
 					}
+					
 					Thread.sleep(1000);
-					if(Timer <= 0) {
-						new TimeOverView1(mf, p);
-						Thread.sleep(3000);
-					}
-					Timer -= 10;
+					Timer -= timer;
 					tLabel2.setSize(Timer,10);;
-
 					count++;
 					label.repaint();
-
-
-
+					
+					if(Timer <= 0) {
+						p.setGarbage(p.getGarbage() + countGarbege);
+						p.setPearl(p.getPearl() + countPearl);
+						ChangePanel.changePanel(mf, inGameView, new TimeOverView1(mf, p, countGarbege, countPearl));
+						Thread.sleep(3000);
+						break;
+					}
+					}
+					else {
+						Thread.sleep(10000);
+					}
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
+					
 				}
-			}
+				
+			} 
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	}
-
 	class Key implements KeyListener{
 		int size = 30;
 		@Override

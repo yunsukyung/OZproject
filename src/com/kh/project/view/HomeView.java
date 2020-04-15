@@ -27,7 +27,7 @@ public class HomeView extends JPanel implements Runnable {
 	LoginManager lm = new LoginManager();
 	Player p;
 	//ReduceSatiety rs = new ReduceSatiety(mf);
-
+	public static Thread t1;;
 	JLabel labelrs;
 	JLabel bg_l;
 	JLabel gameover;
@@ -105,7 +105,7 @@ public class HomeView extends JPanel implements Runnable {
 		garbage_l.setBounds(20, 35, 25, 25);
 
 		//진주 현황
-		JLabel pearl_l = new JLabel(new ImageIcon(new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(25, 25, 0)));
+		JLabel pearl_l = new JLabel(new ImageIcon(new ImageIcon("src/image/start/진주2.png").getImage().getScaledInstance(25, 25, 0)));
 		pearl_l.setBounds(20, 60, 25, 25);
 
 		//하트
@@ -123,12 +123,12 @@ public class HomeView extends JPanel implements Runnable {
 
 
 		//쓰레기 텍스트
-		JLabel trash = new JLabel(Integer.toString(p.getGarbage()));
-		trash.setBounds(55, 35, 100, 25);
+		JLabel trash = new JLabel(" x " + Integer.toString(+p.getGarbage()));
+		trash.setBounds(50, 35, 100, 25);
 
 		//진주 텍스트
-		JLabel pearl = new JLabel(Integer.toString(p.getPearl()));
-		pearl.setBounds(55, 60, 100, 25);
+		JLabel pearl = new JLabel(" x " + Integer.toString(p.getPearl()));
+		pearl.setBounds(50, 60, 100, 25);
 
 		//닉네임 텍스트
 		JLabel id = new JLabel(p.getUserName());
@@ -237,8 +237,12 @@ public class HomeView extends JPanel implements Runnable {
 		mf.repaint();
 	}
 
+	public static void setStop(boolean stop) {
+		HomeView.stop = stop;
+	}
 	//닉네임 간판
 	//텍스트로 바꾸기
+	
 	class Listener1 implements ActionListener {
 
 		@Override
