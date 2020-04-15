@@ -9,8 +9,8 @@ public class Player implements java.io.Serializable{
 	private String userName;	//유저 닉네임
 	private String phoneNumber;	//핸드폰번호
 	private String email;		//이메일
-	private int pearl = 0;	//진주
-	private int garbage = 0;	//쓰레기
+	public static int pearl = 0;	//진주
+	public static int garbage = 0;	//쓰레기
 	private int sp = 10;		//공격력
 	public static int satiety = 236;	//포만감
 	private boolean firstEnter = false;

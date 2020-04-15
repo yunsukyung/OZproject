@@ -17,6 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.kh.project.model.vo.Player;
+import com.kh.project.view.ChangePanel;
+import com.kh.project.view.HomeView;
 import com.kh.project.view.MainView;
 
 public class PaymentView extends JDialog{
@@ -29,7 +31,9 @@ public class PaymentView extends JDialog{
 	public PaymentView (MainView mf, Player p, int pearl, int money) {
 		this.startPage = this;
 		this.mf = mf;
-		
+		this.p = p;
+		this.pearl = pearl;
+		this.money = money;
 		//위치
 		this.setLocation(0, 0);
 		this.setSize(317, 378);
@@ -112,7 +116,13 @@ public class PaymentView extends JDialog{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					buy.dispose();
-					p.setPearl(p.getPearl() + pearl);
+//					Player.pearl = p.getPearl() + pearl;
+//					System.out.println(Player.pearl);
+//					HomeView.pearl.repaint();
+//					HomeView.bg_l.add(HomeView.pearl);
+					
+					ChangePanel.change(mf, buy, new HomeView(mf, p ,pearl));
+					
 				}
 			});
 			

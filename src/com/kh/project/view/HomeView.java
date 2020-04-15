@@ -40,6 +40,7 @@ public class HomeView extends JPanel implements Runnable {
 	public static int maxHp = 236;
 	public static boolean stop = false;
 	public static boolean bl = false;
+	public static JLabel pearl = new JLabel(); 
 
 	public HomeView() {}
 	public HomeView(MainView mf, Player p) {
@@ -131,7 +132,7 @@ public class HomeView extends JPanel implements Runnable {
 		trash.setBounds(50, 35, 100, 25);
 
 		//진주 텍스트
-		JLabel pearl = new JLabel(" x " + Integer.toString(p.getPearl()));
+		pearl = new JLabel(" x " + Integer.toString(Player.pearl));
 		pearl.setBounds(50, 60, 100, 25);
 
 		//닉네임 텍스트
@@ -238,6 +239,10 @@ public class HomeView extends JPanel implements Runnable {
 		this.add(bg_l);		//배경
 		mf.add(this);
 		mf.repaint();
+	}
+	public HomeView(MainView mf, Player p, int pearl) {
+		this(mf, p);
+		this.pearl = new JLabel(" x " + Integer.toString(pearl));
 	}
 
 	public static void setStop(boolean stop) {
@@ -354,6 +359,8 @@ public class HomeView extends JPanel implements Runnable {
 				}
 					
 			}else if (maxHp > 0) {
+				
+				HomeView.pearl.repaint();
 				System.out.println(Player.getSatiety());
 				maxHp -= 10;
 				Player.setSatiety(maxHp);
