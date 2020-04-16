@@ -12,6 +12,7 @@ import javax.swing.*;
 import javax.swing.text.StyledEditorKit.BoldAction;
 
 import com.kh.project.controller.LoginManager;
+import com.kh.project.model.vo.I_Eps2;
 import com.kh.project.model.vo.Player;
 import com.kh.project.run.Run;
 import com.kh.project.view.book.MainBookView;
@@ -47,6 +48,11 @@ public class HomeView extends JPanel implements Runnable {
 	public static JButton eps1_b;
 	public static JButton eps2_b;
 	public static JButton eps3_b;
+	public static boolean eps1bl = false;
+	public static boolean eps2bl = false;
+	public static boolean eps3bl = false;
+	Thread tt = new Thread(new I_Eps2());
+	
 	public HomeView() {}
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
@@ -111,17 +117,39 @@ public class HomeView extends JPanel implements Runnable {
 		//나무
 		eps1_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/winter.png").getImage().getScaledInstance(40, 40, 0)));
 		eps1_b.setLayout(null);
-		eps1_b.setBounds(910, 155, 40, 40);
+		p.setEps2(eps1bl);
+		if(p.isEps2()) {
+			eps1_b.setBounds(310, 155, 40, 40);
+//			tt.start();
+		} else {
+			eps1_b.setBounds(3100, 1550, 40, 40);
+		}
+		
 		
 		//풍력
 		eps2_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/풍차.png").getImage().getScaledInstance(40, 40, 0)));
 		eps2_b.setLayout(null);
-		eps2_b.setBounds(3100, 1550, 40, 40);
+		p.setEps2(eps2bl);
+		if(p.isEps2()) {
+			eps2_b.setBounds(310, 205, 40, 40);
+//			tt.start();
+		} else {
+			eps2_b.setBounds(3100, 1550, 40, 40);
+		}
+		
+		
+		
 		
 		//태양열
 		eps3_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/태양열.png").getImage().getScaledInstance(40, 40, 0)));
 		eps3_b.setLayout(null);
-		eps3_b.setBounds(3100, 1550, 40, 40);
+		p.setEps2(eps3bl);
+		if(p.isEps2()) {
+			eps3_b.setBounds(310, 255, 40, 40);
+//			tt.start();
+		} else {
+			eps3_b.setBounds(3100, 1550, 40, 40);
+		}
 
 		//쓰레기 현황
 		JLabel garbage_l = new JLabel(new ImageIcon(new ImageIcon("src/image/start/trash.png").getImage().getScaledInstance(25, 25, 0)));
@@ -203,6 +231,20 @@ public class HomeView extends JPanel implements Runnable {
 		button7.setBorderPainted(false);
 		button7.setFocusPainted(false);
 		button7.setContentAreaFilled(false);
+
+
+		//펭즈
+		eps1_b.setBorderPainted(false);
+		eps1_b.setFocusPainted(false);
+		eps1_b.setContentAreaFilled(false);
+		
+		eps2_b.setBorderPainted(false);
+		eps2_b.setFocusPainted(false);
+		eps2_b.setContentAreaFilled(false);
+		
+		eps3_b.setBorderPainted(false);
+		eps3_b.setFocusPainted(false);
+		eps3_b.setContentAreaFilled(false);
 
 		//쏘주
 		soju_b.setBorderPainted(false);

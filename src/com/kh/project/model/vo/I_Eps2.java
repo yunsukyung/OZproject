@@ -1,7 +1,11 @@
 package com.kh.project.model.vo;
 
+import javax.swing.JLabel;
+
+import com.kh.project.view.HomeView;
+
 public class I_Eps2 extends Item implements Runnable {
-	Player p;
+	
 	
 	private int epsGb = 0;	//시간당 추가 쓰레기
 
@@ -20,9 +24,18 @@ public class I_Eps2 extends Item implements Runnable {
 
 	@Override
 	public void run() {
+//		HomeView.eps2_b.setLocation(310, 205);
+//		HomeView.eps2_b.setSize(40, 40);
+//		
+		
+		HomeView.eps1bl = true;
+		System.out.println(HomeView.eps2_b.getLocation());
+		
 		while(true) {
-			p.setMyGarbage(p.getMyGarbage() + 3);
+			HomeView.garbage += 3;
 			System.out.println("쓰레기 3개 추가");
+			HomeView.bg_l.add(HomeView.jTrash);
+			HomeView.bg_l.repaint();
 			try {
 				Thread.sleep(3000);
 			} catch (Exception e) {
