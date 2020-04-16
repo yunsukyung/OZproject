@@ -1535,8 +1535,11 @@ public class MainShopView extends JDialog{
 						buy.dispose();
 						p.setMyPearl(p.getMyPearl() - 135);
 						HomeView.pearl = HomeView.pearl - 135;
+						HomeView.eps4bl = true;
+						HomeView.bg_l.repaint();
 						//new MainShopView(mf, p).dispose();
-						
+						ChangePanel.change(mf, buy, new HomeView(mf, p, 0 ,0));
+
 						
 						//발전소추가다시
 
