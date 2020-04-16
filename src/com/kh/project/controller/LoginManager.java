@@ -86,7 +86,7 @@ public class LoginManager {
 	}
 	
 
-	public Player SearchId(String userName, String Email, String phoneNumber) {
+	public Player SearchId(String Email, String userName, String phoneNumber) {
 		System.out.println("dd");
 		ArrayList<Player> plist = pd.readPlayerList();
 		for(int i = 0 ; i < plist.size() ; i ++) {
