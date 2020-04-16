@@ -126,13 +126,13 @@ public class HomeView extends JPanel implements Runnable {
 		labelrs = new JLabel(new ImageIcon(new ImageIcon("src/image/start/Rectangle 81.png").getImage().getScaledInstance(236, 12, 0)));
 //		labelrs.setBounds(60, 15, Player.satiety, 12);
 
-
+		System.out.println("=====");
 		//쓰레기 텍스트
-		trash = new JLabel(" x " + Integer.toString(+p.getGarbage()));
+		trash = new JLabel(" x " + Integer.toString(p.getMyGarbage() + Player.garbage));
 		trash.setBounds(50, 35, 100, 25);
 
 		//진주 텍스트
-		pearl = new JLabel(" x " + Integer.toString(Player.pearl));
+		pearl = new JLabel(" x " + Integer.toString(p.getMyPearl() + Player.pearl));
 		pearl.setBounds(50, 60, 100, 25);
 
 		//닉네임 텍스트
@@ -213,7 +213,6 @@ public class HomeView extends JPanel implements Runnable {
 		ads_b.addMouseListener(new MyMouseAdapter5());
 		//소주(게임)
 		soju_b.addMouseListener(new MyMouseAdapter6());
-		Player.garbage = 200;
 		//포만감 감소
 		//		label5.addMouseListener(new MyMouseAdapter9());
 		

@@ -58,18 +58,16 @@ public class TimeOverView1 extends JPanel{
 		JLabel pearl = new JLabel(Integer.toString(countP));
 		pearl.setBounds(225, 315, 100, 25);
 
-		
-		
 		JLabel label3 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/GameOver3.png").getImage().getScaledInstance(360, 640, 0)));
 		label.setBounds(0, 0, 360, 640);
 		label.setBackground(new Color(0, 0, 0, 0));
-		//label.setLayout(null);
 		
 		JLabel label2 = new JLabel(new ImageIcon(new ImageIcon("src\\\\image\\\\game\\\\Component 64.png").getImage().getScaledInstance(245, 205, 0)));
 		label.setBounds(0, 0, 245, 205);
 		
 		JButton button2 = new JButton(new ImageIcon(new ImageIcon("src/image/game/TimeOverResult.png").getImage().getScaledInstance(245, 205, 0)));
 		button2.setBounds(60,200,240,190);
+		
 		JButton button = new JButton(new ImageIcon(new ImageIcon("src\\image\\game\\Go Home.png").getImage().getScaledInstance(111, 32, 0)));
 		button.setBounds(127,417,111,32);
 		

@@ -1181,7 +1181,6 @@ public class MainShopView extends JDialog{
 			}
 		}
 	}
-	
 	//낚싯대 15진주
 	class PayMouse1 extends MouseAdapter {
 			@Override
@@ -1292,8 +1291,6 @@ public class MainShopView extends JDialog{
 							Player.satiety = 236;
 							HomeView.maxHp = 236;
 						}
-						System.out.println(Player.satiety);
-						System.out.println(HomeView.maxHp);
 						HomeView.bg_l.repaint();
 						ChangePanel.change(mf, buy, new HomeView(mf, p , Player.garbage ,0));
 
@@ -1336,8 +1333,6 @@ public class MainShopView extends JDialog{
 							Player.satiety = 236;
 							HomeView.maxHp = 236;
 						}
-						System.out.println(Player.satiety);
-						System.out.println(HomeView.maxHp);
 						HomeView.bg_l.repaint();
 						ChangePanel.change(mf, buy, new HomeView(mf, p , Player.garbage ,0));
 
@@ -1372,8 +1367,16 @@ public class MainShopView extends JDialog{
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							buy.dispose();
-							p.setPearl(p.getPearl() - 5);
-							p.setSatiety(p.getSatiety() + 100);
+							Player.pearl = Player.pearl - 5;
+							Player.satiety = Player.satiety + 100;
+							HomeView.maxHp += 75;
+							if(Player.satiety > 236 && HomeView.maxHp > 236) {
+								Player.satiety = 236;
+								HomeView.maxHp = 236;
+							}
+							HomeView.bg_l.repaint();
+							ChangePanel.change(mf, buy, new HomeView(mf, p , 0 ,Player.pearl));
+
 
 						}
 					});
