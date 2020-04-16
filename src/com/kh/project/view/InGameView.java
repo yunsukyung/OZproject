@@ -52,7 +52,7 @@ public class InGameView extends JPanel implements Runnable{
 	Player p;
 
 	public static int Timer = 100;
-	public static int timer = 3;
+	public static int timer = 1;
 	public static boolean threadtimer = false;
 	JLabel tLabel;
 	Image tImage;
@@ -86,7 +86,7 @@ public class InGameView extends JPanel implements Runnable{
 		this.p = p;
 		this.inGameView = this;
 		this.mf = mf;
-
+		
 		MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\보글보글 인게임.wav");
 		this.setLayout(null);
 		background = new ImageIcon("src/image/game/InGameBack3.jpg").getImage().getScaledInstance(1000, 1000, 0);
@@ -150,14 +150,10 @@ public class InGameView extends JPanel implements Runnable{
 		mf.add(this);
 		mf.repaint();
 		mf.revalidate();
-		label.addKeyListener(new Key());
-		label.setFocusable(true);
 	}
 
 	@Override
 	public void run() {      
-		label.addKeyListener(new Key());
-		label.setFocusable(true);
 		System.out.println(InGameView.threadtimer);
 		try {
 			stream = AudioSystem.getAudioInputStream(file);
@@ -397,82 +393,10 @@ public class InGameView extends JPanel implements Runnable{
 			label.add(pLabel);
 			label.add(tLabel2);
 			label.add(setLabel);
+			HomeView.bg_l.repaint();
 		}
-
-		
 	}
-	class Key implements KeyListener{
-		int size = 30;
-		@Override
-		public void keyPressed(KeyEvent e) {
-			label.add(tLabel);
-			label.add(gLabel);
-			label.add(pLabel);
-			label.add(tLabel2);
-			label.add(setLabel);
-			Point p = label.getLocation();
-			if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-				if(label.getLocation().getX()< -620) label.setLocation(p.x,p.y);
-				else if (label.getLocation().getX()>=-620){
-					label.setLocation(p.x - size,p.y);
-					setLabel.setLocation(setLabel.getX()+ size, setLabel.getY());
-					gLabel.setLocation(gLabel.getX()+ size, gLabel.getY());
-					pLabel.setLocation(pLabel.getX()+ size, pLabel.getY());
-					tLabel.setLocation(tLabel.getX()+ size, tLabel.getY());
-					tLabel2.setLocation(tLabel2.getX()+ size, tLabel2.getY());
-				}
-			}
-
-			if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-				if(label.getLocation().getX()>= 0) label.setLocation(p.x,p.y);
-				else if (label.getLocation().getX()< 0){
-					label.setLocation(p.x + size,p.y);
-					setLabel.setLocation(setLabel.getX()- size, setLabel.getY());
-					gLabel.setLocation(gLabel.getX()- size,gLabel.getY());
-					pLabel.setLocation(pLabel.getX()- size, pLabel.getY());
-					tLabel.setLocation(tLabel.getX()- size, tLabel.getY());
-					tLabel2.setLocation(tLabel2.getX()- size, tLabel2.getY());
-				}
-			}
-
-			if(e.getKeyCode() == KeyEvent.VK_UP) {
-				if(label.getLocation().getY()> 0) label.setLocation(p.x,p.y);
-				else if (label.getLocation().getY()< 0){
-					label.setLocation(p.x, p.y+ size);
-					setLabel.setLocation(setLabel.getX(), setLabel.getY() - size);
-					gLabel.setLocation(gLabel.getX(), gLabel.getY()- size);
-					pLabel.setLocation(pLabel.getX(), pLabel.getY()- size);
-					tLabel.setLocation(tLabel.getX(), tLabel.getY()- size);
-					tLabel2.setLocation(tLabel2.getX(), tLabel2.getY()- size);
-				}
-			}
-			if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-				if(label.getLocation().getY()<= -360) label.setLocation(p.x,p.y);
-				else if (label.getLocation().getY()>-360){
-					label.setLocation(p.x, p.y - size);
-					setLabel.setLocation(setLabel.getX(), setLabel.getY()+ size);
-					gLabel.setLocation(gLabel.getX(), gLabel.getY()+ size);
-					pLabel.setLocation(pLabel.getX(), pLabel.getY()+ size);
-					tLabel.setLocation(tLabel.getX(), tLabel.getY()+ size);
-					tLabel2.setLocation(tLabel2.getX(), tLabel2.getY()+ size);
-				}
-			}
-		}
-
-		@Override
-		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
-
-		}
-
-		@Override
-		public void keyTyped(KeyEvent e) {
-			// TODO Auto-generated method stub
-
-		}
-
-	}
-
+	
 }
 
 
