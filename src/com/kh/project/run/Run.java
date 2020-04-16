@@ -12,13 +12,13 @@ import com.kh.project.view.Monster;
 
 public class Run {
 
-	
+//	MiniGameView mgv = new MiniGameView();
 	public static Thread t1 = new Thread(new HomeView());
 	public static Thread t2;
 	public static Thread teps1 = new Thread(new I_Eps1());
 	public static Thread teps2 = new Thread(new I_Eps2());
 	public static Thread teps3 = new Thread(new I_Eps3());
-	
+//	public static Thread tg1 = new Thread(new mgv.Garbagespawn());
 	
 	public static void main(String[] args) {
 		new MainView();
