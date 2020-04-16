@@ -17,6 +17,7 @@ public class LessPearl extends JPanel{
 	private JPanel lessPearl;
 	private MainView mf;
 	public LessPearl(MainView mf, Player p) {
+		this.mf = mf;
 		this.setLayout(null);
 		this.setLocation(0, 0);
 		this.setSize(360, 640);

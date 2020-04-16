@@ -34,11 +34,9 @@ public class IngameSettingView extends JDialog {
 		this.countG = countG;
 		this.countP = countP;
 		
-		InGameView.timer = 0;
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBackground(new Color(0, 0, 0, 0));
-		InGameView.threadtimer = true;
 		JLabel background = new JLabel(new ImageIcon(new ImageIcon("src/image/start/ingameback.png").getImage().getScaledInstance(245, 420, 0)));
 		background.setBounds(-10, -30, 245, 420);
 		
@@ -69,16 +67,12 @@ public class IngameSettingView extends JDialog {
 		public void mousePressed(MouseEvent e) {
 			dispose();
 			ChangePanel.change(mf, inset, new TimeOverView1(mf, p, countG, countP));
-			InGameView.count = 1001;
 		}
 	}
 	class MyMouseAdapter1 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			dispose();
-			InGameView.timer = 10;
-
-			InGameView.threadtimer = false;
 			System.out.println(InGameView.threadtimer);
 		}
 	}

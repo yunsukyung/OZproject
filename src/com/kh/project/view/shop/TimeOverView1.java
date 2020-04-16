@@ -94,8 +94,9 @@ public class TimeOverView1 extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ChangePanel.changePanel(mf, startPage, new HomeView(mf, p));
-				InGameView.threadtimer = false;
-				
+				InGameView.threadtimer = true;
+				InGameView.Timer = 100;
+				Run.t2.stop();
 			}
 		});
 		

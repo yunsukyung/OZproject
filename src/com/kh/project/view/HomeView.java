@@ -41,6 +41,7 @@ public class HomeView extends JPanel implements Runnable {
 	public static boolean stop = false;
 	public static boolean bl = false;
 	public static JLabel pearl = new JLabel(); 
+	public static JLabel trash = new JLabel(); 
 
 	public HomeView() {}
 	public HomeView(MainView mf, Player p) {
@@ -127,7 +128,7 @@ public class HomeView extends JPanel implements Runnable {
 
 
 		//쓰레기 텍스트
-		JLabel trash = new JLabel(" x " + Integer.toString(+p.getGarbage()));
+		trash = new JLabel(" x " + Integer.toString(+p.getGarbage()));
 		trash.setBounds(50, 35, 100, 25);
 
 		//진주 텍스트
@@ -212,7 +213,7 @@ public class HomeView extends JPanel implements Runnable {
 		ads_b.addMouseListener(new MyMouseAdapter5());
 		//소주(게임)
 		soju_b.addMouseListener(new MyMouseAdapter6());
-
+		Player.garbage = 200;
 		//포만감 감소
 		//		label5.addMouseListener(new MyMouseAdapter9());
 		
@@ -239,13 +240,16 @@ public class HomeView extends JPanel implements Runnable {
 		mf.add(this);
 		mf.repaint();
 	}
-	public HomeView(MainView mf, Player p, int pearl) {
+	
+	public HomeView(MainView mf, Player p, int garbage, int pearl) {
 		this(mf, p);
+		this.trash = new JLabel(" x " + Integer.toString(garbage));
 		this.pearl = new JLabel(" x " + Integer.toString(pearl));
+		
+		bg_l.add(HomeView.trash);		//진주 텍스트
 		bg_l.add(HomeView.pearl);		//진주 텍스트
 		System.out.println(Player.pearl);
 	}
-
 	public static void setStop(boolean stop) {
 		HomeView.stop = stop;
 	}
@@ -305,9 +309,10 @@ public class HomeView extends JPanel implements Runnable {
 				ChangePanel.changePanel(mf, homeView, new HowToPlayView(mf, p));
 
 			} else {
-				InGameView.timer = 10;
 				InGameView.count = 0;
 				Run.t2.start();
+				InGameView.threadtimer = false;
+				InGameView.timer = 3;
 				ChangePanel.changePanel(mf, homeView, new InGameView());
 
 			}
@@ -328,6 +333,7 @@ public class HomeView extends JPanel implements Runnable {
 
 	@Override
 	public void run() {
+		soju_b.addMouseListener(new MyMouseAdapter6());
 		int max = 0;
 		while(true) {
 			if(maxHp <= 0) {
@@ -361,10 +367,8 @@ public class HomeView extends JPanel implements Runnable {
 				}
 					
 			}else if (maxHp > 0) {
-				
 				HomeView.pearl.repaint();
-				System.out.println(Player.getSatiety());
-				maxHp -= 10;
+				maxHp -= 3;
 				Player.setSatiety(maxHp);
 				try {
 					max ++;
@@ -373,10 +377,8 @@ public class HomeView extends JPanel implements Runnable {
 					// TODO: handle exception
 				}
 				labelrs.setBounds(23, 15, maxHp, 12);
-				System.out.println(labelrs.getSize());
 				bg_l.add(labelrs);
 				bg_l.repaint();
-				System.out.println(labelrs.getSize());
 			}
 
 		}

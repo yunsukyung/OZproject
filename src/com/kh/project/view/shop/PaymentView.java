@@ -121,7 +121,7 @@ public class PaymentView extends JDialog{
 //					HomeView.pearl.repaint();
 //					HomeView.bg_l.add(HomeView.pearl);
 					
-					ChangePanel.change(mf, buy, new HomeView(mf, p ,pearl));
+					ChangePanel.change(mf, buy, new HomeView(mf, p , 0 ,pearl));
 					
 				}
 			});

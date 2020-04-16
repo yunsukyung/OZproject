@@ -1106,6 +1106,7 @@ public class MainShopView extends JDialog{
 			//new MainShopView(mf);
 		}
 	}
+	//낚싯대 50쓰레기
 	class BuyMouse1 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1130,7 +1131,11 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
-						p.setGarbage(p.getGarbage() - 50);
+						if(p.getSp()<=10) {
+							p.setSp(10);
+							Player.garbage -= 50;
+						}
+						ChangePanel.change(mf, buy, new HomeView(mf, p, Player.garbage, 0));
 
 					}
 				});
@@ -1138,6 +1143,8 @@ public class MainShopView extends JDialog{
 			}
 		}
 	}
+
+	//낚싯대 150짜리
 	class BuyMouse2 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1162,7 +1169,11 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
-						p.setGarbage(p.getGarbage() - 150);
+						if(p.getSp()<=30) {
+							p.setSp(30);
+							Player.garbage -= 150;
+						}
+						ChangePanel.change(mf, buy, new HomeView(mf, p, Player.garbage, 0));
 
 					}
 				});
@@ -1170,6 +1181,45 @@ public class MainShopView extends JDialog{
 			}
 		}
 	}
+	
+	//낚싯대 15진주
+	class PayMouse1 extends MouseAdapter {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(p.getPearl() < 15) {
+					ChangePanel.changePanel(mf, panel, new LessPearl(mf, p));
+				} else {
+					JDialog buy = new JDialog(mf, "구매성공!");
+					buy.setVisible(true);
+					buy.setBounds(120, 250, 200, 200);
+
+					JLabel ok = new JLabel("아이템을 구매하였습니다!");
+					ok.setBounds(10, 30, 150, 50);
+
+					JButton button = new JButton("확인");
+					button.setBounds(0, 100, 150, 50);
+					buy.add(button, BorderLayout.SOUTH);
+					buy.add(ok);
+
+					button.addActionListener(new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							buy.dispose();
+							if(p.getSp()<=50) {
+								p.setSp(50);
+								Player.pearl -= 15;
+							}
+							ChangePanel.change(mf, buy, new HomeView(mf, p, 0, Player.pearl));
+
+						}
+					});
+
+				}
+			}
+		}
+		
+	//음식 10쓰레기
 	class BuyMouse3 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1194,14 +1244,23 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
-						p.setGarbage(p.getGarbage() - 10);
-						p.setSatiety(p.getSatiety() + 25);
+						Player.garbage = Player.garbage - 10;
+						Player.satiety = Player.satiety + 25;
+						HomeView.maxHp += 25;
+						if(Player.satiety > 236 && HomeView.maxHp > 236) {
+							Player.satiety = 236;
+							HomeView.maxHp = 236;
+						}
+						HomeView.bg_l.repaint();
+						ChangePanel.change(mf, buy, new HomeView(mf, p , Player.garbage ,0));
 					}
 				});
 
 			}
 		}
 	}
+	
+	//음식 30쓰레기
 	class BuyMouse4 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1226,8 +1285,17 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
-						p.setGarbage(p.getGarbage() - 30);
-						p.setSatiety(p.getSatiety() + 50);
+						Player.garbage = Player.garbage - 30;
+						Player.satiety = Player.satiety + 50;
+						HomeView.maxHp += 50;
+						if(Player.satiety > 236 && HomeView.maxHp > 236) {
+							Player.satiety = 236;
+							HomeView.maxHp = 236;
+						}
+						System.out.println(Player.satiety);
+						System.out.println(HomeView.maxHp);
+						HomeView.bg_l.repaint();
+						ChangePanel.change(mf, buy, new HomeView(mf, p , Player.garbage ,0));
 
 					}
 				});
@@ -1235,6 +1303,8 @@ public class MainShopView extends JDialog{
 			}
 		}
 	}
+
+	//음식 50쓰레기
 	class BuyMouse5 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1259,8 +1329,17 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
-						p.setGarbage(p.getGarbage() - 50);
-						p.setSatiety(p.getSatiety() + 75);
+						Player.garbage = Player.garbage - 50;
+						Player.satiety = Player.satiety + 75;
+						HomeView.maxHp += 75;
+						if(Player.satiety > 236 && HomeView.maxHp > 236) {
+							Player.satiety = 236;
+							HomeView.maxHp = 236;
+						}
+						System.out.println(Player.satiety);
+						System.out.println(HomeView.maxHp);
+						HomeView.bg_l.repaint();
+						ChangePanel.change(mf, buy, new HomeView(mf, p , Player.garbage ,0));
 
 					}
 				});
@@ -1268,6 +1347,42 @@ public class MainShopView extends JDialog{
 			}
 		}
 	}
+	
+	//음식 5진주
+	class PayMouse2 extends MouseAdapter {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(p.getPearl() < 5) {
+					ChangePanel.changePanel(mf, panel, new LessPearl(mf, p));
+				} else {
+					JDialog buy = new JDialog(mf, "구매성공!");
+					buy.setVisible(true);
+					buy.setBounds(120, 250, 200, 200);
+
+					JLabel ok = new JLabel("아이템을 구매하였습니다!");
+					ok.setBounds(10, 30, 150, 50);
+
+					JButton button = new JButton("확인");
+					button.setBounds(0, 100, 150, 50);
+					buy.add(button, BorderLayout.SOUTH);
+					buy.add(ok);
+
+					button.addActionListener(new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							buy.dispose();
+							p.setPearl(p.getPearl() - 5);
+							p.setSatiety(p.getSatiety() + 100);
+
+						}
+					});
+
+				}
+			}
+		}
+	
+	//발전소 쓰레기 500짜리
 	class BuyMouse6 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1300,69 +1415,8 @@ public class MainShopView extends JDialog{
 			}
 		}
 	}
-	class PayMouse1 extends MouseAdapter {
-		@Override
-		public void mousePressed(MouseEvent e) {
-			if(p.getPearl() < 15) {
-				ChangePanel.changePanel(mf, panel, new LessPearl(mf, p));
-			} else {
-				JDialog buy = new JDialog(mf, "구매성공!");
-				buy.setVisible(true);
-				buy.setBounds(120, 250, 200, 200);
-
-				JLabel ok = new JLabel("아이템을 구매하였습니다!");
-				ok.setBounds(10, 30, 150, 50);
-
-				JButton button = new JButton("확인");
-				button.setBounds(0, 100, 150, 50);
-				buy.add(button, BorderLayout.SOUTH);
-				buy.add(ok);
-
-				button.addActionListener(new ActionListener() {
-
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						buy.dispose();
-						p.setPearl(p.getPearl() - 15);
-
-					}
-				});
-
-			}
-		}
-	}
-	class PayMouse2 extends MouseAdapter {
-		@Override
-		public void mousePressed(MouseEvent e) {
-			if(p.getPearl() < 5) {
-				ChangePanel.changePanel(mf, panel, new LessPearl(mf, p));
-			} else {
-				JDialog buy = new JDialog(mf, "구매성공!");
-				buy.setVisible(true);
-				buy.setBounds(120, 250, 200, 200);
-
-				JLabel ok = new JLabel("아이템을 구매하였습니다!");
-				ok.setBounds(10, 30, 150, 50);
-
-				JButton button = new JButton("확인");
-				button.setBounds(0, 100, 150, 50);
-				buy.add(button, BorderLayout.SOUTH);
-				buy.add(ok);
-
-				button.addActionListener(new ActionListener() {
-
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						buy.dispose();
-						p.setPearl(p.getPearl() - 5);
-						p.setSatiety(p.getSatiety() + 100);
-
-					}
-				});
-
-			}
-		}
-	}
+	
+	//발전소 진주 55짜리
 	class PayMouse3 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1394,6 +1448,8 @@ public class MainShopView extends JDialog{
 			}
 		}
 	}
+	
+	//발전소 진주 75짜리
 	class PayMouse4 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1425,6 +1481,8 @@ public class MainShopView extends JDialog{
 			}
 		}
 	}
+	
+	//발전소 진주 135짜리
 	class PayMouse5 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -1449,7 +1507,7 @@ public class MainShopView extends JDialog{
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
 						p.setPearl(p.getPearl() - 135);
-						new MainShopView(mf, p).dispose();
+						//new MainShopView(mf, p).dispose();
 						
 						
 						//발전소추가다시
