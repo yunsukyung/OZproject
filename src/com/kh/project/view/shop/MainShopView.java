@@ -12,7 +12,9 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 
 import com.kh.project.model.vo.Player;
+import com.kh.project.run.Run;
 import com.kh.project.view.*;
+
 
 public class MainShopView extends JDialog{
 	private JDialog startPage;
