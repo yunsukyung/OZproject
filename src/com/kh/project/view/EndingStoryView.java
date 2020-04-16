@@ -116,7 +116,6 @@ public class EndingStoryView extends JPanel {
 				
 			}
 
-
 		}
 	}
 	
