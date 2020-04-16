@@ -146,7 +146,7 @@ public class HomeView extends JPanel implements Runnable {
 
 		System.out.println("=====");
 		//쓰레기 텍스트
-		jTrash = new JLabel(" x " + Integer.toString(p.getMyGarbage() + HomeView.garbage));
+		jTrash = new JLabel(" x " + Integer.toString(p.getMyGarbage()));
 		jTrash.setBounds(50, 35, 100, 25);
 
 		//진주 텍스트
