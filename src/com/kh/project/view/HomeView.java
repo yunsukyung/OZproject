@@ -158,6 +158,9 @@ public class HomeView extends JPanel implements Runnable {
 		p.setEps3(eps4bl);
 		if(p.isEps3()) {
 			eps4_b.setBounds(30, 100, 300, 300);
+			
+			eps4_b.addMouseListener(new EndingMouse());
+			
 //			tt.start();
 		} else {
 			eps4_b.setBounds(3100, 1550, 200, 200);
@@ -503,6 +506,13 @@ public class HomeView extends JPanel implements Runnable {
 			
 		}
 		
+	}
+	
+	class EndingMouse extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ChangePanel.changePanel(mf, homeView, new EndingStoryView(mf, p));
+		}
 	}
 
 

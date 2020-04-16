@@ -111,9 +111,10 @@ public class EndingStoryView extends JPanel {
 						"                   Comming Soon...");
 				
 			} else if(count == 6) {
+				HomeView.eps4bl = false;
 				ChangePanel.changePanel(mf, startStory, new HomeView(mf, p));
+				
 			}
-
 
 		}
 	}
