@@ -44,7 +44,9 @@ public class HomeView extends JPanel implements Runnable {
 	public static boolean bl = false;
 	public static JLabel jPearl = new JLabel(); 
 	public static JLabel jTrash = new JLabel(); 
-
+	public static JButton eps1_b;
+	public static JButton eps2_b;
+	public static JButton eps3_b;
 	public HomeView() {}
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
@@ -106,6 +108,20 @@ public class HomeView extends JPanel implements Runnable {
 		restart2 = new JButton(new ImageIcon(new ImageIcon("src/image/start/Rectangle 35.png").getImage().getScaledInstance(140, 40, 0)));
 		restart2.setBounds(120, 510, 140, 40);
 
+		//나무
+		eps1_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/winter.png").getImage().getScaledInstance(40, 40, 0)));
+		eps1_b.setLayout(null);
+		eps1_b.setBounds(910, 155, 40, 40);
+		
+		//풍력
+		eps2_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/풍차.png").getImage().getScaledInstance(40, 40, 0)));
+		eps2_b.setLayout(null);
+		eps2_b.setBounds(3100, 1550, 40, 40);
+		
+		//태양열
+		eps3_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/태양열.png").getImage().getScaledInstance(40, 40, 0)));
+		eps3_b.setLayout(null);
+		eps3_b.setBounds(3100, 1550, 40, 40);
 
 		//쓰레기 현황
 		JLabel garbage_l = new JLabel(new ImageIcon(new ImageIcon("src/image/start/trash.png").getImage().getScaledInstance(25, 25, 0)));
@@ -221,6 +237,9 @@ public class HomeView extends JPanel implements Runnable {
 		maxHp = Player.getSatiety();
 		//		bg_l.add(bg_gameover);
 		bg_l.add(top_l);
+		bg_l.add(eps1_b);
+		bg_l.add(eps2_b);
+		bg_l.add(eps3_b);
 		bg_l.add(button7);		//펭즈
 		bg_l.add(id);			//닉네임 텍스트
 		bg_l.add(setting_b);		//설정
