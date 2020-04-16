@@ -7,7 +7,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
+import javax.sound.sampled.FloatControl;
 import javax.swing.*;
 import javax.swing.text.StyledEditorKit.BoldAction;
 
@@ -55,7 +59,8 @@ public class HomeView extends JPanel implements Runnable {
 	public static boolean eps3bl = false;
 	public static boolean eps4bl = false;
 	Thread tt = new Thread(new I_Eps2());
-	
+	public static JLabel heart_l = new JLabel();
+
 	public HomeView() {}
 	public HomeView(MainView mf, Player p) {
 		this.homeView = this;
@@ -63,9 +68,10 @@ public class HomeView extends JPanel implements Runnable {
 		this.p = p;
 		//위치 초기화
 		this.setLayout(null);
-
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
+		
+		
 		//배경
 		Image background = new ImageIcon("src/image/start/icebergMain.jpg").getImage().getScaledInstance(360, 640, 0);
 		//라벨로 배경에서 보여줄 위치표시
@@ -96,7 +102,8 @@ public class HomeView extends JPanel implements Runnable {
 		//광고
 		JButton ads_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/Component 2.png").getImage().getScaledInstance(360, 63, 0)));
 		ads_b.setBounds(0, 577, 360, 63);
-
+		ads_b.addMouseListener(new adsMouse());
+		
 		//이글루
 		JButton igloo_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/igloo (1).png").getImage().getScaledInstance(161, 161, 0)));
 		igloo_b.setBounds(30, 185, 161, 161);
@@ -110,7 +117,7 @@ public class HomeView extends JPanel implements Runnable {
 		soju_b.setBounds(60, 400, 60, 100);
 		
 		//펭귄점프게임
-		chip_b = new JButton(new ImageIcon(new ImageIcon("src/image/game/plastic.png").getImage().getScaledInstance(90, 100, 0)));
+		chip_b = new JButton(new ImageIcon(new ImageIcon("src\\image\\minigame\\과자봉지.png").getImage().getScaledInstance(90, 100, 0)));
 		chip_b.setBounds(230, 400, 90, 100);
 
 		//재시작 버튼
@@ -180,7 +187,7 @@ public class HomeView extends JPanel implements Runnable {
 		pearl_l.setBounds(20, 60, 25, 25);
 
 		//하트
-		JLabel heart_l = new JLabel(new ImageIcon(new ImageIcon("src/image/start/heartbeat.png").getImage().getScaledInstance(25, 25, 0)));
+		heart_l = new JLabel(new ImageIcon(new ImageIcon("src/image/start/heartbeat.png").getImage().getScaledInstance(25, 25, 0)));
 		heart_l.setBounds(20, 10, 25, 25);
 
 		//포만감 현황 배경
@@ -276,9 +283,9 @@ public class HomeView extends JPanel implements Runnable {
 		soju_b.setContentAreaFilled(false);
 		
 		//쏘주
-//		chip_b.setBorderPainted(false);
-//		chip_b.setFocusPainted(false);
-//		chip_b.setContentAreaFilled(false);
+		chip_b.setBorderPainted(false);
+		chip_b.setFocusPainted(false);
+		chip_b.setContentAreaFilled(false);
 
 		//쏘주
 		restart.setBorderPainted(false);
@@ -482,7 +489,7 @@ public class HomeView extends JPanel implements Runnable {
 				}
 					
 			}else if (maxHp > 0) {
-				maxHp -= 3;
+				maxHp -= 1;
 				Player.setSatiety(maxHp);
 				try {
 					max ++;
@@ -491,6 +498,8 @@ public class HomeView extends JPanel implements Runnable {
 					// TODO: handle exception
 				}
 				labelrs.setBounds(23, 15, maxHp, 12);
+				heart_l.setBounds(20, 10, 25, 25);
+				bg_l.add(heart_l);
 				bg_l.add(labelrs);
 				bg_l.repaint();
 			}
@@ -543,6 +552,20 @@ public class HomeView extends JPanel implements Runnable {
 			ChangePanel.changePanel(mf, homeView, new EndingStoryView(mf, p));
 		}
 	}
-
+	
+	class adsMouse extends MouseAdapter{
+		@Override
+		public void mousePressed(MouseEvent e) {
+			try {
+				Desktop.getDesktop().browse(new URI("https://www.iei.or.kr/main/main.kh"));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (URISyntaxException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+	}
 
 }
