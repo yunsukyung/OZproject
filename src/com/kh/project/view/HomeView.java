@@ -48,9 +48,11 @@ public class HomeView extends JPanel implements Runnable {
 	public static JButton eps1_b;
 	public static JButton eps2_b;
 	public static JButton eps3_b;
+	public static JButton eps4_b;
 	public static boolean eps1bl = false;
 	public static boolean eps2bl = false;
 	public static boolean eps3bl = false;
+	public static boolean eps4bl = false;
 	Thread tt = new Thread(new I_Eps2());
 	
 	public HomeView() {}
@@ -117,8 +119,8 @@ public class HomeView extends JPanel implements Runnable {
 		//나무
 		eps1_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/winter.png").getImage().getScaledInstance(40, 40, 0)));
 		eps1_b.setLayout(null);
-		p.setEps2(eps1bl);
-		if(p.isEps2()) {
+		p.setEps1(eps1bl);
+		if(p.isEps1()) {
 			eps1_b.setBounds(310, 155, 40, 40);
 //			tt.start();
 		} else {
@@ -139,16 +141,26 @@ public class HomeView extends JPanel implements Runnable {
 		
 		
 		
-		
 		//태양열
-		eps3_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/태양열.png").getImage().getScaledInstance(40, 40, 0)));
+		eps3_b = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\태양열.png").getImage().getScaledInstance(40, 40, 0)));
 		eps3_b.setLayout(null);
-		p.setEps2(eps3bl);
-		if(p.isEps2()) {
+		p.setEps3(eps3bl);
+		if(p.isEps3()) {
 			eps3_b.setBounds(310, 255, 40, 40);
 //			tt.start();
 		} else {
 			eps3_b.setBounds(3100, 1550, 40, 40);
+		}
+
+		//지구
+		eps4_b = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\earth.png").getImage().getScaledInstance(300, 300, 0)));
+		eps4_b.setLayout(null);
+		p.setEps3(eps4bl);
+		if(p.isEps3()) {
+			eps4_b.setBounds(30, 100, 300, 300);
+//			tt.start();
+		} else {
+			eps4_b.setBounds(3100, 1550, 200, 200);
 		}
 
 		//쓰레기 현황
@@ -245,6 +257,10 @@ public class HomeView extends JPanel implements Runnable {
 		eps3_b.setBorderPainted(false);
 		eps3_b.setFocusPainted(false);
 		eps3_b.setContentAreaFilled(false);
+		
+		eps4_b.setBorderPainted(false);
+		eps4_b.setFocusPainted(false);
+		eps4_b.setContentAreaFilled(false);
 
 		//쏘주
 		soju_b.setBorderPainted(false);
@@ -282,6 +298,7 @@ public class HomeView extends JPanel implements Runnable {
 		bg_l.add(eps1_b);
 		bg_l.add(eps2_b);
 		bg_l.add(eps3_b);
+		bg_l.add(eps4_b);
 		bg_l.add(button7);		//펭즈
 		bg_l.add(id);			//닉네임 텍스트
 		bg_l.add(setting_b);		//설정

@@ -25,7 +25,7 @@ public class I_Eps2 extends Item implements Runnable {
 	@Override
 	public void run() {
 
-		HomeView.eps1bl = true;
+		HomeView.eps2bl = true;
 		System.out.println(HomeView.eps2_b.getLocation());
 		
 		while(true) {
