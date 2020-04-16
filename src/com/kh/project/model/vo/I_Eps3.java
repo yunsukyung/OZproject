@@ -1,5 +1,7 @@
 package com.kh.project.model.vo;
 
+import com.kh.project.view.HomeView;
+
 public class I_Eps3 extends Item implements Runnable{
 	Player p;
 	
@@ -20,9 +22,16 @@ public class I_Eps3 extends Item implements Runnable{
 
 	@Override
 	public void run() {
+		
+		HomeView.eps3bl = true;
+		System.out.println(HomeView.eps3_b.getLocation());
+		
 		while(true) {
-			p.setMyGarbage(p.getMyGarbage() + 5);
+			HomeView.garbage += 5;
 			System.out.println("쓰레기 5개 추가");
+			HomeView.bg_l.add(HomeView.jTrash);
+			HomeView.bg_l.repaint();
+			
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {

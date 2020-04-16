@@ -116,6 +116,39 @@ public class Player implements java.io.Serializable{
 		this.myGarbage = myGarbage;
 	}
 
+	public boolean isEps1() {
+		return eps1;
+	}
+
+	public void setEps1(boolean eps1) {
+		this.eps1 = eps1;
+	}
+
+	public boolean isEps2() {
+		return eps2;
+	}
+
+	public void setEps2(boolean eps2) {
+		this.eps2 = eps2;
+	}
+
+	public boolean isEps3() {
+		return eps3;
+	}
+
+	public void setEps3(boolean eps3) {
+		this.eps3 = eps3;
+	}
+
+	public boolean isEps4() {
+		return eps4;
+	}
+
+	public void setEps4(boolean eps4) {
+		this.eps4 = eps4;
+	}
+
+	
 }
 
 
