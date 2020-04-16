@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import com.kh.project.controller.LoginManager;
 import com.kh.project.model.vo.Player;
@@ -20,6 +22,7 @@ public class ConfigurationView extends JDialog {
 	private MainView mf;
 	LoginManager lm = new LoginManager();
 	Player p;
+	
 	
 	public ConfigurationView(MainView mf, Player p) {
 		this.mf = mf;
@@ -80,6 +83,8 @@ public class ConfigurationView extends JDialog {
 		s.setLabelTable(s.createStandardLabels(10));
 		s.setPaintLabels(true);
 		s.setSnapToTicks(true);
+		
+
 		
         s.setBounds(50,80,115,40);
         this.add(s); 
