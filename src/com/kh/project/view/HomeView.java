@@ -250,6 +250,7 @@ public class HomeView extends JPanel implements Runnable {
 		bg_l.add(HomeView.jTrash);		//진주 텍스트
 		bg_l.add(HomeView.jPearl);		//진주 텍스트
 	}
+	
 	public static void setStop(boolean stop) {
 		HomeView.stop = stop;
 	}
