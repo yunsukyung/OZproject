@@ -39,11 +39,11 @@ public class MiniGameView extends JPanel{
 	
 	//이미지 모음
 	Image background;
-	Image ladder = new ImageIcon("src/image/minigame/사다리.png").getImage().getScaledInstance(70, 160, 0);
+	Image ladder = new ImageIcon("src/image/minigame/사다리.png").getImage().getScaledInstance(70, 160, 0);
 	Image obst = new ImageIcon("src/image/minigame/broken-bottle.png").getImage().getScaledInstance(30, 30, 0);
 	Image penzL = new ImageIcon("src/image/minigame/pengL.gif").getImage().getScaledInstance(80, 80, 0);
 	Image penzR = new ImageIcon("src/image/minigame/pengR.gif").getImage().getScaledInstance(80, 80, 0);
-	Image monster1 = new ImageIcon("src/image/minigame/angryshark.png").getImage().getScaledInstance(50, 60, 0);
+	Image monster1 = new ImageIcon("src\\image\\minigame\\angryshark.png").getImage().getScaledInstance(50, 60, 0);
 	Image garbage1 = new ImageIcon("src/image/minigame/담배.png").getImage().getScaledInstance(50, 50, 0);
 	Image garbage2 = new ImageIcon("src/image/minigame/can1.png").getImage().getScaledInstance(50, 50, 0);
 	Image garbage3 = new ImageIcon("src/image/minigame/과자봉지.png").getImage().getScaledInstance(50, 50, 0);
@@ -89,15 +89,25 @@ public class MiniGameView extends JPanel{
 	int countGarbege;
 	int countPearl;
 	
+
+	int xm1 = monster_p1.getX();
+	int ym1 = monster_p1.getY();
+	int xm2 = monster_p2.getX();
+	int ym2 = monster_p2.getY();
+	int xm3 = monster_p3.getX();
+	int ym3 = monster_p3.getY();
+	
 	Thread th;
 	
+	Thread tp = new Thread(new Jump());
+	Thread tf = new Thread(new Fall());
 	public MiniGameView(MainView mf, Player p) {
-		
 		this.p = p;
 		this.miniGameView = this;
 		this.mf = mf;
 		
 		this.setLayout(null);
+		
 		
 		
 		//배경이미지
@@ -217,17 +227,9 @@ public class MiniGameView extends JPanel{
 		this.add(monster_p2);
 		this.add(monster_p3);
 		
-		Monster1 m1 = new Monster1();
-		Monster2 m2 = new Monster2();
-		Monster3 m3 = new Monster3();
-
-		Thread th1 = new Thread(m1);
-		Thread th2 = new Thread(m2);
-		Thread th3 = new Thread(m3);
-	
-		th1.start();
-		th2.start();
-		th3.start();
+//		Monster1 m1 = new Monster1();
+//		Thread th1 = new Thread(m1);
+//		th1.start();
 		
 		this.add(obst1_1);
 		this.add(obst1_2);
@@ -244,6 +246,17 @@ public class MiniGameView extends JPanel{
 		this.add(ladder3_2);
 		
 		this.add(label);
+		Thread tm1 = new Thread(new Monster(this));
+		tm1.start();
+		
+		//점프 스레드 실행
+//		Jump jump = new Jump();
+//		tp.start();
+		
+		//추락 스레드
+//		Fall fall = new Fall();
+//		tf.start();
+
 		
 		//키보드 입력
 		mf.addKeyListener(new Key());
@@ -256,12 +269,6 @@ public class MiniGameView extends JPanel{
 		
 	}
 
-	public void end() {
-		if(hit() == true) {
-			System.out.println("!!!hit!!!");
-		}
-	}
-	
 	
 
 	class Key implements KeyListener{
@@ -276,11 +283,8 @@ public class MiniGameView extends JPanel{
 			int x = penz_p.getX();
 			int y = penz_p.getY();
 			
-			//추락 스레드
-			Fall fall = new Fall();
-			Thread tf = new Thread(fall);
-			tf.start();
-
+//			tf.start();
+			
 			//쓰레기 먹으면 사라지면서 count 1증가
 			if(garbage_p1.getX() == penz_p.getX()) {
 				if(garbage_p1.getY() == penz_p.getY()) {
@@ -350,10 +354,8 @@ public class MiniGameView extends JPanel{
 				}; break;
 			case KeyEvent.VK_SPACE:
 				System.out.println("space");
-				//점프 스레드 실행
-				Jump jump = new Jump();
-				Thread tp = new Thread(jump);
 				tp.start();
+				break;
 			default: break;
 			}
 			penz_p.repaint();
@@ -386,6 +388,17 @@ public class MiniGameView extends JPanel{
 		
 		@Override
 		public void run() {
+			if(hit()==true) {
+				p.setMyGarbage(p.getMyGarbage() + countGarbege);
+				ChangePanel.changePanel(mf, miniGameView, new GemeOverView(mf, p, countGarbege));
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
 			while(true) {
 				try {
 					if(((x >= 120 && x <= 200) && (y == 370))
@@ -448,140 +461,7 @@ public class MiniGameView extends JPanel{
 			}
 		}
 	}
-		
-	class Monster1 extends Thread{
-		int x = monster_p1.getX();
-		int y = monster_p1.getY();
-		@Override
-		public void run() {
-			System.out.println(monster_p1.getX());
-			System.out.println(monster_p1.getY());
-			while(true) {
-				if(hit()==true) {
-					p.setMyGarbage(p.getMyGarbage() + countGarbege);
-					ChangePanel.changePanel(mf, miniGameView, new GemeOverView(mf, p, countGarbege));
-					try {
-						Thread.sleep(300);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					break;
-				
-				} else {
-					try {
-						
-						if(x == 0) {
-							for(int i = 0; i <= 290; i+=10) {
-								x += 10;
-								monster_p1.setLocation(x, 390);
-								Thread.sleep(400);
-							}
-							System.out.println("1");
-						} else if(x == 300) {
-							for(int i = 300; i >= 10; i-=10) {
-								
-								x -= 10;
-								monster_p1.setLocation(x, 390);
-								Thread.sleep(400);
-							}
-							System.out.println("2");
-						}
-					} catch (Exception e) {
-					}
-				}
-			}
-		}
-	}
 	
-	class Monster2 extends Thread{
-		int x = monster_p2.getX();
-		int y = monster_p2.getY();
-		@Override
-		public void run() {
-			System.out.println(monster_p2.getX());
-			System.out.println(monster_p2.getY());
-			while(true) {
-				if(hit()==true) {
-//					System.out.println("m2 hit");
-					p.setMyGarbage(p.getMyGarbage() + countGarbege);
-					ChangePanel.changePanel(mf, miniGameView, new GemeOverView(mf, p, count));
-					try {
-						Thread.sleep(300);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				} else {
-					try {
-						
-						if(x == 0) {
-							for(int i = 0; i <= 290; i+=10) {
-								
-								x += 10;
-								monster_p2.setLocation(x, 240);
-								Thread.sleep(100);
-							}
-							System.out.println("1");
-						} else if(x == 300) {
-							for(int i = 300; i >= 10; i-=10) {
-								
-								x -= 10;
-								monster_p2.setLocation(x, 240);
-								Thread.sleep(100);
-							}
-							System.out.println("2");
-						}
-					} catch (Exception e) {
-					}
-				}
-			}
-		}
-	}
-	
-	class Monster3 extends Thread{
-		int x = monster_p3.getX();
-		int y = monster_p3.getY();
-		@Override
-		public void run() {
-			System.out.println(monster_p3.getX());
-			System.out.println(monster_p3.getY());
-			while(true) {
-				if(hit()==true) {
-//					System.out.println("m3 hit");
-					p.setMyGarbage(p.getMyGarbage() + countGarbege);
-					ChangePanel.changePanel(mf, miniGameView, new GemeOverView(mf, p, countGarbege));
-					try {
-						Thread.sleep(300);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				} else {
-					try {
-						if(x == 0) {
-							for(int i = 0; i <= 290; i+=10) {
-								
-								x += 10;
-								monster_p3.setLocation(x, 90);
-								Thread.sleep(150);
-							}
-							System.out.println("1");
-						} else if(x == 300) {
-							for(int i = 300; i >= 10; i-=10) {
-								
-								x -= 10;
-								monster_p3.setLocation(x, 90);
-								Thread.sleep(150);
-							}
-							System.out.println("2");
-						}
-					} catch (Exception e) {
-					}
-				}
-			}
-		}
-	}
 	
 	class MyMouseAdapter extends MouseAdapter {
 		@Override
@@ -589,9 +469,6 @@ public class MiniGameView extends JPanel{
 //			ChangePanel.changePanel(mf, miniGameView, new HomeView(mf, p));
 		}
 	}
-	
 
 }
-
-
-
+	
