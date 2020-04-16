@@ -134,7 +134,7 @@ public class HomeView extends JPanel implements Runnable {
 		jTrash.setBounds(50, 35, 100, 25);
 
 		//진주 텍스트
-		jPearl = new JLabel(" x " + Integer.toString(p.getMyPearl() + HomeView.pearl));
+		jPearl = new JLabel(" x " + Integer.toString(p.getMyPearl()));
 		jPearl.setBounds(50, 60, 100, 25);
 
 		//닉네임 텍스트
@@ -247,8 +247,14 @@ public class HomeView extends JPanel implements Runnable {
 		HomeView.jTrash = new JLabel(" x " + Integer.toString(garbage));
 		HomeView.jPearl = new JLabel(" x " + Integer.toString(pearl));
 		
+		//p.setMyGarbage(myGarbage);
+		
+		
 		bg_l.add(HomeView.jTrash);		//진주 텍스트
 		bg_l.add(HomeView.jPearl);		//진주 텍스트
+		
+		bg_l.repaint(); System.out.println(Integer.toString(garbage));
+		
 	}
 	public static void setStop(boolean stop) {
 		HomeView.stop = stop;
