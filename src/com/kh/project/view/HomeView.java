@@ -256,6 +256,7 @@ public class HomeView extends JPanel implements Runnable {
 		bg_l.repaint(); System.out.println(Integer.toString(garbage));
 		
 	}
+	
 	public static void setStop(boolean stop) {
 		HomeView.stop = stop;
 	}
