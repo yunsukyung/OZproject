@@ -34,7 +34,9 @@ public class PaymentView extends JDialog{
 		this.p = p;
 		this.pearl = pearl;
 		this.money = money;
-		HomeView.pearl = HomeView.pearl + pearl;
+		
+		
+		
 		//위치
 		this.setLocation(0, 0);
 		this.setSize(317, 378);
@@ -120,6 +122,13 @@ public class PaymentView extends JDialog{
 //					System.out.println(Player.pearl);
 //					HomeView.pearl.repaint();
 //					HomeView.bg_l.add(HomeView.pearl);
+					p.setMyPearl(p.getMyPearl() + pearl);
+					HomeView.pearl = HomeView.pearl + pearl;
+					
+					System.out.println(p.getMyPearl());
+					System.out.println(HomeView.pearl);
+					
+					new PaymentView(mf, p, pearl, money).dispose();
 					
 					ChangePanel.change(mf, buy, new HomeView(mf, p , 0 ,pearl));
 					

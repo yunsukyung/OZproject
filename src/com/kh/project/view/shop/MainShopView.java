@@ -1133,6 +1133,7 @@ public class MainShopView extends JDialog{
 						buy.dispose();
 						if(p.getSp()<=10) {
 							p.setSp(10);
+							p.setMyGarbage(p.getMyGarbage() - 50);
 							HomeView.garbage -= 50;
 						}
 						ChangePanel.change(mf, buy, new HomeView(mf, p, HomeView.garbage, 0));
@@ -1171,6 +1172,7 @@ public class MainShopView extends JDialog{
 						buy.dispose();
 						if(p.getSp()<=30) {
 							p.setSp(30);
+							p.setMyGarbage(p.getMyGarbage() - 150);
 							HomeView.garbage -= 150;
 						}
 						ChangePanel.change(mf, buy, new HomeView(mf, p, HomeView.garbage, 0));
@@ -1207,6 +1209,7 @@ public class MainShopView extends JDialog{
 							buy.dispose();
 							if(p.getSp()<=50) {
 								p.setSp(50);
+								p.setMyPearl(p.getMyPearl() - 15);
 								HomeView.pearl -= 15;
 							}
 							ChangePanel.change(mf, buy, new HomeView(mf, p, 0, HomeView.pearl));
@@ -1243,6 +1246,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setMyGarbage(p.getMyGarbage() - 10);
 						HomeView.garbage = HomeView.garbage - 10;
 						Player.satiety = Player.satiety + 25;
 						HomeView.maxHp += 25;
@@ -1284,6 +1288,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setMyGarbage(p.getMyGarbage() - 30);
 						HomeView.garbage = HomeView.garbage - 30;
 						Player.satiety = Player.satiety + 50;
 						HomeView.maxHp += 50;
@@ -1326,6 +1331,7 @@ public class MainShopView extends JDialog{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
+						p.setMyGarbage(p.getMyGarbage() - 50);
 						HomeView.garbage = HomeView.garbage - 50;
 						Player.satiety = Player.satiety + 75;
 						HomeView.maxHp += 75;
@@ -1367,6 +1373,7 @@ public class MainShopView extends JDialog{
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							buy.dispose();
+							p.setMyPearl(p.getMyPearl() - 5);
 							HomeView.pearl = HomeView.pearl - 5;
 							Player.satiety = Player.satiety + 100;
 							HomeView.maxHp += 75;
@@ -1411,6 +1418,7 @@ public class MainShopView extends JDialog{
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
 						p.setMyGarbage(p.getMyGarbage() - 500);
+						HomeView.garbage = HomeView.garbage - 500;
 
 					}
 				});
@@ -1444,6 +1452,7 @@ public class MainShopView extends JDialog{
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
 						p.setMyPearl(p.getMyPearl() - 55);
+						HomeView.pearl = HomeView.pearl - 55;
 
 					}
 				});
@@ -1477,6 +1486,7 @@ public class MainShopView extends JDialog{
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
 						p.setMyPearl(p.getMyPearl() - 75);
+						HomeView.pearl = HomeView.pearl - 75;
 
 					}
 				});
@@ -1510,6 +1520,7 @@ public class MainShopView extends JDialog{
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
 						p.setMyPearl(p.getMyPearl() - 135);
+						HomeView.pearl = HomeView.pearl - 135;
 						//new MainShopView(mf, p).dispose();
 						
 						
@@ -1533,6 +1544,7 @@ public class MainShopView extends JDialog{
 		@Override
 		public void mousePressed(MouseEvent e) {
 			new PaymentView(mf, p, 30, 3000);
+			
 			
 		}
 	}
