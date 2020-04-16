@@ -313,7 +313,7 @@ public class HomeView extends JPanel implements Runnable {
 				Run.t2.start();
 				InGameView.threadtimer = false;
 				InGameView.timer = 3;
-				ChangePanel.changePanel(mf, homeView, new InGameView());
+				ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
 
 			}
 		}
