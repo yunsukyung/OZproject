@@ -2,6 +2,7 @@ package com.kh.project.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -61,8 +62,10 @@ public class EndingStoryView extends JPanel {
 
 
 		text1 = new JLabel();
-		text1.setText("내가 이곳의 쓰레기를 모두 치웠어!!!");
-		text1.setBounds(30, 0, 350, 200);
+		text1.setText("<html>내가 이곳의 쓰레기를<br>모두 치웠어!!!<html>");
+		text1.setFont(new Font("고딕", Font.BOLD, 25));
+		text1.setBounds(30, 20, 350, 200);
+		text1.setForeground(Color.WHITE);
 		label3.add(text1);
 
 		
@@ -98,23 +101,19 @@ public class EndingStoryView extends JPanel {
 			
 			count++;
 			if(count == 1) {
-				text1.setText("이제 더이상 다른곳으로 갈\r\n" + 
-						"필요가 없을거 같아!!");
+				text1.setText("<html>이제 더이상 다른곳으로 갈<br>필요가 없을거 같아!!<html>");
 				nextText1();
 				
 			} else if(count == 2) {
 				text1.setText( 
-						"다른 섬 친구들은 어떻게 지낼까?\r\n" + 
-						"\r\n" + 
-						"\r\n" + 
-						"\r\n" + 
-						"                   Comming Soon...");
+						"<html>다른 섬 친구들은<br>어떻게 지낼까?<br>Comming Soon...<html>");
 				
 			} else if(count == 6) {
 				HomeView.eps4bl = false;
 				ChangePanel.changePanel(mf, startStory, new HomeView(mf, p));
 				
 			}
+
 
 		}
 	}

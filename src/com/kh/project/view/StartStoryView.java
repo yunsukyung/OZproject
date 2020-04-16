@@ -2,6 +2,7 @@ package com.kh.project.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -73,8 +74,10 @@ public class StartStoryView extends JPanel{
 
 
 		text1 = new JLabel();
-		text1.setText("여기는 어디?...나는 누구?...");
-		text1.setBounds(30, 0, 350, 200);
+		text1.setText("<html>여기는 어디?...<br>나는 누구?...<html>");
+		text1.setFont(new Font("고딕", Font.BOLD, 25));
+		text1.setForeground(Color.WHITE);
+		text1.setBounds(30, 15, 350, 200);
 		label3.add(text1);
 
 		
@@ -110,19 +113,18 @@ public class StartStoryView extends JPanel{
 			
 			count++;
 			if(count == 1) {
-				text1.setText("내가 있는곳은 추웠는데 여기는 그렇게 안춥네..");
+				text1.setText("<html>내가 있는곳은 추웠는데<br>여기는 그렇게 안춥네..<html>");
 				
 			} else if(count == 2) {
 				text1.setText( 
-						"여기가 남극이라고?!!\r\n" + 
-						"왜 이렇게 변한거지?..");
+						"<html>여기가 남극이라고?!!<br>왜 이렇게 변한거지?..<html>");
 				nextText1();
 			} else if(count == 3) {
 				text1.setText("빙하가 녹고있어~!!");
 			} else if(count == 4) {
 				text1.setText("이게 다 쓰레기때문이야!!!!");
 			} else if(count == 5) {
-				text1.setText("내가 이곳의 쓰레기를 모두 치우겠어!");
+				text1.setText("<html>내가 이곳의 쓰레기를<br>모두 치우겠어!<html>");
 				nextText2();
 			} else if(count == 6) {
 				ChangePanel.changePanel(mf, startStory, new ExplainView(mf, p));

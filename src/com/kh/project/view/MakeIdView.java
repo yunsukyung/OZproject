@@ -1,7 +1,9 @@
 package com.kh.project.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dialog;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -42,6 +44,10 @@ public class MakeIdView extends JPanel{
 		JLabel label = new JLabel(new ImageIcon(new ImageIcon("src/image/start/로그인간판.png").getImage().getScaledInstance(458, 458, 0)));
 		label.setBounds(0, 0, 360, 458);
 
+		JLabel check = new JLabel(new ImageIcon(new ImageIcon("src/image/start/checked.png").getImage().getScaledInstance(20, 20, 0)));
+		check.setBounds(275, 200, 20, 20);
+		
+		
 		JButton next = new JButton(new ImageIcon(new ImageIcon("src/image/start/next.png").getImage().getScaledInstance(60, 20, 0)));
 
 		next.setBounds(150, 220, 60, 20);
@@ -58,18 +64,24 @@ public class MakeIdView extends JPanel{
 		pwd.setBounds(90, 145, 80, 50);
 
 		tf2.setBounds(170, 160, 100, 20);
+		
+		JLabel pass = new JLabel("*6글자 이상으로 해주세요.");
+		pass.setBounds(90, 180, 200, 20);
+		pass.setFont(new Font("고딕", Font.BOLD, 12));
+		pass.setForeground(Color.RED);
 
 		JLabel passcheck = new JLabel("passcheck : ");
-		passcheck.setBounds(90, 175, 80, 50);
+		passcheck.setBounds(90, 185, 80, 50);
 
-		tf3.setBounds(170, 190, 100, 20);
-
-
-
+		tf3.setBounds(170, 200, 100, 20);
+		
+		
+		
 		label.add(id);
 		label.add(tf);
 		label.add(pwd);
 		label.add(tf2);
+		label.add(pass);
 		label.add(passcheck);
 		label.add(tf3);
 
