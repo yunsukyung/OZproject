@@ -126,9 +126,9 @@ public class InGameView extends JPanel implements Runnable{
       ptLabel.setBounds(70, 90, 40, 40);
       pLabel.setBounds( 10,  90, 40 ,40);
 
-      if(p.getSp() == 10) setCursor(myCursor1);
-      else if(p.getSp() == 30) setCursor(myCursor2);
-      else if(p.getSp() == 50) setCursor(myCursor3);
+      if(this.p.getSp() <= 10) setCursor(myCursor1);
+      else if(this.p.getSp() <= 30) setCursor(myCursor2);
+      else if(this.p.getSp() <= 50) setCursor(myCursor3);
       System.out.println(p.getSp());
 
       System.out.println("!111");

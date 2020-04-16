@@ -109,7 +109,7 @@ public class ConfigurationView extends JDialog {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			p.setMyGarbage(HomeView.garbage + p.getMyGarbage());
-			p.setMyPearl(HomeView.pearl + p.getMyPearl());
+			p.setMyPearl(p.getMyPearl());
 			lm.SaveId(p.getUserId(), p);
 			System.out.println(lm.SaveId(p.getUserId(), p));
 			System.exit(0);

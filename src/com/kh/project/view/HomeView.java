@@ -323,7 +323,6 @@ public class HomeView extends JPanel implements Runnable {
 	public HomeView(MainView mf, Player p, int garbage, int pearl) {
 		this(mf, p);
 		HomeView.jTrash = new JLabel(" x " + Integer.toString(garbage));
-		HomeView.jPearl = new JLabel(" x " + Integer.toString(pearl));
 		
 		//p.setMyGarbage(myGarbage);
 		
