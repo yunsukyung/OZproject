@@ -37,7 +37,7 @@ public class LoginView extends JPanel{
 	public LoginView(MainView mf) {
 		this.mf = mf;
 		this.loginView = this;
-		System.out.println(this.getLocation());
+		
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
 		
@@ -136,6 +136,9 @@ public class LoginView extends JPanel{
 					p.setFirstEnter(true);
 				} else if (p.isFirstEnter()){
 					Run.t1.start();
+					System.out.println(Player.pearl);
+					System.out.println(p.getPearl());
+					System.out.println(p.getMyPearl());
 					ChangePanel.changePanel(mf, loginView, new HomeView(mf, p));
 				}
 			}

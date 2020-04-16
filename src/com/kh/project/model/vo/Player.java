@@ -9,8 +9,10 @@ public class Player implements java.io.Serializable{
 	private String userName;	//유저 닉네임
 	private String phoneNumber;	//핸드폰번호
 	private String email;		//이메일
-	public static int pearl = 0;	//진주
-	public static int garbage = 0;	//쓰레기
+	public static int pearl;	//진주
+	public static int garbage;	//쓰레기
+	private int myPearl = 0;
+	private int myGarbage = 0;
 	private int sp = 10;		//공격력
 	public static int satiety = 236;	//포만감
 	private boolean firstEnter = false;
@@ -92,11 +94,11 @@ public class Player implements java.io.Serializable{
 	}
 
 	public void setPearl(int pearl) {
-		this.pearl = pearl;
+		Player.pearl = pearl;
 	}
 
 	public void setGarbage(int garbage) {
-		this.garbage = garbage;
+		Player.garbage = garbage;
 	}
 
 	public void setSp(int sp) {
@@ -113,6 +115,22 @@ public class Player implements java.io.Serializable{
 
 	public void setFirstEnter(boolean firstEnter) {
 		this.firstEnter = firstEnter;
+	}
+
+	public int getMyPearl() {
+		return myPearl;
+	}
+
+	public void setMyPearl(int myPearl) {
+		this.myPearl = myPearl;
+	}
+
+	public int getMyGarbage() {
+		return myGarbage;
+	}
+
+	public void setMyGarbage(int myGarbage) {
+		this.myGarbage = myGarbage;
 	}
 
 }

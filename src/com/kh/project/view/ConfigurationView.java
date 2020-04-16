@@ -19,7 +19,8 @@ public class ConfigurationView extends JDialog {
 	private JDialog mo;
 	private MainView mf;
 	LoginManager lm = new LoginManager();
-	Player p = new Player();
+	Player p;
+	
 	public ConfigurationView(MainView mf, Player p) {
 		this.mf = mf;
 		this.mo = this;
@@ -107,6 +108,9 @@ public class ConfigurationView extends JDialog {
 	class MyMouseAdepter2 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
+			p.setMyGarbage(Player.garbage + p.getMyGarbage());
+			p.setMyPearl(Player.pearl + p.getMyPearl());
+			lm.SaveId(p.getUserId(), p);
 			System.out.println(lm.SaveId(p.getUserId(), p));
 			System.exit(0);
 		}
