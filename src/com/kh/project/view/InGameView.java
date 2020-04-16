@@ -86,7 +86,7 @@ public class InGameView extends JPanel implements Runnable{
       this.inGameView = this;
       this.mf = mf;
 
-      MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\인게임.wav");
+      MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\보글보글 인게임.wav");
       this.setLayout(null);
       background = new ImageIcon("src/image/game/InGameBack3.jpg").getImage().getScaledInstance(1000, 1000, 0);
       label = new JLabel(new ImageIcon(background));
