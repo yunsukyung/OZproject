@@ -12,14 +12,14 @@ public class ShopManager {
 		boolean act = false;
 		
 		//보유한 쓰레기나 진주가 가격보다 높으면 실행하고 act에 true 넣어줌
-		if(p.getGarbage() >= thing.getGp()) {
-			p.setGarbage(p.getGarbage() - thing.getGp());
+		if(p.getMyGarbage() >= thing.getGp()) {
+			p.setMyGarbage(p.getMyGarbage() - thing.getGp());
 			act = true;
 		} else {
 			System.out.println("쓰레기가 부족합니다.");
 		}
-		if(p.getPearl() >= thing.getPp()) {
-			p.setGarbage(p.getGarbage() - thing.getPp());
+		if(p.getMyPearl() >= thing.getPp()) {
+			p.setMyGarbage(p.getMyGarbage() - thing.getPp());
 			act = true;
 		} else {
 			System.out.println("진주가 부족합니다.");
@@ -57,11 +57,11 @@ public class ShopManager {
 		//발전소 종류가 맞는지 대조 후 시간당 쓰레기 올려줌
 		if(act == true) {
 			if(thing instanceof I_Eps1) {
-				p.setGarbage(p.getGarbage() + ((I_Eps1)thing).getEpsGb());
+				p.setMyGarbage(p.getMyGarbage() + ((I_Eps1)thing).getEpsGb());
 			} else if(thing instanceof I_Eps2) {
-				p.setGarbage(p.getGarbage() + ((I_Eps2)thing).getEpsGb());
+				p.setMyGarbage(p.getMyGarbage() + ((I_Eps2)thing).getEpsGb());
 			} else if(thing instanceof I_Eps3) {
-				p.setGarbage(p.getGarbage() + ((I_Eps3)thing).getEpsGb());
+				p.setMyGarbage(p.getMyGarbage() + ((I_Eps3)thing).getEpsGb());
 			} else if(thing instanceof I_Eps4) {
 				
 			}	

@@ -68,7 +68,7 @@ public class MainBookView extends JDialog {
 		backbutton.addMouseListener(new MyMouseAdapter());
 		
 		//액션
-		if(p.getGarbage() > 15) {
+		if(p.getMyGarbage() > 15) {
 			bookbutton1.addActionListener(new ActionListener() {
 			
 			@Override
@@ -103,7 +103,7 @@ public class MainBookView extends JDialog {
 			
 		}
 		
-		if(p.getGarbage() > 100) {
+		if(p.getMyGarbage() > 100) {
 			bookbutton2.addActionListener(new ActionListener() {
 			
 			@Override
@@ -139,7 +139,7 @@ public class MainBookView extends JDialog {
 		}
 		
 		
-		if(p.getGarbage() > 500) {
+		if(p.getMyGarbage() > 500) {
 			bookbutton3.addActionListener(new ActionListener() {
 			
 			@Override
@@ -174,7 +174,7 @@ public class MainBookView extends JDialog {
 			
 		}
 		
-		if(p.getGarbage() > 1000) {
+		if(p.getMyGarbage() > 1000) {
 			bookbutton4.addActionListener(new ActionListener() {
 			
 			@Override
@@ -269,8 +269,8 @@ class mous extends JFrame{
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
-		p.setGarbage(p.getGarbage() + 150);
-		p.setPearl(p.getPearl() + 2);
+		p.setMyGarbage(p.getMyGarbage() + 150);
+		p.setMyPearl(p.getMyPearl() + 2);
 		
 		mo.add(jin2);
 		mo.add(jin3);
@@ -325,7 +325,7 @@ class mous2 extends JFrame{
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
-		p.setPearl(p.getPearl() + 5);
+		p.setMyPearl(p.getMyPearl() + 5);
 		
 		mo.add(jin2);
 		mo.add(jin3);
@@ -374,7 +374,7 @@ class mous3 extends JFrame{
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
-		p.setPearl(p.getPearl() + 15);
+		p.setMyPearl(p.getMyPearl() + 15);
 		
 		mo.add(jin2);
 		mo.add(jin3);
@@ -422,7 +422,7 @@ class mous4 extends JFrame{
 		jin3.setBounds(110, 50, 30, 40);
 		jin3.setForeground(Color.WHITE);
 		
-		p.setPearl(p.getPearl() + 30);
+		p.setMyPearl(p.getMyPearl() + 30);
 		
 		mo.add(jin2);
 		mo.add(jin3);

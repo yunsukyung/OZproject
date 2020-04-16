@@ -28,6 +28,8 @@ public class HomeView extends JPanel implements Runnable {
 	boolean f = false;
 	LoginManager lm = new LoginManager();
 	Player p;
+	public static int garbage;
+	public static int pearl;
 	//ReduceSatiety rs = new ReduceSatiety(mf);
 	public static JLabel labelrs = new JLabel();
 	public static JLabel bg_l = new JLabel();
@@ -40,8 +42,8 @@ public class HomeView extends JPanel implements Runnable {
 	public static int maxHp = 236;
 	public static boolean stop = false;
 	public static boolean bl = false;
-	public static JLabel pearl = new JLabel(); 
-	public static JLabel trash = new JLabel(); 
+	public static JLabel jPearl = new JLabel(); 
+	public static JLabel jTrash = new JLabel(); 
 
 	public HomeView() {}
 	public HomeView(MainView mf, Player p) {
@@ -128,12 +130,12 @@ public class HomeView extends JPanel implements Runnable {
 
 		System.out.println("=====");
 		//쓰레기 텍스트
-		trash = new JLabel(" x " + Integer.toString(p.getMyGarbage() + Player.garbage));
-		trash.setBounds(50, 35, 100, 25);
+		jTrash = new JLabel(" x " + Integer.toString(p.getMyGarbage() + HomeView.garbage));
+		jTrash.setBounds(50, 35, 100, 25);
 
 		//진주 텍스트
-		pearl = new JLabel(" x " + Integer.toString(p.getMyPearl() + Player.pearl));
-		pearl.setBounds(50, 60, 100, 25);
+		jPearl = new JLabel(" x " + Integer.toString(p.getMyPearl() + HomeView.pearl));
+		jPearl.setBounds(50, 60, 100, 25);
 
 		//닉네임 텍스트
 		JLabel id = new JLabel(p.getUserName());
@@ -231,8 +233,8 @@ public class HomeView extends JPanel implements Runnable {
 		bg_l.add(pearl_l);		//진주
 		bg_l.add(labelrs);		//포만감 감소
 		//		this.add(label4);		//포만감 배경
-		bg_l.add(trash);		//쓰레기 텍스트
-		bg_l.add(HomeView.pearl);		//진주 텍스트
+		bg_l.add(jTrash);		//쓰레기 텍스트
+		bg_l.add(HomeView.jPearl);		//진주 텍스트
 		bg_l.add(nickname_b);		//닉네임 간판
 		bg_l.add(igloo_b);		//이글루
 		this.add(bg_l);		//배경
@@ -242,12 +244,11 @@ public class HomeView extends JPanel implements Runnable {
 	
 	public HomeView(MainView mf, Player p, int garbage, int pearl) {
 		this(mf, p);
-		this.trash = new JLabel(" x " + Integer.toString(garbage));
-		this.pearl = new JLabel(" x " + Integer.toString(pearl));
+		HomeView.jTrash = new JLabel(" x " + Integer.toString(garbage));
+		HomeView.jPearl = new JLabel(" x " + Integer.toString(pearl));
 		
-		bg_l.add(HomeView.trash);		//진주 텍스트
-		bg_l.add(HomeView.pearl);		//진주 텍스트
-		System.out.println(Player.pearl);
+		bg_l.add(HomeView.jTrash);		//진주 텍스트
+		bg_l.add(HomeView.jPearl);		//진주 텍스트
 	}
 	public static void setStop(boolean stop) {
 		HomeView.stop = stop;
@@ -366,7 +367,6 @@ public class HomeView extends JPanel implements Runnable {
 				}
 					
 			}else if (maxHp > 0) {
-				HomeView.pearl.repaint();
 				maxHp -= 3;
 				Player.setSatiety(maxHp);
 				try {

@@ -9,17 +9,16 @@ public class Player implements java.io.Serializable{
 	private String userName;	//유저 닉네임
 	private String phoneNumber;	//핸드폰번호
 	private String email;		//이메일
-	public static int pearl;	//진주
-	public static int garbage;	//쓰레기
 	private int myPearl = 0;
 	private int myGarbage = 0;
 	private int sp = 10;		//공격력
 	public static int satiety = 236;	//포만감
+	
 	private boolean firstEnter = false;
-	public static boolean eps1 = false;
-	public static boolean eps2 = false;
-	public static boolean eps3 = false;
-	public static boolean eps4 = false;
+	private boolean eps1 = false;
+	private boolean eps2 = false;
+	private boolean eps3 = false;
+	private boolean eps4 = false;
 
 	public Player() {}
 
@@ -56,15 +55,7 @@ public class Player implements java.io.Serializable{
 	public String getEmail() {
 		return email;
 	}
-
-	public int getPearl() {
-		return pearl;
-	}
-
-	public int getGarbage() {
-		return garbage;
-	}
-
+	
 	public int getSp() {
 		return sp;
 	}
@@ -92,15 +83,7 @@ public class Player implements java.io.Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public void setPearl(int pearl) {
-		Player.pearl = pearl;
-	}
-
-	public void setGarbage(int garbage) {
-		Player.garbage = garbage;
-	}
-
+	
 	public void setSp(int sp) {
 		this.sp = sp;
 	}

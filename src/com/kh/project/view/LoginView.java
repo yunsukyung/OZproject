@@ -136,9 +136,6 @@ public class LoginView extends JPanel{
 					p.setFirstEnter(true);
 				} else if (p.isFirstEnter()){
 					Run.t1.start();
-					System.out.println(Player.pearl);
-					System.out.println(p.getPearl());
-					System.out.println(p.getMyPearl());
 					ChangePanel.changePanel(mf, loginView, new HomeView(mf, p));
 				}
 			}

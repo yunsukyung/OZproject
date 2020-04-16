@@ -108,8 +108,8 @@ public class ConfigurationView extends JDialog {
 	class MyMouseAdepter2 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			p.setMyGarbage(Player.garbage + p.getMyGarbage());
-			p.setMyPearl(Player.pearl + p.getMyPearl());
+			p.setMyGarbage(HomeView.garbage + p.getMyGarbage());
+			p.setMyPearl(HomeView.pearl + p.getMyPearl());
 			lm.SaveId(p.getUserId(), p);
 			System.out.println(lm.SaveId(p.getUserId(), p));
 			System.exit(0);
