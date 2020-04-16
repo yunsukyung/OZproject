@@ -307,13 +307,12 @@ public class HomeView extends JPanel implements Runnable {
 		public void mousePressed(MouseEvent e) {
 			if(!f) {
 				ChangePanel.changePanel(mf, homeView, new HowToPlayView(mf, p));
-
 			} else {
 				InGameView.count = 0;
 				Run.t2.start();
 				InGameView.threadtimer = false;
 				InGameView.timer = 3;
-				ChangePanel.changePanel(mf, homeView, new InGameView());
+				ChangePanel.changePanel(mf, homeView, new StageView(mf, p));
 
 			}
 		}
