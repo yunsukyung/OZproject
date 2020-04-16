@@ -40,6 +40,7 @@ public class HomeView extends JPanel implements Runnable {
 	public static JButton restart2 = new JButton();
 	public static JLabel re_text = new JLabel();
 	public static JButton soju_b = new JButton();
+	public static JButton chip_b = new JButton();
 	public static int maxHp = 236;
 	public static boolean stop = false;
 	public static boolean bl = false;
@@ -104,9 +105,13 @@ public class HomeView extends JPanel implements Runnable {
 		JButton button7 = new JButton(new ImageIcon(new ImageIcon("src\\image\\start\\메인펭귄.gif").getImage().getScaledInstance(100, 100, 0)));
 		button7.setBounds(100, 300, 150, 100);
 
-		//쏘주
+		//소주낚시게임
 		soju_b = new JButton(new ImageIcon(new ImageIcon("src/image/start/soju1.png").getImage().getScaledInstance(90, 100, 0)));
 		soju_b.setBounds(60, 400, 60, 100);
+		
+		//펭귄점프게임
+		chip_b = new JButton(new ImageIcon(new ImageIcon("src/image/game/plastic.png").getImage().getScaledInstance(90, 100, 0)));
+		chip_b.setBounds(230, 400, 90, 100);
 
 		//재시작 버튼
 		restart = new JButton(new ImageIcon(new ImageIcon("src/image/start/refresh.png").getImage().getScaledInstance(50, 50, 0)));
@@ -269,6 +274,11 @@ public class HomeView extends JPanel implements Runnable {
 		soju_b.setBorderPainted(false);
 		soju_b.setFocusPainted(false);
 		soju_b.setContentAreaFilled(false);
+		
+		//쏘주
+//		chip_b.setBorderPainted(false);
+//		chip_b.setFocusPainted(false);
+//		chip_b.setContentAreaFilled(false);
 
 		//쏘주
 		restart.setBorderPainted(false);
@@ -292,6 +302,8 @@ public class HomeView extends JPanel implements Runnable {
 		ads_b.addMouseListener(new MyMouseAdapter5());
 		//소주(게임)
 		soju_b.addMouseListener(new MyMouseAdapter6());
+		//허버칩(점프게임)
+		chip_b.addMouseListener(new MyMouseAdapter7());
 		//포만감 감소
 		//		label5.addMouseListener(new MyMouseAdapter9());
 		
@@ -309,6 +321,7 @@ public class HomeView extends JPanel implements Runnable {
 		bg_l.add(book_b);		//책(업적)
 		bg_l.add(ads_b);		//광고
 		bg_l.add(soju_b);		//쏘주(게임)
+		bg_l.add(chip_b);		//쏘주(게임)
 		bg_l.add(heart_l);		//하트
 		bg_l.add(garbage_l);		//쓰레기
 		bg_l.add(pearl_l);		//진주
@@ -405,6 +418,22 @@ public class HomeView extends JPanel implements Runnable {
 		}
 
 
+	}
+	
+	//점프 게임
+	class MyMouseAdapter7 extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			if(!f) {
+				ChangePanel.changePanel(mf, homeView, new MiniGameView(mf, p));
+			} else {
+				//Run.t2.start();
+				ChangePanel.changePanel(mf, homeView, new MiniGameView(mf, p));
+				
+			}
+		}
+		
+		
 	}
 
 	//포만감 감소
