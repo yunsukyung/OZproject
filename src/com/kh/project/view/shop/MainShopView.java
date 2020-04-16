@@ -1413,10 +1413,8 @@ public class MainShopView extends JDialog{
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
 						p.setMyGarbage(p.getMyGarbage() - 500);
-						HomeView.eps1_b.setLocation(310, 155);
-						HomeView.bg_l.repaint();
-						Run.teps1.start();
-						ChangePanel.change(mf, buy, new HomeView(mf, p, 0 ,0));
+						HomeView.garbage = HomeView.garbage - 500;
+
 					}
 				});
 
@@ -1449,10 +1447,7 @@ public class MainShopView extends JDialog{
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
 						p.setMyPearl(p.getMyPearl() - 55);
-						HomeView.eps2_b.setBounds(310, 205, 40, 40);
-						HomeView.bg_l.repaint();
-//						Run.teps2.start();
-						ChangePanel.change(mf, buy, new HomeView(mf, p, 0 ,0));
+						HomeView.pearl = HomeView.pearl - 55;
 
 					}
 				});
@@ -1486,10 +1481,7 @@ public class MainShopView extends JDialog{
 					public void actionPerformed(ActionEvent e) {
 						buy.dispose();
 						p.setMyPearl(p.getMyPearl() - 75);
-						HomeView.eps3_b.setBounds(310, 255, 40, 40);
-						HomeView.bg_l.repaint();
-//						Run.teps3.start();
-						ChangePanel.change(mf, buy, new HomeView(mf, p, 0 ,0));
+						HomeView.pearl = HomeView.pearl - 75;
 
 					}
 				});
