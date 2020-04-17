@@ -431,6 +431,9 @@ public class HomeView extends JPanel implements Runnable {
 	class MyMouseAdapter7 extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent e) {
+			
+			System.out.println("222");
+			
 			if(!f) {
 				ChangePanel.changePanel(mf, homeView, new MiniGameView(mf, p));
 			} else {

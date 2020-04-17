@@ -67,10 +67,10 @@ public class Monster implements Runnable{
 			}
 			
 			if(!monster2) {
-				xm2 += 10;
+				xm2 += 2;
 				mgv.monster_p2.setLocation(xm2, 240);
 			} else if (monster2) {
-				xm2 -= 10;
+				xm2 -= 2;
 				mgv.monster_p2.setLocation(xm2, 240);
 			}
 			
@@ -83,10 +83,10 @@ public class Monster implements Runnable{
 			}
 			
 			if(!monster3) {
-				xm3 += 7;
+				xm3 += 5;
 				mgv.monster_p3.setLocation(xm3, 90);
 			} else if (monster3) {
-				xm3 -= 7;
+				xm3 -= 5;
 				mgv.monster_p3.setLocation(xm3, 90);
 			}
 			

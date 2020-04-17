@@ -10,11 +10,12 @@ import java.util.*;
 
 import javax.swing.*;
 
+import com.kh.project.controller.GameManager;
 import com.kh.project.model.vo.*;
 import com.kh.project.view.ChangePanel;
 import com.kh.project.view.HomeView;
 
-public class MiniGameView extends JPanel{
+public class MiniGameView extends JPanel {
 	private MainView mf;
 	private MiniGameView miniGameView;
 	//플레이어 호출
@@ -34,8 +35,14 @@ public class MiniGameView extends JPanel{
 			return true;
 		} else {
 			return false;
+			
 		}
 	}
+	public boolean gbbl = false;
+	
+	int[] yarr = {-15, -13, -10, -6, -4, 4, 6, 10, 13, 15};
+	int[] x1arr = {-12, -10, -8, -6, -4, -4, -6, -8, -10, -12};
+	int[] x2arr = {12, 10, 8, 6, 4, 4, 6, 8, 10, 12};
 	
 	//이미지 모음
 	Image background;
@@ -75,6 +82,7 @@ public class MiniGameView extends JPanel{
 	JLabel garbage_l3;
 	
 	JLabel gameOver_l;
+	JLabel top_l;
 	
 	JButton over_b;
 	
@@ -83,6 +91,9 @@ public class MiniGameView extends JPanel{
 	boolean keyLeft = false;
 	boolean keyRight = false; 
 	boolean playerMove = false;
+	boolean jumping = false;
+	boolean falling = false;
+	
 	
 	int direction;
 	int count;
@@ -99,14 +110,18 @@ public class MiniGameView extends JPanel{
 	
 	Thread th;
 	
-	Thread tp = new Thread(new Jump());
-	Thread tf = new Thread(new Fall());
+	Thread tp = new Jump();
+	Thread tf = new Fall();
+	Thread g1 = new Thread(new Garbagespawn());
+	
+	public MiniGameView() {}
 	public MiniGameView(MainView mf, Player p) {
 		this.p = p;
 		this.miniGameView = this;
 		this.mf = mf;
 		
 		this.setLayout(null);
+		
 		
 		
 		
@@ -172,13 +187,16 @@ public class MiniGameView extends JPanel{
 		JLabel ladder3_2 = new JLabel(new ImageIcon(ladder));
 		ladder3_2.setBounds(170, 160, 90, 160);
 		
+		top_l = new JLabel();
+		top_l.setBounds(0, 0, 360, 640);
+		
 		
 		//펭귄 패널에 위치 크기 조정
 		penz_p.add(penz_l);
 		penz_p.setOpaque(false);
 		penz_p.setLocation(280, 520);
 		penz_p.setSize(80, 140);
-		//상어 패널에 라벨 붙이고 위치 크기 조정
+		//상어 패널에 라벨 붙이고 위치 크5기 조정
 		monster_p1.add(monster_l1);
 		monster_p1.setBounds(0, 60, 50, 60);
 		monster_p1.setOpaque(false);
@@ -215,6 +233,9 @@ public class MiniGameView extends JPanel{
 			this.add(over_b);
 			
 		}
+		
+		this.add(top_l);
+		
 		this.add(garbage_p1);
 		this.add(garbage_p2);
 		this.add(garbage_p3);
@@ -227,9 +248,6 @@ public class MiniGameView extends JPanel{
 		this.add(monster_p2);
 		this.add(monster_p3);
 		
-//		Monster1 m1 = new Monster1();
-//		Thread th1 = new Thread(m1);
-//		th1.start();
 		
 		this.add(obst1_1);
 		this.add(obst1_2);
@@ -249,19 +267,14 @@ public class MiniGameView extends JPanel{
 		Thread tm1 = new Thread(new Monster(this));
 		tm1.start();
 		
-		//점프 스레드 실행
-//		Jump jump = new Jump();
-//		tp.start();
 		
-		//추락 스레드
-//		Fall fall = new Fall();
-//		tf.start();
-
+		
 		
 		//키보드 입력
-		mf.addKeyListener(new Key());
+		penz_p.addKeyListener(new Key());
 //		over_b.addMouseListener(new MyMouseAdapter());
-		//penz_l.setFocusable(true);
+		penz_p.setFocusable(true);
+//		penz_l.setFocusable(true);
 		
 		mf.add(this);
 		mf.repaint();
@@ -283,7 +296,25 @@ public class MiniGameView extends JPanel{
 			int x = penz_p.getX();
 			int y = penz_p.getY();
 			
-//			tf.start();
+			if(((x >= 120 && x <= 200) && (y == 370))
+					|| ((x >= 70 && x <= 80) && (y == 220))
+					|| (((x >= 90 && x <= 110) || (x >= 220 && x <= 250)) && (y == 70))) {
+				
+			
+			new Fall().start();
+			}
+			
+			if(!gbbl) {
+				gbbl = true;
+				System.out.println(gbbl);
+				g1.start();
+			}
+			
+			if(hit()==true) {
+				p.setMyGarbage(p.getMyGarbage() + countGarbege);
+				ChangePanel.changePanel(mf, miniGameView, new GemeOverView(mf, p, countGarbege));
+				
+			}
 			
 			//쓰레기 먹으면 사라지면서 count 1증가
 			if(garbage_p1.getX() == penz_p.getX()) {
@@ -317,7 +348,7 @@ public class MiniGameView extends JPanel{
 					penz_p.setLocation(x, y-10);
 					System.out.println(penz_p.getLocation());
 				}; break;
-			case KeyEvent.VK_DOWN:
+			case KeyEvent.VK_DOWN: 
 				keyDown = true;
 				direction = 0;
 				System.out.println("down");
@@ -350,11 +381,16 @@ public class MiniGameView extends JPanel{
 					penz_l.setVisible(false);
 					penz_r.setVisible(true);
 					penz_p.setLocation(x+10, y);
-					System.out.println(penz_p.getLocation());
 				}; break;
 			case KeyEvent.VK_SPACE:
-				System.out.println("space");
-				tp.start();
+				if(!jumping) {
+					jumping = true;
+					new Jump().start();
+					System.out.println("펭즈의 좌표"+penz_p.getLocation());
+				}
+				jumping = false;
+//				System.out.println(penz_p.getLocation());
+//				tp.interrupt();
 				break;
 			default: break;
 			}
@@ -382,84 +418,94 @@ public class MiniGameView extends JPanel{
 	}
 	
 	
-	class Fall extends Thread{
+	class Fall extends Thread {
 		int x = penz_p.getX();
 		int y = penz_p.getY();
 		
 		@Override
 		public void run() {
-			if(hit()==true) {
-				p.setMyGarbage(p.getMyGarbage() + countGarbege);
-				ChangePanel.changePanel(mf, miniGameView, new GemeOverView(mf, p, countGarbege));
-				try {
-					Thread.sleep(300);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-			}
-			while(true) {
-				try {
-					if(((x >= 120 && x <= 200) && (y == 370))
-							|| ((x >= 70 && x <= 80) && (y == 220))
-							|| (((x >= 90 && x <= 110) || (x >= 220 && x <= 250)) && (y == 70))) {
-						for(int i = 0; i < 15; i++){
-							y += 10;
-							penz_p.setLocation(x, y);
+			
+//				if(((x >= 120 && x <= 200) && (y == 370))
+//						|| ((x >= 70 && x <= 80) && (y == 220))
+//						|| (((x >= 90 && x <= 110) || (x >= 220 && x <= 250)) && (y == 70))) {
+//					
+					for(int i = 0; i < 15; i++){
+						y += 10;
+						penz_p.setLocation(x, y);
+						try {
 							Thread.sleep(100);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
 					}
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-			}
+				
+				
+			
 		}
 	}
 	
 	
 	class Jump extends Thread{
 		//x, y 좌표 배열로 선언
+//		Key key = new Key();
 		int[] yarr = {-15, -13, -10, -6, -4, 4, 6, 10, 13, 15};
 		int[] x1arr = {-12, -10, -8, -6, -4, -4, -6, -8, -10, -12};
 		int[] x2arr = {12, 10, 8, 6, 4, 4, 6, 8, 10, 12};
 		int x = penz_p.getX();
 		int y = penz_p.getY();
-		Key key = new Key();
+		
 		@Override
 		public void run() {
-			try {
+			jumping = true;
+			for(int i = 0; i < 10; i++) {
 				if(direction == 1) {
-					for(int i = 0; i < 10; i++) {
-						y += yarr[i];
-						x += x1arr[i];
-						if(x<-20) {
-							x=-20;
-							penz_p.setLocation(x, y);
-						} else {
-							penz_p.setLocation(x, y);
-						}
-						Thread.sleep(10);
+					y += yarr[i];
+					x += x1arr[i];
+					if(x <-20) {
+						x = 20;
+						penz_p.setLocation(x, y);
+					} else {
+						penz_p.setLocation(x, y);
+					}
+				} else if(direction == 2) {
+					
+					y += yarr[i];
+					x += x2arr[i];
+					if(x > 300) {
+						x = 300;
+						penz_p.setLocation(x, y);
+					} else {
+						penz_p.setLocation(x, y);
 					}
 				}
-				if(direction == 2) {
-					for(int i = 0; i < 10; i++) {
-						y += yarr[i];
-						x += x2arr[i];
-						if(x>300) {
-							x=300;
-							penz_p.setLocation(x, y);
-						} else {
-							penz_p.setLocation(x, y);
-						}
-						Thread.sleep(10);
-					}
-
+				try {
+					penz_p.repaint();
+					Thread.sleep(100);
+				} catch (Exception e) {
+					// TODO: handle exception
 				}
-			} catch (Exception e) {
-				// TODO: handle exception
 			}
 		}
+	}
+
+	class Garbagespawn implements Runnable{
+		GameManager gm = new GameManager();
+		
+		@Override
+		public void run() {
+			for(int i = 0; i < 10; i++) {
+				top_l.add(gm.getLarr()[i]);
+				try {
+					Thread.sleep(500);
+					top_l.repaint();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			}
+			
+		}
+		
 	}
 	
 	
