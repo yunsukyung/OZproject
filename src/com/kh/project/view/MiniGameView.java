@@ -6,8 +6,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.*;
 
 import com.kh.project.controller.GameManager;
@@ -19,6 +25,9 @@ public class MiniGameView extends JPanel {
 	private MainView mf;
 	private MiniGameView miniGameView;
 	GameManager gm = new GameManager();
+	File file = new File("src\\com\\kh\\project\\bgm\\띠딩2.wav");
+	AudioInputStream stream;
+	Clip clip;
 	
 	//플레이어 호출
 	Player p;
@@ -39,6 +48,7 @@ public class MiniGameView extends JPanel {
 	Image garbage3 = new ImageIcon("src/image/minigame/과자봉지.png").getImage().getScaledInstance(50, 50, 0);
 
 	//펭귄 패널
+	
 	JPanel penz_p = new JPanel();
 	//상어 패널
 	JPanel monster_p1 = new JPanel();
@@ -97,7 +107,9 @@ public class MiniGameView extends JPanel {
 	Thread g1 = new Thread(new Garbagespawn());
 	
 	//상어랑 hit 판별 생성자
+	
 	public boolean hit() {
+	
 		int x1 = penz_p.getX();
 		int y1 = penz_p.getY();
 		int xm1 = monster_p1.getX();
@@ -137,12 +149,21 @@ public class MiniGameView extends JPanel {
 	
 	public MiniGameView() {}
 	public MiniGameView(MainView mf, Player p) {
+		try {
+			stream = AudioSystem.getAudioInputStream(file);
+			clip = AudioSystem.getClip();
+			clip.open(stream);
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
 		this.p = p;
 		this.miniGameView = this;
 		this.mf = mf;
 		
 		this.setLayout(null);
-		
+		MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\너구리-처음꺼.wav");
 		//배경이미지
 		background = new ImageIcon("src/image/minigame/minigamebackground.png").getImage().getScaledInstance(360, 640, 0);
 		label = new JLabel(new ImageIcon(background));
@@ -216,6 +237,7 @@ public class MiniGameView extends JPanel {
 		monster_p3.setOpaque(false);
 		
 		if(hit()==true) {
+			MusicPlayer.MusicStart("src\\com\\kh\\project\\bgm\\쓰레기1.wav");
 			this.add(over_b);
 			
 		}
@@ -279,14 +301,23 @@ public class MiniGameView extends JPanel {
 				g1.start();
 			}
 			
-			
 			for(int i = 0; i < count; i++) {
 				if((gm.getLarr()[i].getX() + 10 < x)&&(gm.getLarr()[i].getX() +30 > x)||
 						(gm.getLarr()[i].getX() < x-10)&&(gm.getLarr()[i].getX() > x+30)) {
 					if(gm.getLarr()[i].getY() == y) {
 						gm.getLarr()[i].setLocation(1000, 1000);
+						clip.start();
 						countGarbege++;
 						System.out.println(countGarbege);
+						try {
+							stream = AudioSystem.getAudioInputStream(file);
+							clip = AudioSystem.getClip();
+							clip.open(stream);
+						} catch (Exception e1) {
+							
+							e1.printStackTrace();
+						}
+						
 					}
 				}
 			}
