@@ -275,6 +275,7 @@ public class MiniGameView extends JPanel {
 		penz_p.setFocusable(true);
 		
 		mf.add(this);
+		mf.setVisible(true);
 		mf.repaint();
 	}
 
