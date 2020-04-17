@@ -34,8 +34,7 @@ public class MainBookView extends JDialog {
 		this.setBounds(57, 180, 230, 400);
 		//this.setUndecorated(true);
 		this.setVisible(true);
-		//this.setBackground(new Color(0, 0, 0, 0));
-
+		
 
 
 		//버튼 및 라벨 생성
