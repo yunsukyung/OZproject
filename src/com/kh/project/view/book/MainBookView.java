@@ -17,9 +17,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.kh.project.model.vo.Player;
+import com.kh.project.view.ChangePanel;
 import com.kh.project.view.HomeView;
 import com.kh.project.view.MainView;
 import com.kh.project.view.shop.MainShopView;
+import com.kh.project.view.shop.PaymentView;
 
 public class MainBookView extends JDialog {
 	private JDialog startPage;
@@ -32,8 +34,7 @@ public class MainBookView extends JDialog {
 		this.setBounds(57, 180, 230, 400);
 		//this.setUndecorated(true);
 		this.setVisible(true);
-		//this.setBackground(new Color(0, 0, 0, 0));
-
+		
 
 
 		//버튼 및 라벨 생성
@@ -76,7 +77,7 @@ public class MainBookView extends JDialog {
 
 
 				if(p.getMyGarbage() > 15) {
-					new mous();
+					new mous(mf, p);
 				} else {
 					JDialog less = new JDialog(mf);
 
@@ -112,7 +113,7 @@ public class MainBookView extends JDialog {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(p.getMyGarbage() > 100) {
-					new mous2();
+					new mous2(p);
 				} else {
 					JDialog less = new JDialog(mf);
 
@@ -248,9 +249,14 @@ public class MainBookView extends JDialog {
 
 }
 //클릭했을때 새로운 프레임 생성
-class mous extends JFrame{
+class mous extends JPanel {
 	Player p;
-	public mous() {
+	MainView mf;
+	JPanel mous;
+	public mous(MainView mf, Player p) {
+		this.p = p;
+		this.mf = mf;
+		this.mous = this;
 		this.setBounds(57, 206, 245, 205);
 		JPanel mo = new JPanel();
 		mo.setLayout(null);
@@ -284,6 +290,7 @@ class mous extends JFrame{
 		p.setMyGarbage(p.getMyGarbage() + 150);
 		p.setMyPearl(p.getMyPearl() + 2);
 
+		
 		mo.add(jin2);
 		mo.add(jin3);
 		mo.add(garbagetong);
@@ -295,14 +302,28 @@ class mous extends JFrame{
 
 
 		this.add(mo);
-		this.setResizable(false);
+		//this.setResizable(false);
 		this.setSize(240,222);
 		this.setVisible(true);
+		mf.add(this);
+		
 	}
 	class HomeMouse1 extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
-			dispose();
+			
+			//dispose();
+			p.setMyPearl(p.getMyPearl() + 2);
+			p.setMyGarbage(p.getMyGarbage() + 150);
+			HomeView.pearl = HomeView.pearl + 2;
+			HomeView.garbage = HomeView.garbage + 150;
+			System.out.println(p.getMyPearl());
+			System.out.println(HomeView.pearl);
+			
+			
+			
+			ChangePanel.changePanel(mf, mous, new HomeView(mf, p , 150 ,2));
+			
 
 		}
 	}
@@ -310,7 +331,8 @@ class mous extends JFrame{
 //클릭했을때 새로운 프레임 생성
 class mous2 extends JFrame{
 	Player p;
-	public mous2() {
+	public mous2(Player p) {
+		this.p = p;
 		this.setBounds(57, 206, 245, 205);
 		JPanel mo = new JPanel();
 		mo.setLayout(null);
