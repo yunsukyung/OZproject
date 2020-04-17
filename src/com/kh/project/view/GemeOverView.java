@@ -24,43 +24,39 @@ public class GemeOverView extends JPanel{
 	private MainView mf;
 	Player p = new Player();
 	
-	public GemeOverView(MainView mf, Player p, int countGarbege) {
+	public GemeOverView(MainView mf, Player p, int countGarbage) {
 		this.startPage = this;
 		this.mf = mf;
 		this.p = p;
 		//위치고정 
 	
-
 		this.setLocation(0, 0);
 		this.setSize(360, 640);
 
-
-		JLabel label = new JLabel(new ImageIcon(new ImageIcon("src/image/minigame/toxic-waste.png").getImage().getScaledInstance(360, 640, 0)));
+		JLabel label = new JLabel(new ImageIcon(new ImageIcon("src/image/start/GameOver2.png").getImage().getScaledInstance(360, 640, 0)));
 		label.setBounds(0, 0, 360, 640);
 		label.setBackground(new Color(0, 0, 0, 0));
 		
 		JLabel TimeOver = new JLabel("G A M E O V E R");
-		TimeOver.setBounds(75, 100, 240, 100);
+		TimeOver.setBounds(70, 100, 240, 100);
 		TimeOver.setFont(new Font("Arial", Font.BOLD, 30));
 		TimeOver.setForeground(Color.WHITE);
 		
 		//label.addMouseListener(new MyMouseAdapter());
-		JLabel trash = new JLabel(Integer.toString(countGarbege));
+		JLabel trash = new JLabel(Integer.toString(countGarbage));
 		trash.setBounds(225, 278, 100, 25);
 
-		
-		
-		JLabel label3 = new JLabel(new ImageIcon(new ImageIcon("src/image/minigame/toxic-waste.png").getImage().getScaledInstance(360, 640, 0)));
+		JLabel label3 = new JLabel(new ImageIcon(new ImageIcon("src/image/start/GameOver3.png").getImage().getScaledInstance(360, 640, 0)));
 		label.setBounds(0, 0, 360, 640);
 		label.setBackground(new Color(0, 0, 0, 0));
 		//label.setLayout(null);
 		
-		JLabel label2 = new JLabel(new ImageIcon(new ImageIcon("src/image/minigame/toxic-waste.png").getImage().getScaledInstance(245, 205, 0)));
+		JLabel label2 = new JLabel(new ImageIcon(new ImageIcon("src/image/game/Component 64.png").getImage().getScaledInstance(245, 205, 0)));
 		label.setBounds(0, 0, 245, 205);
 		
-		JButton button2 = new JButton(new ImageIcon(new ImageIcon("src/image/minigame/toxic-waste.png").getImage().getScaledInstance(245, 205, 0)));
+		JButton button2 = new JButton(new ImageIcon(new ImageIcon("src\\image\\game\\GameOver1.png").getImage().getScaledInstance(245, 205, 0)));
 		button2.setBounds(60,200,240,190);
-		JButton button = new JButton(new ImageIcon(new ImageIcon("src/image/minigame/toxic-waste.png").getImage().getScaledInstance(111, 32, 0)));
+		JButton button = new JButton(new ImageIcon(new ImageIcon("src/image/game/Go Home.png").getImage().getScaledInstance(111, 32, 0)));
 		button.setBounds(127,417,111,32);
 		
 		button2.setContentAreaFilled(false);
