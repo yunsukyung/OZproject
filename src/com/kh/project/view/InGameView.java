@@ -33,7 +33,7 @@ import java.io.*;
 
 public class InGameView extends JPanel implements Runnable{
 
-	File file = new File("src/com/kh/music/띠딩2.wav");
+	File file = new File("src\\\\com\\\\kh\\\\project\\\\bgm\\\\띠딩2.wav");
 
 	private MainView mf;
 	private InGameView inGameView;
